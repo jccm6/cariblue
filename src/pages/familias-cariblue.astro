@@ -1,0 +1,306 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const familyGallery = [
+  { id: 1, img: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=400&q=80", title: "Diversión en la Piscina" },
+  { id: 2, img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80", title: "Oso Perezoso Nativo" },
+  { id: 3, img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80", title: "Mesa de Billar en el Rancho" },
+  { id: 4, img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80", title: "Pizza para Compartir" },
+  { id: 5, img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80", title: "Atardecer Familiar en Cocles" },
+  { id: 6, img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80", title: "Refrescos y Coctelería" }
+];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Familias en Cariblue | Resort de Playa Familiar Costa Rica</title>
+		<meta name="description" content="Las mejores vacaciones en familia en Cariblue Beach & Jungle Resort. Piscinas infantiles, área de juegos, futbolín, tucanes silvestres y diversión asegurada en Puerto Viejo." />
+	</head>
+	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
+		<Header />
+
+		<main>
+			<!-- Hero Banner -->
+			<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+				<div class="absolute inset-0 z-0">
+					<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
+					<img 
+						src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80" 
+						alt="Cariblue resort open air dining hall" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+				<div class="relative z-20 max-w-4xl mx-auto mt-8">
+					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+						Familias En Cariblue
+					</h1>
+				</div>
+			</section>
+
+			<!-- Intro Split Section -->
+			<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+				<div class="max-w-7xl mx-auto">
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+						
+						<!-- Left Side: Happy couple image -->
+						<div class="col-span-1 lg:col-span-5">
+							<div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video">
+								<img 
+									src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" 
+									alt="Parents relaxing with drinks by the pool" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+								/>
+							</div>
+						</div>
+
+						<!-- Right Side: Copy -->
+						<div class="col-span-1 lg:col-span-7 text-left">
+							<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">
+								Cuando los niños se divierten, la familia entera sonríe
+							</h2>
+							
+							<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+								<p>
+									En Cariblue cada detalle está pensado para que tus vacaciones en familia sean inolvidables.
+								</p>
+								<p>
+									Mientras los más pequeños descubren un mundo de juegos y aventuras, los grandes encuentran el equilibrio perfecto entre descanso, naturaleza y buena gastronomía.
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Alternating Family Features Rows -->
+			<section class="bg-white pb-20 px-6 md:px-12 lg:px-24">
+				<div class="max-w-5xl mx-auto space-y-16 lg:space-y-24">
+					
+					<!-- Row 1: Piscinas para todos (Text Left, Image Right) -->
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16">
+						<div class="col-span-1 md:col-span-6 text-left">
+							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+								Piscinas para todos
+							</h3>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal">
+								Disfruta de nuestras piscinas diseñadas para todos. Con áreas poco profundas para los más pequeños y un wet bar para que los adultos se relajen, cada rincón es pura diversión. Tenemos bebidas con y sin alcohol para que todos puedan disfrutar.
+							</p>
+						</div>
+						<div class="col-span-1 md:col-span-6">
+							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+								<img 
+									src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=1000&q=80" 
+									alt="Family swimming in Cariblue pool" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<!-- Row 2: Área de juegos (Image Left, Text Right) -->
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16">
+						<div class="col-span-1 md:col-span-6 order-2 md:order-1">
+							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+								<img 
+									src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" 
+									alt="Children playing games at the resort" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+						</div>
+						<div class="col-span-1 md:col-span-6 text-left order-1 md:order-2">
+							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+								Área de juegos
+							</h3>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal mb-4">
+								Un espacio seguro y entretenido donde los niños se divierten sin parar, mientras descansas tranquilo. Aquí encontrarás:
+							</p>
+							<ul class="list-disc pl-5 space-y-1 text-xs text-slate-500 font-medium mb-4">
+								<li>Jenga gigante</li>
+								<li>Futbolín</li>
+								<li>Mesa de pool</li>
+								<li>Conecta 4 tamaño XL</li>
+								<li>Juegos de mesa y zonas para relajarse en familia</li>
+							</ul>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal italic">
+								Perfecto para una tarde familiar, para que los chicos se entretengan o para disfrutar de partidas amistosas entre grandes y chicos. ¡Un rincón que todos nuestros huéspedes adoran!
+							</p>
+						</div>
+					</div>
+
+					<!-- Row 3: Descubre la fauna local (Text Left, Image Right) -->
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16">
+						<div class="col-span-1 md:col-span-6 text-left">
+							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+								Descubre la fauna local
+							</h3>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal">
+								Monos, tucanes y perezosos se dejan ver entre los jardines y la selva que rodea el resort. Una experiencia única para grandes y chicos, donde los niños podrán convivir con el cuidado de nuestra flora y fauna exótica de forma responsable.
+							</p>
+						</div>
+						<div class="col-span-1 md:col-span-6">
+							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+								<img 
+									src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" 
+									alt="Toucans native tropical wildlife" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<!-- Row 4: Sabores que nos unen (Image Left, Text Right) -->
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16">
+						<div class="col-span-1 md:col-span-6 order-2 md:order-1">
+							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+								<img 
+									src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=80" 
+									alt="Kid eating delicious pizza slice" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+						</div>
+						<div class="col-span-1 md:col-span-6 text-left order-1 md:order-2">
+							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+								Sabores que nos unen
+							</h3>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal mb-5">
+								Dos restaurantes con opciones para todos: desde lo más tropical hasta platos que encantan a los niños.
+							</p>
+							<ul class="list-disc pl-5 space-y-1.5 text-xs text-slate-500 font-medium mb-6">
+								<li>Restaurante principal del hotel (La Jungla)</li>
+								<li>Sushi Wave, frente a la playa Cocles</li>
+							</ul>
+							<a 
+								href="/all-inclusive" 
+								class="inline-block bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded shadow-md transition-colors"
+							>
+								Conoce nuestra tarifa all inclusive
+							</a>
+						</div>
+					</div>
+
+					<!-- Row 5: Actividades y diversión (Text Left, Image Right) -->
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16">
+						<div class="col-span-1 md:col-span-6 text-left">
+							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+								Actividades y diversión
+							</h3>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal">
+								Música en vivo, noches tropicales, shows de magia y mucho más para compartir momentos en familia y crear memorias maravillosas en Puerto Viejo.
+							</p>
+						</div>
+						<div class="col-span-1 md:col-span-6">
+							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+								<img 
+									src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80" 
+									alt="Live music session night" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<!-- Row 6: Momentos de relax (Image Left, Text Right) -->
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center pb-16">
+						<div class="col-span-1 md:col-span-6 order-2 md:order-1">
+							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+								<img 
+									src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1000&q=80" 
+									alt="Holding tropical cocktails" 
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+								/>
+							</div>
+						</div>
+						<div class="col-span-1 md:col-span-6 text-left order-1 md:order-2">
+							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+								Momentos de relax
+							</h3>
+							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal">
+								Mientras ellos juegan, tú puedes disfrutar de un masaje rejuvenecedor en el Surya Spa, leer un libro bajo la brisa en una cómoda hamaca o simplemente escuchar los sonidos apacibles de la selva tropical.
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- "Ver más actividades" Mid-bar -->
+			<section class="bg-[#1a4175] py-12 px-6 text-center border-t border-slate-100/10">
+				<div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+					<h3 class="text-xl md:text-2xl font-serif text-white font-semibold">
+						¿Quieres explorar más aventuras de selva y playa?
+					</h3>
+					<a 
+						href="/actividades-caribe" 
+						class="bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-xs tracking-widest uppercase px-8 py-3.5 rounded shadow-lg transition-all duration-300"
+					>
+						Ver más actividades
+					</a>
+				</div>
+			</section>
+
+			<!-- Day Pass section banner -->
+			<section class="relative min-h-[350px] flex items-center justify-center text-white py-20 px-6 overflow-hidden">
+				<div class="absolute inset-0 z-0">
+					<div class="absolute inset-0 bg-black/55 z-10"></div>
+					<img 
+						src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80" 
+						alt="Enjoying pool at Cariblue" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+				<div class="relative z-20 max-w-4xl mx-auto text-center flex flex-col items-center">
+					<h2 class="text-3xl md:text-6xl font-serif font-bold tracking-wide leading-tight mb-8 drop-shadow-xl">
+						Day pass - 15.000 colones Consumibles
+					</h2>
+					<a 
+						href="/day-pass" 
+						class="bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg transition-all duration-300 hover:shadow-pink-600/30"
+					>
+						Day pass
+					</a>
+				</div>
+			</section>
+
+			<!-- Family Resort Gallery (Replacing WordPress shortcode) -->
+			<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
+				<div class="max-w-7xl mx-auto text-center">
+					<div class="mb-12">
+						<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-3">Galería Familiar</h2>
+						<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#e60067] uppercase">
+							COMPARTIENDO RECUERDOS UNICOS EN CARIBLUE RESORT
+						</p>
+					</div>
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{familyGallery.map((img) => (
+							<div class="overflow-hidden rounded shadow-lg border border-slate-100 relative group aspect-square">
+								<img 
+									src={img.img} 
+									alt={img.title} 
+									class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+								/>
+								<div class="absolute inset-0 bg-[#0f2e59]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+									<h4 class="text-white font-serif font-bold text-lg md:text-xl mb-2">{img.title}</h4>
+									<span class="text-[#e60067] font-semibold uppercase tracking-wider text-[10px]">Family Experience</span>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
