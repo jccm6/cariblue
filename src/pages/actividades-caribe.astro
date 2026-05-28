@@ -1,0 +1,281 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const activities = [
+  {
+    title: "Canopy adventure",
+    bg: "bg-[#1d3557] text-white",
+    align: "left",
+    text: "Vuela por la selva y lleva tu adrenalina al máximo con el tour de Canopy.\nEl recorrido te llevará 2.400 metros de diversión y aventura donde recorrerás maravillosos senderos, puentes de fibra y tirolesas. Canopy sobre la copa de los gigantescos árboles de la jungla, camine por los parques nacionales Cahuita y Gandoca, visite la comunidad indígena local de Bribri...\nConocerá sobre plantas nativas, así como la utilidad que el pueblo indígena les ha dado a lo largo de la historia. Es apto a partir de los 4 años de edad. No apto para mujeres embarazadas, niños menores de 4 años, personas de peso igual o superior a 120 kilos o personas que no tengan buena condición física. Por cuestiones de seguridad los niños con un tamaño inferior a 1,20 m no pueden hacer el cable Superman.",
+    image: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=800&q=80",
+    alt: "Canopy zipline adventure Costa Rica"
+  },
+  {
+    title: "Jungle adventure Tour",
+    bg: "bg-[#0f2e59] text-white",
+    align: "right",
+    text: "Canopy, senderismo, rappel, puentes colgantes, escalada de árboles, columpio Tarzán y cable Superman. ¡Este tour lo tiene todo!\nComienza la aventura en las líneas de canopy, deslizándote por los cielos hasta quedar inmerso en las profundidades del bosque lluvioso. Sortearemos ríos, puentes y los obstáculos que hacen de la selva de Costa Rica un lugar único en el planeta. Descenso en rappel por cascadas, cruzar un puente colgante y escalar un majestuoso árbol que permitirá aprovechar de una vista inigualable en el Caribe sur.\nFinalmente llegaremos a una de las actividades más extremas de esta aventura, el Tarzan Swing, a 16 metros de altura. Y por último vuelo en posición horizontal, dándole el nombre a nuestra famosa línea SUPERMAN.\nFinalizaremos el tour en un restaurante donde podremos disfrutar de comida típica de la zona con un menú personalizado según sus preferencias.\nNo apto para mujeres embarazadas, niños menores de 12 años, personas de peso igual o superior a 120 kilos o personas que no tengan buena condición física.",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    alt: "Jungle hanging bridges walk"
+  },
+  {
+    title: "Punta uva",
+    bg: "bg-slate-50 text-slate-800",
+    align: "left",
+    text: "Ubicado a 8.4 kilómetros de nuestro resort se encuentra esta playa de olas suaves y peces por doquier, esta playa se divide en dos por una roca enorme la cual tiene un túnel natural increíble, caracterizado por su agua cristalina y corrientes bajas, que la hacen prácticamente una piscina.\nPunta Uva es categorizado como la playa #25 más linda del mundo según el ranking de playas de Tripadvisor por la cantidad de peces que se pueden observar, restaurantes y facilidad de instalaciones cerca del lugar. El acceso a la playa se puede realizar en cualquier tipo de vehículo y al ser una playa pública no tiene ningún tipo de costo su entrada. Puede consultar más información en el Tour Desk, ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    alt: "Punta Uva Beach and kayaking"
+  },
+  {
+    title: "Cahuita",
+    bg: "bg-[#1a4175] text-white",
+    align: "right",
+    text: "El Parque Nacional Cahuita se ubica a 19 kilómetros de nuestro resort y cuenta con más de 24.532 hectáreas entre mar y tierra, su nombre Cahuita proviene de los términos \"Kawi\" y \"Ta\" en lengua Miskito que significa \"Sangrillo\" y \"Punta\", es decir \"Punto Sangrillo\", el Sangrillo es un árbol característico de la zona. Entre sus más de 8 kilómetros de senderos el parque cuenta con más de 3 tipos de arena y parajes que no tienen explicación, cabe destacar que por ser Parque Nacional se encuentra protegido varios normas estatales para el convivio en el lugar, por ejemplo: se puede practicar snorkel pero debe de ser siempre con la compañía de un guía lo que da la oportunidad de conocer especies de la zona y saber el nombre al instante de las especies que se observa.\n\nTarifas:\nSector Playa Blanca: Cuota voluntaria\nSector Puerto Vargas: $5 USD extranjeros (Adultos y niños)\n₡1.000 CRC adultos nacionales\n₡500 CRC niños nacionales\nFacilidades marinas: de 8am a 4pm\n\nHorario:\nSector Playa Blanca: de 8am a 4pm\nSector Puerto Vargas: de 8am a 4pm\nFacilidades marinas: de 8am a 4pm\n\nPuede consultar más información en el Tour Desk, ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80",
+    alt: "Cahuita National Park path"
+  },
+  {
+    title: "Clases de surf",
+    bg: "bg-slate-50 text-slate-800",
+    align: "left",
+    text: "Experimentar la sensación de la brisa acariciando todo el cuerpo mientras te deslizas sobre las olas, es una experiencia incomparable. Te invitamos a aprovechar esta oportunidad única para aprender a surfear como un profesional al inscribirse en nuestras clases de surf, dirigidas por instructores locales altamente calificados. Ellos te proporcionarán las mejores recomendaciones y consejos para iniciarte en este emocionante deporte, así como para perfeccionar tus técnicas y superar desafíos.\nNuestras clases se llevan a cabo en Playa Cocles, una de las playas más populares tanto entre surfistas locales como extranjeros. Si estás interesado en explorar este emocionante deporte, puedes inscribirte en las clases de surf directamente en nuestro Tour Desk, ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=800&q=80",
+    alt: "Surf lessons Cocles beach"
+  },
+  {
+    title: "Bike Rental",
+    bg: "bg-[#0f2e59] text-white",
+    align: "right",
+    text: "La exploración del Caribe adquiere una dimensión única a través del uso de bicicletas. Esta opción no solo te brinda la oportunidad de descubrir los rincones locales como un residente, sino que también contribuye a la reducción de la huella de carbono, promueve un estilo de vida activo y saludable, y mejora el bienestar general.\nPara facilitar esta experiencia, ofrecemos el alquiler de bicicletas tipo \"banana\" a nuestros huéspedes. Pueden optar por un tour guiado, dirigido por un residente local que proporciona una visión auténtica de la vida cotidiana en el Caribe, o explorar por su cuenta seleccionando puntos de interés en el mapa. Para obtener más detalles y realizar reservas, visítanos en el Tour Desk, ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+    alt: "Beach cruiser bicycles rental"
+  },
+  {
+    title: "Refugio Natural de vida Silvestre Gandoca-Manzanillo",
+    bg: "bg-slate-50 text-slate-800",
+    align: "left",
+    text: "Rocas de más de 2 millones de años se esconden entre los tesoros de este gran refugio de vida silvestre el cual se divide en 2 secciones, sector de Gandoca ubicado a XX kilómetros de nuestro resort y sector de Manzanillo ubicado a 10 kilómetros, en este parque podrá estar cerca del único manglar intacto del Caribe así como especies que no podrá observar en ningún otro lugar del mundo como lo son los bancos de ostras de manglar, las palmeras de orey y cativo.\nSi quiere optar por este tour puede solicitar más información en nuestro tour desk ubicado al frente de la playa.",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+    alt: "Gandoca Manzanillo sloth"
+  },
+  {
+    title: "Reserva indígena Kekoldi & Bribri",
+    bg: "bg-[#1d3557] text-white",
+    align: "right",
+    text: "Recóndito entre las montañas de Talamanca, a 9 kilómetros de nuestro resort, se encuentra una de las reservas indígenas más destacadas de Costa Rica, conocida por su dedicación a preservar su cultura, tradiciones y entorno natural. Con una población de más de 10.000 habitantes, esta comunidad se dedica incansablemente a la conservación de la biodiversidad y la protección de especies de flora y fauna autóctonas. Destacan sus programas de reproducción de iguanas y ranas, así como su reconocimiento como el segundo mejor lugar a nivel mundial para la observación de la migración de aves rapaces, donde en un día propicio se pueden avistar más de 100.000 aves sobrevolando la zona.\nAdemás de ser un santuario para la vida silvestre, esta reserva ofrece la oportunidad de sumergirse en la historia del cacao a través de la cultura local. Más que una golosina, el chocolate es considerado un alimento sagrado utilizado en diversas ceremonias indígenas. Para culminar una jornada de exploración, los visitantes no pueden dejar de refrescarse en la impresionante catarata Volio.\nSi este tipo de experiencia le interesa, no dude en solicitar más información en nuestro tour desk, ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+    alt: "Bribri cacao traditional ceremony"
+  },
+  {
+    title: "Cabalgatas",
+    bg: "bg-slate-50 text-slate-800",
+    align: "left",
+    text: "Si eres amante de los caballos, no puedes dejar pasar la experiencia de montar un caballo por las playas y junglas del caribe costarricense.\nTe ofrecemos paseos a caballo de calidad, caballos naturales, dóciles, hipoterapia con certificado profesional, para que disfrutes de unas vacaciones increíbles.\nCabalgue en caballos rescatados, felices, saludables y bien entrenados. Tratados con amor y respeto. ¡La aventura en el Caribe te espera!",
+    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    alt: "Horseback riding on Cocles beach"
+  },
+  {
+    title: "Pacuare rafting",
+    bg: "bg-[#1a4175] text-white",
+    align: "right",
+    text: "Para los aventureros sedientos de adrenalina y sensaciones fuertes tendrán esta opción de hacer rafting tipo III y IV en uno de los ríos más bellos de Costa Rica. El río Pacuare se encuentra a 2 horas de nuestro resort, el viaje por sí solo es un espectáculo y vale cada minuto, el tour de rafting tiene una longitud de aproximadamente 30 kilómetros, en los cuales se encontrarán 52 corrientes rápidas que le darán de una experiencia sin igual.\nSi quiere optar por este tour puede solicitar más información en nuestro tour desk ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=800&q=80",
+    alt: "Pacuare River white water rafting"
+  },
+  {
+    title: "Tortuguero",
+    bg: "bg-[#0f2e59] text-white",
+    align: "left",
+    text: "Contemplar el retorno de una tortuga al mar tras cumplir su ciclo vital es una experiencia reveladora que conecta profundamente con la esencia misma de la vida. La elección de nuestras costas por parte de miles de tortugas marinas para anidar no es fortuita. Tortuguero, como su nombre sugiere, es el hogar elegido para estas criaturas majestuosas. Entre las especies más destacadas que frecuentan estas playas se encuentran las tortugas baulas, conocidas por su imponente tamaño, las tortugas verdes, que son abundantes en el área protegida, la carey y la cabezona, lamentablemente en peligro crítico de extinción.\nEl parque nacional de Tortuguero abarca una impresionante extensión de 312 kilómetros cuadrados, donde se preservan más de 400 especies de árboles, alrededor de 2.200 especies de plantas, 405 especies de aves y más de 150 especies de mamíferos. Si desea sumergirse en esta fascinante aventura natural, le invitamos a solicitar más información sobre nuestros tours en nuestro tour desk, ubicado en recepción.",
+    image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=80",
+    alt: "Tortuguero National Park boat canal"
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Actividades en el Caribe | Puerto Viejo Adventure Tours</title>
+		<meta name="description" content="Descubre todas las actividades de aventura y naturaleza que puedes realizar en Cariblue Resort: Canopy, clases de surf, rafting en Pacuare, Reserva Bribri." />
+	</head>
+	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
+		<Header />
+
+		<main>
+			<!-- Hero Section Banner -->
+			<section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+				<div class="absolute inset-0 z-0">
+					<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
+					<img 
+						src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=80" 
+						alt="Kayaking river Caribbean Costa Rica" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+				<div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
+					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+						Actividades En El Caribe
+					</h1>
+					<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#e60067] uppercase mt-2 drop-shadow">
+						EN CARIBLUE, CADA DÍA ES UNA AVENTURA
+					</p>
+				</div>
+			</section>
+
+			<!-- Family Adventure Intro Section -->
+			<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+				<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+					<h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-3">
+						El Caribe más divertido para tu familia
+					</h2>
+					<p class="text-xs md:text-sm font-bold text-[#e60067] uppercase tracking-wider mb-6">
+						En Cariblue, cada día es una aventura.
+					</p>
+					<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-2xl">
+						Disfruta un Caribe pensado para grandes y chicos, con actividades que conectan a toda la familia: desde caminatas por la selva y experiencias acuáticas hasta juegos y momentos de relax en la piscina. Explora todas nuestras actividades familiares aquí abajo.
+					</p>
+				</div>
+			</section>
+
+			<!-- Puerto Viejo y Alrededores Split Row -->
+			<section class="bg-slate-50/50 py-16 px-6 md:px-12 lg:px-24 border-y border-slate-100">
+				<div class="max-w-7xl mx-auto">
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+						
+						<!-- Left Side: Copy -->
+						<div class="col-span-1 lg:col-span-7 text-left">
+							<h3 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6">
+								Puerto Viejo y Alrededores
+							</h3>
+							
+							<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+								<p>
+									Ubicado en la costa caribeña de Costa Rica, Puerto Viejo de Talamanca es un popular destino turístico debido a la gran variedad de playas y parques que tiene a su alrededor.
+								</p>
+								<p>
+									Puerto Viejo está lleno de paisajes asombrosos, vida salvaje única, emociones libres y actividades. Canopy sobre la copa de los gigantescos árboles de la jungla, caminar por los parques nacionales Cahuita y Gandoca, visitar la comunidad indígena local de Bribri...
+								</p>
+								<p>
+									Si lo tuyo es la acción, prueba una lección de surf o rafting en aguas rápidas. Puerto Viejo es, definitivamente, un lugar para disfrutar de unas vacaciones relajantes, llenas de deporte y diversión.
+								</p>
+							</div>
+						</div>
+
+						<!-- Right Side: Beautiful collage -->
+						<div class="col-span-1 lg:col-span-5 grid grid-cols-2 gap-4">
+							<div class="overflow-hidden rounded shadow-md h-[180px] border border-slate-100">
+								<img 
+									src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=400&q=80" 
+									alt="Children laughing in jungle" 
+									class="w-full h-full object-cover"
+								/>
+							</div>
+							<div class="overflow-hidden rounded shadow-md h-[180px] border border-slate-100">
+								<img 
+									src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" 
+									alt="Beautiful Cocles coast view" 
+									class="w-full h-full object-cover"
+								/>
+							</div>
+							<div class="col-span-2 overflow-hidden rounded shadow-md h-[160px] border border-slate-100">
+								<img 
+									src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" 
+									alt="Sloth climbing a tree branch" 
+									class="w-full h-full object-cover"
+								/>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Massive Catalog of Activities (Alternating Rows) -->
+			<section class="w-full">
+				{activities.map((act) => (
+					<div class={`py-20 px-6 md:px-12 lg:px-24 ${act.bg}`}>
+						<div class="max-w-7xl mx-auto">
+							<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+								
+								<!-- Left Alignment rendering -->
+								{act.align === 'left' ? (
+									<>
+										<!-- Text Left (7 columns) -->
+										<div class="col-span-1 lg:col-span-7 text-left">
+											<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">
+												{act.title}
+											</h3>
+											<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">
+												{act.text}
+											</p>
+											<a 
+												href="https://wa.me/50683141965" 
+												target="_blank"
+												class="inline-block mt-8 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
+											>
+												Reservar Actividad
+											</a>
+										</div>
+
+										<!-- Image Right (5 columns) -->
+										<div class="col-span-1 lg:col-span-5">
+											<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-[4/3] group">
+												<img 
+													src={act.image} 
+													alt={act.alt} 
+													class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+												/>
+											</div>
+										</div>
+									</>
+								) : (
+									<>
+										<!-- Image Left (5 columns) -->
+										<div class="col-span-1 lg:col-span-5 order-2 lg:order-1">
+											<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-[4/3] group">
+												<img 
+													src={act.image} 
+													alt={act.alt} 
+													class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+												/>
+											</div>
+										</div>
+
+										<!-- Text Right (7 columns) -->
+										<div class="col-span-1 lg:col-span-7 text-left order-1 lg:order-2">
+											<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">
+												{act.title}
+											</h3>
+											<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">
+												{act.text}
+											</p>
+											<a 
+												href="https://wa.me/50683141965" 
+												target="_blank"
+												class="inline-block mt-8 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
+											>
+												Reservar Actividad
+											</a>
+										</div>
+									</>
+								)}
+
+							</div>
+						</div>
+					</div>
+				))}
+			</section>
+
+		</main>
+
+		<Footer />
+	</body>
+</html>
