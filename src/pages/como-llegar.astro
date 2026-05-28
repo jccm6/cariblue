@@ -1,0 +1,251 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const accordions = [
+  {
+    id: "autobus",
+    title: "AUTOBUS",
+    content: `La empresa MEPE tienen viaje regular San José - Puerto Viejo Limón y viceversa. Cuesta aproximadamente USD 13 por personas puedes revisar los horarios en el siguiente link: <a href="http://www.mepe.co.cr/" target="_blank" class="text-[#e60067] font-semibold hover:underline">Horarios Limón / Puerto Viejo</a>`,
+    isOpen: true
+  },
+  {
+    id: "shuttle-regular",
+    title: "SHUTTLE REGULAR",
+    content: "Ofrecemos servicios de shuttle compartido puerta a puerta desde San José (aeropuerto y principales hoteles) directamente hasta Cariblue Beach & Jungle Resort. Las tarifas rondan los $59 USD por persona por trayecto. Salidas diarias programadas por la mañana y por la tarde.",
+    isOpen: false
+  },
+  {
+    id: "transfer-privado",
+    title: "TRANSFER PRIVADO",
+    content: "Para mayor comodidad, privacidad y flexibilidad horaria, coordinamos traslados privados en microbuses climatizadas con chofer bilingüe. Ideal para familias o grupos de amigos. Disponible las 24 horas del día, saliendo según la hora de aterrizaje de su vuelo.",
+    isOpen: false
+  },
+  {
+    id: "vehiculo-arrendado",
+    title: "VEHÍCULO ARRENDADO",
+    content: "Puedes rentar un vehículo estándar o 4x4 en el Aeropuerto Internacional Juan Santamaría (SJO). La ruta común transcurre cruzando la Autopista 32 hacia Limón, tomando luego la pintoresca Ruta 36 hacia el sur pasando por Cahuita hasta llegar a Puerto Viejo de Talamanca y Playa Cocles. La carretera se encuentra totalmente pavimentada.",
+    isOpen: false
+  },
+  {
+    id: "avion",
+    title: "AVIÓN",
+    content: "Vuelos locales operados diariamente por Sansa desde San José hasta el aeropuerto nacional de Limón (aproximadamente 30 minutos de vuelo). Desde Limón, coordinamos un transfer terrestre de 45 minutos para llevarlo directo al hotel.",
+    isOpen: false
+  },
+  {
+    id: "circuito-aventura",
+    title: "CIRCUITO AVENTURA",
+    content: "¡Combina tu viaje con adrenalina! Te recogemos en San José por la mañana, realizas el asombroso tour de rafting por el Río Pacuare (clase III y IV) con almuerzo incluido, y al finalizar la tarde un traslado directo te dejará en las puertas de Cariblue Resort.",
+    isOpen: false
+  },
+  {
+    id: "circuito-naturaleza",
+    title: "CIRCUITO NATURALEZA",
+    content: "Disfruta de traslados turísticos que incluyen paradas programadas y visitas ecológicas guiadas en el Parque Nacional Braulio Carrillo o visitas a plantaciones tradicionales de cacao y café orgánico, convirtiendo su trayecto de traslado en su primera excursión de vacaciones.",
+    isOpen: false
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Cómo Llegar | Cariblue Resort Puerto Viejo Costa Rica</title>
+		<meta name="description" content="Descubre cómo llegar de San José a Puerto Viejo de Talamanca y Playa Cocles. Opciones de autobús, transfer privado, shuttle o rafting de aventura." />
+	</head>
+	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
+		<Header />
+
+		<main>
+			<!-- Hero Section Banner -->
+			<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+				<div class="absolute inset-0 z-0">
+					<div class="absolute inset-0 bg-black/60 z-10"></div>
+					<img 
+						src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80" 
+						alt="Dark coastline sunset Costa Rica background" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+				<div class="relative z-20 max-w-4xl mx-auto mt-8">
+					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+						Cómo Llegar
+					</h1>
+				</div>
+			</section>
+
+			<!-- Map & Options Split Section -->
+			<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+				<div class="max-w-7xl mx-auto">
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+						
+						<!-- Left Side: Route Map Frame (5 columns) -->
+						<div class="col-span-1 lg:col-span-5 lg:sticky lg:top-24">
+							<div class="bg-white rounded-lg shadow-2xl border border-slate-100 p-4 relative group">
+								<div class="absolute -top-3 -left-3 w-10 h-10 border-t-2 border-l-2 border-[#e60067]"></div>
+								<div class="absolute -bottom-3 -right-3 w-10 h-10 border-b-2 border-r-2 border-[#0f2e59]"></div>
+								
+								<div class="overflow-hidden rounded">
+									<!-- Visual representative map layout vector/illustration mimicking SJO to Puerto Viejo -->
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" class="w-full h-auto bg-[#eef1f6] border border-slate-200 text-slate-800 font-sans p-4 rounded select-none">
+										<!-- Sea background -->
+										<rect x="0" y="0" width="500" height="350" fill="#cbd5e1" opacity="0.3"/>
+										<path d="M 0 100 Q 150 150 250 120 T 500 180 L 500 0 L 0 0 Z" fill="#93c5fd" opacity="0.4" />
+										
+										<!-- Map lines/Land representation -->
+										<path d="M 0 100 Q 150 150 250 120 T 500 180" stroke="#475569" stroke-width="1.5" stroke-dasharray="3" fill="none" />
+										
+										<text x="350" y="80" class="text-[12px] font-bold fill-blue-600 tracking-wider">MAR CARIBE</text>
+										<text x="50" y="320" class="text-[12px] font-bold fill-blue-600 tracking-wider">OCÉANO PACÍFICO</text>
+										
+										<!-- Route 32 Line -->
+										<path d="M 120 180 Q 220 140 320 160 T 450 240" stroke="#ef4444" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" class="animate-pulse" />
+										<!-- Alternative Rafting Line -->
+										<path d="M 120 180 Q 230 190 280 200 T 450 240" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" fill="none" />
+										
+										<!-- SJO Node -->
+										<circle cx="120" cy="180" r="7" fill="#0f2e59" stroke="#ffffff" stroke-width="2" />
+										<text x="95" y="165" class="text-[10px] font-bold fill-[#0f2e59]">SAN JOSÉ (SJO)</text>
+										
+										<!-- Limón Node -->
+										<circle cx="360" cy="170" r="5" fill="#0f2e59" />
+										<text x="345" y="190" class="text-[9px] font-semibold fill-slate-600">Limón</text>
+
+										<!-- Puerto Viejo Node -->
+										<circle cx="450" cy="240" r="8" fill="#e60067" stroke="#ffffff" stroke-width="2" />
+										<text x="340" y="250" class="text-[11px] font-extrabold fill-[#0f2e59]">Playa Cocles / Puerto Viejo</text>
+										
+										<!-- Legend/Route descriptions mimicking screenshot -->
+										<rect x="20" y="20" width="220" height="95" fill="white" fill-opacity="0.85" rx="4" stroke="slate-200" stroke-width="1" />
+										<text x="30" y="40" class="text-[9px] font-bold fill-slate-700">RUTAS Y DURACIÓN:</text>
+										
+										<line x1="30" y1="52" x2="55" y2="52" stroke="#ef4444" stroke-width="3" />
+										<text x="65" y="55" class="text-[8px] font-semibold fill-slate-600">Ruta 32 Terrestre: 4.5 - 5 hrs</text>
+										
+										<line x1="30" y1="72" x2="55" y2="72" stroke="#3b82f6" stroke-width="1.5" />
+										<text x="65" y="75" class="text-[8px] font-semibold fill-slate-600">Circuito Rafting: 11 hrs</text>
+										
+										<circle cx="42" cy="92" r="2.5" fill="#e60067" />
+										<text x="65" y="95" class="text-[8px] font-semibold fill-slate-600">Vuelo + Transfer: 1.5 hrs</text>
+									</svg>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right Side: Accordions (7 columns) -->
+						<div class="col-span-1 lg:col-span-7 text-left">
+							<p class="text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-8">
+								Desde San José a Puerto Viejo hay que irse por la ruta 32 y tarda entre 4 a 5 horas el viaje. Existen varias opciones para llegar:
+							</p>
+							
+							<!-- Accordion List -->
+							<div class="border-t border-slate-100 divide-y divide-slate-100">
+								{accordions.map((item) => (
+									<div class="accordion-item py-4">
+										<!-- Accordion Header -->
+										<button 
+											class="accordion-trigger w-full flex justify-between items-center text-left py-2 focus:outline-none cursor-pointer group"
+											data-target={item.id}
+											aria-expanded={item.isOpen ? "true" : "false"}
+										>
+											<span class="text-xs md:text-sm font-bold text-[#0f2e59] tracking-wider group-hover:text-[#e60067] transition-colors uppercase">
+												{item.title}
+											</span>
+											<!-- Toggle icon -->
+											<span class="accordion-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none">
+												{item.isOpen ? "−" : "+"}
+											</span>
+										</button>
+										
+										<!-- Accordion Content -->
+										<div 
+											id={item.id} 
+											class={`accordion-content overflow-hidden transition-all duration-300 ease-in-out ${item.isOpen ? 'max-h-[500px] opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+										>
+											<div class="text-xs text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-4 rounded-sm border-l-2 border-[#e60067] whitespace-pre-line">
+												<Fragment set:html={item.content} />
+											</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<!-- Call To Action Section -->
+			<section class="bg-slate-50/50 py-16 px-6 text-center border-t border-slate-100">
+				<div class="max-w-3xl mx-auto">
+					<h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">
+						¿Necesita ayuda coordinando su transporte?
+					</h2>
+					<p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+						Nuestro equipo de Tour Desk estará encantado de reservarle traslados compartidos o privados sin costo adicional de gestión. ¡Póngase en contacto hoy mismo!
+					</p>
+					<a 
+						href="https://wa.me/50683141965" 
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-block bg-[#e60067] hover:bg-[#c20056] text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300"
+					>
+						Contáctanos
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<script>
+	const triggers = document.querySelectorAll('.accordion-trigger');
+
+	triggers.forEach((trigger) => {
+		trigger.addEventListener('click', () => {
+			const targetId = trigger.getAttribute('data-target');
+			const content = document.getElementById(targetId || '');
+			const icon = trigger.querySelector('.accordion-icon');
+
+			if (!content || !icon) return;
+
+			const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+			// Collapse all first (accordion style - optional but highly premium)
+			triggers.forEach((t) => {
+				const tid = t.getAttribute('data-target');
+				const c = document.getElementById(tid || '');
+				const ic = t.querySelector('.accordion-icon');
+				if (c && ic) {
+					t.setAttribute('aria-expanded', 'false');
+					c.classList.remove('max-h-[500px]', 'opacity-100', 'mt-3');
+					c.classList.add('max-h-0', 'opacity-0');
+					ic.textContent = '+';
+				}
+			});
+
+			if (!isExpanded) {
+				// Expand clicked
+				trigger.setAttribute('aria-expanded', 'true');
+				content.classList.remove('max-h-0', 'opacity-0');
+				content.classList.add('max-h-[500px]', 'opacity-100', 'mt-3');
+				icon.textContent = '−';
+			} else {
+				// Collapse clicked (it was already collapsed above, so if it was expanded we set it to false)
+				trigger.setAttribute('aria-expanded', 'false');
+				content.classList.remove('max-h-[500px]', 'opacity-100', 'mt-3');
+				content.classList.add('max-h-0', 'opacity-0');
+				icon.textContent = '+';
+			}
+		});
+	});
+</script>
