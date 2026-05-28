@@ -1,42 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
 
 @import "tailwindcss";
 
 :root {
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Montserrat', sans-serif;
-  --color-primary: #0f2e59;
-  --color-accent: #e60067;
+	--font-serif: "Playfair Display", Georgia, serif;
+	--font-sans: "Montserrat", sans-serif;
+	--color-primary: #0f2e59;
+	--color-accent: #e60067;
 }
 
 body {
-  font-family: var(--font-sans);
-  color: #334155;
-  background-color: #ffffff;
-  overflow-x: hidden;
+	font-family: var(--font-sans);
+	color: #334155;
+	background-color: #ffffff;
+	overflow-x: hidden;
 }
 
-h1, h2, h3, h4, .font-serif {
-  font-family: var(--font-serif);
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+	font-family: var(--font-serif);
+}
+
+p {
+	font-size: 15px;
 }
 
 /* Animations for book button or subtle elements */
 @keyframes pulse-soft {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(230, 0, 103, 0.7);
-  }
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 0 0 10px rgba(230, 0, 103, 0);
-  }
+	0%,
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(230, 0, 103, 0.7);
+	}
+	50% {
+		transform: scale(1.03);
+		box-shadow: 0 0 0 10px rgba(230, 0, 103, 0);
+	}
 }
 
 .animate-pulse-soft {
-  animation: pulse-soft 2s infinite;
+	animation: pulse-soft 2s infinite;
 }
 
 /* Smooth scroll behavior */
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
