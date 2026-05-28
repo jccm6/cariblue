@@ -1,6 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Welcome from '../components/Welcome.astro';
 import Rooms from '../components/Rooms.astro';
@@ -9,51 +8,33 @@ import ViveCaribe from '../components/ViveCaribe.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Sustainability from '../components/Sustainability.astro';
 import FindUs from '../components/FindUs.astro';
-import Footer from '../components/Footer.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica</title>
-		<meta name="description" content="Bienvenido a Cariblue Beach & Jungle Resort en Playa Cocles, Puerto Viejo. Experimenta la mezcla perfecta de jungla y playa en nuestro resort de lujo en el Caribe costarricense." />
-	</head>
-	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
-		<!-- Header / Navigation -->
-		<Header />
+<Layout 
+	title="Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica"
+	description="Bienvenido a Cariblue Beach & Jungle Resort en Playa Cocles, Puerto Viejo. Experimenta la mezcla perfecta de jungla y playa en nuestro resort de lujo en el Caribe costarricense."
+>
+	<!-- Hero Section & Booking Bar -->
+	<Hero />
 
-		<main>
-			<!-- Hero Section & Booking Bar -->
-			<Hero />
+	<!-- Welcome Description & Stats Dashboard -->
+	<Welcome />
 
-			<!-- Welcome Description & Stats Dashboard -->
-			<Welcome />
+	<!-- Rooms Slider -->
+	<Rooms />
 
-			<!-- Rooms Slider -->
-			<Rooms />
+	<!-- Interactive Vacation Video Callout -->
+	<VacationBanner />
 
-			<!-- Interactive Vacation Video Callout -->
-			<VacationBanner />
+	<!-- Brand Split and Nature Slideshow -->
+	<ViveCaribe />
 
-			<!-- Brand Split and Nature Slideshow -->
-			<ViveCaribe />
+	<!-- Booking/TripAdvisor Testimonials -->
+	<Testimonials />
 
-			<!-- Booking/TripAdvisor Testimonials -->
-			<Testimonials />
+	<!-- Sustainability Columns -->
+	<Sustainability />
 
-			<!-- Sustainability Columns -->
-			<Sustainability />
-
-			<!-- Contact Map & Phone Widget -->
-			<FindUs />
-		</main>
-
-		<!-- Brand Footer & Awards -->
-		<Footer />
-	</body>
-</html>
+	<!-- Contact Map & Phone Widget -->
+	<FindUs />
+</Layout>

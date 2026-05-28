@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 
 const activities = [
   {
@@ -48,7 +46,7 @@ const activities = [
     title: "Bike Rental",
     bg: "bg-[#0f2e59] text-white",
     align: "right",
-    text: "La exploración del Caribe adquiere una dimensión única a través del uso de bicicletas. Esta opción no solo te brinda la oportunidad de descubrir los rincones locales como un residente, sino que también contribuye a la reducción de la huella de carbono, promueve un estilo de vida activo y saludable, y mejora el bienestar general.\nPara facilitar esta experiencia, ofrecemos el alquiler de bicicletas tipo \"banana\" a nuestros huéspedes. Pueden optar por un tour guiado, dirigido por un residente local que proporciona una visión auténtica de la vida cotidiana en el Caribe, o explorar por su cuenta seleccionando puntos de interés en el mapa. Para obtener más detalles y realizar reservas, visítanos en el Tour Desk, ubicado en recepción.",
+    text: "La exploración del Caribe adquiere una dimensión única a través del uso de bicicletas. Esta opción no solo te brinda la oportunidad de descubrir los rincones locales como un residente, sino que también contribuye a la reducción de la huella de carbono, promueve un estilo de vida activo y saludable, y mejora el bienestar general.\nPara facilitar esta experiencia, ofrecemos el alquiler de bicicletas tipo \"banana\" a nuestros huéspedes. Pueden optar por un tour guiado, dirigido por un resident local que proporciona una visión auténtica de la vida cotidiana en el Caribe, o explorar por su cuenta seleccionando puntos de interés en el mapa. Para obtener más detalles y realizar reservas, visítanos en el Tour Desk, ubicado en recepción.",
     image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
     alt: "Beach cruiser bicycles rental"
   },
@@ -95,187 +93,173 @@ const activities = [
 ];
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Actividades en el Caribe | Puerto Viejo Adventure Tours</title>
-		<meta name="description" content="Descubre todas las actividades de aventura y naturaleza que puedes realizar en Cariblue Resort: Canopy, clases de surf, rafting en Pacuare, Reserva Bribri." />
-	</head>
-	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
-		<Header />
+<Layout 
+	title="Actividades en el Caribe | Puerto Viejo Adventure Tours"
+	description="Descubre todas las actividades de aventura y naturaleza que puedes realizar en Cariblue Resort: Canopy, clases de surf, rafting en Pacuare, Reserva Bribri."
+>
+	<main>
+		<!-- Hero Section Banner -->
+		<section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
+				<img 
+					src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=80" 
+					alt="Kayaking river Caribbean Costa Rica" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+					Actividades En El Caribe
+				</h1>
+				<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#e60067] uppercase mt-2 drop-shadow">
+					EN CARIBLUE, CADA DÍA ES UNA AVENTURA
+				</p>
+			</div>
+		</section>
 
-		<main>
-			<!-- Hero Section Banner -->
-			<section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-				<div class="absolute inset-0 z-0">
-					<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
-					<img 
-						src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=80" 
-						alt="Kayaking river Caribbean Costa Rica" 
-						class="w-full h-full object-cover"
-					/>
-				</div>
-				<div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
-					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
-						Actividades En El Caribe
-					</h1>
-					<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#e60067] uppercase mt-2 drop-shadow">
-						EN CARIBLUE, CADA DÍA ES UNA AVENTURA
-					</p>
-				</div>
-			</section>
+		<!-- Family Adventure Intro Section -->
+		<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+			<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+				<h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-3">
+					El Caribe más divertido para tu familia
+				</h2>
+				<p class="text-xs md:text-sm font-bold text-[#e60067] uppercase tracking-wider mb-6">
+					En Cariblue, cada día es una aventura.
+				</p>
+				<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-2xl">
+					Disfruta un Caribe pensado para grandes y chicos, con actividades que conectan a toda la familia: desde caminatas por la selva y experiencias acuáticas hasta juegos y momentos de relax en la piscina. Explora todas nuestras actividades familiares aquí abajo.
+				</p>
+			</div>
+		</section>
 
-			<!-- Family Adventure Intro Section -->
-			<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
-				<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-					<h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-3">
-						El Caribe más divertido para tu familia
-					</h2>
-					<p class="text-xs md:text-sm font-bold text-[#e60067] uppercase tracking-wider mb-6">
-						En Cariblue, cada día es una aventura.
-					</p>
-					<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-2xl">
-						Disfruta un Caribe pensado para grandes y chicos, con actividades que conectan a toda la familia: desde caminatas por la selva y experiencias acuáticas hasta juegos y momentos de relax en la piscina. Explora todas nuestras actividades familiares aquí abajo.
-					</p>
-				</div>
-			</section>
-
-			<!-- Puerto Viejo y Alrededores Split Row -->
-			<section class="bg-slate-50/50 py-16 px-6 md:px-12 lg:px-24 border-y border-slate-100">
-				<div class="max-w-7xl mx-auto">
-					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+		<!-- Puerto Viejo y Alrededores Split Row -->
+		<section class="bg-slate-50/50 py-16 px-6 md:px-12 lg:px-24 border-y border-slate-100">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+					
+					<!-- Left Side: Copy -->
+					<div class="col-span-1 lg:col-span-7 text-left">
+						<h3 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6">
+							Puerto Viejo y Alrededores
+						</h3>
 						
-						<!-- Left Side: Copy -->
-						<div class="col-span-1 lg:col-span-7 text-left">
-							<h3 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6">
-								Puerto Viejo y Alrededores
-							</h3>
+						<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+							<p>
+								Ubicado en la costa caribeña de Costa Rica, Puerto Viejo de Talamanca es un popular destino turístico debido a la gran variedad de playas y parques que tiene a su alrededor.
+							</p>
+							<p>
+								Puerto Viejo está lleno de paisajes asombrosos, vida salvaje única, emociones libres y actividades. Canopy sobre la copa de los gigantescos árboles de la jungla, caminar por los parques nacionales Cahuita y Gandoca, visitar la comunidad indígena local de Bribri...
+							</p>
+							<p>
+								Si lo tuyo es la acción, prueba una lección de surf o rafting en aguas rápidas. Puerto Viejo es, definitivamente, un lugar para disfrutar de unas vacaciones relajantes, llenas de deporte y diversión.
+							</p>
+						</div>
+					</div>
+
+					<!-- Right Side: Beautiful collage -->
+					<div class="col-span-1 lg:col-span-5 grid grid-cols-2 gap-4">
+						<div class="overflow-hidden rounded shadow-md h-[180px] border border-slate-100">
+							<img 
+								src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=400&q=80" 
+								alt="Children laughing in jungle" 
+								class="w-full h-full object-cover"
+							/>
+						</div>
+						<div class="overflow-hidden rounded shadow-md h-[180px] border border-slate-100">
+							<img 
+								src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" 
+								alt="Beautiful Cocles coast view" 
+								class="w-full h-full object-cover"
+							/>
+						</div>
+						<div class="col-span-2 overflow-hidden rounded shadow-md h-[160px] border border-slate-100">
+							<img 
+								src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" 
+								alt="Sloth climbing a tree branch" 
+								class="w-full h-full object-cover"
+							/>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Massive Catalog of Activities (Alternating Rows) -->
+		<section class="w-full">
+			{activities.map((act) => (
+				<div class={`py-20 px-6 md:px-12 lg:px-24 ${act.bg}`}>
+					<div class="max-w-7xl mx-auto">
+						<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 							
-							<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
-								<p>
-									Ubicado en la costa caribeña de Costa Rica, Puerto Viejo de Talamanca es un popular destino turístico debido a la gran variedad de playas y parques que tiene a su alrededor.
-								</p>
-								<p>
-									Puerto Viejo está lleno de paisajes asombrosos, vida salvaje única, emociones libres y actividades. Canopy sobre la copa de los gigantescos árboles de la jungla, caminar por los parques nacionales Cahuita y Gandoca, visitar la comunidad indígena local de Bribri...
-								</p>
-								<p>
-									Si lo tuyo es la acción, prueba una lección de surf o rafting en aguas rápidas. Puerto Viejo es, definitivamente, un lugar para disfrutar de unas vacaciones relajantes, llenas de deporte y diversión.
-								</p>
-							</div>
-						</div>
+							<!-- Left Alignment rendering -->
+							{act.align === 'left' ? (
+								<>
+									<!-- Text Left (7 columns) -->
+									<div class="col-span-1 lg:col-span-7 text-left">
+										<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">
+											{act.title}
+										</h3>
+										<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">
+											{act.text}
+										</p>
+										<a 
+											href="https://wa.me/50683141965" 
+											target="_blank"
+											class="inline-block mt-8 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
+										>
+											Reservar Actividad
+										</a>
+									</div>
 
-						<!-- Right Side: Beautiful collage -->
-						<div class="col-span-1 lg:col-span-5 grid grid-cols-2 gap-4">
-							<div class="overflow-hidden rounded shadow-md h-[180px] border border-slate-100">
-								<img 
-									src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=400&q=80" 
-									alt="Children laughing in jungle" 
-									class="w-full h-full object-cover"
-								/>
-							</div>
-							<div class="overflow-hidden rounded shadow-md h-[180px] border border-slate-100">
-								<img 
-									src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" 
-									alt="Beautiful Cocles coast view" 
-									class="w-full h-full object-cover"
-								/>
-							</div>
-							<div class="col-span-2 overflow-hidden rounded shadow-md h-[160px] border border-slate-100">
-								<img 
-									src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" 
-									alt="Sloth climbing a tree branch" 
-									class="w-full h-full object-cover"
-								/>
-							</div>
-						</div>
+									<!-- Image Right (5 columns) -->
+									<div class="col-span-1 lg:col-span-5">
+										<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-[4/3] group">
+											<img 
+												src={act.image} 
+												alt={act.alt} 
+												class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+											/>
+										</div>
+									</div>
+								</>
+							) : (
+								<>
+									<!-- Image Left (5 columns) -->
+									<div class="col-span-1 lg:col-span-5 order-2 lg:order-1">
+										<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-[4/3] group">
+											<img 
+												src={act.image} 
+												alt={act.alt} 
+												class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+											/>
+										</div>
+									</div>
 
+									<!-- Text Right (7 columns) -->
+									<div class="col-span-1 lg:col-span-7 text-left order-1 lg:order-2">
+										<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">
+											{act.title}
+										</h3>
+										<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">
+											{act.text}
+										</p>
+										<a 
+											href="https://wa.me/50683141965" 
+											target="_blank"
+											class="inline-block mt-8 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
+										>
+											Reservar Actividad
+										</a>
+									</div>
+								</>
+							)}
+
+						</div>
 					</div>
 				</div>
-			</section>
-
-			<!-- Massive Catalog of Activities (Alternating Rows) -->
-			<section class="w-full">
-				{activities.map((act) => (
-					<div class={`py-20 px-6 md:px-12 lg:px-24 ${act.bg}`}>
-						<div class="max-w-7xl mx-auto">
-							<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-								
-								<!-- Left Alignment rendering -->
-								{act.align === 'left' ? (
-									<>
-										<!-- Text Left (7 columns) -->
-										<div class="col-span-1 lg:col-span-7 text-left">
-											<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">
-												{act.title}
-											</h3>
-											<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">
-												{act.text}
-											</p>
-											<a 
-												href="https://wa.me/50683141965" 
-												target="_blank"
-												class="inline-block mt-8 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
-											>
-												Reservar Actividad
-											</a>
-										</div>
-
-										<!-- Image Right (5 columns) -->
-										<div class="col-span-1 lg:col-span-5">
-											<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-[4/3] group">
-												<img 
-													src={act.image} 
-													alt={act.alt} 
-													class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-												/>
-											</div>
-										</div>
-									</>
-								) : (
-									<>
-										<!-- Image Left (5 columns) -->
-										<div class="col-span-1 lg:col-span-5 order-2 lg:order-1">
-											<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-[4/3] group">
-												<img 
-													src={act.image} 
-													alt={act.alt} 
-													class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-												/>
-											</div>
-										</div>
-
-										<!-- Text Right (7 columns) -->
-										<div class="col-span-1 lg:col-span-7 text-left order-1 lg:order-2">
-											<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">
-												{act.title}
-											</h3>
-											<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">
-												{act.text}
-											</p>
-											<a 
-												href="https://wa.me/50683141965" 
-												target="_blank"
-												class="inline-block mt-8 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
-											>
-												Reservar Actividad
-											</a>
-										</div>
-									</>
-								)}
-
-							</div>
-						</div>
-					</div>
-				))}
-			</section>
-
-		</main>
-
-		<Footer />
-	</body>
-</html>
+			))}
+		</section>
+	</main>
+</Layout>

@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 
 const coreActions = [
   {
@@ -76,7 +74,7 @@ const alliances = [
     logo: `<!-- Heart stethoscope icon -->
       <div class="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center text-rose-600 mb-4 mx-auto border border-rose-100 select-none">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.75 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.75 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 21 12Z" />
         </svg>
       </div>`,
     text: "Fundación local que brinda acceso a atención médica básica y de especialidad a las comunidades del Caribe Sur que más lo necesitan."
@@ -145,167 +143,154 @@ const recommendations = [
 ];
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sustentabilidad y Eco-compromiso | Cariblue Resort Costa Rica</title>
-		<meta name="description" content="Descubre nuestros esfuerzos y programas de sostenibilidad en Cariblue Resort. Prácticas eco-amigables, reducción de plástico y apoyo a la biodiversidad local." />
-	</head>
-	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
-		<Header />
+<Layout 
+	title="Sustentabilidad y Eco-compromiso | Cariblue Resort Costa Rica"
+	description="Descubre nuestros esfuerzos y programas de sostenibilidad en Cariblue Resort. Prácticas eco-amigables, reducción de plástico y apoyo a la biodiversidad local."
+>
+	<main>
+		<!-- Hero Section Banner -->
+		<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 bg-black/45 z-10"></div>
+				<img 
+					src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=80" 
+					alt="Exuberant tropical jungle canopy background" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto mt-8">
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+					Sustentabilidad
+				</h1>
+			</div>
+		</section>
 
-		<main>
-			<!-- Hero Section Banner -->
-			<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-				<div class="absolute inset-0 z-0">
-					<div class="absolute inset-0 bg-black/45 z-10"></div>
-					<img 
-						src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=80" 
-						alt="Exuberant tropical jungle canopy background" 
-						class="w-full h-full object-cover"
-					/>
-				</div>
-				<div class="relative z-20 max-w-4xl mx-auto mt-8">
-					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
-						Sustentabilidad
-					</h1>
-				</div>
-			</section>
-
-			<!-- Sustainability Intro Section -->
-			<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
-				<div class="max-w-7xl mx-auto">
-					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-						
-						<!-- Left Side: Copy details -->
-						<div class="col-span-1 lg:col-span-7 text-left">
-							<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">
-								Sustentabilidad
-							</h2>
-							<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
-								<p>
-									Cariblue Jungle & Beach Resort está inmerso en más de 20.000 m² de jungla tropical, hogar de una increíble diversidad de vida silvestre.
-								</p>
-								<p>
-									Vivimos en armonía con la naturaleza y trabajamos cada día para protegerla, implementando acciones que reducen nuestro impacto ambiental y promueven el respeto por la flora y fauna que nos rodea.
-								</p>
-								<p class="font-semibold text-[#0f2e59] italic border-l-2 border-[#e60067] pl-4">
-									Nuestro compromiso es simple: cuidar este paraíso y compartirlo de forma responsable con quienes nos visitan.
-								</p>
-							</div>
-						</div>
-
-						<!-- Right Side: Sloth/Monkeys Image -->
-						<div class="col-span-1 lg:col-span-5">
-							<div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video">
-								<img 
-									src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
-									alt="Monkeys in the trees - Cariblue Sustainability" 
-									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-								/>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</section>
-
-			<!-- "Así cuidamos nuestro entorno" Grid -->
-			<section class="bg-[#1a4175] py-24 px-6 md:px-12 lg:px-24 text-white">
-				<div class="max-w-7xl mx-auto text-center">
-					<div class="mb-14">
-						<h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
-							Así cuidamos nuestro entorno
+		<!-- Sustainability Intro Section -->
+		<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+					
+					<!-- Left Side: Copy details -->
+					<div class="col-span-1 lg:col-span-7 text-left">
+						<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">
+							Sustentabilidad
 						</h2>
+						<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+							<p>
+								Cariblue Jungle & Beach Resort está inmerso en más de 20.000 m² de jungla tropical, hogar de una increíble diversidad de vida silvestre.
+							</p>
+							<p>
+								Vivimos en armonía con la naturaleza y trabajamos cada día para protegerla, implementando acciones que reducen nuestro impacto ambiental y promueven el respeto por la flora y fauna que nos rodea.
+							</p>
+							<p class="font-semibold text-[#0f2e59] italic border-l-2 border-[#e60067] pl-4">
+								Nuestro compromiso es simple: cuidar este paraíso y compartirlo de forma responsable con quienes nos visitan.
+							</p>
+						</div>
 					</div>
 
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-						{coreActions.map((action) => (
-							<div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-lg p-6 md:p-8 flex flex-col justify-center items-center text-center shadow-lg hover:bg-white/15 transition-all">
-								<h3 class="text-base font-bold uppercase tracking-wider mb-3 text-slate-100">{action.title}</h3>
-								<p class="text-xs text-slate-200/90 leading-relaxed font-light">{action.text}</p>
-							</div>
-						))}
+					<!-- Right Side: Sloth/Monkeys Image -->
+					<div class="col-span-1 lg:col-span-5">
+						<div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video">
+							<img 
+								src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+								alt="Monkeys in the trees - Cariblue Sustainability" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+							/>
+						</div>
 					</div>
-				</div>
-			</section>
 
-			<!-- Supported Projects Mid-bar -->
-			<section class="relative min-h-[350px] flex items-center justify-center text-white py-24 px-6 overflow-hidden">
-				<div class="absolute inset-0 z-0">
-					<div class="absolute inset-0 bg-black/60 z-10"></div>
-					<img 
-						src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=80" 
-						alt="Jungle canopy green view" 
-						class="w-full h-full object-cover"
-					/>
 				</div>
-				<div class="relative z-20 max-w-4xl mx-auto text-center flex flex-col items-center">
-					<h2 class="text-2xl md:text-4xl font-serif font-bold tracking-wide leading-tight mb-4 drop-shadow-xl max-w-2xl">
-						Proyectos e iniciativas que apoyamos: Juntos por un mejor planeta
+			</div>
+		</section>
+
+		<!-- "Así cuidamos nuestro entorno" Grid -->
+		<section class="bg-[#1a4175] py-24 px-6 md:px-12 lg:px-24 text-white">
+			<div class="max-w-7xl mx-auto text-center">
+				<div class="mb-14">
+					<h2 class="text-3xl md:text-5xl font-serif font-bold mb-4">
+						Así cuidamos nuestro entorno
 					</h2>
-					<p class="text-xs md:text-sm font-light max-w-2xl text-slate-200/90 leading-relaxed drop-shadow-md">
-						En Cariblue formamos parte de diversas iniciativas locales y globales que promueven la conservación, la educación ambiental y el bienestar de nuestra comunidad. Creemos que el cambio comienza cuando trabajamos juntos.
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+					{coreActions.map((action) => (
+						<div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-lg p-6 md:p-8 flex flex-col justify-center items-center text-center shadow-lg hover:bg-white/15 transition-all">
+							<h3 class="text-base font-bold uppercase tracking-wider mb-3 text-slate-100">{action.title}</h3>
+							<p class="text-xs text-slate-200/90 leading-relaxed font-light">{action.text}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Supported Projects Mid-bar -->
+		<section class="relative min-h-[350px] flex items-center justify-center text-white py-24 px-6 overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 bg-black/60 z-10"></div>
+				<img 
+					src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=80" 
+					alt="Jungle canopy green view" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto text-center flex flex-col items-center">
+				<h2 class="text-2xl md:text-4xl font-serif font-bold tracking-wide leading-tight mb-4 drop-shadow-xl max-w-2xl">
+					Proyectos e iniciativas que apoyamos: Juntos por un mejor planeta
+				</h2>
+				<p class="text-xs md:text-sm font-light max-w-2xl text-slate-200/90 leading-relaxed drop-shadow-md">
+					En Cariblue formamos parte de diversas iniciativas locales y globales que promueven la conservación, la educación ambiental y el bienestar de nuestra comunidad. Creemos que el cambio comienza cuando trabajamos juntos.
+				</p>
+			</div>
+		</section>
+
+		<!-- All Alliances Projects Listing -->
+		<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
+			<div class="max-w-6xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+					{alliances.map((alliance) => (
+						<div class="flex flex-col justify-between items-center text-center p-6 bg-white border border-slate-50 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+							<div>
+								<Fragment set:html={alliance.logo} />
+								<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-3 leading-tight">{alliance.title}</h3>
+								<p class="text-[11px] text-slate-500 leading-relaxed font-light mb-6">{alliance.text}</p>
+							</div>
+							<a 
+								href="https://wa.me/50683141965" 
+								target="_blank"
+								class="bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-2.5 rounded-xs transition-colors shadow-sm"
+							>
+								Más Información
+							</a>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Recommendations Section -->
+		<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
+			<div class="max-w-5xl mx-auto text-center">
+				<div class="max-w-3xl mx-auto mb-16 text-center">
+					<p class="text-xs md:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
+						Cariblue Jungle and Beach Resort se compromete de sobremanera para mantener un ambiente equilibrado con el ecosistema donde se mezclan los esfuerzos tanto de nuestras estrategias, colaboradores y huéspedes.
+					</p>
+					<p class="text-sm font-bold text-[#0f2e59] tracking-wider uppercase">
+						Instamos a nuestros huéspedes a ser parte de este cambio y dejar su huella positiva con las siguientes recomendaciones:
 					</p>
 				</div>
-			</section>
 
-			<!-- All Alliances Projects Listing -->
-			<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
-				<div class="max-w-6xl mx-auto">
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-						{alliances.map((alliance) => (
-							<div class="flex flex-col justify-between items-center text-center p-6 bg-white border border-slate-50 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
-								<div>
-									<Fragment set:html={alliance.logo} />
-									<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-3 leading-tight">{alliance.title}</h3>
-									<p class="text-[11px] text-slate-500 leading-relaxed font-light mb-6">{alliance.text}</p>
-								</div>
-								<a 
-									href="https://wa.me/50683141965" 
-									target="_blank"
-									class="bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-2.5 rounded-xs transition-colors shadow-sm"
-								>
-									Más Información
-								</a>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
+					{recommendations.map((rec) => (
+						<div class="flex flex-col bg-white border border-slate-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
+							<div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-5 border border-slate-100 shrink-0">
+								<Fragment set:html={rec.icon} />
 							</div>
-						))}
-					</div>
+							<h3 class="text-xs font-bold text-[#0f2e59] uppercase tracking-wider mb-2.5 leading-tight">{rec.title}</h3>
+							<p class="text-[11px] text-slate-500 leading-relaxed font-light">{rec.text}</p>
+						</div>
+					))}
 				</div>
-			</section>
-
-			<!-- Recommendations Section -->
-			<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
-				<div class="max-w-5xl mx-auto text-center">
-					<div class="max-w-3xl mx-auto mb-16 text-center">
-						<p class="text-xs md:text-sm text-slate-500 leading-relaxed mb-6 font-normal">
-							Cariblue Jungle and Beach Resort se compromete de sobremanera para mantener un ambiente equilibrado con el ecosistema donde se mezclan los esfuerzos tanto de nuestras estrategias, colaboradores y huéspedes.
-						</p>
-						<p class="text-sm font-bold text-[#0f2e59] tracking-wider uppercase">
-							Instamos a nuestros huéspedes a ser parte de este cambio y dejar su huella positiva con las siguientes recomendaciones:
-						</p>
-					</div>
-
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
-						{recommendations.map((rec) => (
-							<div class="flex flex-col bg-white border border-slate-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
-								<div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-5 border border-slate-100 shrink-0">
-									<Fragment set:html={rec.icon} />
-								</div>
-								<h3 class="text-xs font-bold text-[#0f2e59] uppercase tracking-wider mb-2.5 leading-tight">{rec.title}</h3>
-								<p class="text-[11px] text-slate-500 leading-relaxed font-light">{rec.text}</p>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<Footer />
-	</body>
-</html>
+			</div>
+		</section>
+	</main>
+</Layout>

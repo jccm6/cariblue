@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 
 const stats = [
   {
@@ -61,233 +59,220 @@ const galleryDishes = [
 ];
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.webp" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Restaurante La Jungla | Cariblue Resort Puerto Viejo</title>
-		<meta name="description" content="Disfruta de la mejor cocina de autor en el Restaurante La Jungla. Fusión de gastronomía caribeña y mediterránea en Puerto Viejo, Limón." />
-	</head>
-	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
-		<Header />
+<Layout 
+	title="Restaurante La Jungla | Cariblue Resort Puerto Viejo"
+	description="Disfruta de la mejor cocina de autor en el Restaurante La Jungla. Fusión de gastronomía caribeña y mediterránea en Puerto Viejo, Limón."
+>
+	<main>
+		<!-- Hero Section banner -->
+		<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
+				<img 
+					src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80" 
+					alt="Cariblue Restaurant dining area" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto mt-8">
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+					Restaurante
+				</h1>
+			</div>
+		</section>
 
-		<main>
-			<!-- Hero Section banner -->
-			<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-				<div class="absolute inset-0 z-0">
-					<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
-					<img 
-						src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80" 
-						alt="Cariblue Restaurant dining area" 
-						class="w-full h-full object-cover"
-					/>
-				</div>
-				<div class="relative z-20 max-w-4xl mx-auto mt-8">
-					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
-						Restaurante
-					</h1>
-				</div>
-			</section>
-
-			<!-- Restaurant Intro Section -->
-			<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
-				<div class="max-w-7xl mx-auto">
-					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-						
-						<!-- Left Side: Pool couples image -->
-						<div class="col-span-1 lg:col-span-5">
-							<div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video">
-								<img 
-									src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" 
-									alt="Enjoying drinks by the pool" 
-									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-								/>
-							</div>
-						</div>
-
-						<!-- Right Side: Copy -->
-						<div class="col-span-1 lg:col-span-7 text-left">
-							<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">
-								Restaurante La Jungla
-							</h2>
-							
-							<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
-								<p>
-									Te invitamos a descubrir y disfrutar de nuestra cocina de autor, una fusión de sabores mediterráneos y caribeños, que deleitarán tu paladar.
-								</p>
-								<p>
-									Nuestro restaurante ofrece una experiencia culinaria incomparable, con una cuidosa selección de platos que satisfacen una amplia gama de estilos de vida y preferencias dietéticas. Desde exquisitos aperitivos, como nuestra variada selección de ceviches, quesadillas, hummus, tartares y tacos, hasta nuestra sección de bowls, que incluye opciones veganas, de pescado, pollo y camarones. Además, destacamos nuestras deliciosas opciones de pastas, arroces y sándwiches.
-								</p>
-								<p class="italic text-slate-500 font-light">
-									Nuestra cocina de autor presenta platos de elaboración propia, una sinfonía de aromas y sabores que garantizan una experiencia gastronómica memorable.
-								</p>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</section>
-
-			<!-- Schedule and details Columns -->
-			<section class="bg-white pb-10 px-6 md:px-12 lg:px-24">
-				<div class="max-w-7xl mx-auto">
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-						{stats.map((stat) => (
-							<div class="bg-white border border-slate-100 rounded-lg p-5 shadow-lg flex flex-col items-center text-center">
-								<div class={`w-12 h-12 ${stat.iconBg} rounded-full flex items-center justify-center mb-4 shrink-0`}>
-									<Fragment set:html={stat.icon} />
-								</div>
-								<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-2.5">{stat.title}</h3>
-								<p class="text-[11px] text-slate-500 leading-relaxed font-light">{stat.text}</p>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-
-			<!-- Menu Online CTA Bar -->
-			<section class="bg-[#1a4175] py-10 px-6 text-center border-y border-slate-100/10">
-				<div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-					<h3 class="text-xl md:text-2xl font-serif text-white font-semibold">
-						¿Quieres ver todas nuestras deliciosas opciones?
-					</h3>
-					<a 
-						href="#" 
-						class="bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-xs tracking-widest uppercase px-8 py-3.5 rounded shadow-lg transition-all duration-300"
-					>
-						Menú online
-					</a>
-				</div>
-			</section>
-
-			<!-- Interactive highlights: Alternating Rows -->
-			<section class="bg-white py-24 px-6 md:px-12 lg:px-24 space-y-20">
-				<div class="max-w-6xl mx-auto">
+		<!-- Restaurant Intro Section -->
+		<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 					
-					<!-- Row 1: Actividades nocturnas -->
-					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16 pb-16 border-b border-slate-100">
-						<!-- Text Left -->
-						<div class="col-span-1 lg:col-span-6 text-left">
-							<div class="text-[#e60067] mb-3">
-								<!-- Music note icon -->
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
-									<path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 0L21 9m-1.5-3v13.5m-12-3h12M3 19.125a2.625 2.625 0 1 0 5.25 0 2.625 2.625 0 0 0-5.25 0Z" />
-								</svg>
-							</div>
-							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
-								Actividades nocturnas
-							</h3>
-							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light">
-								Cada fin de semana te esperan actividades nocturnas pensadas para toda la familia. Música en vivo, shows y momentos divertidos para compartir en el mejor ambiente caribeño.
-							</p>
+					<!-- Left Side: Pool couples image -->
+					<div class="col-span-1 lg:col-span-5">
+						<div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video">
+							<img 
+								src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80" 
+								alt="Enjoying drinks by the pool" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+							/>
 						</div>
+					</div>
+
+					<!-- Right Side: Copy -->
+					<div class="col-span-1 lg:col-span-7 text-left">
+						<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">
+							Restaurante La Jungla
+						</h2>
 						
-						<!-- Image Right -->
-						<div class="col-span-1 lg:col-span-6">
-							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
-								<img 
-									src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80" 
-									alt="Live music night performance at Cariblue" 
-									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-								/>
-							</div>
-						</div>
-					</div>
-
-					<!-- Row 2: Cocktail y gastronomía -->
-					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-						<!-- Image Left -->
-						<div class="col-span-1 lg:col-span-6 order-2 lg:order-1">
-							<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
-								<img 
-									src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1000&q=80" 
-									alt="Person holding fresh tropical mango cocktail" 
-									class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-								/>
-							</div>
-						</div>
-
-						<!-- Text Right -->
-						<div class="col-span-1 lg:col-span-6 text-left order-1 lg:order-2">
-							<div class="text-[#e60067] mb-3">
-								<!-- Wine glass icon -->
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg>
-							</div>
-							<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
-								Cocktail y gastronomía en nuestro wetbar
-							</h3>
-							<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light">
-								Con el espectáculo de vida silvestre que rodea nuestra área de piscina se encuentra nuestro wetbar, donde podrá disfrutar de deliciosas y refrescantes bebidas. Entre las 11:00 am a 6:00 pm llega nuestra Happy Hour y también es posible pedir comida del restaurante La Jungla y deleitarse sin necesidad de salir de la piscina.
+						<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+							<p>
+								Te invitamos a descubrir y disfrutar de nuestra cocina de autor, una fusión de sabores mediterráneos y caribeños, que deleitarán tu paladar.
+							</p>
+							<p>
+								Nuestro restaurante ofrece una experiencia culinaria incomparable, con una cuidosa selección de platos que satisfacen una amplia gama de estilos de vida y preferencias dietéticas. Desde exquisitos aperitivos, como nuestra variada selección de ceviches, quesadillas, hummus, tartares y tacos, hasta nuestra sección de bowls, que incluye opciones veganas, de pescado, pollo y camarones. Además, destacamos nuestras deliciosas opciones de pastas, arroces y sándwiches.
+							</p>
+							<p class="italic text-slate-500 font-light">
+								Nuestra cocina de autor presenta platos de elaboración propia, una sinfonía de aromas y sabores que garantizan una experiencia gastronomica memorable.
 							</p>
 						</div>
 					</div>
 
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Day pass section banner -->
-			<section class="relative min-h-[350px] flex items-center justify-center text-white py-20 px-6 overflow-hidden">
-				<div class="absolute inset-0 z-0">
-					<div class="absolute inset-0 bg-black/55 z-10"></div>
-					<img 
-						src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80" 
-						alt="Friends enjoying pool at Cariblue" 
-						class="w-full h-full object-cover"
-					/>
-				</div>
-				<div class="relative z-20 max-w-4xl mx-auto text-center flex flex-col items-center">
-					<h2 class="text-3xl md:text-6xl font-serif font-bold tracking-wide leading-tight mb-4 drop-shadow-xl">
-						Day pass - 15.000 colones Consumibles
-					</h2>
-					<p class="text-sm md:text-lg font-light max-w-2xl text-slate-200/90 mb-6 drop-shadow-md">
-						Un día en las mejores instalaciones de Puerto Viejo.
-					</p>
-					<div class="max-w-2xl bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-lg text-slate-100 text-xs md:text-sm font-normal leading-relaxed text-center">
-						<p class="mb-3">
-							Disfruta de un día increíble en nuestras piscinas, wetbar, jacuzzi, rodeados por una naturaleza exuberante y experimenta la mejor gastronomía en nuestro restaurante La Jungla.
-						</p>
-						<p class="font-bold text-white">
-							Por solo 15.000 colones por persona que puedes usar en consumos en nuestro restaurante.
-						</p>
-					</div>
-				</div>
-			</section>
-
-			<!-- Beautiful Plates Grid Gallery (Replacing the shortcode) -->
-			<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
-				<div class="max-w-7xl mx-auto text-center">
-					<div class="mb-12">
-						<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-3">Nuestra Cocina</h2>
-						<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#e60067] uppercase">
-							UNA EXPERIENCIA GASTRONÓMICA ÚNICA EN EL CARIBE
-						</p>
-					</div>
-
-					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-						{galleryDishes.map((dish) => (
-							<div class="overflow-hidden rounded shadow-lg border border-slate-100 relative group aspect-square">
-								<img 
-									src={dish.img} 
-									alt={dish.title} 
-									class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-								/>
-								<div class="absolute inset-0 bg-[#0f2e59]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
-									<h4 class="text-white font-serif font-bold text-lg md:text-xl mb-2">{dish.title}</h4>
-									<span class="text-[#e60067] font-semibold uppercase tracking-wider text-[10px]">La Jungla Restaurant</span>
-								</div>
+		<!-- Schedule and details Columns -->
+		<section class="bg-white pb-10 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+					{stats.map((stat) => (
+						<div class="bg-white border border-slate-100 rounded-lg p-5 shadow-lg flex flex-col items-center text-center">
+							<div class={`w-12 h-12 ${stat.iconBg} rounded-full flex items-center justify-center mb-4 shrink-0`}>
+								<Fragment set:html={stat.icon} />
 							</div>
-						))}
+							<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-2.5">{stat.title}</h3>
+							<p class="text-[11px] text-slate-500 leading-relaxed font-light">{stat.text}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Menu Online CTA Bar -->
+		<section class="bg-[#1a4175] py-10 px-6 text-center border-y border-slate-100/10">
+			<div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+				<h3 class="text-xl md:text-2xl font-serif text-white font-semibold">
+					¿Quieres ver todas nuestras deliciosas opciones?
+				</h3>
+				<a 
+					href="#" 
+					class="bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-xs tracking-widest uppercase px-8 py-3.5 rounded shadow-lg transition-all duration-300"
+				>
+					Menú online
+				</a>
+			</div>
+		</section>
+
+		<!-- Interactive highlights: Alternating Rows -->
+		<section class="bg-white py-24 px-6 md:px-12 lg:px-24 space-y-20">
+			<div class="max-w-6xl mx-auto">
+				
+				<!-- Row 1: Actividades nocturnas -->
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16 pb-16 border-b border-slate-100">
+					<!-- Text Left -->
+					<div class="col-span-1 lg:col-span-6 text-left">
+						<div class="text-[#e60067] mb-3">
+							<!-- Music note icon -->
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+								<path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 0L21 9m-1.5-3v13.5m-12-3h12M3 19.125a2.625 2.625 0 1 0 5.25 0 2.625 2.625 0 0 0-5.25 0Z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+							Actividades nocturnas
+						</h3>
+						<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light">
+							Cada fin de semana te esperan actividades nocturnas pensadas para toda la familia. Música en vivo, shows y momentos divertidos para compartir en el mejor ambiente caribeño.
+						</p>
+					</div>
+					
+					<!-- Image Right -->
+					<div class="col-span-1 lg:col-span-6">
+						<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+							<img 
+								src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=80" 
+								alt="Live music night performance at Cariblue" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
+						</div>
 					</div>
 				</div>
-			</section>
-		</main>
 
-		<Footer />
-	</body>
-</html>
+				<!-- Row 2: Cocktail y gastronomía -->
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+					<!-- Image Left -->
+					<div class="col-span-1 lg:col-span-6 order-2 lg:order-1">
+						<div class="overflow-hidden rounded shadow-xl border border-slate-100 aspect-video relative group">
+							<img 
+								src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1000&q=80" 
+								alt="Person holding fresh tropical mango cocktail" 
+								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
+						</div>
+					</div>
+
+					<!-- Text Right -->
+					<div class="col-span-1 lg:col-span-6 text-left order-1 lg:order-2">
+						<div class="text-[#e60067] mb-3">
+							<!-- Wine glass icon -->
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+						<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">
+							Cocktail y gastronomía en nuestro wetbar
+						</h3>
+						<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light">
+							Con el espectáculo de vida silvestre que rodea nuestra área de piscina se encuentra nuestro wetbar, donde podrá disfrutar de deliciosas y refrescantes bebidas. Entre las 11:00 am a 6:00 pm llega nuestra Happy Hour y también es posible pedir comida del restaurante La Jungla y deleitarse sin necesidad de salir de la piscina.
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- Day pass section banner -->
+		<section class="relative min-h-[350px] flex items-center justify-center text-white py-20 px-6 overflow-hidden">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 bg-black/55 z-10"></div>
+				<img 
+					src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80" 
+					alt="Friends enjoying pool at Cariblue" 
+					class="w-full h-full object-cover"
+				/>
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto text-center flex flex-col items-center">
+				<h2 class="text-3xl md:text-6xl font-serif font-bold tracking-wide leading-tight mb-4 drop-shadow-xl">
+					Day pass - 15.000 colones Consumibles
+				</h2>
+				<p class="text-sm md:text-lg font-light max-w-2xl text-slate-200/90 mb-6 drop-shadow-md">
+					Un día en las mejores instalaciones de Puerto Viejo.
+				</p>
+				<div class="max-w-2xl bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-lg text-slate-100 text-xs md:text-sm font-normal leading-relaxed text-center">
+					<p class="mb-3">
+						Disfruta de un día increíble en nuestras piscinas, wetbar, jacuzzi, rodeados por una naturaleza exuberante y experimenta la mejor gastronomía en nuestro restaurante La Jungla.
+					</p>
+					<p class="font-bold text-white">
+						Por solo 15.000 colones por persona que puedes usar en consumos en nuestro restaurante.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Beautiful Plates Grid Gallery (Replacing the shortcode) -->
+		<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto text-center">
+				<div class="mb-12">
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-3">Nuestra Cocina</h2>
+					<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#e60067] uppercase">
+						UNA EXPERIENCIA GASTRONÓMICA ÚNICA EN EL CARIBE
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{galleryDishes.map((dish) => (
+						<div class="overflow-hidden rounded shadow-lg border border-slate-100 relative group aspect-square">
+							<img 
+								src={dish.img} 
+								alt={dish.title} 
+								class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+							/>
+							<div class="absolute inset-0 bg-[#0f2e59]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+								<h4 class="text-white font-serif font-bold text-lg md:text-xl mb-2">{dish.title}</h4>
+								<span class="text-[#e60067] font-semibold uppercase tracking-wider text-[10px]">La Jungla Restaurant</span>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
