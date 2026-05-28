@@ -1,0 +1,261 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  {
+    id: "distancia",
+    question: "¿A QUÉ DISTANCIA SE ENCUENTRA CARIBLUE DE PUERTO VIEJO?",
+    answer: "Cariblue Beach and Jungle Resort se encuentra a 2 kilometros del centro de puerto Viejo. Al frente de Playa Coclés, contamos con una recepción y tour desk ubicado a orilla de la calle y 2 entradas, 1 a 25 metros del tour desk y otra a 75 metros, siendo esta última la entrada principal al hotel.",
+    isOpen: true
+  },
+  {
+    id: "animales",
+    question: "¿VEREMOS ANIMALES SALVAJES EN EL RESORT?",
+    answer: "¡Sí, absolutamente! Contamos con más de 20.000 metros cuadrados de selva tropical protegida. Es sumamente común avistar osos perezosos de dos y tres dedos, monos aulladores, tucanes de pico arcoíris, iguanas verdes, ranas dardo y una inmensa variedad de mariposas y aves exóticas rondando libremente por nuestros jardines y senderos.",
+    isOpen: false
+  },
+  {
+    id: "clima",
+    question: "¿CÓMO ES EL CLIMA Y CUÁL ES LA MEJOR FECHA PARA VISITAR LA ZONA?",
+    answer: "El Caribe de Costa Rica goza de un clima tropical cálido durante todo el año (promedio de 25°C a 30°C). A diferencia del Pacífico, nuestros meses más secos, despejados y con mar tipo piscina suelen ser septiembre y octubre, lo que los convierte en una temporada ideal para visitarnos. Sin embargo, cualquier mes es perfecto para disfrutar de la exuberancia verde de nuestra selva.",
+    isOpen: false
+  },
+  {
+    id: "petfriendly",
+    question: "¿SON UN HOTEL PET FRIENDLY?",
+    answer: "Amamos profundamente a los animales; sin embargo, debido a nuestro compromiso con la conservación ecológica y para garantizar la seguridad y tranquilidad de la fauna silvestre vulnerable que habita libremente en el resort (como perezosos y monos bebés), no está permitido el ingreso de mascotas de ningún tipo a las instalaciones.",
+    isOpen: false
+  },
+  {
+    id: "reservar",
+    question: "¿QUÉ SE NECESITA PARA RESERVAR?",
+    answer: "Para confirmar tu reserva solicitamos los detalles de una tarjeta de crédito o débito válida como garantía o bien realizar un depósito por transferencia bancaria. Dependiendo del tipo de tarifa que elijas (Tarifa Flexible o No Reembolsable Promocional), se aplicarán diferentes políticas de pago anticipado o cancelación.",
+    isOpen: false
+  },
+  {
+    id: "allinclusive",
+    question: "¿SON UN HOTEL ALL INCLUSIVE?",
+    answer: "Ofrecemos planes flexibles: desde solo alojamiento con desayuno buffet incluido, hasta nuestro completo paquete especial 'All Inclusive' (Todo Incluido) que contempla almuerzos, cenas a la carta, bebidas seleccionadas y bar abierto. Puedes ver toda la información de este plan en la pestaña 'All Inclusive' de nuestro menú.",
+    isOpen: false
+  },
+  {
+    id: "ninos",
+    question: "¿CUÁNTO PAGAN LOS NIÑOS?",
+    answer: "Niños de 0 a 2 años de edad se hospedan gratis compartiendo la cama con sus padres (sin pensión alimenticia). Los niños de 3 a 12 años pagan una tarifa especial con descuento del 50%, la cual incluye el montaje de una cama supletoria en la habitación y el menú infantil correspondiente en el restaurante.",
+    isOpen: false
+  },
+  {
+    id: "parking",
+    question: "¿TIENEN PARKING?",
+    answer: "Sí, disponemos de un estacionamiento privado, vigilado las 24 horas del día por nuestro personal de seguridad y cámaras de circuito cerrado. El estacionamiento es totalmente gratuito para todos nuestros huéspedes durante su estancia.",
+    isOpen: false
+  },
+  {
+    id: "ac",
+    question: "¿SUS HABITACIONES TIENEN AC?",
+    answer: "Sí, nuestras habitaciones, bungalows y villas están equipadas con unidades de aire acondicionado independientes de última tecnología y funcionamiento silencioso, además de ventiladores de techo para aquellos que prefieren disfrutar de la brisa natural caribeña.",
+    isOpen: false
+  },
+  {
+    id: "restaurante",
+    question: "¿CUENTAN CON RESTAURANTE?",
+    answer: "Sí, contamos con dos opciones gastronómicas espectaculares: el Restaurante La Jungla (ubicado junto a la piscina principal, especializado en cocina de autor fusión caribeña-mediterránea) y Sushi Wave (ubicado frente a Playa Cocles, especializado en gastronomía Nikkei japonesa-peruana y coctelería), además del Wetbar Congo en el área de la piscina.",
+    isOpen: false
+  },
+  {
+    id: "secador",
+    question: "¿TIENEN SECADOR DE PELO EN LAS HABITACIONES?",
+    answer: "Sí, todas nuestras habitaciones, bungalows y villas cuentan con secador de pelo instalado en el cuarto de baño para su comodidad.",
+    isOpen: false
+  },
+  {
+    id: "wifi",
+    question: "¿CUENTAN CON WIFI EN LAS HABITACIONES?",
+    answer: "Sí, ofrecemos conexión a internet WiFi de alta velocidad (fibra óptica) de forma totalmente gratuita e ilimitada. El acceso cubre todas las habitaciones, terrazas de los bungalows y áreas sociales comunes como las piscinas, lobby y restaurantes.",
+    isOpen: false
+  },
+  {
+    id: "instalaciones",
+    question: "¿QUÉ INSTALACIONES TIENE EL RESORT?",
+    answer: "El complejo dispone de 2 piscinas de agua dulce, un jacuzzi, restaurante principal La Jungla, restaurante de playa Sushi Wave, Wetbar, área recreativa con futbolín y billar, senderos privados por la selva tropical, Surya Wellness Spa, gimnasio, Tour Desk de excursiones, recepción 24 horas y estacionamiento vigilado.",
+    isOpen: false
+  },
+  {
+    id: "tourdesk",
+    question: "¿CUENTAN CON UN TOURDESK PARA AGENDAR ACTIVIDADES DURANTE MI ESTADÍA?",
+    answer: "Sí, contamos con un Tour Desk especializado ubicado al lado de la recepción. Nuestro personal local estará encantado de asesorarle e inscribirle en tours de canopy, caminatas por Cahuita, clases de surf en Playa Cocles, alquiler de bicicletas, paseos a caballo, rafting en el río Pacuare o visitas a las reservas Bribri de cacao.",
+    isOpen: false
+  },
+  {
+    id: "spa",
+    question: "¿PUEDO HACERME UN MASAJE EN EL RESORT?",
+    answer: "¡Por supuesto! Nuestro Surya Wellness & Spa ofrece una variada carta de masajes terapéuticos, masajes relajantes con aceite de CBD, tratamientos con chocolate y exfoliaciones orgánicas con ingredientes 100% artesanales costarricenses, en un espacio de paz rodeado de naturaleza.",
+    isOpen: false
+  },
+  {
+    id: "voltaje",
+    question: "¿QUÉ VOLTAJE USA EN COSTA RICA Y DE QUÉ ESTILO TOMA CORRIENTES?",
+    answer: "El voltaje estándar en Costa Rica es de 120 V con una frecuencia de 60 Hz. Los enchufes son de Tipo A y B (estilo plano americano de dos clavijas). Si viaja desde Europa, le recomendamos traer un adaptador de corriente para sus dispositivos electrónicos.",
+    isOpen: false
+  },
+  {
+    id: "agua",
+    question: "¿ES SEGURO BEBER AGUA DEL GRIFO EN EL RESORT?",
+    answer: "Sí, el agua corriente de nuestro hotel es potable y segura para el consumo humano y el aseo personal. No obstante, para mayor comodidad de nuestros huéspedes, proveemos agua embotellada de cortesía en la habitación a su llegada y disponemos de dispensadores de agua filtrada en las áreas comunes.",
+    isOpen: false
+  },
+  {
+    id: "lavanderia",
+    question: "¿OFRECEN SERVICIO DE LAVANDERÍA?",
+    answer: "Sí, ofrecemos un servicio de lavandería eficiente con entrega el mismo día para todos nuestros huéspedes por un cargo adicional por prenda. Encontrará la bolsa de lavandería y la lista de precios dentro del armario de su habitación.",
+    isOpen: false
+  },
+  {
+    id: "covid",
+    question: "¿CUÁLES SON SUS MEDIDAS POR EL COVID-19?",
+    answer: "Mantenemos protocolos de limpieza hospitalaria y desinfección estricta en todas las habitaciones antes de la entrada de cada huésped. Disponemos de estaciones de desinfección con alcohol en gel en todas las áreas de alto tránsito, ventilación constante en restaurantes y políticas flexibles de reprogramación de estadías.",
+    isOpen: false
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Preguntas Frecuentes | Cariblue Resort Costa Rica</title>
+		<meta name="description" content="¿Tienes dudas sobre tu estadía en Cariblue? Consulta nuestras preguntas frecuentes sobre wifi, mascotas, distancias, clima, tours, estacionamiento y más." />
+	</head>
+	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-[#e60067] selection:text-white">
+		<Header />
+
+		<main>
+			<!-- Hero Section Banner -->
+			<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+				<div class="absolute inset-0 z-0">
+					<div class="absolute inset-0 bg-black/60 z-10"></div>
+					<img 
+						src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80" 
+						alt="Scenic coastline ocean background" 
+						class="w-full h-full object-cover"
+					/>
+				</div>
+				<div class="relative z-20 max-w-4xl mx-auto mt-8">
+					<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+						Preguntas Frecuentes
+					</h1>
+				</div>
+			</section>
+
+			<!-- Accordions Content Section -->
+			<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+				<div class="max-w-4xl mx-auto">
+					
+					<!-- FAQ Accordion List -->
+					<div class="border border-slate-100 rounded-lg shadow-xl divide-y divide-slate-100 overflow-hidden bg-white">
+						{faqs.map((faq) => (
+							<div class="faq-item py-4.5 px-6 md:px-8 hover:bg-slate-50/30 transition-colors">
+								<!-- FAQ Header -->
+								<button 
+									class="faq-trigger w-full flex justify-between items-center text-left focus:outline-none cursor-pointer group"
+									data-target={faq.id}
+									aria-expanded={faq.isOpen ? "true" : "false"}
+								>
+									<span class="text-xs md:text-[13px] font-bold text-[#0f2e59] tracking-wider group-hover:text-[#e60067] transition-colors leading-relaxed uppercase pr-4">
+										{faq.question}
+									</span>
+									<!-- Toggle icon -->
+									<span class="faq-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none shrink-0 border border-slate-100 rounded-full group-hover:border-[#e60067]/20 transition-all">
+										{faq.isOpen ? "−" : "+"}
+									</span>
+								</button>
+								
+								<!-- FAQ Content -->
+								<div 
+									id={faq.id} 
+									class={`faq-content overflow-hidden transition-all duration-300 ease-in-out ${faq.isOpen ? 'max-h-[300px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
+								>
+									<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-5 rounded-md border-l-2 border-[#e60067]">
+										{faq.answer}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Call To Action Section -->
+			<section class="bg-slate-50/50 py-16 px-6 text-center border-t border-slate-100">
+				<div class="max-w-3xl mx-auto">
+					<h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-5 leading-tight">
+						¿Aún tienes alguna pregunta?
+					</h2>
+					<p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+						No dudes en ponerte en contacto con nosotros directamente. Nuestro equipo de atención al cliente bilingüe está listo para ayudarte en todo lo que necesites para tu viaje.
+					</p>
+					<a 
+						href="https://wa.me/50683141965" 
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-block bg-[#e60067] hover:bg-[#c20056] text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300"
+					>
+						Contáctanos
+					</a>
+				</div>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<script>
+	const triggers = document.querySelectorAll('.faq-trigger');
+
+	triggers.forEach((trigger) => {
+		trigger.addEventListener('click', () => {
+			const targetId = trigger.getAttribute('data-target');
+			const content = document.getElementById(targetId || '');
+			const icon = trigger.querySelector('.faq-icon');
+
+			if (!content || !icon) return;
+
+			const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+			// Collapse all first (accordion style - optional but highly premium)
+			triggers.forEach((t) => {
+				const tid = t.getAttribute('data-target');
+				const c = document.getElementById(tid || '');
+				const ic = t.querySelector('.faq-icon');
+				if (c && ic) {
+					t.setAttribute('aria-expanded', 'false');
+					c.classList.remove('max-h-[300px]', 'opacity-100', 'mt-4');
+					c.classList.add('max-h-0', 'opacity-0');
+					ic.textContent = '+';
+				}
+			});
+
+			if (!isExpanded) {
+				// Expand clicked
+				trigger.setAttribute('aria-expanded', 'true');
+				content.classList.remove('max-h-0', 'opacity-0');
+				content.classList.add('max-h-[300px]', 'opacity-100', 'mt-4');
+				icon.textContent = '−';
+			} else {
+				// Collapse clicked (it was already collapsed above, so if it was expanded we set it to false)
+				trigger.setAttribute('aria-expanded', 'false');
+				content.classList.remove('max-h-[300px]', 'opacity-100', 'mt-4');
+				content.classList.add('max-h-0', 'opacity-0');
+				icon.textContent = '+';
+			}
+		});
+	});
+</script>
