@@ -1,0 +1,90 @@
+---
+---
+
+<section class="relative min-h-[350px] flex items-center justify-center text-white py-20 px-6 overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-[#05152b]/50 backdrop-blur-[1px] z-10"></div>
+    <img 
+      src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1600&q=80" 
+      alt="Cariblue resort paradise overview" 
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Interactive Play and Heading Content -->
+  <div class="relative z-20 max-w-4xl mx-auto text-center flex flex-col items-center">
+    
+    <!-- Video Play Button -->
+    <button 
+      id="video-play-btn" 
+      class="group relative w-20 h-20 bg-white/95 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 mb-8 cursor-pointer focus:outline-none"
+      aria-label="Play Resort Video"
+    >
+      <!-- Pulsing Ring 1 -->
+      <span class="absolute inset-0 rounded-full bg-white/40 animate-ping group-hover:bg-white/60"></span>
+      <!-- Pulsing Ring 2 -->
+      <span class="absolute -inset-4 rounded-full bg-white/10 animate-[pulse_2s_infinite] group-hover:bg-white/20"></span>
+      
+      <!-- Triangle Play Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-[#0f2e59] ml-1 group-hover:text-[#e60067] transition-colors duration-300">
+        <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+      </svg>
+    </button>
+
+    <h2 class="text-3xl md:text-6xl font-serif font-bold tracking-wide leading-tight drop-shadow-xl select-none">
+      Enjoy Your Wonderful Vacation
+    </h2>
+  </div>
+
+  <!-- Video Modal (Bonus polish for absolute realism!) -->
+  <div id="video-modal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-[#e60067] transition-colors focus:outline-none" aria-label="Close Video">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-2xl bg-black">
+      <!-- High premium resort placeholder video -->
+      <iframe 
+        id="modal-iframe"
+        class="w-full h-full" 
+        src="" 
+        title="Cariblue Resort Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<script>
+  const playBtn = document.getElementById('video-play-btn');
+  const modal = document.getElementById('video-modal');
+  const closeModal = document.getElementById('close-modal');
+  const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
+
+  // Premium travel video
+  const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"; // Or a nice travel B-roll
+  const resortVideoUrl = "https://www.youtube.com/embed/l59Z_Z59gYw?autoplay=1"; // Nice Costa Rica B-roll
+
+  if (playBtn && modal && closeModal && iframe) {
+    playBtn.addEventListener('click', () => {
+      iframe.src = resortVideoUrl;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+    });
+
+    const hideModal = () => {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      iframe.src = ""; // Stop playback
+    };
+
+    closeModal.addEventListener('click', hideModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        hideModal();
+      }
+    });
+  }
+</script>

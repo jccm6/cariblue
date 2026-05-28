@@ -1,0 +1,180 @@
+---
+const slides = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1000&q=80",
+    caption: "Playa Cocles, arenas doradas y aguas cristalinas"
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
+    caption: "Fauna local: Tucanes y monos a la vista"
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=80",
+    caption: "Naturaleza intacta de Puerto Viejo"
+  }
+];
+---
+
+<section id="all-inclusive" class="w-full overflow-hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-12">
+    
+    <!-- Left: Brand Text Block (5 columns) -->
+    <div class="lg:col-span-5 bg-[#0f2e59] text-white py-16 px-8 md:p-16 lg:p-20 flex flex-col justify-center text-left">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-wide drop-shadow">
+        Vive El Caribe
+      </h2>
+      <div class="space-y-5 text-xs md:text-[13px] text-slate-100/85 leading-relaxed font-light">
+        <p>
+          Lo peligroso del Caribe es querer quedarse para siempre. Un mágico y auténtico paraíso de biodiversidad donde viven un sin número de animales silvestres, los cuales deleitan con sus cantos y danzas a todos nuestros huéspedes.
+        </p>
+        <p>
+          Hemos optado por tener un compromiso serio y responsable con el medio ambiente implementando medidas y protocolos para salvaguardar la armonía de nuestro resort con la flora y fauna del lugar para lograr que el espectáculo natural y el contacto de nuestros huéspedes con los animales se lleve en una atmósfera normal sin alterar el ecosistema.
+        </p>
+        <p class="font-normal text-slate-100 italic border-l-2 border-[#e60067] pl-4">
+          "Un mágico y auténtico paraíso de biodiversidad para descubrir paso a paso..."
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Slideshow Block (7 columns) -->
+    <div class="lg:col-span-7 h-[450px] lg:h-[600px] relative group select-none">
+      <!-- Image Slides -->
+      <div id="caribe-slider" class="w-full h-full relative overflow-hidden">
+        {slides.map((slide, index) => (
+          <div 
+            class={`caribe-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            data-index={index}
+          >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#05152b]/50 via-transparent to-[#05152b]/15 z-10"></div>
+            <img 
+              src={slide.image} 
+              alt={slide.caption} 
+              class="w-full h-full object-cover"
+            />
+            <!-- Caption -->
+            <div class="absolute bottom-10 left-8 md:left-12 z-20 text-left text-white max-w-lg">
+              <span class="inline-block bg-[#e60067] text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 mb-2 rounded-xs">
+                Explora
+              </span>
+              <p class="text-sm md:text-lg font-serif font-semibold italic drop-shadow-md">
+                {slide.caption}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button 
+        id="caribe-prev" 
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#0f2e59]/85 hover:bg-[#e60067] text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
+        aria-label="Previous Slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+
+      <button 
+        id="caribe-next" 
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#0f2e59]/85 hover:bg-[#e60067] text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
+        aria-label="Next Slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+
+      <!-- Dots Indicators (Inside bottom right of the image block) -->
+      <div class="absolute bottom-6 right-8 md:right-12 z-30 flex space-x-2">
+        {slides.map((_, index) => (
+          <button 
+            class={`caribe-dot w-2 h-2 rounded-full border border-white transition-all focus:outline-none cursor-pointer ${index === 0 ? 'bg-white scale-110' : 'bg-transparent'}`}
+            data-index={index}
+            aria-label={`Go to slide ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.caribe-slide');
+  const dots = document.querySelectorAll('.caribe-dot');
+  const prevBtn = document.getElementById('caribe-prev');
+  const nextBtn = document.getElementById('caribe-next');
+
+  let activeIndex = 0;
+  let autoplayInterval: ReturnType<typeof setInterval>;
+
+  function showSlide(index: number) {
+    if (slides.length === 0) return;
+    
+    // Ensure index wrap around
+    if (index >= slides.length) activeIndex = 0;
+    else if (index < 0) activeIndex = slides.length - 1;
+    else activeIndex = index;
+
+    // Reset styles
+    slides.forEach((slide, idx) => {
+      const el = slide as HTMLElement;
+      if (idx === activeIndex) {
+        el.classList.add('opacity-100', 'z-10');
+        el.classList.remove('opacity-0', 'z-0');
+      } else {
+        el.classList.remove('opacity-100', 'z-10');
+        el.classList.add('opacity-0', 'z-0');
+      }
+    });
+
+    // Update dots
+    dots.forEach((dot, idx) => {
+      const el = dot as HTMLElement;
+      if (idx === activeIndex) {
+        el.classList.add('bg-white', 'scale-110');
+      } else {
+        el.classList.remove('bg-white', 'scale-110');
+      }
+    });
+  }
+
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      showSlide(activeIndex + 1);
+    }, 5000);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+
+  if (prevBtn && nextBtn && slides.length > 0) {
+    nextBtn.addEventListener('click', () => {
+      showSlide(activeIndex + 1);
+      resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      showSlide(activeIndex - 1);
+      resetAutoplay();
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const index = parseInt(target.getAttribute('data-index') || '0');
+        showSlide(index);
+        resetAutoplay();
+      });
+    });
+
+    // Initialize Autoplay
+    startAutoplay();
+  }
+</script>
