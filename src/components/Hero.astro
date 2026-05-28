@@ -57,7 +57,6 @@
           type="date" 
           id="check-in" 
           name="check-in" 
-          value="2026-05-27"
           class="text-xs font-semibold text-slate-700 bg-transparent outline-none border-b border-transparent focus:border-[#e60067] pb-1 cursor-pointer w-full"
         />
         <span class="text-[10px] text-slate-400 mt-0.5" id="check-in-day">miércoles</span>
@@ -70,7 +69,6 @@
           type="date" 
           id="check-out" 
           name="check-out" 
-          value="2026-05-29"
           class="text-xs font-semibold text-slate-700 bg-transparent outline-none border-b border-transparent focus:border-[#e60067] pb-1 cursor-pointer w-full"
         />
         <span class="text-[10px] text-slate-400 mt-0.5" id="check-out-day">viernes</span>
@@ -170,4 +168,30 @@
 
   if (checkIn) checkIn.addEventListener('change', updateDays);
   if (checkOut) checkOut.addEventListener('change', updateDays);
+
+  // Handle booking form submission and redirect
+  const bookingForm = document.getElementById('booking-form');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const checkInVal = checkIn ? checkIn.value : '';
+      const checkOutVal = checkOut ? checkOut.value : '';
+      
+      const guestsSelect = document.getElementById('guests') as HTMLSelectElement;
+      const guestsCount = guestsSelect ? guestsSelect.value : '2';
+      
+      const adults = parseInt(guestsCount, 10) || 2;
+      const children = 0;
+      const rooms = 1;
+      const totalGuests = adults + children;
+      
+      // Construct dynamic booking URL
+      // const bookingUrl = `https://book.cariblue.com/?adults=${adults}&children=${children}&rooms=${rooms}&guests=${totalGuests}&n_guests=${totalGuests}&guests_rooms=${adults},${children};&kross_lang=es&from=${checkInVal}&to=${checkOutVal}&`;
+      const bookingUrl = `https://book.cariblue.com/?from=${checkInVal}&to=${checkOutVal}&guests=${totalGuests}`;
+      
+      // Open in a new tab/window
+      window.open(bookingUrl, '_blank');
+    });
+  }
 </script>
