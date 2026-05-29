@@ -4,17 +4,17 @@ import Layout from '../layouts/Layout.astro';
 const daySpaPackages = [
   {
     title: "Sin preocupaciones",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80",
+    image: "https://i.imgur.com/atoJGJu.png",
     text: "¡Libérate del estrés con nuestra oferta exclusiva! Relájate con piedras calientes y reflexología para renovar cuerpo y mente. Luego, disfruta de un día completo en la piscina y deléitate con exquisiteces en el restaurante La Jungla."
   },
   {
     title: "Revitalizate",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80",
+    image: "https://i.imgur.com/5pz8vkh.png",
     text: "Descubre el paraíso con nuestra oferta exclusiva! Relájate con un masaje de CBD y renueva tu piel con el facial \"Vive el Caribe\". Luego, disfruta del sol, la piscina y saborea exquisiteces en el Restaurante La Jungla, con un tiquete de ₡7.950. ¡Tu día perfecto te espera!"
   },
   {
     title: "Renueva tu energía",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80",
+    image: "https://i.imgur.com/KQ1CXM8.png",
     text: "Renueva tu bienestar con nuestra oferta exclusiva! Comienza con la exfoliación Surya para revitalizar tu piel y sigue con un masaje de tejido profundo de 90 minutos que elimina el estrés. Luego, disfruta de un día de sol y piscina, y deléitate con un tiquete de consumo de ₡7.950 en el restaurante La Jungla. ¡Tu escape perfecto te está esperando!"
   }
 ];
@@ -22,46 +22,34 @@ const daySpaPackages = [
 const massages = [
   {
     title: "Masaje Con CBD",
-    image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80"
+    image: "https://i.imgur.com/j4bd36i.png"
   },
   {
     title: "Masaje Con Chocolate",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+    image: "https://i.imgur.com/WVGPmvW.png"
   },
   {
     title: "Masaje Con Piedras Calientes",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
+    image: "https://i.imgur.com/BW06TrU.png"
   },
   {
-    title: "Masaje de Tejido Profundo",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80"
+    title: "Masaje Relajante",
+    image: "https://i.imgur.com/Fbn8cfL.png"
   },
   {
-    title: "Aromaterapia Relajante",
-    image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=600&q=80"
+    title: "Masaje de tejido profundo",
+    image: "https://i.imgur.com/zy9tGnn.png"
   }
 ];
 
 const treatments = [
   {
     title: "Exfoliación Surya",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80"
+    image: "https://i.imgur.com/pK1zhBV.png"
   },
   {
     title: "Facial Vive El Caribe",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    title: "Exfoliación de Café y Coco",
-    image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    title: "Envoltura de Barro Volcánico",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    title: "Hidratación Facial Profunda",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80"
+    image: "https://i.imgur.com/wcxhAIA.png"
   }
 ];
 ---
@@ -104,7 +92,7 @@ const treatments = [
 				</div>
 
 				<a 
-					href="https://wa.me/50683141965" 
+					href="https://commerce.smartness.com/cariblue/Masajes-Relajaci%C3%B3n-Total:-Cuerpo-y-Mente-en-Calma-%F0%9F%8C%BF%F0%9F%98%B4-Cariblue-beach-and-jungle-resort" 
 					target="_blank"
 					rel="noopener noreferrer"
 					class="mt-10 bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-xs tracking-widest uppercase px-10 py-3.5 rounded shadow-lg transition-all duration-300"
@@ -126,7 +114,7 @@ const treatments = [
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 					{daySpaPackages.map((pkg) => (
 						<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-lg flex flex-col hover:shadow-xl transition-all duration-300">
-							<div class="h-[200px] overflow-hidden">
+							<div class="h-50 overflow-hidden">
 								<img 
 									src={pkg.image} 
 									alt={pkg.title} 
@@ -164,7 +152,7 @@ const treatments = [
 					<div id="massage-track" class="flex transition-transform duration-500 ease-out gap-6" style="transform: translateX(0px);">
 						{massages.map((item) => (
 							<div class="massage-card min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] bg-white rounded-md overflow-hidden border border-slate-100 shadow-md hover:shadow-lg flex flex-col transition-all duration-300">
-								<div class="aspect-[4/3] overflow-hidden">
+								<div class="aspect-4/3 overflow-hidden">
 									<img 
 										src={item.image} 
 										alt={item.title} 
@@ -217,7 +205,7 @@ const treatments = [
 					<div id="treatment-track" class="flex transition-transform duration-500 ease-out gap-6" style="transform: translateX(0px);">
 						{treatments.map((item) => (
 							<div class="treatment-card min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] bg-white rounded-md overflow-hidden border border-slate-100 shadow-md hover:shadow-lg flex flex-col transition-all duration-300">
-								<div class="aspect-[4/3] overflow-hidden">
+								<div class="aspect-4/3 overflow-hidden">
 									<img 
 										src={item.image} 
 										alt={item.title} 
