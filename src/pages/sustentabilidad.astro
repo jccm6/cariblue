@@ -30,63 +30,33 @@ const coreActions = [
 
 const alliances = [
   {
-    logo: `<!-- Rainforest / Reef icon -->
-      <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-4 mx-auto border border-green-100 select-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-.11-7.843-.218m15.686 0A8.959 8.996 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.08-8.716-.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253" />
-        </svg>
-      </div>`,
+    logo: "https://i.imgur.com/IeqyG8A.png",
     title: "Rainforest Alliance",
     text: "Protege y conserva los arrecifes del Caribe. ¿Sabías que el 25% de la vida marina depende de los corales? Promueven la educación ambiental y las limpiezas de playa."
   },
   {
     title: "The Sloth Conservation Foundation",
-    logo: `<!-- Sloth icon / Green heart -->
-      <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 mb-4 mx-auto border border-emerald-100 select-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-        </svg>
-      </div>`,
+    logo: "https://i.imgur.com/d8909Kt.png",
     text: "Protege a los osos perezosos, símbolo nacional de Costa Rica. Junto a ellos creamos una red de puentes aéreos que permiten su movilidad segura en la jungla."
   },
   {
     title: "Planta mi Árbol",
-    logo: `<!-- Tree icon -->
-      <div class="w-20 h-20 bg-lime-50 rounded-full flex items-center justify-center text-lime-600 mb-4 mx-auto border border-lime-100 select-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.467 5.99 5.99 0 0 0-1.925-3.546 5.974 5.974 0 0 0-2.133-1A3.75 3.75 0 0 0 3.75 12A3.75 3.75 0 0 0 7.5 15.75m9-.75a3.75 3.75 0 1 1-6 0m6 0a2.25 2.25 0 0 0-2.247-2.118H13.5V12h-.007a2.25 2.25 0 0 0-2.243 2.117H9" />
-        </svg>
-      </div>`,
+    logo: "https://i.imgur.com/XiGAyrg.png",
     text: "Financiamos la plantación de 100 árboles mensuales en zonas deforestadas de Costa Rica, ayudando a restaurar ecosistemas y absorber CO₂."
   },
   {
     title: "Planet Conservation",
-    logo: `<!-- Turtle / Nature icon -->
-      <div class="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center text-amber-600 mb-4 mx-auto border border-amber-100 select-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747" />
-        </svg>
-      </div>`,
+    logo: "https://i.imgur.com/rK1M8oH.png",
     text: "Organización dedicada a la protección de tortugas marinas, reciclaje y educación ambiental, ofreciendo también programas de voluntariado."
   },
   {
     title: "Salud para Todos",
-    logo: `<!-- Heart stethoscope icon -->
-      <div class="w-20 h-20 bg-rose-50 rounded-full flex items-center justify-center text-rose-600 mb-4 mx-auto border border-rose-100 select-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.75 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 21 12Z" />
-        </svg>
-      </div>`,
+    logo: "https://i.imgur.com/Pl7vZe3.png",
     text: "Fundación local que brinda acceso a atención médica básica y de especialidad a las comunidades del Caribe Sur que más lo necesitan."
   },
   {
     title: "Puerto Viejo Limpio",
-    logo: `<!-- Clean / Recycle icon -->
-      <div class="w-20 h-20 bg-sky-50 rounded-full flex items-center justify-center text-sky-600 mb-4 mx-auto border border-sky-100 select-none">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-        </svg>
-      </div>`,
+    logo: "https://i.imgur.com/jh4aTj6.png",
     text: "Proyecto local independiente que impulsa intensas jornadas de limpieza de playas y la concientización ambiental en toda nuestra comunidad."
   }
 ];
@@ -95,50 +65,32 @@ const recommendations = [
   {
     title: "1. Cuidar el espacio y los objetos",
     text: "Cuidar el espacio y los objetos que se encuentran en el hotel, el objetivo es extender la vida útil para así disminuir la demanda de recursos naturales para fabricar nuevos objetos.",
-    icon: `<!-- Box / hand icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-[#52b788]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
-      </svg>`
+    icon: "https://i.imgur.com/Lc5bg0O.png"
   },
   {
     title: "2. Elegir productos ecológicos",
     text: "Elegir productos con envases reutilizables o sin envases para reducir drásticamente la cantidad de desechos producidos durante tu viaje.",
-    icon: `<!-- Circular arrows icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-[#52b788]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-      </svg>`
+    icon: "https://i.imgur.com/GDYKk7i.png"
   },
   {
     title: "3. Estaciones de agua potable",
     text: "Rellenar agua en botellas reutilizables en nuestra estación de agua purificada, para disminuir drásticamente el uso de botellas plásticas desechables.",
-    icon: `<!-- Bottle icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-[#52b788]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v1.243m4.5-1.243v1.243M9 7.5h6M9.75 20.25h4.5a1.5 1.5 0 0 0 1.5-1.5V11.25H8.25v7.5a1.5 1.5 0 0 0 1.5 1.5Z" />
-      </svg>`
+    icon: "https://i.imgur.com/e1r4dyw.png"
   },
   {
     title: "4. Clasificar residuos",
     text: "Seleccionar y apartar los desechos no orgánicos en los contenedores correctos para facilitar la gestión, reciclaje y compostaje interno del resort.",
-    icon: `<!-- Recycle bin icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-[#52b788]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.722 2.25-2.742m0 0 2.25 2.742m-2.25-2.742V16.5" />
-      </svg>`
+    icon: "https://i.imgur.com/axPlXvl.png"
   },
   {
     title: "5. Souvenirs y economía local",
     text: "Compra los souvenirs y regalos a las pequeñas tiendas de artesanías locales, que se fabrican en Puerto Viejo y alrededores de forma justa.",
-    icon: `<!-- Local shop icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-[#52b788]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615 3.001 3.001 0 0 0 3.75.615m-7.5 0h7.5m-.75 0a3.001 3.001 0 0 0 3.75-.615 3.001 3.001 0 0 0 3.75.615m0 0h3.75m0 0a3.001 3.001 0 0 0 3.75-.615 3.001 3.001 0 0 0 3.75.615m0 0V5.25A2.25 2.25 0 0 0 18 3H6a2.25 2.25 0 0 0-2.25 2.25V9.35m16.5 0V11.5" />
-      </svg>`
+    icon: "https://i.imgur.com/oYTF1k2.png"
   },
   {
     title: "6. Respetar los senderos",
     text: "Respetar los senderos marcados, no alimentar a animales silvestres, no dejar basura y ojalá traer la basura que se encuentre cuando se salga a pasear.",
-    icon: `<!-- Footprint icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 text-[#52b788]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>`
+    icon: "https://i.imgur.com/wGxootJ.png"
   }
 ];
 ---
@@ -153,7 +105,7 @@ const recommendations = [
 			<div class="absolute inset-0 z-0">
 				<div class="absolute inset-0 bg-black/45 z-10"></div>
 				<img 
-					src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=80" 
+					src="https://i.imgur.com/FMNK8bT.jpeg" 
 					alt="Exuberant tropical jungle canopy background" 
 					class="w-full h-full object-cover"
 				/>
@@ -192,7 +144,7 @@ const recommendations = [
 					<div class="col-span-1 lg:col-span-5">
 						<div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video">
 							<img 
-								src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+								src="https://i.imgur.com/go0oipy.png" 
 								alt="Monkeys in the trees - Cariblue Sustainability" 
 								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
 							/>
@@ -228,7 +180,7 @@ const recommendations = [
 			<div class="absolute inset-0 z-0">
 				<div class="absolute inset-0 bg-black/60 z-10"></div>
 				<img 
-					src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=80" 
+					src="https://i.imgur.com/WtPRlPF.jpeg" 
 					alt="Jungle canopy green view" 
 					class="w-full h-full object-cover"
 				/>
@@ -250,7 +202,7 @@ const recommendations = [
 					{alliances.map((alliance) => (
 						<div class="flex flex-col justify-between items-center text-center p-6 bg-white border border-slate-50 shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
 							<div>
-								<Fragment set:html={alliance.logo} />
+								<img src={alliance.logo} alt={alliance.title} class="mb-6 m-auto">
 								<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-3 leading-tight">{alliance.title}</h3>
 								<p class="text-[11px] text-slate-500 leading-relaxed font-light mb-6">{alliance.text}</p>
 							</div>
@@ -283,7 +235,7 @@ const recommendations = [
 					{recommendations.map((rec) => (
 						<div class="flex flex-col bg-white border border-slate-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
 							<div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center mb-5 border border-slate-100 shrink-0">
-								<Fragment set:html={rec.icon} />
+								<img src={rec.icon}/>
 							</div>
 							<h3 class="text-xs font-bold text-[#0f2e59] uppercase tracking-wider mb-2.5 leading-tight">{rec.title}</h3>
 							<p class="text-[11px] text-slate-500 leading-relaxed font-light">{rec.text}</p>
