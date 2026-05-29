@@ -187,7 +187,6 @@
       const totalGuests = adults + children;
       
       // Construct dynamic booking URL
-      // const bookingUrl = `https://book.cariblue.com/?adults=${adults}&children=${children}&rooms=${rooms}&guests=${totalGuests}&n_guests=${totalGuests}&guests_rooms=${adults},${children};&kross_lang=es&from=${checkInVal}&to=${checkOutVal}&`;
       const bookingUrl = `https://book.cariblue.com/?from=${checkInVal}&to=${checkOutVal}&guests=${totalGuests}`;
       
       // Open in a new tab/window
