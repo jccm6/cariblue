@@ -2,13 +2,18 @@
 ---
 
 <section id="inicio" class="relative min-h-[95vh] md:min-h-screen flex flex-col justify-center items-center text-white text-center px-4 pt-24 overflow-hidden">
-  <!-- Background Image with Overlay -->
+  <!-- Background Video with Overlay -->
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-linear-to-b from-[#05152b]/60 via-[#05152b]/45 to-[#05152b]/70 z-10"></div>
-    <img 
-      src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2000&q=80" 
-      alt="Cariblue Resort Pool & Jungle" 
-      class="w-full h-full object-cover scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
+    <iframe
+      src="https://www.youtube.com/embed/rMIO4s3ae70?autoplay=1&mute=1&controls=0&loop=1&playlist=rMIO4s3ae70&modestbranding=1&rel=0&playsinline=1"
+      title="Cariblue Hero Background Video"
+      class="absolute top-1/2 left-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen
+      loading="eager"
+      aria-hidden="true"
+      tabindex="-1"
     />
   </div>
 
@@ -122,13 +127,6 @@
     </a>
   </div>
 </section>
-
-<style>
-  @keyframes subtle-zoom {
-    0% { transform: scale(1.02); }
-    100% { transform: scale(1.08); }
-  }
-</style>
 
 <script>
   // Close promo card
