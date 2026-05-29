@@ -5,26 +5,17 @@ const stats = [
   {
     title: "Beachfront",
     text: "Mesas en la playa y vista al mar",
-    icon: `<!-- Palm Tree icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#e60067]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M12 3c-1.5 1.5-3.5 2.5-6 2.5m6-2.5c2.5 0 4.5 1 6 2.5M12 10.5c-2 1-4.5 1.5-7 1.5m7-1.5c2.5 0 5 .5 7 1.5M12 17.5C10 18.5 7.5 19 5 19m7 0c2.5 0 5-.5 7-1.5" />
-      </svg>`
+    icon: "https://i.imgur.com/N6NmSHp.png"
   },
   {
     title: "Horario de atención",
     text: "Lunes a domingo de 11:00 a 21:00 hrs.",
-    icon: `<!-- Clock icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#e60067]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>`
+    icon: "https://i.imgur.com/s89vBk2.png"
   },
   {
     title: "Happy hour",
     text: "Todos los días de 16:00 a 17:00 hrs",
-    icon: `<!-- Tropical Drink icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#e60067]">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>`
+    icon: "https://i.imgur.com/89Lxb5P.png"
   }
 ];
 
@@ -48,7 +39,7 @@ const galleryDishes = [
 			<div class="absolute inset-0 z-0">
 				<div class="absolute inset-0 bg-[#05152b]/55 z-10"></div>
 				<img 
-					src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80" 
+					src="/ClubDelSushi.webp" 
 					alt="Sunset Beach dinner beachfront" 
 					class="w-full h-full object-cover"
 				/>
@@ -123,7 +114,7 @@ const galleryDishes = [
 					<div class="col-span-1 lg:col-span-6">
 						<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-video relative group">
 							<img 
-								src="https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=1000&q=80" 
+								src="/sushi_wave.webp" 
 								alt="Gourmet Sushi Roll plate with ocean view" 
 								class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
 							/>
@@ -147,7 +138,8 @@ const galleryDishes = [
 		<!-- Menu Online CTA Button section -->
 		<section class="bg-white py-12 text-center">
 			<a 
-				href="#" 
+				href="https://oddmenu.com/es/p/sushiwave" 
+				target="_blank"
 				class="inline-block bg-[#e60067] hover:bg-[#c20056] text-white font-extrabold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg transition-all duration-300"
 			>
 				Menú Online
@@ -161,7 +153,7 @@ const galleryDishes = [
 					{stats.map((stat) => (
 						<div class="flex flex-col items-center">
 							<div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center mb-4 border border-slate-100">
-								<Fragment set:html={stat.icon} />
+								<img src={stat.icon} alt={stat.title} />
 							</div>
 							<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-2">{stat.title}</h3>
 							<p class="text-xs text-slate-500 font-light leading-relaxed max-w-xs">{stat.text}</p>
@@ -172,7 +164,7 @@ const galleryDishes = [
 		</section>
 
 		<!-- Food Photo Grid Gallery -->
-		<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
+		<!-- <section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
 			<div class="max-w-7xl mx-auto text-center">
 				<div class="mb-12">
 					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-3">Nuestra Cocina Nikkei</h2>
@@ -197,7 +189,7 @@ const galleryDishes = [
 					))}
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- Youtube Play Modal -->
 		<div id="video-modal-yt" class="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
@@ -227,7 +219,7 @@ const galleryDishes = [
 	const closeModal = document.getElementById('close-modal-yt');
 	const iframe = document.getElementById('modal-iframe-yt') as HTMLIFrameElement;
 
-	const youtubeUrl = "https://www.youtube.com/embed/l59Z_Z59gYw?autoplay=1"; // Great travel video
+	const youtubeUrl = "https://www.youtube.com/embed/L18gbY9RHYo?si=FeoRw_OI59jJseAl"; // Great travel video
 
 	if (trigger && modal && closeModal && iframe) {
 		trigger.addEventListener('click', () => {
