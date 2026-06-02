@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import RoomGallery from '../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Bungalow con 2 camas Queen";
@@ -87,20 +88,7 @@ const otherRooms = [
       </div>
     </section>
 
-    <!-- panoramic Image Gallery Row -->
-    <section class="w-full bg-slate-50 py-4 px-4 md:px-12">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-        {images.map((img, idx) => (
-          <div class="overflow-hidden rounded shadow-md border border-slate-100 aspect-video relative group">
-            <img 
-              src={img} 
-              alt={`${title} preview ${idx+1}`} 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+    <RoomGallery images={images} title={title} />
 
     <!-- Main Grid Contents: Left details, Right cards -->
     <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
