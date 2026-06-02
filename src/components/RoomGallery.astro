@@ -1,0 +1,239 @@
+---
+interface Props {
+  images: string[];
+  title: string;
+}
+
+const { images, title } = Astro.props;
+---
+
+<section class="room-gallery w-full bg-slate-50 py-4 px-4 md:px-12" data-room-gallery>
+  <div class="max-w-7xl mx-auto">
+    <div class="relative">
+      <div class="overflow-hidden">
+        <div class="room-gallery-track flex gap-4 transition-transform duration-500 ease-out">
+          {images.map((img, idx) => (
+            <button
+              type="button"
+              class="room-gallery-slide overflow-hidden rounded shadow-md border border-slate-100 aspect-video relative group bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067] focus-visible:ring-offset-2"
+              data-gallery-image
+              data-index={idx}
+              aria-label={`Abrir imagen ${idx + 1} de ${title}`}
+            >
+              <img
+                src={img}
+                alt={`${title} preview ${idx + 1}`}
+                loading={idx > 2 ? "lazy" : "eager"}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            class="room-gallery-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/95 text-[#0f2e59] shadow-lg border border-slate-100 flex items-center justify-center hover:text-[#e60067] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067]"
+            aria-label="Ver imagenes anteriores"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19 8 12l7-7" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="room-gallery-next absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/95 text-[#0f2e59] shadow-lg border border-slate-100 flex items-center justify-center hover:text-[#e60067] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067]"
+            aria-label="Ver imagenes siguientes"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7" />
+            </svg>
+          </button>
+        </>
+      )}
+    </div>
+
+    {images.length > 1 && (
+      <div class="room-gallery-dots mt-4 flex items-center justify-center gap-2" aria-label="Navegacion de galeria"></div>
+    )}
+  </div>
+
+  <div
+    class="room-gallery-modal fixed inset-0 z-[100] hidden bg-black/90 px-4 py-6 md:px-10 md:py-10"
+    role="dialog"
+    aria-modal="true"
+    aria-label={`Galeria fullscreen de ${title}`}
+  >
+    <button
+      type="button"
+      class="room-gallery-close absolute right-4 top-4 md:right-8 md:top-8 z-20 w-11 h-11 rounded-full bg-white/10 text-white border border-white/25 flex items-center justify-center hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      aria-label="Cerrar galeria"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    {images.length > 1 && (
+      <>
+        <button
+          type="button"
+          class="room-gallery-modal-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 text-white border border-white/25 flex items-center justify-center hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          aria-label="Imagen anterior"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19 8 12l7-7" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="room-gallery-modal-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 text-white border border-white/25 flex items-center justify-center hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          aria-label="Imagen siguiente"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+      </>
+    )}
+
+    <div class="h-full w-full flex items-center justify-center">
+      <img class="room-gallery-modal-image max-h-full max-w-full object-contain" src={images[0]} alt={`${title} ampliada`} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .room-gallery-slide {
+    flex: 0 0 100%;
+  }
+
+  @media (min-width: 768px) {
+    .room-gallery-slide {
+      flex-basis: calc((100% - 2rem) / 3);
+    }
+  }
+</style>
+
+<script>
+  const galleries = document.querySelectorAll<HTMLElement>('[data-room-gallery]');
+  let lockedBodyOverflow = '';
+
+  galleries.forEach((gallery) => {
+    const track = gallery.querySelector<HTMLElement>('.room-gallery-track');
+    const slides = Array.from(gallery.querySelectorAll<HTMLElement>('[data-gallery-image]'));
+    const prevButton = gallery.querySelector<HTMLButtonElement>('.room-gallery-prev');
+    const nextButton = gallery.querySelector<HTMLButtonElement>('.room-gallery-next');
+    const dotsContainer = gallery.querySelector<HTMLElement>('.room-gallery-dots');
+    const modal = gallery.querySelector<HTMLElement>('.room-gallery-modal');
+    const modalImage = gallery.querySelector<HTMLImageElement>('.room-gallery-modal-image');
+    const closeButton = gallery.querySelector<HTMLButtonElement>('.room-gallery-close');
+    const modalPrevButton = gallery.querySelector<HTMLButtonElement>('.room-gallery-modal-prev');
+    const modalNextButton = gallery.querySelector<HTMLButtonElement>('.room-gallery-modal-next');
+
+    if (!track || !modal || !modalImage || slides.length === 0) return;
+
+    let page = 0;
+    let activeIndex = 0;
+
+    const perView = () => window.matchMedia('(min-width: 768px)').matches ? 3 : 1;
+    const pageCount = () => Math.max(1, Math.ceil(slides.length / perView()));
+    const startIndexForPage = (targetPage: number) => Math.min(targetPage * perView(), Math.max(0, slides.length - perView()));
+
+    const renderDots = () => {
+      if (!dotsContainer) return;
+
+      dotsContainer.innerHTML = '';
+
+      for (let index = 0; index < pageCount(); index += 1) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'room-gallery-dot w-2.5 h-2.5 rounded-full border border-[#0f2e59] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067]';
+        dot.setAttribute('aria-label', `Ir al grupo ${index + 1}`);
+        dot.addEventListener('click', () => {
+          page = index;
+          updateCarousel();
+        });
+        dotsContainer.append(dot);
+      }
+    };
+
+    const updateCarousel = () => {
+      page = Math.min(page, pageCount() - 1);
+      const startIndex = startIndexForPage(page);
+      const offset = slides[startIndex]?.offsetLeft ?? 0;
+      track.style.transform = `translateX(-${offset}px)`;
+
+      dotsContainer?.querySelectorAll('.room-gallery-dot').forEach((dot, index) => {
+        dot.classList.toggle('bg-[#0f2e59]', index === page);
+        dot.classList.toggle('w-6', index === page);
+      });
+    };
+
+    const openModal = (index: number) => {
+      activeIndex = index;
+      updateModalImage();
+      lockedBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      modal.classList.remove('hidden');
+      closeButton?.focus();
+    };
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = lockedBodyOverflow;
+    };
+
+    const updateModalImage = () => {
+      const image = slides[activeIndex]?.querySelector('img');
+      if (!image) return;
+
+      modalImage.src = image.src;
+      modalImage.alt = image.alt.replace('preview', 'ampliada');
+    };
+
+    const showModalImage = (direction: number) => {
+      activeIndex = (activeIndex + direction + slides.length) % slides.length;
+      updateModalImage();
+    };
+
+    prevButton?.addEventListener('click', () => {
+      page = (page - 1 + pageCount()) % pageCount();
+      updateCarousel();
+    });
+
+    nextButton?.addEventListener('click', () => {
+      page = (page + 1) % pageCount();
+      updateCarousel();
+    });
+
+    slides.forEach((slide, index) => {
+      slide.addEventListener('click', () => openModal(index));
+    });
+
+    closeButton?.addEventListener('click', closeModal);
+    modalPrevButton?.addEventListener('click', () => showModalImage(-1));
+    modalNextButton?.addEventListener('click', () => showModalImage(1));
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (modal.classList.contains('hidden')) return;
+
+      if (event.key === 'Escape') closeModal();
+      if (event.key === 'ArrowLeft') showModalImage(-1);
+      if (event.key === 'ArrowRight') showModalImage(1);
+    });
+
+    window.addEventListener('resize', () => {
+      renderDots();
+      updateCarousel();
+    });
+
+    renderDots();
+    updateCarousel();
+  });
+</script>
