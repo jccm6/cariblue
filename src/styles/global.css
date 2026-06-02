@@ -2,11 +2,14 @@
 
 @import "tailwindcss";
 
+@theme {
+	--color-primary: #406ea7;
+	--color-accent: #e60067;
+}
+
 :root {
 	--font-serif: "Playfair Display", Georgia, serif;
 	--font-sans: "Montserrat", sans-serif;
-	--color-primary: #406ea7;
-	--color-accent: #e60067;
 }
 
 body {
