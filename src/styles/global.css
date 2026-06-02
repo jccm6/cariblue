@@ -5,7 +5,7 @@
 :root {
 	--font-serif: "Playfair Display", Georgia, serif;
 	--font-sans: "Montserrat", sans-serif;
-	--color-primary: #0f2e59;
+	--color-primary: #406ea7;
 	--color-accent: #e60067;
 }
 
@@ -26,6 +26,22 @@ h4,
 
 p {
 	font-size: 15px;
+}
+
+.bg-primary {
+	background-color: var(--color-primary);
+}
+
+.text-primary {
+	color: var(--color-primary);
+}
+
+.bg-accent {
+	background-color: var(--color-accent);
+}
+
+.text-accent {
+	color: var(--color-accent);
 }
 
 /* Animations for book button or subtle elements */
