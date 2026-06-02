@@ -2,30 +2,24 @@
 const rooms = [
   {
     id: 1,
-    title: "Junior Suite",
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
-    acreage: "80 m²",
-    guests: "5",
-    beds: "2",
-    description: "Ubicada en el sector de la jungla, cerca de la piscina principal, esta habitación especial es - con sus 80 metros cuadrados - la más espaciosa que ofrecemos."
+    title: "Triple Económica",
+    image: "https://i.imgur.com/KwOHJV4.jpeg",
+    description: "¡Tu espacio cómodo y funcional te está esperando! Nuestra habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort. Con una habitación principal con cama matrimonial y una cama individual, esta opción es perfecta para grupos pequeños que buscan una experiencia acogedora.",
+    link: ""
   },
   {
     id: 2,
     title: "Bungalow con 2 camas Queen",
-    image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80",
-    acreage: "35 m²",
-    guests: "4",
-    beds: "2",
-    description: "Nuestros bungalow jungle rooms con 2 camas queen se encuentran en el sector selva del resort, son una excelente opción para parejas."
+    image: "https://i.imgur.com/O2BheRC.png",
+    description: "Nuestras habitaciones tipo bungalow con dos camas queen, ubicadas en el sector selvático del resort, representan una opción excepcional para parejas en búsqueda de una experiencia tranquila. Con una impresionante vista a la exuberante selva, cada una de estas habitaciones cuenta con una terraza privada equipada con hamacas y un juego de sillas de exterior, creando el entorno perfecto para disfrutar apacibles tardes, escuchando inigualables sonidos de la selva y su variada fauna.",
+    link: ""
   },
   {
     id: 3,
-    title: "Villas Familiares Deluxe",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-    acreage: "110 m²",
-    guests: "6",
-    beds: "3",
-    description: "Amplias villas rodeadas de exuberante selva tropical. Cuentan con balcón privado, hamacas y todas las comodidades modernas para grupos y familias."
+    title: " Ocean Beach View Suites",
+    image: "https://i.imgur.com/K1xjwrw.png",
+    description: "Cada una de las tres Ocean Suites está configurada con dos habitaciones independientes divididas por una puerta y un baño compartido. La habitación principal está amueblada con una cama king size, mientras que la segunda habitación ofrece dos camas matrimoniales para adaptarse a las necesidades de los huéspedes con estilo y comodidad.",
+    link: ""
   }
 ];
 ---
@@ -64,40 +58,13 @@ const rooms = [
               <div>
                 <h3 class="text-xl md:text-2xl font-serif font-bold text-[#0f2e59] mb-4 text-center md:text-left">{room.title}</h3>
                 
-                <!-- Specs Row -->
-                <div class="flex items-center justify-center md:justify-start space-x-6 text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-5 border-y border-slate-100 py-3">
-                  <span class="flex items-center space-x-1.5">
-                    <!-- Acreage SVG -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#e60067]">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v16.5h16.5M12 7.5h7.5m-7.5 3h7.5m-7.5 3h7.5m-7.5 3h7.5" />
-                    </svg>
-                    <span>{room.acreage}</span>
-                  </span>
-                  
-                  <span class="flex items-center space-x-1.5">
-                    <!-- Guests SVG -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#e60067]">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A11.386 11.386 0 0 1 8.625 18a11.369 11.369 0 0 1-4.654-2.224 4.125 4.125 0 0 1 7.533-2.493m0-4.082A3.5 3.5 0 1 1 8 7a3.5 3.5 0 0 1 3.5 3.5m0 0a3.5 3.5 0 0 1-3.5 3.5" />
-                    </svg>
-                    <span>{room.guests} huéspedes</span>
-                  </span>
-
-                  <span class="flex items-center space-x-1.5">
-                    <!-- Bed SVG -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-[#e60067]">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 0v2m0-2h2m-2 0H10m12 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>{room.beds} camas</span>
-                  </span>
-                </div>
-
                 <p class="text-xs text-slate-500 leading-relaxed text-center md:text-left mb-6 font-normal italic">
                   {room.description}
                 </p>
               </div>
 
               <div class="text-center md:text-left">
-                <a href="#booking" class="inline-block text-[#e60067] hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-[#e60067] pb-1 transition-all">
+                <a href="https://book.cariblue.com/" target="_blank" class="inline-block text-[#e60067] hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-[#e60067] pb-1 transition-all">
                   Ver Detalles y Disponibilidad &rarr;
                 </a>
               </div>
