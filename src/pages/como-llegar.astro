@@ -5,7 +5,7 @@ const accordions = [
   {
     id: "autobus",
     title: "AUTOBUS",
-    content: `La empresa MEPE tienen viaje regular San José - Puerto Viejo Limón y viceversa. Cuesta aproximadamente USD 13 por personas puedes revisar los horarios en el siguiente link: <a href="http://www.mepe.co.cr/" target="_blank" class="text-[#e60067] font-semibold hover:underline">Horarios Limón / Puerto Viejo</a>`,
+    content: `La empresa MEPE tienen viaje regular San José - Puerto Viejo Limón y viceversa. Cuesta aproximadamente USD 13 por personas puedes revisar los horarios en el siguiente link: <a href="http://www.mepe.co.cr/" target="_blank" class="text-accent font-semibold hover:underline">Horarios Limón / Puerto Viejo</a>`,
     isOpen: true
   },
   {
@@ -103,7 +103,7 @@ const accordions = [
 										data-target={item.id}
 										aria-expanded={item.isOpen ? "true" : "false"}
 									>
-										<span class="text-xs md:text-sm font-bold text-[#0f2e59] tracking-wider group-hover:text-[#e60067] transition-colors uppercase">
+										<span class="text-xs md:text-sm font-bold text-[#0f2e59] tracking-wider group-hover:text-accent transition-colors uppercase">
 											{item.title}
 										</span>
 										<!-- Toggle icon -->
