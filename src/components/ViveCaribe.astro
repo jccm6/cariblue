@@ -22,7 +22,7 @@ const slides = [
   <div class="grid grid-cols-1 lg:grid-cols-12">
     
     <!-- Left: Brand Text Block (5 columns) -->
-    <div class="lg:col-span-5 text-white py-16 px-8 md:p-16 lg:p-20 flex flex-col justify-center text-left" style="background-color: var(--color-primary);">
+    <div class="lg:col-span-5 bg-primary text-white py-16 px-8 md:p-16 lg:p-20 flex flex-col justify-center text-left">
       <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-wide drop-shadow">
         Vive El Caribe
       </h2>
@@ -48,7 +48,7 @@ const slides = [
             class={`caribe-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
             data-index={index}
           >
-            <div class="absolute inset-0 bg-linear-to-t from-[#05152b]/50 via-transparent to-[#05152b]/15 z-10"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-primary/50 via-transparent to-primary/15 z-10"></div>
             <img 
               src={slide.image} 
               alt={slide.caption} 
@@ -56,7 +56,7 @@ const slides = [
             />
             <!-- Caption -->
             <div class="absolute bottom-10 left-8 md:left-12 z-20 text-left text-white max-w-lg">
-              <span class="inline-block bg-[#e60067] text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 mb-2 rounded-xs">
+              <span class="inline-block bg-accent text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 mb-2 rounded-xs">
                 Explora
               </span>
               <p class="text-sm md:text-lg font-serif font-semibold italic drop-shadow-md">
@@ -70,7 +70,7 @@ const slides = [
       <!-- Navigation Arrows -->
       <button 
         id="caribe-prev" 
-        class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#0f2e59]/85 hover:bg-[#e60067] text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/85 hover:bg-accent text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
         aria-label="Previous Slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
@@ -80,7 +80,7 @@ const slides = [
 
       <button 
         id="caribe-next" 
-        class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#0f2e59]/85 hover:bg-[#e60067] text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/85 hover:bg-accent text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
         aria-label="Next Slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">

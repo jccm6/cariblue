@@ -105,7 +105,7 @@ const reviews = [
     <div class="flex justify-center space-x-2 mt-8">
       {reviews.map((_, index) => (
         <button 
-          class={`review-dot w-2 h-2 rounded-full border border-[#0f2e59]/30 transition-all focus:outline-none cursor-pointer ${index === 0 ? 'bg-[#0f2e59] scale-110' : 'bg-transparent'}`}
+          class={`review-dot w-2 h-2 rounded-full border border-[#0f2e59]/30 transition-all focus:outline-none cursor-pointer ${index === 0 ? 'bg-primary scale-110' : 'bg-transparent'}`}
           data-index={index}
           aria-label={`Go to testimonial ${index + 1}`}
         ></button>
@@ -144,10 +144,10 @@ const reviews = [
     dots.forEach((dot, idx) => {
       const el = dot as HTMLElement;
       if (idx === activeIndex) {
-        el.classList.add('bg-[#0f2e59]', 'scale-110');
+        el.classList.add('bg-primary', 'scale-110');
         el.classList.remove('bg-transparent');
       } else {
-        el.classList.remove('bg-[#0f2e59]', 'scale-110');
+        el.classList.remove('bg-primary', 'scale-110');
         el.classList.add('bg-transparent');
       }
     });
