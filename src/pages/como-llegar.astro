@@ -115,7 +115,7 @@ const accordions = [
 									<!-- Accordion Content -->
 									<div 
 										id={item.id} 
-										class={`accordion-content overflow-hidden transition-all duration-300 ease-in-out ${item.isOpen ? 'max-h-[500px] opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+										class={`accordion-content overflow-hidden transition-all duration-300 ease-in-out ${item.isOpen ? 'max-h-125 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
 									>
 										<div class="text-xs text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-4 rounded-sm border-l-2 border-[#e60067] whitespace-pre-line">
 											<Fragment set:html={item.content} />
