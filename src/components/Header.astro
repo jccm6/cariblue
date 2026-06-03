@@ -187,22 +187,80 @@
   </nav>
 
   <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-primary border-b border-white/10 w-full flex-col items-center py-6 space-y-4 text-xs font-semibold tracking-wider uppercase shadow-xl transition-all duration-300">
-    <a href="/" class="mobile-link text-white hover:text-pink-400">Inicio</a>
-    <a href="/#habitaciones" class="mobile-link text-white/85 hover:text-pink-400">Habitaciones</a>
-    <a href="/all-inclusive" class="mobile-link text-white/85 hover:text-pink-400">All Inclusive</a>
-    <a href="/restaurante" class="mobile-link text-white/85 hover:text-pink-400">La Jungla Restaurant</a>
-    <a href="/sushi-wave" class="mobile-link text-white/85 hover:text-pink-400">Sushi Wave (Playa)</a>
-    <a href="/surya-spa" class="mobile-link text-white/85 hover:text-pink-400">Surya Spa</a>
-    <a href="/actividades-caribe" class="mobile-link text-white/85 hover:text-pink-400">Actividades Caribe</a>
-    <a href="/day-pass" class="mobile-link text-white/85 hover:text-pink-400">Day Pass</a>
-    <a href="/paquetes" class="mobile-link text-white/85 hover:text-pink-400">Paquetes</a>
-    <a href="/familias-cariblue" class="mobile-link text-white/85 hover:text-pink-400">Familias en Cariblue</a>
-    <a href="/eventos" class="mobile-link text-white/85 hover:text-pink-400">Eventos</a>
-    <a href="/como-llegar" class="mobile-link text-white/85 hover:text-pink-400">Cómo Llegar</a>
-    <a href="/preguntas-frecuentes" class="mobile-link text-white/85 hover:text-pink-400">Preguntas Frecuentes</a>
-    <a href="/sustentabilidad" class="mobile-link text-white/85 hover:text-pink-400">Sustentabilidad</a>
-    <a href="/contacto" class="mobile-link text-white/85 hover:text-pink-400">Contacto</a>
+  <div id="mobile-menu" class="hidden lg:hidden bg-primary border-b border-white/10 w-full px-6 py-5 text-xs font-black tracking-widest uppercase shadow-xl transition-all duration-300">
+    <div class="flex flex-col divide-y divide-white/10">
+      <a href="/" class="mobile-link py-4 text-white hover:text-pink-400 transition-colors">Inicio</a>
+
+      <details class="group">
+        <summary class="flex cursor-pointer list-none items-center justify-between py-4 text-white/85 hover:text-pink-400 transition-colors [&::-webkit-details-marker]:hidden">
+          <span>Habitaciones</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 transition-transform group-open:rotate-180">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </summary>
+        <div class="pb-4 pl-4 flex flex-col gap-3 text-[11px] font-semibold tracking-wider">
+          <a href="/room/triple-economica" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Triple Economica</a>
+          <a href="/room/superior-king" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Habitación Superior King</a>
+          <a href="/room/bungalow-king" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Bungalow King</a>
+          <a href="/room/bungalow-queen" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Bungalow con 2 camas Queen</a>
+          <a href="/room/junior-suite" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Junior Suite</a>
+          <a href="/room/jungle-house" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Jungle House</a>
+          <a href="/room/ocean-beach-view-suites" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Ocean Beach View Suites</a>
+          <a href="/room/ocean-pool-view-suites" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Ocean Pool View Suites</a>
+          <a href="/room/beach-studio" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Beach Studio</a>
+          <a href="/room/beach-apartment" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Beach Apartment</a>
+          <a href="/room/beach-loft" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Beach Loft</a>
+          <a href="/room/estandar-king" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Estándar King</a>
+        </div>
+      </details>
+
+      <a href="/all-inclusive" class="mobile-link py-4 text-white/85 hover:text-pink-400 transition-colors">All Inclusive</a>
+
+      <details class="group">
+        <summary class="flex cursor-pointer list-none items-center justify-between py-4 text-white/85 hover:text-pink-400 transition-colors [&::-webkit-details-marker]:hidden">
+          <span>Restaurantes</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 transition-transform group-open:rotate-180">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </summary>
+        <div class="pb-4 pl-4 flex flex-col gap-3 text-[11px] font-semibold tracking-wider">
+          <a href="/restaurante" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Restaurante La Jungla</a>
+          <a href="/sushi-wave" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Sushi Wave (Playa)</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex cursor-pointer list-none items-center justify-between py-4 text-white/85 hover:text-pink-400 transition-colors [&::-webkit-details-marker]:hidden">
+          <span>Experiencias</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 transition-transform group-open:rotate-180">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </summary>
+        <div class="pb-4 pl-4 flex flex-col gap-3 text-[11px] font-semibold tracking-wider">
+          <a href="/surya-spa" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Surya Spa</a>
+          <a href="/actividades-caribe" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Actividades Caribe</a>
+          <a href="/day-pass" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Day Pass</a>
+          <a href="/paquetes" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Paquetes</a>
+          <a href="/familias-cariblue" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Familias en Cariblue</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex cursor-pointer list-none items-center justify-between py-4 text-white/85 hover:text-pink-400 transition-colors [&::-webkit-details-marker]:hidden">
+          <span>Más</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 transition-transform group-open:rotate-180">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </summary>
+        <div class="pb-4 pl-4 flex flex-col gap-3 text-[11px] font-semibold tracking-wider">
+          <a href="/eventos" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Eventos</a>
+          <a href="/como-llegar" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Cómo Llegar</a>
+          <a href="/preguntas-frecuentes" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Preguntas Frecuentes</a>
+          <a href="/sustentabilidad" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Sustentabilidad</a>
+          <a href="/contacto" class="mobile-link text-white/75 hover:text-pink-400 transition-colors">Contacto</a>
+        </div>
+      </details>
+    </div>
   </div>
 </header>
 
@@ -213,15 +271,25 @@
   const menuIcon = document.getElementById('menu-icon');
 
   if (menuBtn && mobileMenu && menuIcon) {
+    const closeMobileMenu = () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.setAttribute('d', 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.querySelectorAll('details[open]').forEach(details => {
+        details.removeAttribute('open');
+      });
+    };
+
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
       const isHidden = mobileMenu.classList.contains('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
       
       // Toggle burger icon to an 'X'
       if (!isHidden) {
         menuIcon.setAttribute('d', 'M6 18 18 6M6 6l12 12');
       } else {
-        menuIcon.setAttribute('d', 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5');
+        closeMobileMenu();
       }
     });
 
@@ -229,8 +297,7 @@
     const mobileLinks = document.querySelectorAll('.mobile-link');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuIcon.setAttribute('d', 'M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5');
+        closeMobileMenu();
       });
     });
   }
