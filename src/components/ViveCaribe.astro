@@ -2,16 +2,34 @@
 const slides = [
   {
     id: 1,
+    title: "Vive El Caribe 1",
+    description: [
+      "Lo peligroso del Caribe es querer quedarse para siempre. Un mágico y auténtico paraíso de biodiversidad donde viven un sin número de animales silvestres, los cuales deleitan con sus cantos y danzas a todos nuestros huéspedes.",
+      "Hemos optado por tener un compromiso serio y responsable con el medio ambiente implementando medidas y protocolos para salvaguardar la armonía de nuestro resort con la flora y fauna del lugar para lograr que el espectáculo natural y el contacto de nuestros huéspedes con los animales se lleve en una atmósfera normal sin alterar el ecosistema."
+    ],
+    quote: "\"Un mágico y auténtico paraíso de biodiversidad para descubrir paso a paso...\"",
     image: "/vive_el_caribe.webp",
     caption: "Playa Cocles, arenas doradas y aguas cristalinas"
   },
   {
     id: 2,
+    title: "Vive El Caribe 2",
+    description: [
+      "Lo peligroso del Caribe es querer quedarse para siempre. Un mágico y auténtico paraíso de biodiversidad donde viven un sin número de animales silvestres, los cuales deleitan con sus cantos y danzas a todos nuestros huéspedes.",
+      "Hemos optado por tener un compromiso serio y responsable con el medio ambiente implementando medidas y protocolos para salvaguardar la armonía de nuestro resort con la flora y fauna del lugar para lograr que el espectáculo natural y el contacto de nuestros huéspedes con los animales se lleve en una atmósfera normal sin alterar el ecosistema."
+    ],
+    quote: "\"Un mágico y auténtico paraíso de biodiversidad para descubrir paso a paso...\"",
     image: "/casa-familiar.webp",
     caption: "Fauna local: Tucanes y monos a la vista"
   },
   {
     id: 3,
+    title: "Vive El Caribe 3",
+    description: [
+      "Lo peligroso del Caribe es querer quedarse para siempre. Un mágico y auténtico paraíso de biodiversidad donde viven un sin número de animales silvestres, los cuales deleitan con sus cantos y danzas a todos nuestros huéspedes.",
+      "Hemos optado por tener un compromiso serio y responsable con el medio ambiente implementando medidas y protocolos para salvaguardar la armonía de nuestro resort con la flora y fauna del lugar para lograr que el espectáculo natural y el contacto de nuestros huéspedes con los animales se lleve en una atmósfera normal sin alterar el ecosistema."
+    ],
+    quote: "\"Un mágico y auténtico paraíso de biodiversidad para descubrir paso a paso...\"",
     image: "/vista_al_mar.webp",
     caption: "Naturaleza intacta de Puerto Viejo"
   }
@@ -21,22 +39,26 @@ const slides = [
 <section id="all-inclusive" class="w-full overflow-hidden">
   <div class="grid grid-cols-1 lg:grid-cols-12">
     
-    <!-- Left: Brand Text Block (5 columns) -->
-    <div class="lg:col-span-5 bg-primary text-white py-16 px-8 md:p-16 lg:p-20 flex flex-col justify-center text-left">
-      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-wide drop-shadow">
-        Vive El Caribe
-      </h2>
-      <div class="space-y-5 text-xs md:text-[13px] text-slate-100/85 leading-relaxed font-light">
-        <p>
-          Lo peligroso del Caribe es querer quedarse para siempre. Un mágico y auténtico paraíso de biodiversidad donde viven un sin número de animales silvestres, los cuales deleitan con sus cantos y danzas a todos nuestros huéspedes.
-        </p>
-        <p>
-          Hemos optado por tener un compromiso serio y responsable con el medio ambiente implementando medidas y protocolos para salvaguardar la armonía de nuestro resort con la flora y fauna del lugar para lograr que el espectáculo natural y el contacto de nuestros huéspedes con los animales se lleve en una atmósfera normal sin alterar el ecosistema.
-        </p>
-        <p class="font-normal text-slate-100 italic border-l-2 border-[#e60067] pl-4">
-          "Un mágico y auténtico paraíso de biodiversidad para descubrir paso a paso..."
-        </p>
-      </div>
+    <!-- Left: Text Slides Block (5 columns) -->
+    <div class="lg:col-span-5 bg-primary text-white text-left relative overflow-hidden min-h-112.5 lg:min-h-150">
+      {slides.map((slide, index) => (
+        <div
+          class={`caribe-text-slide absolute inset-0 py-16 px-8 md:p-16 lg:p-20 flex flex-col justify-center transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+          data-index={index}
+        >
+          <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 tracking-wide drop-shadow">
+            {slide.title}
+          </h2>
+          <div class="space-y-5 text-xs md:text-[13px] text-slate-100/85 leading-relaxed font-light">
+            {slide.description.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+            <p class="font-normal text-slate-100 italic border-l-2 border-accent pl-4">
+              {slide.quote}
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
 
     <!-- Right: Slideshow Block (7 columns) -->
@@ -104,7 +126,8 @@ const slides = [
 </section>
 
 <script>
-  const slides = document.querySelectorAll('.caribe-slide');
+  const imageSlides = document.querySelectorAll('.caribe-slide');
+  const textSlides = document.querySelectorAll('.caribe-text-slide');
   const dots = document.querySelectorAll('.caribe-dot');
   const prevBtn = document.getElementById('caribe-prev');
   const nextBtn = document.getElementById('caribe-next');
@@ -113,15 +136,15 @@ const slides = [
   let autoplayInterval: ReturnType<typeof setInterval>;
 
   function showSlide(index: number) {
-    if (slides.length === 0) return;
+    if (imageSlides.length === 0) return;
     
     // Ensure index wrap around
-    if (index >= slides.length) activeIndex = 0;
-    else if (index < 0) activeIndex = slides.length - 1;
+    if (index >= imageSlides.length) activeIndex = 0;
+    else if (index < 0) activeIndex = imageSlides.length - 1;
     else activeIndex = index;
 
-    // Reset styles
-    slides.forEach((slide, idx) => {
+    // Update image slides
+    imageSlides.forEach((slide, idx) => {
       const el = slide as HTMLElement;
       if (idx === activeIndex) {
         el.classList.add('opacity-100', 'z-10');
@@ -129,6 +152,18 @@ const slides = [
       } else {
         el.classList.remove('opacity-100', 'z-10');
         el.classList.add('opacity-0', 'z-0');
+      }
+    });
+
+    // Update text slides
+    textSlides.forEach((slide, idx) => {
+      const el = slide as HTMLElement;
+      if (idx === activeIndex) {
+        el.classList.add('opacity-100', 'z-10');
+        el.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+      } else {
+        el.classList.remove('opacity-100', 'z-10');
+        el.classList.add('opacity-0', 'z-0', 'pointer-events-none');
       }
     });
 
@@ -154,7 +189,7 @@ const slides = [
     startAutoplay();
   }
 
-  if (prevBtn && nextBtn && slides.length > 0) {
+  if (prevBtn && nextBtn && imageSlides.length > 0) {
     nextBtn.addEventListener('click', () => {
       showSlide(activeIndex + 1);
       resetAutoplay();
