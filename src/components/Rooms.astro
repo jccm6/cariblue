@@ -4,21 +4,100 @@ const rooms = [
     id: 1,
     title: "Triple Económica",
     image: "https://i.imgur.com/KwOHJV4.jpeg",
-    description: "¡Tu espacio cómodo y funcional te está esperando! Nuestra habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort. Con una habitación principal con cama matrimonial y una cama individual, esta opción es perfecta para grupos pequeños que buscan una experiencia acogedora.",
+    acreage: "30 ft²",
+    guests: "3",
+    beds: "1",
+    description: "Nuestras habitaciones estándar son nuestro alojamiento más popular. Tienen vista al jardín.",
     link: ""
   },
   {
     id: 2,
     title: "Bungalow con 2 camas Queen",
     image: "https://i.imgur.com/O2BheRC.png",
-    description: "Nuestras habitaciones tipo bungalow con dos camas queen, ubicadas en el sector selvático del resort, representan una opción excepcional para parejas en búsqueda de una experiencia tranquila. Con una impresionante vista a la exuberante selva, cada una de estas habitaciones cuenta con una terraza privada equipada con hamacas y un juego de sillas de exterior, creando el entorno perfecto para disfrutar apacibles tardes, escuchando inigualables sonidos de la selva y su variada fauna.",
+    acreage: "35 ft²",
+    guests: "4",
+    beds: "2",
+    description: "Nuestras bungalow jungle rooms con 2 camas queen se encuentran en el sector selva del resort, son una excelente opción para parejas.",
     link: ""
   },
   {
     id: 3,
-    title: " Ocean Beach View Suites",
+    title: "Ocean Beach View Suites",
     image: "https://i.imgur.com/K1xjwrw.png",
-    description: "Cada una de las tres Ocean Suites está configurada con dos habitaciones independientes divididas por una puerta y un baño compartido. La habitación principal está amueblada con una cama king size, mientras que la segunda habitación ofrece dos camas matrimoniales para adaptarse a las necesidades de los huéspedes con estilo y comodidad.",
+    acreage: "55 ft²",
+    guests: "6",
+    beds: "3",
+    description: "Ubicado frente al mar, este módulo consta de 3 en la planta alta que tienen una magnifica vista a la playa Cocles.",
+    link: ""
+  },
+  {
+    id: 4,
+    title: "Beach Loft",
+    image: "https://i.imgur.com/KTobwyy.png",
+    acreage: "30 ft²",
+    guests: "3",
+    beds: "1",
+    description: "El Beach Loft es un refugio práctico y acogedor, ideal para quienes buscan disfrutar de la cercanía del mar en un ambiente confortable",
+    link: ""
+  },
+  {
+    id: 5,
+    title: "Estándar King",
+    image: "https://i.imgur.com/hDdwfD3.png",
+    acreage: "30 ft²",
+    guests: "3",
+    beds: "1",
+    description: "¡Tu escapada junto al mar te espera aquí! Habitaciones con espléndida vista al jardín y un toque cercano a la playa",
+    link: ""
+  },
+  {
+    id: 6,
+    title: "Ocean Pool View Suites",
+    image: "https://i.imgur.com/NIorB4b.png",
+    acreage: "55 ft²",
+    guests: "6",
+    beds: "3",
+    description: "Ubicado frente al mar, este módulo consta de 3 suites en la planta baja que tienen salida directa a una piscina con cascada.",
+    link: ""
+  },
+  {
+    id: 7,
+    title: "Habitación Superior King",
+    image: "https://i.imgur.com/sLAn159.png",
+    acreage: "35 ft²",
+    guests: "3",
+    beds: "1",
+    description: "Nuestras habitaciones superior se encuentran en el sector selva del resort, son una excelente opción para parejas.",
+    link: ""
+  },
+  {
+    id: 8,
+    title: "Jungle House",
+    image: "https://i.imgur.com/7vvtt44.png",
+    acreage: "40 ft²",
+    guests: "4",
+    beds: "2",
+    description: "Ubicados en el sector de la selva del hotel, rodeados de arboles centenarios y flores tropicales, nuestros tres bungalows de madera son una excelente opción para familias que quieran descansar rodeados de naturaleza.",
+    link: ""
+  },
+  {
+    id: 9,
+    title: "Junior Suite",
+    image: "https://i.imgur.com/PQuYFD9.png",
+    acreage: "80 ft²",
+    guests: "5",
+    beds: "2",
+    description: "Ubicada en el sector de la jungla, cerca de la piscina principal, esta habitación especial es – con sus 80 metros cuadrados. – la más espaciosa que ofrecemos.",
+    link: ""
+  },
+  {
+    id: 10,
+    title: "Bungalow King",
+    image: "https://i.imgur.com/OHZmNxu.png",
+    acreage: "40 ft²",
+    guests: "3",
+    beds: "1",
+    description: "Ubicados en el sector de la selva del hotel, rodeados de arboles centenarios y flores tropicales, nuestros dos bungalows de madera son una excelente opción para parejas que quieran descansar rodeados de naturaleza.",
     link: ""
   }
 ];
@@ -62,9 +141,20 @@ const rooms = [
                   {room.description}
                 </p>
               </div>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 text-center">
+                <p class="text-xs text-slate-600 leading-relaxed font-normal mb-4">
+                  <span class="font-bold">Superficie:</span><br>{room.acreage}
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed font-normal mb-4">
+                  <span class="font-bold">Capacidad:</span><br>{room.guests} personas
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed font-normal mb-4">
+                  <span class="font-bold">Camas:</span><br>{room.beds} camas
+                </p>
+              </div>
 
               <div class="text-center md:text-left">
-                <a href="https://book.cariblue.com/" target="_blank" class="inline-block text-accent hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-[#e60067] pb-1 transition-all">
+                <a href="https://book.cariblue.com/" target="_blank" class="inline-block text-accent hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-accent pb-1 transition-all">
                   Ver Detalles y Disponibilidad &rarr;
                 </a>
               </div>
