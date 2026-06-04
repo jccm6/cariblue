@@ -2,30 +2,52 @@
 const reviews = [
   {
     id: 1,
-    source: "Booking.com",
-    logoText: "B.",
-    logoBg: "bg-[#003580]", // Booking.com brand blue
+    logoImg: "https://i.imgur.com/PxouyQu.png", // Booking.com
     author: "Booking / Costa Rica",
     rating: "9.2",
     text: "El hotel tiene una buena ubicación, la piscina es probablemente una de las más bonitas de la zona, las habitaciones son cómodas y tienen refrigerador (sumamente importante). El desayuno es bueno y sus colaboradores muy amables. En general la experiencia es muy buena."
   },
   {
     id: 2,
-    source: "TripAdvisor",
-    logoText: "O0", // TripAdvisor logo representation or nice SVG
-    logoBg: "bg-[#34e0a1]", // TripAdvisor brand green
-    author: "TripAdvisor / España",
+    logoImg: "https://i.imgur.com/PxouyQu.png",
+    author: "Booking / Argentina",
     rating: "5.0",
-    text: "Increíble lugar rodeado de selva pura y playa. Pudimos ver monos y perezosos desde la terraza de nuestro bungalow. El personal es súper atento y las piscinas excelentes. Volveremos sin duda alguna."
+    text: "El ambiente selvático fue de lo mejor. Animales para ver todo el tiempo. La pileta es muy linda. La ubicacion es genial. Tiene la playa Cocles en frente."
   },
   {
     id: 3,
-    source: "Google Reviews",
-    logoText: "G",
-    logoBg: "bg-[#4285F4]", // Google blue
-    author: "Google / Argentina",
+    logoImg: "https://i.imgur.com/ZQMqucS.png", // TripAdvisor
+    author: "Tripadvisor / España",
     rating: "4.8",
-    text: "Hermosa experiencia en Cariblue. Muy cuidado el medio ambiente, respetuoso de los animales de la zona. El restaurante de playa Sushi Wave es espectacular y la comida riquísima. Altamente recomendado."
+    text: "Lugar bellísimo con excelente atención al cliente. Las habitaciones son super cómodas y aseadas, los jardines tropicales llenos de animales y linda vegetación. Se descansa super bien. El desayuno es estilo buffet muy variado. Los sábados en la noche hay música en vivo. La piscina de las mejores de la zona. La verdad es un lugar para volver."
+  },
+  {
+    id: 4,
+    logoImg: "https://i.imgur.com/ZQMqucS.png", // TripAdvisor
+    author: "Tripadvisor / Chile",
+    rating: "4.8",
+    text: "Muy decisión haber venido a Cariblue, excelente ubicación, frente a la mejor ola para realizar surf, tiene una gran piscina para relajarse, el staff y el servicio fue muy atento, está inmerso en un gran vegetación y árboles muy grandes, se escuchan constantemente pájaros y animales lo que da una sensación muy grata, lugar muy recomendado."
+  },
+  {
+    id: 5,
+    logoImg: "https://i.imgur.com/9LU7Zc9.png", // Google Hotel
+    author: "Google / España",
+    rating: "4.8",
+    text: "Es un hotel fantástico. Las habitaciones muy bonitas , la piscina muy acogedora y el desayuno completo. Nos dejaron unas bicicletas para llegar a las playas . Está muy buen situado, Puerto Viejo a tan solo unos minutos en coche/bici. Esta zona del caribe costaricense merece una visita. Nos encantó."
+  },
+  {
+    id: 6,
+    logoImg: "https://i.imgur.com/9LU7Zc9.png", // Google Hotel
+    author: "Google / Colombia",
+    rating: "4.8",
+    text: "Buen sitio a metros de la playa Cocles. Discreto, bien vigilado, con parqueo. Sus jardines, ya crecidos, son una maravilla y guardan infinidad de fauna: ranas, iguanas, perezosos, arañas, mariposas, basiliscos"
+  },
+  {
+    id: 7,
+    logoImg: "https://i.imgur.com/ZvK3LOL.png", // Expedia
+    author: "Expedia / México",
+    rating: "4.8",
+    text: "Excelente servicio por parte del personal, en especial Jahir que estuvo atento a todo sobre nuestra estadia. Recomiendo el hotel totalmente. La piscina limpia, los jardines preciosos y el desayuno muy rico."
   }
 ];
 ---
@@ -39,7 +61,7 @@ const reviews = [
     </div>
 
     <!-- Review Slider Container -->
-    <div class="relative px-8 md:px-16 min-h-[250px] flex items-center justify-center">
+    <div class="relative px-8 md:px-16 min-h-62.5 flex items-center justify-center">
       
       <!-- Track/Slide List -->
       <div id="reviews-container" class="w-full relative overflow-hidden">
@@ -49,8 +71,8 @@ const reviews = [
             data-index={index}
           >
             <!-- Brand Badge -->
-            <div class={`w-14 h-14 ${review.logoBg} text-white font-black text-3xl flex items-center justify-center rounded-lg shadow-md mb-6 select-none`}>
-              {review.logoText}
+            <div class={`w-14 h-14 text-white font-black text-3xl flex items-center justify-center rounded-lg shadow-md mb-6 select-none`}>
+              <img src={review.logoImg} alt={review.author}>
             </div>
 
             <!-- Review Text -->
@@ -61,14 +83,14 @@ const reviews = [
             </blockquote>
 
             <!-- Rating badge -->
-            <div class="flex items-center space-x-1 mb-2 text-accent">
+            {/* <div class="flex items-center space-x-1 mb-2 text-accent">
               {[...Array(5)].map(() => (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
                   <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
                 </svg>
               ))}
               <span class="text-xs font-bold text-slate-400 ml-2">({review.rating})</span>
-            </div>
+            </div> */}
 
             <!-- Author info -->
             <cite class="text-[11px] md:text-xs font-bold tracking-widest text-[#0f2e59] uppercase not-italic block mt-1">
