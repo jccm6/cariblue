@@ -63,7 +63,7 @@ const t = getUi(lang).home.rooms;
               </div>
 
               <div class="text-center md:text-left">
-                <a href={`/room/${room.slug}`} class="inline-block text-accent hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-accent pb-1 transition-all">
+                <a href={`${lang === "en" ? "/en/" : "/"}room/${room.slug}/`} class="inline-block text-accent hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-accent pb-1 transition-all">
                   {t.details} &rarr;
                 </a>
               </div>
