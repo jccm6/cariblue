@@ -4,7 +4,7 @@ import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Beach Loft";
-const description = "El Beach Loft es un refugio práctico y acogedor, ideal para quienes buscan disfrutar de la cercanía del mar en un ambiente confortable. Este espacio bien distribuido ofrece una estancia agradable a solo unos pasos de la playa.";
+const description = "Beach Loft is a practical and welcoming retreat, ideal for those who want to enjoy the sea nearby in a comfortable setting. This well-planned space offers a pleasant stay just steps from the beach.";
 
 const images = [
   "https://i.imgur.com/VacTR6s.jpeg",
@@ -15,40 +15,40 @@ const images = [
 ];
 
 const amenities = [
-  "1 cama King y 1 individual",
-  "4 personas máximo",
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Armario en la habitación",
-  "Balcon / Terraza",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Cocina Equipada",
-  "Desayuno Buffet",
-  "Escritorio",
-  "Estacionamiento Gratis",
-  "Living",
-  "Pequeño refrigerador",
-  "Piscina Común",
-  "Refrigerador",
-  "Secador de pelo",
-  "Toallas"
+  "1 king bed and 1 single bed",
+  "Up to 4 guests",
+  "Ceiling fan",
+  "Air conditioning",
+  "Wardrobe",
+  "Balcony / Terrace",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Equipped kitchen",
+  "Buffet breakfast",
+  "Desk",
+  "Free parking",
+  "Living area",
+  "Mini fridge",
+  "Shared pool",
+  "Refrigerator",
+  "Hair dryer",
+  "Towels"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
@@ -57,21 +57,21 @@ const otherRooms = [
     title: "Beach Apartment",
     image: "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=600&q=80",
     slug: "beach-apartment",
-    specs: "5 huéspedes | 2 Habitaciones",
-    description: "Apartamento vacacional a pasos de Playa Cocles, con espacios amplios y cocina equipada para una estadía completa."
+    specs: "5 guests | 2 bedrooms",
+    description: "Vacation apartment just steps from Playa Cocles, with spacious areas and an equipped kitchen for a complete stay."
   },
   {
     title: "Beach Studio",
     image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=600&q=80",
     slug: "beach-studio",
-    specs: "3 huéspedes | 1 Cama King",
-    description: "Estudio funcional y cómodo ideal para viajeros que buscan practicidad muy cerca de la playa."
+    specs: "3 guests | 1 king bed",
+    description: "Functional and comfortable studio ideal for travelers who want convenience very close to the beach."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -104,19 +104,19 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Ocupación máxima 4 (de los cuales máximo x 3). 2 dormitorios, 1 baño, 90 mt cuadrados. El Beach Loft es un refugio práctico y acogedor, ideal para quienes buscan disfrutar de la cercanía del mar en un ambiente confortable. Este espacio bien distribuido ofrece una estancia agradable a solo unos pasos de la playa.
+              Maximum occupancy 4 (of which up to 3 adults). 2 bedrooms, 1 bathroom, 90 square meters. Beach Loft is a practical and welcoming retreat, ideal for those who want to enjoy the sea nearby in a comfortable setting. This well-planned space offers a pleasant stay just steps from the beach.
             </p>
             <p>
-              En su interior, el loft cuenta con dos habitaciones versátiles: una con una cama king size que se puede separar en dos individuales y otra con dos camas singles, adaptándose fácilmente a las necesidades de familias o grupos pequeños. La cocina equipada proporciona todo lo necesario para preparar y disfrutar de comidas caseras en un ambiente íntimo y familiar.
+              Inside, the loft features two versatile rooms: one with a king-size bed that can be split into two singles and another with two single beds, easily adapting to the needs of families or small groups. The equipped kitchen provides everything needed to prepare and enjoy home-cooked meals in an intimate, family-friendly setting.
             </p>
             <p>
-              La terraza del loft es un espacio ideal para tu relajación y disfrute. Aquí podrás comenzar el día con energía, disfrutando de un café matutino al aire libre, o cerrar la jornada contemplando las estrellas en un ambiente tranquilo.
+              The loft's terrace is an ideal space for relaxation and enjoyment. Here you can start the day energized with an outdoor morning coffee or end the evening stargazing in a peaceful atmosphere.
             </p>
             <p>
-              Además, el loft incluye comodidades esenciales como aire acondicionado e internet, garantizando una estancia confortable y conectada. Loft Playa Cariblue es la elección perfecta para aquellos que buscan un alojamiento práctico y cómodo en un entorno natural impresionante.
+              In addition, the loft includes essential comforts such as air conditioning and internet, ensuring a comfortable and connected stay. Cariblue Beach Loft is the perfect choice for those seeking practical and comfortable accommodation in a stunning natural setting.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y prepárate para disfrutar una experiencia cómoda y relajada en Beach Loft!
+              Book now and get ready to enjoy a comfortable and relaxed experience at Beach Loft.
             </p>
           </div>
 
@@ -168,10 +168,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -188,10 +188,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -242,7 +242,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

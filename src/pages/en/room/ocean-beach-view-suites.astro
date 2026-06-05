@@ -4,7 +4,7 @@ import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Ocean Beach View Suites";
-const description = "Ubicado frente al mar, este exclusivo módulo se compone de tres suites en la planta alta, todas ellas ofreciendo una magnífica vista panorámica de la playa Cocles.";
+const description = "Located in front of the sea, this exclusive module consists of three upper-floor suites, all offering a magnificent panoramic view of Playa Cocles.";
 
 const images = [
   "https://i.imgur.com/of5be7O.jpeg",
@@ -20,40 +20,40 @@ const images = [
 ];
 
 const amenities = [
-  "1 cama King y 2 camas matrimoniales",
-  "2 habitaciones",
+  "1 king bed and 2 double beds",
+  "2 bedrooms",
   "55 m²",
-  "6 personas máximo",
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Cama extra suplementaria si se requiere",
+  "Up to 6 guests",
+  "Ceiling fan",
+  "Air conditioning",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Extra bed available if needed",
   "Coffee maker",
-  "Dispensadores con Shampoo, acondicionador y gel de ducha biodegradables preparadas en la Costa Caribeña",
-  "Escritorio",
-  "Habitación no fumadores",
-  "Living",
-  "Refrigerador",
-  "Secador de pelo",
-  "Terraza con hamacas y juego de sillas",
-  "Veladores con toma de corriente USB"
+  "Biodegradable shampoo, conditioner and body gel dispensers made on the Caribbean coast",
+  "Desk",
+  "Non-smoking room",
+  "Living area",
+  "Refrigerator",
+  "Hair dryer",
+  "Terrace with hammocks and seating",
+  "Bedside lamps with USB outlets"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
@@ -62,21 +62,21 @@ const otherRooms = [
     title: "Junior Suite",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80",
     slug: "junior-suite",
-    specs: "80 m² | 5 huéspedes | 2 Camas",
-    description: "Ubicada en el sector jungla, cerca de la piscina principal, es una de nuestras opciones más espaciosas para una estadía de confort."
+    specs: "80 m² | 5 guests | 2 Beds",
+    description: "Located in the jungle area near the main pool, it is one of our most spacious options for a comfortable stay."
   },
   {
     title: "Jungle House",
     image: "https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=600&q=80",
     slug: "jungle-house",
-    specs: "90 m² | 7 huéspedes | 4 Camas",
-    description: "Residencia ideal para familias, con dos dormitorios y amplias áreas comunes para compartir una estadía cómoda."
+    specs: "90 m² | 7 guests | 4 Beds",
+    description: "Ideal family residence with two bedrooms and spacious common areas for a comfortable stay together."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -109,13 +109,13 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Ubicado frente al mar, este exclusivo módulo se compone de tres suites en la planta alta, todas ellas ofreciendo una magnífica vista panorámica de la playa Cocles.
+              Located in front of the sea, this exclusive module consists of three upper-floor suites, all offering a magnificent panoramic view of Playa Cocles.
             </p>
             <p>
-              Cada una de las tres Ocean Suites está configurada con dos habitaciones independientes divididas por una puerta y un baño compartido. La habitación principal está amueblada con una cama king size, mientras que la segunda habitación ofrece dos camas matrimoniales para adaptarse a las necesidades de los huéspedes con estilo y comodidad.
+              Each of the three Ocean Suites is configured with two separate bedrooms divided by a door and a shared bathroom. The main bedroom is furnished with a king-size bed, while the second bedroom offers two double beds to suit guests with style and comfort.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y despierta frente al mar en nuestras Ocean Beach View Suites!
+              Book now and wake up facing the sea in our Ocean Beach View Suites.
             </p>
           </div>
 
@@ -167,10 +167,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -187,10 +187,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -241,7 +241,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

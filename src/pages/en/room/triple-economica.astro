@@ -3,8 +3,8 @@ import Layout from '../../../layouts/Layout.astro';
 import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
-const title = "Triple Económica";
-const description = "¡Tu espacio cómodo y funcional te está esperando! Nuestra habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort. Con una habitación principal con cama matrimonial y una cama individual, esta opción es perfecta para grupos pequeños que buscan una experiencia acogedora.";
+const title = "Economy Triple";
+const description = "Your comfortable and functional space is waiting for you. Our Economy Triple room combines practicality with everything you need to enjoy your stay at our resort. With a main bedroom featuring a double bed and a single bed, this option is perfect for small groups looking for a cozy experience.";
 
 const images = [
   "https://i.imgur.com/rLcrxfM.jpeg",
@@ -14,32 +14,32 @@ const images = [
 ];
 
 const amenities = [
-  "1 cama matrimonial",
-  "3 personas máximo",
-  "Aire acondicionado",
-  "Armario en la habitación",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Escritorio",
-  "Pequeño refrigerador",
-  "Piscina Común",
-  "Secador de pelo"
+  "1 double bed",
+  "Up to 3 guests",
+  "Air conditioning",
+  "Wardrobe",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Desk",
+  "Mini fridge",
+  "Shared pool",
+  "Hair dryer"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
@@ -48,21 +48,21 @@ const otherRooms = [
     title: "Junior Suite",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80",
     slug: "junior-suite",
-    specs: "80 m² | 5 huéspedes | 2 Camas",
-    description: "Ubicada en el sector de la jungla, cerca de la piscina principal, esta habitación especial es la más espaciosa que ofrecemos."
+    specs: "80 m² | 5 guests | 2 Beds",
+    description: "Located in the jungle area near the main pool, this special room is our most spacious option."
   },
   {
-    title: "Bungalow con 2 camas Queen",
+    title: "Bungalow with 2 Queen Beds",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80",
     slug: "bungalow-queen",
-    specs: "35 m² | 4 huéspedes | 2 Camas",
-    description: "Nuestros bungalow jungle rooms con 2 camas queen se encuentran en el sector selva del resort, son una excelente opción para parejas."
+    specs: "35 m² | 4 guests | 2 Beds",
+    description: "Our jungle bungalow rooms with two queen beds are located in the resort's jungle area and are a great option for couples."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -103,13 +103,13 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              ¡Tu espacio cómodo y funcional te está esperando! Nuestra habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort. Con una habitación principal con cama matrimonial y una cama individual, esta opción es perfecta para grupos pequeños que buscan una experiencia acogedora.
+              Your comfortable and functional space is waiting for you. Our Economy Triple room combines practicality with everything you need to enjoy your stay at our resort. With a main bedroom featuring a double bed and a single bed, this option is perfect for small groups looking for a cozy experience.
             </p>
             <p>
-              Aunque sencilla, esta habitación ofrece comodidades esenciales, como aire acondicionado, acceso gratuito a WiFi y una televisión por cable de plasma de 32". Además, encontrarás secador de pelo, amenidades de baño y comodidades prácticas, como una conexión USB, un escritorio de trabajo y un armario.
+              Though simple, this room offers essential comforts such as air conditioning, free Wi-Fi and a 32-inch plasma cable TV. You will also find a hair dryer, bathroom amenities and practical features such as USB access, a work desk and a wardrobe.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y sumérgete en la experiencia de nuestro resort con una opción económica que no compromete el confort ni el disfrute!
+              Book now and immerse yourself in the resort experience with an affordable option that does not compromise comfort or enjoyment.
             </p>
           </div>
 
@@ -161,10 +161,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -181,10 +181,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -235,7 +235,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

@@ -3,8 +3,8 @@ import Layout from '../../../layouts/Layout.astro';
 import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
-const title = "Estándar King";
-const description = "Tu escapada junto al mar te espera aquí. Habitaciones con espléndida vista al jardín y un toque cercano a la playa, decoradas con inspiración marina contemporánea. Exclusivamente para parejas.";
+const title = "Standard King";
+const description = "Your seaside escape awaits here. Rooms with a splendid garden view and a close connection to the beach, decorated with contemporary coastal inspiration. Exclusively for couples.";
 
 const images = [
   "https://i.imgur.com/dkOCFYM.jpeg",
@@ -15,33 +15,33 @@ const images = [
 ];
 
 const amenities = [
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Armario en la habitación",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Desayuno Buffet",
-  "Escritorio",
-  "Estacionamiento Gratis",
-  "Pequeño refrigerador",
-  "Piscina Común",
-  "Toallas"
+  "Ceiling fan",
+  "Air conditioning",
+  "Wardrobe",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Buffet breakfast",
+  "Desk",
+  "Free parking",
+  "Mini fridge",
+  "Shared pool",
+  "Towels"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
@@ -50,21 +50,21 @@ const otherRooms = [
     title: "Beach Studio",
     image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=600&q=80",
     slug: "beach-studio",
-    specs: "3 huéspedes | 1 Cama King",
-    description: "Estudio funcional y cómodo, ideal para disfrutar una estadía práctica muy cerca de Playa Cocles."
+    specs: "3 guests | 1 king bed",
+    description: "Functional and comfortable studio, ideal for a practical stay very close to Playa Cocles."
   },
   {
     title: "Beach Apartment",
     image: "https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=600&q=80",
     slug: "beach-apartment",
-    specs: "5 huéspedes | 2 Habitaciones",
-    description: "Apartamento vacacional con cocina equipada y ambiente ideal para disfrutar del Caribe en familia o con amigos."
+    specs: "5 guests | 2 bedrooms",
+    description: "Vacation apartment with an equipped kitchen and an ideal atmosphere for enjoying the Caribbean with family or friends."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -97,13 +97,13 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Tu escapada junto al mar te espera aquí. Habitaciones con espléndida vista al jardín y un toque cercano a la playa, decoradas con inspiración marina contemporánea. Exclusivamente para parejas. Disfruta de comodidades de lujo: aire acondicionado, WiFi gratuito, ventilador de techo y TV por cable de plasma 32″.
+              Your seaside escape awaits here. Rooms with a splendid garden view and a close connection to the beach, decorated with contemporary coastal inspiration. Exclusively for couples. Enjoy luxury comforts such as air conditioning, free Wi-Fi, a ceiling fan and a 32-inch plasma cable TV.
             </p>
             <p>
-              Cuenta además con secador de pelo, amenidades de baño y detalles adicionales como conexión USB, escritorio de trabajo y amplio armario. Solo disponible con una lujosa cama King size.
+              It also includes a hair dryer, bathroom amenities and extra details such as USB access, a work desk and a spacious wardrobe. Available only with a luxurious king-size bed.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y siente el romance con cada susurro del mar!
+              Book now and feel the romance in every whisper of the sea.
             </p>
           </div>
 
@@ -155,10 +155,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -175,10 +175,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -229,7 +229,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

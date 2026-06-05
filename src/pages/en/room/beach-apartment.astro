@@ -4,7 +4,7 @@ import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Beach Apartment";
-const description = "Despierta cada mañana en nuestro apartamento vacacional y siente la cercanía del mar Caribe. Ubicado a solo unos pasos de la paradisíaca Playa Cocles, este refugio ofrece la combinación perfecta de lujo y proximidad a la playa.";
+const description = "Wake up every morning in our vacation apartment and feel the closeness of the Caribbean Sea. Located just steps from the paradise-like Playa Cocles, this retreat offers the perfect combination of luxury and beach proximity.";
 
 const images = [
   "https://i.imgur.com/UDIGFb5.jpeg",
@@ -23,39 +23,39 @@ const images = [
 ];
 
 const amenities = [
-  "5 personas máximo",
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Armario en la habitación",
-  "Balcon / Terraza",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Cocina Equipada",
-  "Desayuno Buffet",
-  "Escritorio",
-  "Estacionamiento Gratis",
-  "Living",
-  "Pequeño refrigerador",
-  "Piscina Común",
-  "Refrigerador",
-  "Secador de pelo",
-  "Toallas"
+  "Up to 5 guests",
+  "Ceiling fan",
+  "Air conditioning",
+  "Wardrobe",
+  "Balcony / Terrace",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Equipped kitchen",
+  "Buffet breakfast",
+  "Desk",
+  "Free parking",
+  "Living area",
+  "Mini fridge",
+  "Shared pool",
+  "Refrigerator",
+  "Hair dryer",
+  "Towels"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
@@ -64,21 +64,21 @@ const otherRooms = [
     title: "Beach Studio",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80",
     slug: "beach-studio",
-    specs: "3 huéspedes | 1 Cama King",
-    description: "Estudio práctico y confortable a pocos pasos de Playa Cocles, ideal para una estadía funcional junto al mar."
+    specs: "3 guests | 1 king bed",
+    description: "Practical and comfortable studio just steps from Playa Cocles, ideal for a functional stay by the sea."
   },
   {
     title: "Ocean Beach View Suites",
     image: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=600&q=80",
     slug: "ocean-beach-view-suites",
-    specs: "55 m² | 6 huéspedes | 3 Camas",
-    description: "Suites en planta alta con vista panorámica al mar, diseñadas para una estadía amplia y cómoda."
+    specs: "55 m² | 6 guests | 3 Beds",
+    description: "Upper-floor suites with panoramic sea views, designed for a spacious and comfortable stay."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -111,19 +111,19 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Despierta cada mañana en nuestro apartamento vacacional y siente la cercanía del mar Caribe. Ubicado a solo unos pasos de la paradisíaca Playa Cocles, este refugio ofrece la combinación perfecta de lujo y proximidad a la playa. Imagínate comenzar tus días con un corto paseo y encontrarte en las suaves arenas de una de las playas más bellas de la zona.
+              Wake up every morning in our vacation apartment and feel the closeness of the Caribbean Sea. Located just steps from the paradise-like Playa Cocles, this retreat offers the perfect combination of luxury and beach proximity. Imagine starting your day with a short walk and arriving at the soft sands of one of the area's most beautiful beaches.
             </p>
             <p>
-              La habitación principal es un verdadero santuario de descanso, con una cama king size para un sueño reparador y un acogedor living adyacente equipado con una TV de 55 pulgadas, ideal para relajarte después de un día de sol y surf. Además, la segunda habitación, con dos cómodas camas individuales, ofrece un espacio adicional y acogedor, ideal para amigos o familiares. Ambas habitaciones cuentan con aire acondicionado para asegurar tu confort.
+              The main bedroom is a true sanctuary of rest, with a king-size bed for a restorative sleep and a cozy adjacent living area equipped with a 55-inch TV, ideal for relaxing after a day of sun and surf. In addition, the second bedroom, with two comfortable single beds, offers an extra cozy space, ideal for friends or family. Both bedrooms have air conditioning to ensure your comfort.
             </p>
             <p>
-              La cocina de estilo americano es un verdadero punto de encuentro en el apartamento, completamente equipada y con una amplia isla central que invita a compartir momentos culinarios y charlas amenas.
+              The American-style kitchen is a true gathering point in the apartment, fully equipped and featuring a large central island that invites shared meals and pleasant conversation.
             </p>
             <p>
-              Pero lo que realmente hace especial a este apartamento es su ubicación. Situado en una zona vibrante, estarás rodeado de exquisitos restaurantes y a solo unos pasos de la famosa escena surfera de Playa Cocles. Aquí, cada día es una nueva oportunidad para sumergirse en la cultura local y disfrutar de todo lo que la vida en la playa tiene para ofrecer.
+              What truly makes this apartment special is its location. Set in a lively area, you will be surrounded by excellent restaurants and just steps from Playa Cocles's famous surf scene. Here, every day is a new opportunity to immerse yourself in local culture and enjoy everything beach life has to offer.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              Este apartamento no es solo un lugar para alojarse; es tu puerta de entrada a una experiencia vacacional única, donde el lujo se encuentra con la aventura en el corazón del Caribe. ¡Reserva ahora y prepárate para vivir unas vacaciones que siempre recordarás!
+              This apartment is not just a place to stay; it is your gateway to a unique vacation experience where luxury meets adventure in the heart of the Caribbean. Book now and get ready for a vacation you will always remember.
             </p>
           </div>
 
@@ -175,10 +175,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -195,10 +195,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -249,7 +249,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

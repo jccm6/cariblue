@@ -4,7 +4,7 @@ import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Beach Studio";
-const description = "Disfruta de la comodidad y la conveniencia en este estudio encantador, ubicado a pocos pasos de Playa Cocles. Ideal para viajeros y profesionales, el estudio cuenta con una amplia cama King en el segundo piso, aire acondicionado para tu confort, y conexión WiFi de alta velocidad. El primer piso ofrece una cocina completamente equipada para preparar tus platos favoritos. Con un escritorio espacioso, este lugar es perfecto para trabajar en un entorno tranquilo y relajante.";
+const description = "Enjoy comfort and convenience in this charming studio, located just steps from Playa Cocles. Ideal for travelers and professionals, the studio features a spacious king bed on the second floor, air conditioning for your comfort and high-speed Wi-Fi. The first floor offers a fully equipped kitchen for preparing your favorite meals. With a spacious desk, this place is perfect for working in a calm and relaxing environment.";
 
 const images = [
   "https://i.imgur.com/Gn9vXrn.jpeg",
@@ -15,63 +15,63 @@ const images = [
 ];
 
 const amenities = [
-  "1 cama King",
-  "3 personas máximo",
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Armario en la habitación",
-  "Balcon / Terraza",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Cocina Equipada",
-  "Desayuno Buffet",
-  "Escritorio",
-  "Estacionamiento Gratis",
-  "Living",
-  "Pequeño refrigerador",
-  "Piscina Común",
-  "Refrigerador",
-  "Secador de pelo",
-  "Toallas"
+  "1 king bed",
+  "Up to 3 guests",
+  "Ceiling fan",
+  "Air conditioning",
+  "Wardrobe",
+  "Balcony / Terrace",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Equipped kitchen",
+  "Buffet breakfast",
+  "Desk",
+  "Free parking",
+  "Living area",
+  "Mini fridge",
+  "Shared pool",
+  "Refrigerator",
+  "Hair dryer",
+  "Towels"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
 const otherRooms = [
   {
-    title: "Bungalow con 2 camas Queen",
+    title: "Bungalow with 2 Queen Beds",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80",
     slug: "bungalow-queen",
-    specs: "35 m² | 4 huéspedes | 2 Camas",
-    description: "Habitaciones tipo bungalow en el sector selvático, ideales para una experiencia de descanso entre naturaleza."
+    specs: "35 m² | 4 guests | 2 Beds",
+    description: "Bungalow-style rooms in the jungle area, ideal for a relaxing experience surrounded by nature."
   },
   {
     title: "Ocean Pool View Suites",
     image: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=600&q=80",
     slug: "ocean-pool-view-suites",
-    specs: "55 m² | 6 huéspedes | 3 Camas",
-    description: "Suites en planta baja con acceso directo a piscina, diseñadas para una estadía cómoda y funcional."
+    specs: "55 m² | 6 guests | 3 Beds",
+    description: "Ground-floor suites with direct pool access, designed for a comfortable and functional stay."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -104,13 +104,13 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Disfruta de la comodidad y la conveniencia en este estudio encantador, ubicado a pocos pasos de Playa Cocles. Ideal para viajeros y profesionales, el estudio cuenta con una amplia cama King en el segundo piso, aire acondicionado para tu confort, y conexión WiFi de alta velocidad.
+              Enjoy comfort and convenience in this charming studio, located just steps from Playa Cocles. Ideal for travelers and professionals, the studio features a spacious king bed on the second floor, air conditioning for your comfort and high-speed Wi-Fi.
             </p>
             <p>
-              El primer piso ofrece una cocina completamente equipada para preparar tus platos favoritos. Con un escritorio espacioso, este lugar es perfecto para trabajar en un entorno tranquilo y relajante.
+              The first floor offers a fully equipped kitchen for preparing your favorite meals. With a spacious desk, this place is perfect for working in a calm and relaxing environment.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y disfruta una estadía práctica y confortable a pasos del mar!
+              Book now and enjoy a practical and comfortable stay just steps from the sea.
             </p>
           </div>
 
@@ -162,10 +162,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -182,10 +182,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -236,7 +236,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

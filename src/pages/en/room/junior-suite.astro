@@ -4,7 +4,7 @@ import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Junior Suite";
-const description = "Ubicada en el corazón de nuestra exuberante jungla y a pasos de la piscina principal, esta exclusiva habitación especial destaca por su generoso espacio de 80 metros cuadrados, convirtiéndola en la opción más amplia disponible en nuestro establecimiento. Equipada con dos camas queen size y un encantador porche provisto de hamacas y sillas, esta habitación ofrece un ambiente de comodidad y relajación incomparables.";
+const description = "Located in the heart of our lush jungle and steps from the main pool, this exclusive special room stands out for its generous 80 square meters, making it the most spacious option available at our property. Equipped with two queen-size beds and a charming porch with hammocks and chairs, this room offers an atmosphere of unmatched comfort and relaxation.";
 
 const images = [
   "https://i.imgur.com/nYhla72.jpeg",
@@ -18,60 +18,60 @@ const images = [
 ];
 
 const amenities = [
-  "1 cama King",
-  "5 personas máximo agregando cama suplatoria",
+  "1 king bed",
+  "Up to 5 guests with an extra bed",
   "80 m²",
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Cama extra suplementaria si se requiere",
-  "Dispensadores con Shampoo, acondicionador y gel de ducha biodegradables preparadas en la Costa Caribeña",
-  "Escritorio con toma corriente USB",
-  "Habitación no fumadores",
-  "Living",
-  "Pequeño refrigerador",
-  "Secador de pelo",
-  "Terraza con hamacas"
+  "Ceiling fan",
+  "Air conditioning",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Extra bed available if needed",
+  "Biodegradable shampoo, conditioner and body gel dispensers made on the Caribbean coast",
+  "Desk with USB outlet",
+  "Non-smoking room",
+  "Living area",
+  "Mini fridge",
+  "Hair dryer",
+  "Terrace with hammocks"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
 const otherRooms = [
   {
-    title: "Bungalow con 2 camas Queen",
+    title: "Bungalow with 2 Queen Beds",
     image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80",
     slug: "bungalow-queen",
-    specs: "35 m² | 4 huéspedes | 2 Camas",
-    description: "Nuestras habitaciones tipo bungalow con dos camas queen, en el sector selvático, son una opción ideal para una estadía tranquila."
+    specs: "35 m² | 4 guests | 2 Beds",
+    description: "Our bungalow-style rooms with two queen beds in the jungle area are an ideal choice for a peaceful stay."
   },
   {
-    title: "Habitación Superior King",
+    title: "Superior King Room",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80",
     slug: "superior-king",
-    specs: "35 m² | 3 huéspedes | 1 Cama King",
-    description: "Nuestras exclusivas habitaciones superiores en el sector selvático representan una opción de alojamiento perfecta para parejas."
+    specs: "35 m² | 3 guests | 1 king bed",
+    description: "Our exclusive superior rooms in the jungle area are a perfect accommodation option for couples."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -104,13 +104,13 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Ubicada en el corazón de nuestra exuberante jungla y a pasos de la piscina principal, esta exclusiva habitación especial destaca por su generoso espacio de 80 metros cuadrados, convirtiéndola en la opción más amplia disponible en nuestro establecimiento. Equipada con dos camas queen size y un encantador porche provisto de hamacas y sillas, esta habitación ofrece un ambiente de comodidad y relajación incomparables.
+              Located in the heart of our lush jungle and steps from the main pool, this exclusive special room stands out for its generous 80 square meters, making it the most spacious option available at our property. Equipped with two queen-size beds and a charming porch with hammocks and chairs, this room offers an atmosphere of unmatched comfort and relaxation.
             </p>
             <p>
-              Los interiores de esta habitación están diseñados con materiales naturales como madera y piedra, añadiendo un toque de autenticidad a la experiencia de alojamiento. Además, esta categoría de habitación cuenta con instalaciones adaptadas para huéspedes con discapacidades, garantizando así la accesibilidad para todos nuestros visitantes. Se ruega tener en cuenta que nuestras habitaciones son para no fumadores.
+              The interiors of this room are designed with natural materials such as wood and stone, adding a touch of authenticity to the lodging experience. In addition, this room category includes facilities adapted for guests with disabilities, ensuring accessibility for all our visitors. Please note that our rooms are non-smoking.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y vive la Junior Suite más amplia de nuestro resort en plena selva caribeña!
+              Book now and experience the most spacious Junior Suite at our resort in the heart of the Caribbean jungle.
             </p>
           </div>
 
@@ -162,10 +162,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -182,10 +182,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -236,7 +236,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>

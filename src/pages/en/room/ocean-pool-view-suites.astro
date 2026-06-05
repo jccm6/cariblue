@@ -4,7 +4,7 @@ import RoomGallery from '../../../components/RoomGallery.astro';
 
 // Room detail values
 const title = "Ocean Pool View Suites";
-const description = "Situado en una ubicación privilegiada frente al mar, este distinguido módulo consta de tres suites en la planta baja, todas ellas con acceso directo a una exquisita piscina con cascada.";
+const description = "Situated in a privileged oceanfront location, this distinguished module consists of three ground-floor suites, all with direct access to an exquisite waterfall pool.";
 
 const images = [
   "https://i.imgur.com/g2fSlLr.jpeg",
@@ -21,40 +21,40 @@ const images = [
 ];
 
 const amenities = [
-  "1 cama King y 2 camas matrimoniales",
-  "2 habitaciones",
+  "1 king bed and 2 double beds",
+  "2 bedrooms",
   "55 m²",
-  "6 personas máximo",
-  "Abanico de techo",
-  "Aire acondicionado",
-  "Baños privados con ducha y agua caliente",
-  "Cable Tv plasma 32 pulgadas",
-  "Caja de seguridad",
-  "Cama extra suplementaria si se requiere",
+  "Up to 6 guests",
+  "Ceiling fan",
+  "Air conditioning",
+  "Private bathroom with hot water",
+  "32-inch plasma TV with cable",
+  "Safe",
+  "Extra bed available if needed",
   "Coffee maker",
-  "Dispensadores con Shampoo, acondicionador y gel de ducha biodegradables preparadas en la Costa Caribeña",
-  "Escritorio",
-  "Habitación no fumadores",
-  "Living",
-  "Refrigerador",
-  "Secador de pelo",
-  "Terraza con hamacas y juego de sillas",
-  "Veladores con toma de corriente USB"
+  "Biodegradable shampoo, conditioner and body gel dispensers made on the Caribbean coast",
+  "Desk",
+  "Non-smoking room",
+  "Living area",
+  "Refrigerator",
+  "Hair dryer",
+  "Terrace with hammocks and seating",
+  "Bedside lamps with USB outlets"
 ];
 
 const services = [
-  "Servicio a la habitación",
-  "Wifi"
+  "Room service",
+  "Wi-Fi"
 ];
 
 const reasons = [
-  { text: "Servicio de calidad", icon: "thumbs-up" },
-  { text: "Ubicación inmejorable", icon: "map-pin" },
-  { text: "La mejor relación precio/calidad", icon: "currency-dollar" },
-  { text: "Habitaciones con baño privado", icon: "home" },
-  { text: "Restaurante La Jungla", icon: "cake" },
-  { text: "2 piscinas y jacuzzi", icon: "sparkles" },
-  { text: "Bar de piscina", icon: "drink" },
+  { text: "Quality service", icon: "thumbs-up" },
+  { text: "Excellent location", icon: "map-pin" },
+  { text: "Best value for money", icon: "currency-dollar" },
+  { text: "Rooms with private bathrooms", icon: "home" },
+  { text: "La Jungla Restaurant", icon: "cake" },
+  { text: "2 pools and jacuzzi", icon: "sparkles" },
+  { text: "Pool bar", icon: "drink" },
   { text: "Sushi Wave", icon: "star" }
 ];
 
@@ -63,21 +63,21 @@ const otherRooms = [
     title: "Junior Suite",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80",
     slug: "junior-suite",
-    specs: "80 m² | 5 huéspedes | 2 Camas",
-    description: "Ubicada en el sector jungla, cerca de la piscina principal, es una de nuestras opciones más espaciosas para una estadía de confort."
+    specs: "80 m² | 5 guests | 2 Beds",
+    description: "Located in the jungle area near the main pool, it is one of our most spacious options for a comfortable stay."
   },
   {
     title: "Ocean Beach View Suites",
     image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80",
     slug: "ocean-beach-view-suites",
-    specs: "55 m² | 6 huéspedes | 3 Camas",
-    description: "Suites ubicadas en planta alta con magnífica vista panorámica al mar y distribución ideal para grupos."
+    specs: "55 m² | 6 guests | 3 Beds",
+    description: "Upper-floor suites with a magnificent panoramic sea view and an ideal layout for groups."
   }
 ];
 ---
 
 <Layout 
-  title={`${title} | Habitaciones Cariblue Resort`}
+  title={`${title} | Cariblue Resort Rooms`}
   description={description}
 >
   <main class="bg-white">
@@ -110,13 +110,13 @@ const otherRooms = [
           <!-- Description text -->
           <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
             <p>
-              Situado en una ubicación privilegiada frente al mar, este distinguido módulo consta de tres suites en la planta baja, todas ellas con acceso directo a una exquisita piscina con cascada.
+              Situated in a privileged oceanfront location, this distinguished module consists of three ground-floor suites, all with direct access to an exquisite waterfall pool.
             </p>
             <p>
-              Las Ocean Pool View Suites presentan un diseño amplio y abierto, como un loft, que incluye dos habitaciones y un baño. La habitación principal está equipada con una cama King, mientras que la segunda habitación ofrece dos cómodas camas matrimoniales, brindando un alojamiento confortable para los huéspedes.
+              Ocean Pool View Suites feature a spacious open loft-style design that includes two bedrooms and one bathroom. The main bedroom is equipped with a king bed, while the second bedroom offers two comfortable double beds, providing a comfortable stay for guests.
             </p>
             <p class="font-semibold italic text-[#0f2e59]">
-              ¡Reserva ahora y disfruta acceso directo a la piscina en nuestras Ocean Pool View Suites!
+              Book now and enjoy direct pool access in our Ocean Pool View Suites.
             </p>
           </div>
 
@@ -168,10 +168,10 @@ const otherRooms = [
         <!-- Right Side: Sidebar Cards (4 columns) -->
         <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
           
-          <!-- Card 1: Por qué elegir Cariblue -->
+          <!-- Card 1: Why Choose Cariblue -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Por qué elegir Cariblue
+              Why Choose Cariblue
             </div>
             <div class="p-6">
               <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
@@ -188,10 +188,10 @@ const otherRooms = [
             </div>
           </div>
 
-          <!-- Card 2: Información y reservas -->
+          <!-- Card 2: Information and reservations -->
           <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
             <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
-              Información y reservas
+              Information and reservations
             </div>
             <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
               <div class="flex items-start space-x-3.5">
@@ -242,7 +242,7 @@ const otherRooms = [
                 </div>
                 <div>
                   <a href="/#habitaciones" class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
-                    Ver Habitación &rarr;
+                    View Room &rarr;
                   </a>
                 </div>
               </div>
