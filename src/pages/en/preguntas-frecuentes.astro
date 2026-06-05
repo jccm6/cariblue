@@ -2,11 +2,132 @@
 import Layout from "../../layouts/Layout.astro";
 
 const faqs = [
-  { id: "distance", question: "HOW FAR IS CARIBLUE FROM PUERTO VIEJO?", answer: "Cariblue Beach and Jungle Resort is 2 kilometers from downtown Puerto Viejo, in front of Playa Cocles. We have a tour desk by the road and two entrances to the property.", isOpen: true },
-  { id: "animals", question: "WILL WE SEE WILD ANIMALS AT THE RESORT?", answer: "Yes. Walking to your room you will most likely see wildlife. Our jungle setting is home to sloths, frogs, agoutis, toucans and several monkey species.", isOpen: false },
-  { id: "weather", question: "WHAT IS THE WEATHER LIKE AND WHEN IS THE BEST TIME TO VISIT?", answer: "The climate is tropical, warm and humid. Rain can be frequent. The best months to visit are from August to October.", isOpen: false },
-  { id: "pet", question: "IS THE HOTEL PET FRIENDLY?", answer: "For the safety of the local wildlife and your pet, domestic animals are not allowed in the resort.", isOpen: false },
-  { id: "reserve", question: "WHAT DO I NEED TO BOOK?", answer: "You can book directly through our website any time of day. If you have questions, call +506 2750 0035 or contact us on WhatsApp.", isOpen: false },
+  {
+    id: "distance",
+    question: "HOW FAR IS CARIBLUE FROM PUERTO VIEJO?",
+    answer:
+      "Cariblue Beach and Jungle Resort is located 2 kilometers from downtown Puerto Viejo. In front of Playa Cocles, we have a reception and tour desk by the roadside, plus 2 entrances: one 25 meters from the tour desk and another 75 meters away, which is the main hotel entrance.",
+    isOpen: true,
+  },
+  {
+    id: "animals",
+    question: "WILL WE SEE WILD ANIMALS AT THE RESORT?",
+    answer:
+      "On the way to your room, it is very likely that you will see wildlife. We have more than 2,000 square meters of jungle, so we live alongside a great variety of animals throughout the property. Among them is a unique family of sloths that regularly roams the resort. You may also see frogs on the walk to the rooms, so please be careful not to step on them. You might also spot agoutis, toucans, howler monkeys, white-faced monkeys and many more species that come through the hotel. You will always have a wild friend to admire during your stay.",
+    isOpen: false,
+  },
+  {
+    id: "climate",
+    question: "WHAT IS THE WEATHER LIKE AND WHEN IS THE BEST TIME TO VISIT?",
+    answer:
+      "The climate is tropical, warm and humid. Rain is unpredictable and often heavy. The best time to visit the area is from August to October.",
+    isOpen: false,
+  },
+  {
+    id: "petfriendly",
+    question: "IS THE HOTEL PET FRIENDLY?",
+    answer:
+      "The resort has a serious commitment to local wildlife. Our staff and owners love animals, but due to recommendations from the authorities and to protect the local fauna, we are unfortunately forced to prohibit domestic animals from entering the resort. This helps avoid any incident, since there are poisonous frogs on the property that could be lethal if ingested by a domestic animal. We also have many agoutis and other species that freely move around the resort.",
+    isOpen: false,
+  },
+  {
+    id: "booking",
+    question: "WHAT DO I NEED TO BOOK?",
+    answer:
+      "You can book your stay through our website without speaking to anyone. Our website is available 24 hours a day and the information is updated every minute. If you have any questions, you can call us at +506 2750 0035 or reach us on WhatsApp.",
+    isOpen: false,
+  },
+  {
+    id: "allinclusive",
+    question: "IS THIS AN ALL-INCLUSIVE HOTEL?",
+    answer:
+      "We are a resort with multiple services in addition to lodging, such as a restaurant, wet bar, spa and wellness center, tour desk and souvenir shop. All services can be enjoyed at the hotel in different ways. We offer rate plans that include breakfast, half board and full board, plus an eWallet system that lets guests load money and spend it across the resort without needing any payment method other than their eWallet, making the experience more pleasant, simple and sophisticated.",
+    isOpen: false,
+  },
+  {
+    id: "children",
+    question: "HOW MUCH DO CHILDREN PAY?",
+    answer:
+      "Infants from 0 to 5 years old stay free when sharing a room and bed with their parents. Children from 6 to 12 years old pay 50% of the rate. Children 13 years and older pay the full rate.",
+    isOpen: false,
+  },
+  {
+    id: "parking",
+    question: "DO YOU HAVE PARKING?",
+    answer:
+      "Yes, we have 2 parking areas: one in the Jungle Area and one in the Beach Area, with capacity for more than XX vehicles. The parking area is monitored by cameras and has 24-hour security.",
+    isOpen: false,
+  },
+  {
+    id: "ac",
+    question: "DO YOUR ROOMS HAVE AIR CONDITIONING?",
+    answer:
+      "Yes, our rooms, bungalows and villas are equipped with independent, state-of-the-art air conditioning units with quiet operation, as well as ceiling fans for those who prefer to enjoy the natural Caribbean breeze.",
+    isOpen: false,
+  },
+  {
+    id: "restaurant",
+    question: "DO YOU HAVE A RESTAURANT?",
+    answer:
+      "Yes, we have two spectacular dining options: Restaurante La Jungla, located next to the main pool and specializing in Caribbean-Mediterranean fusion signature cuisine, and Sushi Wave, located in front of Playa Cocles and specializing in Japanese-Peruvian Nikkei cuisine and cocktails, plus the Congo Wet Bar in the pool area.",
+    isOpen: false,
+  },
+  {
+    id: "hairdryer",
+    question: "DO THE ROOMS HAVE A HAIR DRYER?",
+    answer:
+      "Yes, all of our rooms, bungalows and villas have a hair dryer installed in the bathroom for your convenience.",
+    isOpen: false,
+  },
+  {
+    id: "wifi",
+    question: "DO YOU HAVE WIFI IN THE ROOMS?",
+    answer:
+      "Yes, we offer high-speed fiber-optic WiFi completely free and unlimited. Access covers all rooms, bungalow terraces and common social areas such as the pools, lobby and restaurants.",
+    isOpen: false,
+  },
+  {
+    id: "facilities",
+    question: "WHAT FACILITIES DOES THE RESORT HAVE?",
+    answer:
+      "The resort has 2 freshwater pools, a jacuzzi, the main restaurant La Jungla, the beach restaurant Sushi Wave, a wet bar, a recreation area with foosball and billiards, private rainforest trails, Surya Wellness Spa, a gym, a tour desk, 24-hour reception and guarded parking.",
+    isOpen: false,
+  },
+  {
+    id: "tourdesk",
+    question: "DO YOU HAVE A TOUR DESK TO ARRANGE ACTIVITIES DURING MY STAY?",
+    answer:
+      "Yes, we have a specialized Tour Desk located next to the reception. Our local staff will be happy to advise you and help you book canopy tours, hikes in Cahuita, surf lessons at Playa Cocles, bicycle rentals, horseback rides, rafting on the Pacuare River or visits to the Bribri cacao reserves.",
+    isOpen: false,
+  },
+  {
+    id: "spa",
+    question: "CAN I GET A MASSAGE AT THE RESORT?",
+    answer:
+      "Absolutely! Our Surya Wellness & Spa offers a wide range of therapeutic massages, relaxing CBD oil massages, chocolate treatments and organic scrubs made with 100% artisanal Costa Rican ingredients, all in a peaceful space surrounded by nature.",
+    isOpen: false,
+  },
+  {
+    id: "voltage",
+    question: "WHAT VOLTAGE DOES COSTA RICA USE AND WHAT TYPE OF OUTLET?",
+    answer:
+      "Costa Rica uses 120 volts at 60 Hz. The plugs and outlets are type A (Japanese) and B (American), although adapters are available for different plug types.",
+    isOpen: false,
+  },
+  {
+    id: "water",
+    question: "IS IT SAFE TO DRINK TAP WATER AT THE RESORT?",
+    answer:
+      "Yes, we have potable water throughout the resort. However, many people in the Puerto Viejo community use well water, so we recommend avoiding it outside the resort.",
+    isOpen: false,
+  },
+  {
+    id: "laundry",
+    question: "DO YOU OFFER LAUNDRY SERVICE?",
+    answer:
+      "Yes, we offer washing and drying for your clothes. The price is charged by weight, and you can check the rate at reception.",
+    isOpen: false,
+  },
 ];
 ---
 
@@ -17,15 +138,110 @@ const faqs = [
 >
   <main>
     <section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-      <div class="absolute inset-0 z-0"><div class="absolute inset-0 bg-black/60 z-10"></div><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80" alt="Scenic coastline ocean background" class="w-full h-full object-cover" /></div>
-      <div class="relative z-20 max-w-4xl mx-auto mt-8"><h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Frequently Asked Questions</h1></div>
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <img
+          src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80"
+          alt="Scenic coastline ocean background"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="relative z-20 max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+          Frequently Asked Questions
+        </h1>
+      </div>
     </section>
-    <section class="bg-white py-20 px-6 md:px-12 lg:px-24"><div class="max-w-4xl mx-auto"><div class="border border-slate-100 rounded-lg shadow-xl divide-y divide-slate-100 overflow-hidden bg-white">{faqs.map((faq) => (<div class="faq-item py-4.5 px-6 md:px-8 hover:bg-slate-50/30 transition-colors"><button class="faq-trigger w-full flex justify-between items-center text-left focus:outline-none cursor-pointer group" data-target={faq.id} aria-expanded={faq.isOpen ? "true" : "false"}><span class="text-xs md:text-[13px] font-bold text-[#0f2e59] tracking-wider group-hover:text-accent transition-colors leading-relaxed uppercase pr-4">{faq.question}</span><span class="faq-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none shrink-0 border border-slate-100 rounded-full group-hover:border-[#e60067]/20 transition-all">{faq.isOpen ? "−" : "+"}</span></button><div id={faq.id} class={`faq-content overflow-hidden transition-all duration-300 ease-in-out ${faq.isOpen ? 'max-h-75 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}><p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-5 rounded-md border-l-2 border-[#e60067]">{faq.answer}</p></div></div>))}</div></div></section>
-    <section class="bg-slate-50/50 py-16 px-6 text-center border-t border-slate-100"><div class="max-w-3xl mx-auto"><h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-5 leading-tight">Still have a question?</h2><p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed mb-8 max-w-2xl mx-auto">Feel free to contact us directly. Our bilingual customer service team is ready to help with whatever you need for your trip.</p><a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300">Contact us</a></div></section>
+
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+      <div class="max-w-4xl mx-auto">
+        <div class="border border-slate-100 rounded-lg shadow-xl divide-y divide-slate-100 overflow-hidden bg-white">
+          {faqs.map((faq) => (
+            <div class="faq-item py-4.5 px-6 md:px-8 hover:bg-slate-50/30 transition-colors">
+              <button
+                class="faq-trigger w-full flex justify-between items-center text-left focus:outline-none cursor-pointer group"
+                data-target={faq.id}
+                aria-expanded={faq.isOpen ? "true" : "false"}
+              >
+                <span class="text-xs md:text-[13px] font-bold text-[#0f2e59] tracking-wider group-hover:text-accent transition-colors leading-relaxed uppercase pr-4">
+                  {faq.question}
+                </span>
+                <span class="faq-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none shrink-0 border border-slate-100 rounded-full group-hover:border-accent/20 transition-all">
+                  {faq.isOpen ? "−" : "+"}
+                </span>
+              </button>
+
+              <div
+                id={faq.id}
+                class={`faq-content overflow-hidden transition-all duration-300 ease-in-out ${faq.isOpen ? "max-h-75 opacity-100 mt-4" : "max-h-0 opacity-0"}`}
+              >
+                <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-5 rounded-md border-l-2 border-accent">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50/50 py-16 px-6 text-center border-t border-slate-100">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-5 leading-tight">
+          Still have a question?
+        </h2>
+        <p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+          Feel free to contact us directly. Our bilingual customer service team is ready to help with whatever you need for your trip.
+        </p>
+        <a
+          href="https://wa.me/50683141965"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300"
+        >
+          Contact us
+        </a>
+      </div>
+    </section>
   </main>
 </Layout>
 
 <script>
-  const triggers = document.querySelectorAll('.faq-trigger');
-  triggers.forEach((trigger) => { trigger.addEventListener('click', () => { const targetId = trigger.getAttribute('data-target'); const content = document.getElementById(targetId || ''); const icon = trigger.querySelector('.faq-icon'); if (!content || !icon) return; const isExpanded = trigger.getAttribute('aria-expanded') === 'true'; triggers.forEach((t) => { const tid = t.getAttribute('data-target'); const c = document.getElementById(tid || ''); const ic = t.querySelector('.faq-icon'); if (c && ic) { t.setAttribute('aria-expanded', 'false'); c.classList.remove('max-h-[300px]', 'opacity-100', 'mt-4'); c.classList.add('max-h-0', 'opacity-0'); ic.textContent = '+'; } }); if (!isExpanded) { trigger.setAttribute('aria-expanded', 'true'); content.classList.remove('max-h-0', 'opacity-0'); content.classList.add('max-h-[300px]', 'opacity-100', 'mt-4'); icon.textContent = '−'; } else { trigger.setAttribute('aria-expanded', 'false'); content.classList.remove('max-h-[300px]', 'opacity-100', 'mt-4'); content.classList.add('max-h-0', 'opacity-0'); icon.textContent = '+'; } }); });
+  const triggers = document.querySelectorAll(".faq-trigger");
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const targetId = trigger.getAttribute("data-target");
+      const content = document.getElementById(targetId || "");
+      const icon = trigger.querySelector(".faq-icon");
+
+      if (!content || !icon) return;
+
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+
+      triggers.forEach((t) => {
+        const tid = t.getAttribute("data-target");
+        const c = document.getElementById(tid || "");
+        const ic = t.querySelector(".faq-icon");
+        if (c && ic) {
+          t.setAttribute("aria-expanded", "false");
+          c.classList.remove("max-h-[300px]", "opacity-100", "mt-4");
+          c.classList.add("max-h-0", "opacity-0");
+          ic.textContent = "+";
+        }
+      });
+
+      if (!isExpanded) {
+        trigger.setAttribute("aria-expanded", "true");
+        content.classList.remove("max-h-0", "opacity-0");
+        content.classList.add("max-h-[300px]", "opacity-100", "mt-4");
+        icon.textContent = "−";
+      } else {
+        trigger.setAttribute("aria-expanded", "false");
+        content.classList.remove("max-h-[300px]", "opacity-100", "mt-4");
+        content.classList.add("max-h-0", "opacity-0");
+        icon.textContent = "+";
+      }
+    });
+  });
 </script>
