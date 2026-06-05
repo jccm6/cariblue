@@ -29,6 +29,37 @@ export function localizePath(path: string, locale: Locale): string {
 	return `/${locale}${normalizedPath}`;
 }
 
+export function getLocalizedPath(pathname: string, locale: Locale): string {
+	const normalizedPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+
+	if (locale === defaultLocale) {
+		if (normalizedPath === "/en" || normalizedPath === "/en/") {
+			return "/";
+		}
+
+		if (normalizedPath.startsWith("/en/")) {
+			const path = normalizedPath.slice(3);
+			return path === "" ? "/" : path;
+		}
+
+		return normalizedPath;
+	}
+
+	if (normalizedPath === "/") {
+		return `/${locale}/`;
+	}
+
+	if (normalizedPath === `/${locale}` || normalizedPath === `/${locale}/`) {
+		return `/${locale}/`;
+	}
+
+	if (normalizedPath.startsWith(`/${locale}/`)) {
+		return normalizedPath;
+	}
+
+	return `/${locale}${normalizedPath}`;
+}
+
 export function getHomePath(locale: Locale): string {
 	return localizePath("/", locale);
 }

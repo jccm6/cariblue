@@ -1,5 +1,5 @@
 ---
-import { getHomePath, getLocale, localizePath, type Locale } from "../i18n/config";
+import { getHomePath, getLocalizedPath, getLocale, localizePath, type Locale } from "../i18n/config";
 import { getUi } from "../i18n/ui";
 
 interface Props {
@@ -11,7 +11,7 @@ const t = getUi(lang).header;
 const homeHref = getHomePath(lang);
 const roomsHref = localizePath("/habitaciones", lang);
 const allInclusiveHref = localizePath("/all-inclusive", lang);
-const alternateHref = lang === "es" ? "/en/" : "/";
+const alternateHref = getLocalizedPath(Astro.url.pathname, lang === "es" ? "en" : "es");
 ---
 
 <header class="w-full z-50 absolute top-0 left-0 text-white font-sans bg-primary/30">
@@ -62,29 +62,15 @@ const alternateHref = lang === "es" ? "/en/" : "/";
       </a>
       </div>
 
-      <!-- Language Dropdown -->
-      <div class="relative group cursor-pointer flex items-center space-x-1 py-1">
-        <span class="inline-block w-4 h-3 bg-red-600 border border-yellow-400 relative overflow-hidden mr-1">
-          <span class="absolute inset-x-0 top-0 h-1/3 bg-red-600"></span>
-          <span class="absolute inset-x-0 top-1/3 h-1/3 bg-yellow-500"></span>
-          <span class="absolute inset-x-0 bottom-0 h-1/3 bg-red-600"></span>
-        </span>
-        <span class="uppercase">{t.currentLanguage}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-2.5 h-2.5 transition-transform group-hover:rotate-180">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-        </svg>
-        <!-- Dropdown elements -->
-        <div class="absolute right-0 top-full mt-1 bg-slate-900 border border-white/10 rounded-sm shadow-xl hidden group-hover:block w-28 text-left overflow-hidden z-50">
-          <a href={alternateHref} aria-label={t.alternateLanguageLabel} class="block px-3 py-2 hover:bg-slate-800 text-[11px] transition-colors  items-center space-x-2">
-            <span class="inline-block w-4 h-3 bg-blue-900 border border-white relative overflow-hidden">
-              <span class="absolute inset-0 bg-blue-800"></span>
-              <span class="absolute inset-y-0 left-1/3 right-1/3 bg-white"></span>
-              <span class="absolute inset-x-0 top-1/3 bottom-1/3 bg-red-600"></span>
-            </span>
-            <span>{t.alternateLanguage}</span>
-          </a>
-        </div>
-      </div>
+      <a
+        href={alternateHref}
+        aria-label={t.alternateLanguageLabel}
+        class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[11px] font-black tracking-widest uppercase transition-colors hover:bg-white/15 hover:border-white/25"
+      >
+        <span>{t.currentLanguage}</span>
+        <span class="text-white/40">|</span>
+        <span class="text-white/85">{t.alternateLanguage}</span>
+      </a>
     </div>
   </div>
 
@@ -190,6 +176,19 @@ const alternateHref = lang === "es" ? "/en/" : "/";
   <!-- Mobile Menu Dropdown -->
   <div id="mobile-menu" class="hidden lg:hidden bg-primary border-b border-white/10 w-full px-6 py-5 text-xs font-black tracking-widest uppercase shadow-xl transition-all duration-300">
     <div class="flex flex-col divide-y divide-white/10">
+      <div class="flex items-center justify-between py-4 text-white/85">
+        <span>{lang === "es" ? "Idioma" : "Language"}</span>
+        <a
+          href={alternateHref}
+          aria-label={t.alternateLanguageLabel}
+          class="mobile-link inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[11px] font-black tracking-widest uppercase transition-colors hover:bg-white/15 hover:border-white/25"
+        >
+          <span>{t.currentLanguage}</span>
+          <span class="text-white/40">|</span>
+          <span class="text-white/85">{t.alternateLanguage}</span>
+        </a>
+      </div>
+
       <a href={homeHref} class="mobile-link py-4 text-white hover:text-pink-400 transition-colors">{t.nav.home}</a>
 
       <details class="group">

@@ -51,11 +51,11 @@ const rooms = {
 		{
 			title: "Beach Apartment",
 			slug: "beach-apartment",
-			description: "Despierta cada mañana en nuestro apartamento vacacional y siente la cercanía del mar Caribe. Ubicado a solo unos pasos de la paradisíaca Playa Cocles.",
-			image: "https://i.imgur.com/UDIGFb5.jpeg",
+			description: "Habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort.",
+			image: "https://i.imgur.com/whD7g3R.png",
 			acreage: "30 m²",
-			guests: "5",
-			beds: "2",
+			guests: "3",
+			beds: "1",
 		},
 		{
 			title: "Triple Económica",
@@ -163,10 +163,10 @@ const rooms = {
 			title: "Beach Apartment",
 			slug: "beach-apartment",
 			description: "Wake up each morning in our vacation apartment and feel the Caribbean Sea nearby, just steps from beautiful Playa Cocles.",
-			image: "https://i.imgur.com/UDIGFb5.jpeg",
+			image: "https://i.imgur.com/whD7g3R.png",
 			acreage: "30 m²",
-			guests: "5",
-			beds: "2",
+			guests: "3",
+			beds: "1",
 		},
 		{
 			title: "Economy Triple",
@@ -282,11 +282,7 @@ const roomPageExtrasEn: Record<string, RoomPageExtra> = {
 	"beach-loft": {
 		title: "Beach Loft",
 		heroImage: "https://i.imgur.com/KTobwyy.png",
-		gallery: [
-			"https://i.imgur.com/KTobwyy.png",
-			"https://i.imgur.com/4L5fXlP.jpeg",
-			"https://i.imgur.com/8gWn6qQ.jpeg",
-		],
+		gallery: ["https://i.imgur.com/KTobwyy.png", "https://i.imgur.com/4L5fXlP.jpeg", "https://i.imgur.com/8gWn6qQ.jpeg"],
 		paragraphs: [
 			"Beach Loft is a practical and welcoming retreat for guests who want to stay close to the sea in a comfortable, easygoing setting.",
 			"Its layout is simple and functional, with the essentials you need for a relaxed stay just steps from the beach.",
@@ -383,11 +379,7 @@ const roomPageExtrasEn: Record<string, RoomPageExtra> = {
 	"triple-economica": {
 		title: "Economy Triple",
 		heroImage: "https://i.imgur.com/mxszw4k.png",
-		gallery: [
-			"https://i.imgur.com/mxszw4k.png",
-			"https://i.imgur.com/Y1vJYcB.jpeg",
-			"https://i.imgur.com/5N8mF5L.jpeg",
-		],
+		gallery: ["https://i.imgur.com/mxszw4k.png", "https://i.imgur.com/Y1vJYcB.jpeg", "https://i.imgur.com/5N8mF5L.jpeg"],
 		paragraphs: [
 			"A comfortable and functional room made for small groups who want a relaxed stay at the resort.",
 			"It offers the essentials for a practical vacation and a pleasant garden-view atmosphere.",
@@ -413,11 +405,7 @@ const roomPageExtrasEn: Record<string, RoomPageExtra> = {
 	"superior-king": {
 		title: "Superior King Room",
 		heroImage: "https://i.imgur.com/sLAn159.png",
-		gallery: [
-			"https://i.imgur.com/sLAn159.png",
-			"https://i.imgur.com/6VxkN6v.jpeg",
-			"https://i.imgur.com/x0dP1Qf.jpeg",
-		],
+		gallery: ["https://i.imgur.com/sLAn159.png", "https://i.imgur.com/6VxkN6v.jpeg", "https://i.imgur.com/x0dP1Qf.jpeg"],
 		paragraphs: [
 			"Our superior rooms are located in the jungle area of the resort and are a great option for couples who want to stay close to nature.",
 			"Each room includes a private terrace with hammocks and outdoor seating so you can enjoy quiet afternoons listening to the sounds of the jungle.",
@@ -441,11 +429,7 @@ const roomPageExtrasEn: Record<string, RoomPageExtra> = {
 	"bungalow-king": {
 		title: "Bungalow King",
 		heroImage: "https://i.imgur.com/OHZmNxu.png",
-		gallery: [
-			"https://i.imgur.com/OHZmNxu.png",
-			"https://i.imgur.com/0w4m8jP.jpeg",
-			"https://i.imgur.com/2o0M2Yg.jpeg",
-		],
+		gallery: ["https://i.imgur.com/OHZmNxu.png", "https://i.imgur.com/0w4m8jP.jpeg", "https://i.imgur.com/2o0M2Yg.jpeg"],
 		paragraphs: [
 			"Located in the hotel's jungle area, surrounded by ancient trees and tropical flowers, these wooden bungalows offer a calm natural retreat for couples.",
 			"The atmosphere is quiet and private, with direct access to the resort's lush surroundings and the comfort of a king bed.",
@@ -469,11 +453,7 @@ const roomPageExtrasEn: Record<string, RoomPageExtra> = {
 	"bungalow-queen": {
 		title: "Bungalow with 2 Queen Beds",
 		heroImage: "https://i.imgur.com/O2BheRC.png",
-		gallery: [
-			"https://i.imgur.com/O2BheRC.png",
-			"https://i.imgur.com/8qH7j7j.jpeg",
-			"https://i.imgur.com/4R3mT2U.jpeg",
-		],
+		gallery: ["https://i.imgur.com/O2BheRC.png", "https://i.imgur.com/8qH7j7j.jpeg", "https://i.imgur.com/4R3mT2U.jpeg"],
 		paragraphs: [
 			"Our jungle bungalows with two queen beds are a great option for couples or families looking for a peaceful stay surrounded by nature.",
 			"Each bungalow includes a private terrace with hammocks and outdoor seating, creating the perfect setting for relaxed afternoons.",
