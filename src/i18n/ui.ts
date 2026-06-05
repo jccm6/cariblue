@@ -4,8 +4,7 @@ export const ui = {
 	es: {
 		layout: {
 			defaultTitle: "Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica",
-			defaultDescription:
-				"Bienvenido a Cariblue Beach & Jungle Resort en Playa Cocles, Puerto Viejo. Experimenta la mezcla perfecta de jungla y playa.",
+			defaultDescription: "Bienvenido a Cariblue Beach & Jungle Resort en Playa Cocles, Puerto Viejo. Experimenta la mezcla perfecta de jungla y playa.",
 		},
 		header: {
 			location: "COCLES BEACH, PUERTO VIEJO, LIMÓN",
@@ -24,36 +23,36 @@ export const ui = {
 				more: "Más",
 			},
 			roomLinks: [
-				["/en/room/triple-economica", "Economy Triple"],
-				["/en/room/superior-king", "Superior King Room"],
-				["/en/room/bungalow-king", "Bungalow King"],
-				["/en/room/bungalow-queen", "Bungalow with 2 Queen Beds"],
-				["/en/room/junior-suite", "Junior Suite"],
-				["/en/room/jungle-house", "Jungle House"],
-				["/en/room/ocean-beach-view-suites", "Ocean Beach View Suites"],
-				["/en/room/ocean-pool-view-suites", "Ocean Pool View Suites"],
-				["/en/room/beach-studio", "Beach Studio"],
-				["/en/room/beach-apartment", "Beach Apartment"],
-				["/en/room/beach-loft", "Beach Loft"],
-				["/en/room/estandar-king", "Standard King"],
+				["/room/triple-economica", "Economy Triple"],
+				["/room/superior-king", "Superior King Room"],
+				["/room/bungalow-king", "Bungalow King"],
+				["/room/bungalow-queen", "Bungalow with 2 Queen Beds"],
+				["/room/junior-suite", "Junior Suite"],
+				["/room/jungle-house", "Jungle House"],
+				["/room/ocean-beach-view-suites", "Ocean Beach View Suites"],
+				["/room/ocean-pool-view-suites", "Ocean Pool View Suites"],
+				["/room/beach-studio", "Beach Studio"],
+				["/room/beach-apartment", "Beach Apartment"],
+				["/room/beach-loft", "Beach Loft"],
+				["/room/estandar-king", "Standard King"],
 			],
 			restaurants: [
-				["/en/restaurante", "La Jungla Restaurant"],
-				["/en/sushi-wave", "Sushi Wave (Beachfront)"],
+				["/restaurante", "La Jungla Restaurant"],
+				["/sushi-wave", "Sushi Wave"],
 			],
 			experiences: [
-				["/en/surya-spa", "Surya Spa"],
-				["/en/actividades-caribe", "Caribbean Activities"],
-				["/en/day-pass", "Day Pass"],
-				["/en/paquetes", "Packages"],
-				["/en/familias-cariblue", "Cariblue Families"],
+				["/surya-spa", "Surya Spa"],
+				["/actividades-caribe", "Actividades del Caribe"],
+				["/day-pass", "Day Pass"],
+				["/paquetes", "Paquetes"],
+				["/familias-cariblue", "Familias Cariblue"],
 			],
 			more: [
-				["/en/eventos", "Weddings & Events"],
-				["/en/como-llegar", "How to Get Here"],
-				["/en/preguntas-frecuentes", "FAQ"],
-				["/en/sustentabilidad", "Sustainability"],
-				["/en/contacto", "Contact"],
+				["/eventos", "Bodas y Eventos"],
+				["/como-llegar", "Como Llegar"],
+				["/preguntas-frecuentes", "FAQ"],
+				["/sustentabilidad", "Sustentabilidad"],
+				["/contacto", "Contacto"],
 			],
 		},
 		footer: {
@@ -254,8 +253,7 @@ export const ui = {
 	en: {
 		layout: {
 			defaultTitle: "Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica",
-			defaultDescription:
-				"Welcome to Cariblue Beach & Jungle Resort in Playa Cocles, Puerto Viejo. Experience the perfect blend of jungle and beach.",
+			defaultDescription: "Welcome to Cariblue Beach & Jungle Resort in Playa Cocles, Puerto Viejo. Experience the perfect blend of jungle and beach.",
 		},
 		header: {
 			location: "COCLES BEACH, PUERTO VIEJO, LIMÓN",
