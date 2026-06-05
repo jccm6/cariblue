@@ -4,20 +4,25 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
 import WhatsApp from "../components/WhatsApp.astro";
+import { getLocale, type Locale } from "../i18n/config";
+import { getUi } from "../i18n/ui";
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
+  lang?: Locale;
 }
 
+const lang = getLocale(Astro.props.lang ?? Astro.currentLocale);
+const t = getUi(lang);
 const { 
-  title, 
-  description = "Bienvenido a Cariblue Beach & Jungle Resort en Playa Cocles, Puerto Viejo. Experimenta la mezcla perfecta de jungla y playa." 
+  title = t.layout.defaultTitle, 
+  description = t.layout.defaultDescription,
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
@@ -29,13 +34,13 @@ const {
 	</head>
 	<body class="bg-white text-slate-800 antialiased overflow-x-hidden selection:bg-accent selection:text-white">
 		<!-- Global Navigation Header -->
-		<Header />
+		<Header lang={lang} />
 
 		<!-- Dynamic Page Injection Slot -->
 		<slot />
 
 		<!-- Global Brand Footer & Awards -->
-		<Footer />
+		<Footer lang={lang} />
 
 		<!-- Global Floating Back to Top Button -->
 		<BackToTop />
