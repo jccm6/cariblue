@@ -1,10 +1,18 @@
 ---
+import { getLocale, type Locale } from "../i18n/config";
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = getLocale(Astro.props.lang);
+const label = lang === "es" ? "Volver al inicio" : "Back to top";
 ---
 
 <button 
   id="back-to-top" 
   class="fixed bottom-28 right-6 z-40 bg-primary/90 hover:bg-accent text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 translate-y-10 opacity-0 pointer-events-none hover:scale-110 flex items-center justify-center cursor-pointer border border-white/10"
-  aria-label="Volver al inicio"
+  aria-label={label}
 >
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
     <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />

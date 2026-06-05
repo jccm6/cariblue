@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const stats = [
+  { title: "Beachfront", text: "Tables on the beach and ocean views", icon: "https://i.imgur.com/N6NmSHp.png" },
+  { title: "Opening hours", text: "Monday to Sunday from 11:00 am to 9:00 pm", icon: "https://i.imgur.com/s89vBk2.png" },
+  { title: "Happy hour", text: "Every day from 4:00 pm to 5:00 pm", icon: "https://i.imgur.com/89Lxb5P.png" },
+];
+---
+
+<Layout
+  lang="en"
+  title="Sushi Wave | Cocles Beach Beachfront Restaurant"
+  description="Discover Sushi Wave in front of Cocles beach. Japanese-Peruvian gourmet fusion with authentic Nikkei flavor and signature cocktails in Costa Rica."
+>
+  <main>
+    <section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-10"></div>
+        <img src="/ClubDelSushi.webp" alt="Sunset Beach dinner beachfront" class="w-full h-full object-cover" />
+      </div>
+      <div class="relative z-20 max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Sushi Wave</h1>
+      </div>
+    </section>
+
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div class="col-span-1 lg:col-span-7 text-left">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">Welcome to Sushi Wave</h2>
+            <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+              <p>The gastronomic oasis where Japanese and Peruvian culinary traditions meet the sound of the sea. Every bite is designed to awaken the senses and transport you to a world of exquisite flavors.</p>
+              <p>From the relaxed Rancho to the Beach Spot and the shared tables, every corner has its own atmosphere and a beautiful panoramic ocean view.</p>
+              <p>Our concept goes beyond sushi. It is a perfect fusion of freshness and creativity that shines in every dish.</p>
+            </div>
+          </div>
+          <div class="col-span-1 lg:col-span-5">
+            <div class="overflow-hidden rounded-lg shadow-2xl relative border border-slate-100 group aspect-video cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Cariblue Caribe Costa Rica Video Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-black/35 group-hover:bg-black/45 transition-colors flex items-center justify-center">
+                <div class="w-16 h-11 bg-[#FF0000] rounded-lg flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" /></svg>
+                </div>
+              </div>
+              <div class="absolute bottom-3 left-4 text-xs font-semibold text-white drop-shadow">Cariblue - Costa Rican Caribbean</div>
+              <div class="absolute bottom-3 right-4 text-[10px] text-white/80 drop-shadow">Watch on <span class="font-bold">YouTube</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50/50 py-16 px-6 md:px-12 lg:px-24 border-y border-slate-100">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div class="col-span-1 lg:col-span-6">
+            <div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-video relative group">
+              <img src="/sushi_wave.webp" alt="Gourmet sushi plate with ocean view" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+          <div class="col-span-1 lg:col-span-6 text-left">
+            <p class="text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">Our restaurant also stands out for its innovative cocktails. Sushi Wave is sophistication in every sip, a world of exquisite flavors that perfectly complements our dishes.</p>
+            <p class="text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mt-4">Join us and discover the authentic art of sushi and Nikkei cuisine in every bite. Freshness, creativity and excellence come together for an unforgettable culinary experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-12 text-center">
+      <a href="https://oddmenu.com/es/p/sushiwave" target="_blank" class="inline-block bg-accent hover:bg-accent text-white font-extrabold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg transition-all duration-300">Online menu</a>
+    </section>
+
+    <section class="bg-white pb-16 px-6 md:px-12 lg:px-24">
+      <div class="max-w-5xl mx-auto border-t border-slate-100 pt-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {stats.map((stat) => (
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center mb-4 border border-slate-100">
+                <img src={stat.icon} alt={stat.title} />
+              </div>
+              <h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-2">{stat.title}</h3>
+              <p class="text-xs text-slate-500 font-light leading-relaxed max-w-xs">{stat.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

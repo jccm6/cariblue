@@ -1,0 +1,110 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const inclusions = [
+  {
+    title: "Rooms",
+    text: "Choose the room type that best fits your stay.",
+    image: "/habitaciones.webp",
+    alt: "Luxury room with king bed",
+  },
+  {
+    title: "Buffet Breakfast",
+    text: "Served daily from 7:00 am to 10:00 am at La Jungla restaurant.",
+    image: "/desayuno_buffet.webp",
+    alt: "Tropical buffet breakfast",
+  },
+  {
+    title: "Lunch and Dinner A La Carte",
+    text: "Lunch and dinner are included at La Jungla restaurant, with starter, main course and dessert.",
+    image: "/almuerzo_cena.webp",
+    alt: "Gourmet lunch and dinner",
+  },
+  {
+    title: "Open Bar",
+    text: "Soft drinks, daily fresh juices, beer and selected cocktails are included. Premium spirits are not included. Open from 11:00 am to 9:00 pm.",
+    image: "https://i.imgur.com/EWwKuvg.png",
+    alt: "Tropical cocktails by the pool",
+  },
+  {
+    title: "Late Check-out",
+    text: "Stay until 4:00 pm and enjoy your departure day, subject to availability.",
+    image: "https://i.imgur.com/COZoXoz.png",
+    alt: "Couple relaxing in the room",
+  },
+  {
+    title: "Children Policy",
+    text: "Children 0 to 2 years old stay free sharing bed with parents. Children 3 to 12 years old pay 50%, with kids menu and extra bed available. Price: 39,500 colones.",
+    image: "/politica_ninos.webp",
+    alt: "Family by the pool",
+  },
+];
+---
+
+<Layout
+  lang="en"
+  title="All Inclusive | Cariblue Beach & Jungle Resort Costa Rica"
+  description="Discover the All Inclusive plan at Cariblue Resort. Everything you need for a family trip, couple getaway or friends escape in Playa Cocles, Costa Rica."
+>
+  <main>
+    <section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-10"></div>
+        <img src="https://i.imgur.com/bkq1aqP.png" alt="Cariblue All Inclusive coastline" class="w-full h-full object-cover" />
+      </div>
+      <div class="relative z-20 max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">All Inclusive</h1>
+      </div>
+    </section>
+
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div class="col-span-1 lg:col-span-7 text-left">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6">Cariblue</h2>
+            <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+              <p>Cariblue invites you to live a unique beach-and-jungle experience on Costa Rica's South Caribbean coast with <span class="font-semibold text-accent">ALL INCLUSIVE</span> convenience.</p>
+              <p>It is the ideal plan for families, couples and groups of friends. Here you'll find great rooms, restaurants, live music, spa and wellness, gourmet food to take to the beach, yoga, wildlife spotting, tours and sports activities.</p>
+              <p>We are located less than 3 kilometers from Puerto Viejo, right on Playa Cocles, one of the most beautiful beaches on the South Caribbean coast, and within walking distance of Playa Chiquita, Pocitas, Punta Uva, Arrecife and Playa Grande.</p>
+              <p class="font-bold text-[#0f2e59] tracking-wider uppercase mt-6 text-[11px]">We are waiting for you to live the <span class="text-accent italic font-semibold border-b border-accent pb-0.5">• p u r a  v i d a •</span> experience</p>
+            </div>
+          </div>
+          <div class="col-span-1 lg:col-span-5">
+            <div class="overflow-hidden rounded-lg shadow-2xl border border-slate-100 relative group h-75">
+              <img src="/bienvenido.webp" alt="Jungle pool at Cariblue Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50/50 py-10 border-y border-slate-100 text-center">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">What is included?</h2>
+    </section>
+
+    <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+      <div class="max-w-5xl mx-auto space-y-16 lg:space-y-24">
+        {inclusions.map((inc) => (
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16 last:border-0 last:pb-0">
+            <div class="col-span-1 md:col-span-6 text-left">
+              <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">{inc.title}</h3>
+              <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal whitespace-pre-line">{inc.text}</p>
+            </div>
+            <div class="col-span-1 md:col-span-6">
+              <div class="overflow-hidden rounded shadow-xl border border-slate-100 relative group aspect-video">
+                <img src={inc.image} alt={inc.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-slate-50/50 py-20 px-6 text-center border-t border-slate-100">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-8 leading-tight">Don't wait any longer to plan your trip</h2>
+        <a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300">Contact us</a>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const dayPassFeatures = [
+  {
+    title: "Value",
+    text: "The price is 15,000 colones per person. Children 5 to 12 years old pay 50%. Children under 5 enter free.",
+    image: "https://i.imgur.com/Pb4VtVh.png",
+    alt: "Friends raising cocktails by the pool",
+  },
+  {
+    title: "Restaurant",
+    text: "The price is consumable at La Jungla restaurant and bar, where you can enjoy dishes and drinks.",
+    image: "https://i.imgur.com/xUxe0xj.png",
+    alt: "Gourmet burger served on a plate",
+  },
+  {
+    title: "Facilities",
+    text: "You can use all hotel facilities such as bars, pools, restaurants, common spaces and the pool table.",
+    image: "https://i.imgur.com/Vf3BfEO.png",
+    alt: "Guests playing pool at the resort lounge",
+  },
+  {
+    title: "Schedule",
+    text: "Open daily from 11:00 am to 6:00 pm.",
+    image: "https://i.imgur.com/kDB5tha.png",
+    alt: "Family enjoying the swimming pool",
+  },
+];
+---
+
+<Layout
+  lang="en"
+  title="Day Pass | Cariblue Beach & Jungle Resort Costa Rica"
+  description="Enjoy an unforgettable day at Cariblue Resort with our Day Pass. Access to pools, jacuzzis, bars and 15,000 colones of consumable credit at the restaurant."
+>
+  <main>
+    <section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-10"></div>
+        <img src="https://i.imgur.com/3l7ZTne.png" alt="Pool sunbathing floating lounge background" class="w-full h-full object-cover" />
+      </div>
+      <div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
+        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Day Pass</h1>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-5">What is included?</h2>
+        <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-3xl">
+          Enjoy full access to our facilities for a whole day for only <span class="font-bold text-accent">15,000 consumable colones</span> at La Jungla restaurant, where you can enjoy delicious dishes and cocktails. Create memorable moments with friends and family.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-white pb-20 px-6 md:px-12 lg:px-24">
+      <div class="max-w-5xl mx-auto space-y-16 lg:space-y-24">
+        {dayPassFeatures.map((feat) => (
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16 last:border-0 last:pb-0">
+            <div class="col-span-1 md:col-span-6 text-left">
+              <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">{feat.title}</h3>
+              <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal">{feat.text}</p>
+            </div>
+            <div class="col-span-1 md:col-span-6">
+              <div class="overflow-hidden rounded shadow-xl border border-slate-100 relative group aspect-video">
+                <img src={feat.image} alt={feat.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-slate-50/50 py-20 px-6 text-center border-t border-slate-100">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-8 leading-tight">Don't wait any longer to spend a day at Cariblue</h2>
+        <a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300">Contact us</a>
+      </div>
+    </section>
+  </main>
+</Layout>

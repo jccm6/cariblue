@@ -1,10 +1,39 @@
 ---
+import { getLocale, type Locale } from "../i18n/config";
+
 interface Props {
   images: string[];
   title: string;
+  lang?: Locale;
 }
 
+const lang = getLocale(Astro.props.lang);
 const { images, title } = Astro.props;
+const labels = lang === "es"
+  ? {
+      openImage: (index: number) => `Abrir imagen ${index + 1} de ${title}`,
+      prevGroup: "Ver imágenes anteriores",
+      nextGroup: "Ver imágenes siguientes",
+      galleryLabel: `Galería fullscreen de ${title}`,
+      closeGallery: "Cerrar galería",
+      prevImage: "Imagen anterior",
+      nextImage: "Imagen siguiente",
+      jumpGroup: (index: number) => `Ir al grupo ${index + 1}`,
+      altPreview: "vista previa",
+      altExpanded: "ampliada",
+    }
+  : {
+      openImage: (index: number) => `Open image ${index + 1} of ${title}`,
+      prevGroup: "View previous images",
+      nextGroup: "View next images",
+      galleryLabel: `Fullscreen gallery of ${title}`,
+      closeGallery: "Close gallery",
+      prevImage: "Previous image",
+      nextImage: "Next image",
+      jumpGroup: (index: number) => `Go to group ${index + 1}`,
+      altPreview: "preview",
+      altExpanded: "expanded",
+    };
 ---
 
 <section class="room-gallery w-full bg-slate-50 py-4 px-4 md:px-12" data-room-gallery>
@@ -18,7 +47,7 @@ const { images, title } = Astro.props;
               class="room-gallery-slide overflow-hidden rounded shadow-md border border-slate-100 aspect-video relative group bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067] focus-visible:ring-offset-2"
               data-gallery-image
               data-index={idx}
-              aria-label={`Abrir imagen ${idx + 1} de ${title}`}
+              aria-label={labels.openImage(idx)}
             >
               <img
                 src={img}
@@ -36,7 +65,7 @@ const { images, title } = Astro.props;
           <button
             type="button"
             class="room-gallery-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/95 text-[#0f2e59] shadow-lg border border-slate-100 flex items-center justify-center hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067]"
-            aria-label="Ver imagenes anteriores"
+            aria-label={labels.prevGroup}
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 19 8 12l7-7" />
@@ -45,7 +74,7 @@ const { images, title } = Astro.props;
           <button
             type="button"
             class="room-gallery-next absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/95 text-[#0f2e59] shadow-lg border border-slate-100 flex items-center justify-center hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067]"
-            aria-label="Ver imagenes siguientes"
+            aria-label={labels.nextGroup}
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
               <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7" />
@@ -64,12 +93,12 @@ const { images, title } = Astro.props;
     class="room-gallery-modal fixed inset-0 z-100 hidden bg-black/90 px-4 py-6 md:px-10 md:py-10"
     role="dialog"
     aria-modal="true"
-    aria-label={`Galeria fullscreen de ${title}`}
+    aria-label={labels.galleryLabel}
   >
     <button
       type="button"
       class="room-gallery-close absolute right-4 top-4 md:right-8 md:top-8 z-20 w-11 h-11 rounded-full bg-white/10 text-white border border-white/25 flex items-center justify-center hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-      aria-label="Cerrar galeria"
+      aria-label={labels.closeGallery}
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -81,7 +110,7 @@ const { images, title } = Astro.props;
         <button
           type="button"
           class="room-gallery-modal-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 text-white border border-white/25 flex items-center justify-center hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          aria-label="Imagen anterior"
+          aria-label={labels.prevImage}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19 8 12l7-7" />
@@ -90,7 +119,7 @@ const { images, title } = Astro.props;
         <button
           type="button"
           class="room-gallery-modal-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 text-white border border-white/25 flex items-center justify-center hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          aria-label="Imagen siguiente"
+          aria-label={labels.nextImage}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
             <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7" />
@@ -151,7 +180,7 @@ const { images, title } = Astro.props;
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'room-gallery-dot w-2.5 h-2.5 rounded-full border border-[#0f2e59] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e60067]';
-        dot.setAttribute('aria-label', `Ir al grupo ${index + 1}`);
+        dot.setAttribute('aria-label', labels.jumpGroup(index));
         dot.addEventListener('click', () => {
           page = index;
           updateCarousel();
@@ -191,7 +220,7 @@ const { images, title } = Astro.props;
       if (!image) return;
 
       modalImage.src = image.src;
-      modalImage.alt = image.alt.replace('preview', 'ampliada');
+      modalImage.alt = image.alt.replace(labels.altPreview, labels.altExpanded);
     };
 
     const showModalImage = (direction: number) => {

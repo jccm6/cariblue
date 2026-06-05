@@ -1,0 +1,190 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RoomGallery from "./RoomGallery.astro";
+import { getLocale, type Locale } from "../i18n/config";
+import { getRooms, getRoomPageExtra } from "../i18n/rooms";
+
+interface Props {
+  lang?: Locale;
+  slug: string;
+}
+
+const lang = getLocale(Astro.props.lang);
+const slug = Astro.props.slug;
+const room = getRooms(lang).find((item) => item.slug === slug);
+const extra = getRoomPageExtra(lang, slug);
+
+if (!room || !extra) {
+  throw new Error(`Unknown room slug for locale ${lang}: ${slug}`);
+}
+
+const services = lang === "es" ? ["Servicio a la habitación", "Wifi"] : ["Room service", "Wi-Fi"];
+const reasons = lang === "es"
+  ? [
+      "Servicio de calidad",
+      "Ubicación inmejorable",
+      "La mejor relación precio/calidad",
+      "Habitaciones con baño privado",
+      "Restaurante La Jungla",
+      "2 piscinas y jacuzzi",
+      "Bar de piscina",
+      "Sushi Wave",
+    ]
+  : [
+      "Quality service",
+      "Unbeatable location",
+      "Best value for money",
+      "Rooms with private bathroom",
+      "La Jungla Restaurant",
+      "2 pools and jacuzzi",
+      "Pool bar",
+      "Sushi Wave",
+    ];
+
+const otherRooms = (extra.otherRooms || [])
+  .map((otherSlug) => getRooms(lang).find((item) => item.slug === otherSlug))
+  .filter((item): item is NonNullable<typeof item> => Boolean(item));
+---
+
+<Layout
+  lang={lang}
+  title={`${room.title} | ${lang === "es" ? "Habitaciones Cariblue Resort" : "Cariblue Resort Rooms"}`}
+  description={room.description}
+>
+  <main class="bg-white">
+    <section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-10"></div>
+        <img src={extra.heroImage} alt={room.title} class="w-full h-full object-cover" />
+      </div>
+      <div class="relative z-20 max-w-4xl mx-auto mt-8">
+        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">{room.title}</h1>
+      </div>
+    </section>
+
+    <RoomGallery images={extra.gallery} title={room.title} lang={lang} />
+
+    <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="col-span-1 lg:col-span-8 text-left">
+          <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
+            <p>{room.description}</p>
+            {extra.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            <p class="font-semibold italic text-[#0f2e59]">
+              {lang === "es"
+                ? "Reserva ahora y disfruta una estadía inolvidable en Cariblue."
+                : "Book now and enjoy an unforgettable stay at Cariblue."}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-100">
+            <div>
+              <h4 class="text-md font-bold uppercase tracking-widest text-[#0f2e59] mb-4 flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"/></svg>
+                <span>{lang === "es" ? "Amenities" : "Amenities"}</span>
+              </h4>
+              <ul class="space-y-2 text-sm text-slate-500 font-medium">
+                {extra.amenities.map((item) => (
+                  <li class="flex items-start space-x-2">
+                    <span class="text-accent font-bold shrink-0">&rsaquo;</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-md font-bold uppercase tracking-widest text-[#0f2e59] mb-4 flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+                <span>{lang === "es" ? "Room Services" : "Room Services"}</span>
+              </h4>
+              <ul class="space-y-2 text-sm text-slate-500 font-medium">
+                {services.map((item) => (
+                  <li class="flex items-start space-x-2">
+                    <span class="text-accent font-bold shrink-0">&rsaquo;</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
+          <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
+            <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
+              {lang === "es" ? "Por qué elegir Cariblue" : "Why choose Cariblue"}
+            </div>
+            <div class="p-6">
+              <ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
+                {reasons.map((reason) => (
+                  <li class="py-3 flex items-center space-x-3 first:pt-0 last:pb-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-accent shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                    <span>{reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
+            <div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">
+              {lang === "es" ? "Información y reservas" : "Information and reservations"}
+            </div>
+            <div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
+              <div class="flex items-start space-x-3.5">
+                <span class="text-slate-400 font-bold shrink-0">Tel:</span>
+                <a href="tel:+50627500035" class="hover:text-accent transition-colors">506 2750 0035</a>
+              </div>
+              <div class="flex items-start space-x-3.5">
+                <span class="text-slate-400 font-bold shrink-0">Whatsapp:</span>
+                <a href="https://wa.me/50683141965" target="_blank" class="hover:text-green-500 transition-colors">+506 8314 1965</a>
+              </div>
+              <div class="flex items-start space-x-3.5">
+                <span class="text-slate-400 font-bold shrink-0">Email:</span>
+                <a href="mailto:reservations@cariblue.com" class="hover:text-accent transition-colors">reservations@cariblue.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {otherRooms.length > 0 && (
+      <section class="bg-slate-50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
+        <div class="max-w-6xl mx-auto text-center">
+          <div class="mb-14">
+            <h2 class="text-3xl font-serif font-bold text-[#0f2e59] mb-1">{lang === "es" ? "Otras habitaciones" : "Other rooms"}</h2>
+            <p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-accent uppercase">
+              {lang === "es" ? "También te pueden gustar estas habitaciones" : "You may also like these rooms"}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {otherRooms.map((otherRoom) => (
+              <div class="bg-white rounded border border-slate-100 shadow-lg overflow-hidden flex flex-col text-left">
+                <div class="h-50 overflow-hidden">
+                  <img src={otherRoom.image} alt={otherRoom.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-lg font-serif font-bold text-[#0f2e59] mb-2">{otherRoom.title}</h3>
+                    <span class="inline-block text-[10px] font-bold text-accent uppercase tracking-wider mb-3">
+                      {otherRoom.acreage} | {otherRoom.guests} {lang === "es" ? "huéspedes" : "guests"} | {otherRoom.beds} {lang === "es" ? "camas" : "beds"}
+                    </span>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light mb-6">{otherRoom.description}</p>
+                  </div>
+                  <div>
+                    <a href={lang === "es" ? `/room/${otherRoom.slug}` : `/en/room/${otherRoom.slug}`} class="text-xs font-bold text-[#0f2e59] hover:text-accent uppercase tracking-wider border-b border-[#0f2e59] pb-0.5 transition-colors">
+                      {lang === "es" ? "Ver habitación" : "View room"} &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </main>
+</Layout>

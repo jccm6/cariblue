@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const accordions = [
+  { id: "bus", title: "BUS", content: 'The MEPE bus company offers regular service from San José to Puerto Viejo and back. The fare is approximately USD 13 per person. Check schedules at <a href="http://www.mepe.co.cr/" target="_blank" class="text-accent font-semibold hover:underline">Limón / Puerto Viejo schedules</a>.', isOpen: true },
+  { id: "shuttle", title: "REGULAR SHUTTLE", content: "Regular shuttles run from San José to Puerto Viejo and back, with a maximum of 16 passengers, air conditioning and WiFi. The fare is USD 65 + tax per person.", isOpen: false },
+  { id: "private", title: "PRIVATE TRANSFER", content: "If you want a private transfer for a group or family, write to us and we will organize it for you. Approximate cost: USD 330 + tax.", isOpen: false },
+  { id: "rental", title: "RENTAL CAR", content: "If you want more freedom, you can rent a car at the airport. There are many options such as Hertz, Adobe, Alamo and Sixt. Daily rates start at USD 20 depending on the car and number of days.", isOpen: false },
+];
+---
+
+<Layout
+  lang="en"
+  title="How to Get Here | Cariblue Resort Puerto Viejo Costa Rica"
+  description="Find out how to travel from San José to Puerto Viejo de Talamanca and Playa Cocles. Bus, private transfer, shuttle and adventure rafting options."
+>
+  <main>
+    <section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+      <div class="absolute inset-0 z-0"><div class="absolute inset-0 bg-black/60 z-10"></div><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=80" alt="Dark coastline sunset Costa Rica background" class="w-full h-full object-cover" /></div>
+      <div class="relative z-20 max-w-4xl mx-auto mt-8"><h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">How to Get Here</h1></div>
+    </section>
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto"><div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"><div class="col-span-1 lg:col-span-5 lg:sticky lg:top-24"><div class="bg-white rounded-lg shadow-2xl border border-slate-100 p-4 relative group"><div class="absolute -top-3 -left-3 w-10 h-10 border-t-2 border-l-2 border-[#e60067]"></div><div class="absolute -bottom-3 -right-3 w-10 h-10 border-b-2 border-r-2 border-[#0f2e59]"></div><div class="overflow-hidden rounded"><img src="https://i.imgur.com/EjESm7G.png" alt="Route map" /></div></div></div><div class="col-span-1 lg:col-span-7 text-left"><p class="text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-8">From San José to Puerto Viejo you take Route 32 and the trip takes about 4 to 5 hours. There are several ways to get here:</p><div class="border-t border-slate-100 divide-y divide-slate-100">{accordions.map((item) => (<div class="accordion-item py-4"><button class="accordion-trigger w-full flex justify-between items-center text-left py-2 focus:outline-none cursor-pointer group" data-target={item.id} aria-expanded={item.isOpen ? "true" : "false"}><span class="text-xs md:text-sm font-bold text-[#0f2e59] tracking-wider group-hover:text-accent transition-colors uppercase">{item.title}</span><span class="accordion-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none">{item.isOpen ? "−" : "+"}</span></button><div id={item.id} class={`accordion-content overflow-hidden transition-all duration-300 ease-in-out ${item.isOpen ? 'max-h-125 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}><div class="text-xs text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-4 rounded-sm border-l-2 border-[#e60067] whitespace-pre-line"><Fragment set:html={item.content} /></div></div></div>))}</div></div></div></div></section>
+    <section class="bg-slate-50/50 py-16 px-6 text-center border-t border-slate-100"><div class="max-w-3xl mx-auto"><h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">Need help coordinating your transport?</h2><p class="text-xs md:text-sm text-slate-500 font-light leading-relaxed mb-8 max-w-2xl mx-auto">Our Tour Desk will be happy to help you book shared or private transfers at no extra management cost. Get in touch today.</p><a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300">Contact us</a></div></section>
+  </main>
+</Layout>
+
+<script>
+  const triggers = document.querySelectorAll('.accordion-trigger');
+  triggers.forEach((trigger) => { trigger.addEventListener('click', () => { const targetId = trigger.getAttribute('data-target'); const content = document.getElementById(targetId || ''); const icon = trigger.querySelector('.accordion-icon'); if (!content || !icon) return; const isExpanded = trigger.getAttribute('aria-expanded') === 'true'; triggers.forEach((t) => { const tid = t.getAttribute('data-target'); const c = document.getElementById(tid || ''); const ic = t.querySelector('.accordion-icon'); if (c && ic) { t.setAttribute('aria-expanded', 'false'); c.classList.remove('max-h-[500px]', 'opacity-100', 'mt-3'); c.classList.add('max-h-0', 'opacity-0'); ic.textContent = '+'; } }); if (!isExpanded) { trigger.setAttribute('aria-expanded', 'true'); content.classList.remove('max-h-0', 'opacity-0'); content.classList.add('max-h-[500px]', 'opacity-100', 'mt-3'); icon.textContent = '−'; } else { trigger.setAttribute('aria-expanded', 'false'); content.classList.remove('max-h-[500px]', 'opacity-100', 'mt-3'); content.classList.add('max-h-0', 'opacity-0'); icon.textContent = '+'; } }); });
+</script>

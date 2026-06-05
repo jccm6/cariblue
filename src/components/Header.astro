@@ -1,5 +1,5 @@
 ---
-import { getHomePath, getLocale, type Locale } from "../i18n/config";
+import { getHomePath, getLocale, localizePath, type Locale } from "../i18n/config";
 import { getUi } from "../i18n/ui";
 
 interface Props {
@@ -9,6 +9,8 @@ interface Props {
 const lang = getLocale(Astro.props.lang);
 const t = getUi(lang).header;
 const homeHref = getHomePath(lang);
+const roomsHref = localizePath("/habitaciones", lang);
+const allInclusiveHref = localizePath("/all-inclusive", lang);
 const alternateHref = lang === "es" ? "/en/" : "/";
 ---
 
@@ -102,7 +104,7 @@ const alternateHref = lang === "es" ? "/en/" : "/";
       <a href={homeHref} class="text-white hover:text-pink-400 transition-all">{t.nav.home}</a>
       <div class="relative group cursor-pointer py-2">
         <span class="flex items-center space-x-1 hover:text-pink-400 transition-colors text-white/85">
-          <a href="/habitaciones">{t.nav.rooms}</a>
+          <a href={roomsHref}>{t.nav.rooms}</a>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3 h-3">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>
@@ -115,7 +117,7 @@ const alternateHref = lang === "es" ? "/en/" : "/";
           </div>
         </div>
       </div>
-      <a href="/all-inclusive" class="text-white/85 hover:text-pink-400 transition-colors">{t.nav.allInclusive}</a>
+      <a href={allInclusiveHref} class="text-white/85 hover:text-pink-400 transition-colors">{t.nav.allInclusive}</a>
       
       <!-- Restaurantes Dropdown -->
       <div class="relative group cursor-pointer py-2">
@@ -204,7 +206,7 @@ const alternateHref = lang === "es" ? "/en/" : "/";
         </div>
       </details>
 
-      <a href="/all-inclusive" class="mobile-link py-4 text-white/85 hover:text-pink-400 transition-colors">{t.nav.allInclusive}</a>
+      <a href={allInclusiveHref} class="mobile-link py-4 text-white/85 hover:text-pink-400 transition-colors">{t.nav.allInclusive}</a>
 
       <details class="group">
         <summary class="flex cursor-pointer list-none items-center justify-between py-4 text-white/85 hover:text-pink-400 transition-colors [&::-webkit-details-marker]:hidden">
