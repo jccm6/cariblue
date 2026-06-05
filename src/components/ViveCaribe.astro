@@ -1,4 +1,13 @@
 ---
+import { getLocale, type Locale } from "../i18n/config";
+import { getUi } from "../i18n/ui";
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = getLocale(Astro.props.lang);
+const t = getUi(lang).home.viveCaribe;
 const slides = [
   {
     id: 1,
@@ -100,6 +109,7 @@ const slides = [
     caption: "Caribe costarricense"
   }
 ];
+const localizedSlides = t.slides;
 ---
 
 <section id="all-inclusive" class="w-full overflow-hidden">
@@ -107,7 +117,7 @@ const slides = [
     
     <!-- Left: Text Slides Block (5 columns) -->
     <div class="lg:col-span-5 bg-primary text-white text-left relative overflow-hidden min-h-112.5 lg:min-h-150">
-      {slides.map((slide, index) => (
+      {localizedSlides.map((slide, index) => (
         <div
           class={`caribe-text-slide absolute inset-0 py-16 px-8 md:p-16 lg:p-20 flex flex-col justify-center transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
           data-index={index}
@@ -131,7 +141,7 @@ const slides = [
     <div class="lg:col-span-7 h-112.5 lg:h-150 relative group select-none">
       <!-- Image Slides -->
       <div id="caribe-slider" class="w-full h-full relative overflow-hidden">
-        {slides.map((slide, index) => (
+        {localizedSlides.map((slide, index) => (
           <div 
             class={`caribe-slide absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
             data-index={index}
@@ -145,7 +155,7 @@ const slides = [
             <!-- Caption -->
             <div class="absolute bottom-10 left-8 md:left-12 z-20 text-left text-white max-w-lg">
               <span class="inline-block bg-accent text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 mb-2 rounded-xs">
-                Explora
+                {t.explore}
               </span>
               <p class="text-sm md:text-lg font-serif font-semibold italic drop-shadow-md">
                 {slide.caption}
@@ -159,7 +169,7 @@ const slides = [
       <button 
         id="caribe-prev" 
         class="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/85 hover:bg-accent text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
-        aria-label="Previous Slide"
+        aria-label={t.previous}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -169,7 +179,7 @@ const slides = [
       <button 
         id="caribe-next" 
         class="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/85 hover:bg-accent text-white p-2.5 rounded-full shadow-lg z-30 transition-all opacity-0 group-hover:opacity-100 focus:outline-none cursor-pointer"
-        aria-label="Next Slide"
+        aria-label={t.next}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">
           <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -178,11 +188,11 @@ const slides = [
 
       <!-- Dots Indicators (Inside bottom right of the image block) -->
       <div class="absolute bottom-6 right-8 md:right-12 z-30 flex space-x-2">
-        {slides.map((_, index) => (
+        {localizedSlides.map((_, index) => (
           <button 
             class={`caribe-dot w-2 h-2 rounded-full border border-white transition-all focus:outline-none cursor-pointer ${index === 0 ? 'bg-white scale-110' : 'bg-transparent'}`}
             data-index={index}
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`${t.goToSlide} ${index + 1}`}
           ></button>
         ))}
       </div>

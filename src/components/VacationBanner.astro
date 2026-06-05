@@ -1,4 +1,13 @@
 ---
+import { getLocale, type Locale } from "../i18n/config";
+import { getUi } from "../i18n/ui";
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = getLocale(Astro.props.lang);
+const t = getUi(lang).home.vacationBanner;
 ---
 
 <section class="relative min-h-[350px] flex items-center justify-center text-white py-20 px-6 overflow-hidden">
@@ -7,7 +16,7 @@
     <div class="absolute inset-0 bg-primary/50 backdrop-blur-[1px] z-10"></div>
     <img 
       src="/video.webp" 
-      alt="Cariblue resort paradise overview" 
+      alt={t.imageAlt} 
       class="w-full h-full object-cover"
     />
   </div>
@@ -19,7 +28,7 @@
     <button 
       id="video-play-btn" 
       class="group relative w-20 h-20 bg-white/95 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 mb-8 cursor-pointer focus:outline-none"
-      aria-label="Play Resort Video"
+      aria-label={t.playLabel}
     >
       <!-- Pulsing Ring 1 -->
       <span class="absolute inset-0 rounded-full bg-white/40 animate-ping group-hover:bg-white/60"></span>
@@ -33,13 +42,13 @@
     </button>
 
     <h2 class="text-3xl md:text-6xl font-serif font-bold tracking-wide leading-tight drop-shadow-xl select-none">
-      Enjoy Your Wonderful Vacation
+      {t.title}
     </h2>
   </div>
 
   <!-- Video Modal (Bonus polish for absolute realism!) -->
   <div id="video-modal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-accent transition-colors focus:outline-none" aria-label="Close Video">
+    <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-accent transition-colors focus:outline-none" aria-label={t.closeLabel}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
       </svg>
@@ -50,7 +59,7 @@
         id="modal-iframe"
         class="w-full h-full" 
         src="" 
-        title="Cariblue Resort Video" 
+        title={t.videoTitle} 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         allowfullscreen

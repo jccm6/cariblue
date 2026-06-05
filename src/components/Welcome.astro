@@ -1,4 +1,13 @@
 ---
+import { getLocale, type Locale } from "../i18n/config";
+import { getUi } from "../i18n/ui";
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = getLocale(Astro.props.lang);
+const t = getUi(lang).home.welcome;
 ---
 
 <section id="bienvenido" class="relative bg-white pt-24 pb-20 px-6 md:px-12 lg:px-24">
@@ -14,11 +23,11 @@
         <div class="overflow-hidden rounded shadow-2xl relative group">
           <img 
             src="/bienvenido.webp" 
-            alt="Welcome to Cariblue Resort Pool" 
+            alt={t.imageAlt} 
             class="w-full h-100 object-cover hover:scale-105 transition-transform duration-700"
           />
           <div class="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span class="text-white text-xs font-semibold uppercase tracking-wider">Piscina Principal y Wet Bar</span>
+            <span class="text-white text-xs font-semibold uppercase tracking-wider">{t.imageCaption}</span>
           </div>
         </div>
       </div>
@@ -26,21 +35,13 @@
       <!-- Right side: Text copy -->
       <div class="col-span-1 lg:col-span-7 text-left flex flex-col justify-center">
         <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight mb-6">
-          ¡Bienvenido al paraíso <span class="text-accent italic font-semibold">del caribe costarricense!</span>
+          {t.title} <span class="text-accent italic font-semibold">{t.titleAccent}</span>
         </h2>
         
         <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
-          <p>
-            Ubicado estratégicamente frente a la hermosa Playa Cocles, rodeada de arena dorada y la exuberante vegetación de los bosques tropicales, nuestro resort ofrece una experiencia única de confort y relajación en Costa Rica.
-          </p>
-          
-          <p>
-            Con una variedad de opciones de alojamiento que incluyen cómodas habitaciones, bungalows y villas, nuestro resort proporciona el escenario ideal para unas vacaciones inolvidables. Además de disfrutar de la serenidad de la playa, nuestros huéspedes pueden relajarse en nuestras 2 piscinas de agua dulce, sumergirse en el jacuzzi o rejuvenecer en el Surya Wellness SPA.
-          </p>
-          
-          <p>
-            Para satisfacer tus necesidades gastronómicas, nuestro exclusivo restaurante <strong class="text-[#0f2e59]">La Jungla</strong> ofrece deliciosas opciones para el desayuno, almuerzo y cena, mientras que el <strong class="text-[#0f2e59]">Congo wet bar</strong> es el lugar perfecto para disfrutar de los mejores cócteles y el happy hour junto a la piscina principal del resort. Por otro lado, contamos con <strong class="text-[#0f2e59]">Sushi Wave</strong>, nuestro restaurante frente a la playa, donde podrás deleitarte con los sabores frescos del mar en un entorno espectacular. Ya sea que busques aventura o un retiro tranquilo, nuestro resort ofrece una experiencia única para todos los gustos.
-          </p>
+          {t.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
         </div>
       </div>
     </div>
@@ -56,7 +57,7 @@
              <img src="https://i.imgur.com/E74cztA.png" alt="Bed icon" class="w-8 h-8">
           </div>
           <span class="text-3xl md:text-4xl font-serif font-extrabold text-[#0f2e59]">51</span>
-          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">habitaciones</span>
+          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">{t.stats[0]}</span>
         </div>
 
         <!-- Stat 2 -->
@@ -66,7 +67,7 @@
              <img src="https://i.imgur.com/E873Xz5.png" alt="Bed icon" class="w-8 h-8">
           </div>
           <span class="text-3xl md:text-4xl font-serif font-extrabold text-[#0f2e59]">3</span>
-          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">piscinas</span>
+          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">{t.stats[1]}</span>
         </div>
 
         <!-- Stat 3 -->
@@ -76,7 +77,7 @@
              <img src="https://i.imgur.com/Cobu7Hp.png" alt="Bed icon" class="w-8 h-8">
           </div>
           <span class="text-3xl md:text-4xl font-serif font-extrabold text-[#0f2e59]">3</span>
-          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">restaurantes</span>
+          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">{t.stats[2]}</span>
         </div>
 
         <!-- Stat 4 -->
@@ -86,7 +87,7 @@
              <img src="https://i.imgur.com/x3oXCNs.png" alt="Bed icon" class="w-8 h-8">
           </div>
           <span class="text-3xl md:text-4xl font-serif font-extrabold text-[#0f2e59]">1</span>
-          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">SPA</span>
+          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">{t.stats[3]}</span>
         </div>
 
         <!-- Stat 5 -->
@@ -96,7 +97,7 @@
              <img src="https://i.imgur.com/PZFYJ5K.png" alt="Bed icon" class="w-8 h-8">
           </div>
           <span class="text-3xl md:text-4xl font-serif font-extrabold text-[#0f2e59]">1</span>
-          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">gimnasio</span>
+          <span class="text-sm uppercase tracking-wider font-semibold text-slate-400 mt-1">{t.stats[4]}</span>
         </div>
 
       </div>

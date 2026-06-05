@@ -1,5 +1,15 @@
 ---
-import { rooms } from "../data/rooms";
+import { getLocale, type Locale } from "../i18n/config";
+import { getRooms } from "../i18n/rooms";
+import { getUi } from "../i18n/ui";
+
+interface Props {
+  lang?: Locale;
+}
+
+const lang = getLocale(Astro.props.lang);
+const rooms = getRooms(lang);
+const t = getUi(lang).home.rooms;
 ---
 
 <section id="habitaciones" class="bg-slate-50/65 py-24 px-6 md:px-12 lg:px-24">
@@ -7,9 +17,9 @@ import { rooms } from "../data/rooms";
     
     <!-- Section Header -->
     <div class="mb-14">
-      <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-3">Habitaciones</h2>
+      <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-3">{t.title}</h2>
       <p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-accent uppercase">
-        TENEMOS LAS MEJORES HABITACIONES PARA TI
+        {t.eyebrow}
       </p>
     </div>
 
@@ -27,7 +37,7 @@ import { rooms } from "../data/rooms";
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-xs">
-                Reserva Online
+                {t.onlineBooking}
               </div>
             </div>
 
@@ -42,19 +52,19 @@ import { rooms } from "../data/rooms";
               </div>
               <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 text-center">
                 <p class="text-xs text-slate-600 leading-relaxed font-normal mb-4">
-                  <span class="font-bold">Superficie:</span><br>{room.acreage}
+                  <span class="font-bold">{t.acreage}</span><br>{room.acreage}
                 </p>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal mb-4">
-                  <span class="font-bold">Capacidad:</span><br>{room.guests} personas
+                  <span class="font-bold">{t.capacity}</span><br>{room.guests} {t.people}
                 </p>
                 <p class="text-xs text-slate-600 leading-relaxed font-normal mb-4">
-                  <span class="font-bold">Camas:</span><br>{room.beds} camas
+                  <span class="font-bold">{t.beds}</span><br>{room.beds} {t.bedsUnit}
                 </p>
               </div>
 
               <div class="text-center md:text-left">
                 <a href={`/room/${room.slug}`} class="inline-block text-accent hover:text-[#c20056] font-bold text-xs tracking-wider uppercase border-b-2 border-accent pb-1 transition-all">
-                  Ver Detalles &rarr;
+                  {t.details} &rarr;
                 </a>
               </div>
             </div>
@@ -66,7 +76,7 @@ import { rooms } from "../data/rooms";
       <button 
         id="room-prev" 
         class="absolute left-0 top-[40%] -translate-y-1/2 bg-white/90 hover:bg-white text-[#0f2e59] p-3 rounded-full shadow-md z-20 border border-slate-100 hover:scale-105 transition-all focus:outline-none"
-        aria-label="Previous Room"
+        aria-label={t.previous}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -76,7 +86,7 @@ import { rooms } from "../data/rooms";
       <button 
         id="room-next" 
         class="absolute right-0 top-[40%] -translate-y-1/2 bg-white/90 hover:bg-white text-[#0f2e59] p-3 rounded-full shadow-md z-20 border border-slate-100 hover:scale-105 transition-all focus:outline-none"
-        aria-label="Next Room"
+        aria-label={t.next}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -90,7 +100,7 @@ import { rooms } from "../data/rooms";
         <button 
           class="room-dot w-2.5 h-2.5 rounded-full border border-[#0f2e59] transition-all focus:outline-none"
           data-index={index}
-          aria-label={`Go to slide ${index + 1}`}
+          aria-label={`${t.goToSlide} ${index + 1}`}
         ></button>
       ))}
     </div>
