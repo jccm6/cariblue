@@ -10,7 +10,7 @@ const lang = getLocale(Astro.props.lang);
 const t = getUi(lang).home.vacationBanner;
 ---
 
-<section class="relative min-h-[350px] flex items-center justify-center text-white py-20 px-6 overflow-hidden">
+<section class="relative min-h-87.5 flex items-center justify-center text-white py-20 px-6 overflow-hidden">
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-primary/50 backdrop-blur-[1px] z-10"></div>
@@ -75,8 +75,7 @@ const t = getUi(lang).home.vacationBanner;
   const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
 
   // Premium travel video
-  const videoUrl = "https://www.youtube.com/watch?v=AGevwDKK_fU"; // Or a nice travel B-roll
-  const resortVideoUrl = "https://www.youtube.com/watch?v=AGevwDKK_fU"; // Nice Costa Rica B-roll
+  const resortVideoUrl = "https://www.youtube.com/embed/AGevwDKK_fU?si=tgM85KaILUAtk_AR"; // Nice Costa Rica B-roll
 
   if (playBtn && modal && closeModal && iframe) {
     playBtn.addEventListener('click', () => {
