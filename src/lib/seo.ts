@@ -1,7 +1,7 @@
 import { getRooms, type Room } from "../i18n/rooms";
 import { defaultLocale, getLocalizedPath, type Locale } from "../i18n/config";
 
-export const SITE_URL = "https://www.cariblue.com";
+export const SITE_URL = "https://cariblue.com";
 export const SITE_NAME = "Cariblue Beach & Jungle Resort";
 export const DEFAULT_SOCIAL_IMAGE = "/favicon.webp";
 export const BOOKING_URL = "https://book.cariblue.com/";
