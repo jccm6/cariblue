@@ -6,11 +6,34 @@ import BackToTop from '../components/BackToTop.astro';
 import WhatsApp from "../components/WhatsApp.astro";
 import { getLocale, type Locale } from "../i18n/config";
 import { getUi } from "../i18n/ui";
+import {
+	DEFAULT_SOCIAL_IMAGE,
+	SITE_NAME,
+	absoluteAssetUrl,
+	absoluteUrl,
+	getAlternateUrls,
+	getBreadcrumbSchema,
+	getCanonicalPath,
+	getFaqSchema,
+	getGlobalStructuredData,
+	getHrefLang,
+	getLocaleCode,
+	getRoomFromPath,
+	getRoomSchema,
+	toJsonLd,
+	truncateDescription,
+	type PageType,
+} from "../lib/seo";
 
 interface Props {
   title?: string;
   description?: string;
   lang?: Locale;
+  canonicalPath?: string;
+  image?: string;
+  type?: PageType;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
 }
 
 const lang = getLocale(Astro.props.lang ?? Astro.currentLocale);
@@ -18,21 +41,62 @@ const t = getUi(lang);
 const { 
   title = t.layout.defaultTitle, 
   description = t.layout.defaultDescription,
+  canonicalPath,
+  image = DEFAULT_SOCIAL_IMAGE,
+  type = "website",
+  structuredData,
+  noindex = false,
 } = Astro.props;
 const gtmId = import.meta.env.PUBLIC_GTM;
 const shouldLoadGtm = Boolean(gtmId) && (import.meta.env.NODE_ENV !== "development");
+const canonicalUrl = absoluteUrl(canonicalPath ?? getCanonicalPath(Astro.url.pathname, lang));
+const alternates = getAlternateUrls(canonicalPath ?? Astro.url.pathname);
+const socialImage = absoluteAssetUrl(image);
+const room = getRoomFromPath(canonicalPath ?? Astro.url.pathname, lang);
+const metaDescription = truncateDescription(room?.description ?? description);
+const breadcrumbSchema = getBreadcrumbSchema(canonicalPath ?? Astro.url.pathname, lang);
+const autoStructuredData = [
+  ...getGlobalStructuredData(lang),
+  ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+  ...(room ? [getRoomSchema(room, lang)] : []),
+  ...(getCanonicalPath(canonicalPath ?? Astro.url.pathname, lang).endsWith("/preguntas-frecuentes") ? [getFaqSchema(lang)] : []),
+];
+const pageStructuredData = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : [];
+const jsonLd = toJsonLd([...autoStructuredData, ...pageStructuredData]);
 ---
 
 <!DOCTYPE html>
 <html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.webp" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#0f2e59" />
+		<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 		<title>{title}</title>
-		<meta name="description" content={description} />
+		<meta name="description" content={metaDescription} />
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="alternate" hreflang={getHrefLang("es")} href={alternates.es} />
+		<link rel="alternate" hreflang={getHrefLang("en")} href={alternates.en} />
+		<link rel="alternate" hreflang="x-default" href={alternates["x-default"]} />
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:type" content={type} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={socialImage} />
+		<meta property="og:locale" content={getLocaleCode(lang)} />
+		<meta property="og:locale:alternate" content={getLocaleCode(lang === "es" ? "en" : "es")} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={metaDescription} />
+		<meta name="twitter:image" content={socialImage} />
+		<script type="application/ld+json" set:html={jsonLd}></script>
 		{shouldLoadGtm && (
 			<script is:inline define:vars={{ gtmId }}>
 				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
