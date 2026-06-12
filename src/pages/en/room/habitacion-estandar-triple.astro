@@ -1,0 +1,161 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import RoomGallery from "../../../components/RoomGallery.astro";
+
+const title = "Standard Triple Room";
+const description =
+	"A comfortable and functional option, ideal for guests looking to enjoy a relaxing stay with all the essential comforts. Its welcoming atmosphere makes it the perfect space to rest and enjoy the Cariblue experience.";
+
+const images = [
+	"https://i.imgur.com/Yvwz1V9.jpeg",
+	"https://i.imgur.com/noSLIlC.jpeg",
+	"https://i.imgur.com/BA7295G.jpeg",
+	"https://i.imgur.com/iOYNFip.jpeg",
+	"https://i.imgur.com/vv3d4Ho.jpeg",
+];
+
+const amenities = [
+	"1 king bed",
+	"1 single bed",
+	"Up to 3 guests",
+	"Air conditioning",
+	"Wardrobe",
+	"Private bathroom with shower and hot water",
+	"32-inch plasma TV with cable",
+	"Safe",
+	"Desk",
+	"Mini fridge",
+	"Hair dryer",
+];
+
+const services = ["Room service", "Wi-Fi"];
+
+const reasons = [
+	{ text: "Quality service", icon: "thumbs-up" },
+	{ text: "Excellent location", icon: "map-pin" },
+	{ text: "Best value for money", icon: "currency-dollar" },
+	{ text: "Rooms with private bathrooms", icon: "home" },
+	{ text: "La Jungla Restaurant", icon: "cake" },
+	{ text: "2 pools and jacuzzi", icon: "sparkles" },
+	{ text: "Pool bar", icon: "drink" },
+	{ text: "Sushi Wave", icon: "star" },
+];
+---
+
+<Layout title={`${title} | Cariblue Resort Rooms`} description={description}>
+	<main class="bg-white">
+		<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 z-10"></div>
+				<img src="https://i.imgur.com/V34b3Qj.jpeg" alt={`${title} Balcony View`} class="w-full h-full object-cover" />
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto mt-8">
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
+					{title}
+				</h1>
+			</div>
+		</section>
+
+		<RoomGallery images={images} title={title} />
+
+		<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+				<div class="col-span-1 lg:col-span-8 text-left">
+					<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal mb-10">
+						<p>
+							Ideal for small families or groups of friends, our Standard Triple Room offers a comfortable and welcoming space to rest. It features a king bed and a single bed,
+							combining space and comfort for a pleasant stay.
+						</p>
+						<p class="font-semibold italic text-[#0f2e59]">Book now and immerse yourself in the resort experience.</p>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-100">
+						<div>
+							<h4 class="text-md font-bold uppercase tracking-widest text-[#0f2e59] mb-4 flex items-center space-x-2">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
+									></path>
+								</svg>
+								<span>Amenities</span>
+							</h4>
+							<ul class="space-y-2 text-sm text-slate-500 font-medium">
+								{
+									amenities.map((item) => (
+										<li class="flex items-start space-x-2">
+											<span class="text-accent font-bold shrink-0">&rsaquo;</span>
+											<span>{item}</span>
+										</li>
+									))
+								}
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="text-md font-bold uppercase tracking-widest text-[#0f2e59] mb-4 flex items-center space-x-2">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+									></path>
+								</svg>
+								<span>Room Services</span>
+							</h4>
+							<ul class="space-y-2 text-sm text-slate-500 font-medium">
+								{
+									services.map((item) => (
+										<li class="flex items-start space-x-2">
+											<span class="text-accent font-bold shrink-0">&rsaquo;</span>
+											<span>{item}</span>
+										</li>
+									))
+								}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-span-1 lg:col-span-4 space-y-8 lg:sticky lg:top-24">
+					<div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
+						<div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">Why Choose Cariblue</div>
+						<div class="p-6">
+							<ul class="divide-y divide-slate-50 text-sm text-slate-600 font-medium">
+								{
+									reasons.map((rec) => (
+										<li class="py-3 flex items-center space-x-3 first:pt-0 last:pb-0">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-accent shrink-0">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+											</svg>
+											<span>{rec.text}</span>
+										</li>
+									))
+								}
+							</ul>
+						</div>
+					</div>
+
+					<div class="bg-white border border-slate-100 rounded shadow-xl overflow-hidden text-left">
+						<div class="bg-primary text-white px-6 py-4 font-bold text-sm uppercase tracking-wider">Information and reservations</div>
+						<div class="p-6 space-y-4 text-sm font-semibold text-slate-600">
+							<div class="flex items-start space-x-3.5">
+								<span class="text-slate-400 font-bold shrink-0">Tel:</span>
+								<a href="tel:+50627500035" class="hover:text-accent transition-colors">506 2750 0035</a>
+							</div>
+							<div class="flex items-start space-x-3.5">
+								<span class="text-slate-400 font-bold shrink-0">Whatsapp:</span>
+								<a href="https://wa.me/50683141965" target="_blank" class="hover:text-green-500 transition-colors">+506 8314 1965</a>
+							</div>
+							<div class="flex items-start space-x-3.5">
+								<span class="text-slate-400 font-bold shrink-0">Email:</span>
+								<a href="mailto:reservations@cariblue.com" class="hover:text-accent transition-colors">reservations@cariblue.com</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

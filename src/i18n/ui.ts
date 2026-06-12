@@ -15,7 +15,7 @@ export const ui = {
 			menuToggle: "Abrir menú",
 			booking: "Reservar",
 			nav: {
-				home: "Inicio",
+				// home: "Inicio",
 				rooms: "Habitaciones",
 				allInclusive: "All Inclusive",
 				restaurants: "Restaurantes",
@@ -24,6 +24,9 @@ export const ui = {
 			},
 			roomLinks: [
 				["/room/triple-economica", "Economy Triple"],
+				["/room/habitacion-estandar-triple", "Habitación Estándar Triple"],
+				["/room/habitacion-familiar-economica", "Habitación Familiar Económica"],
+				["/room/habitacion-superior-2-queen", "Habitación Superior 2 Queen"],
 				["/room/superior-king", "Superior King Room"],
 				["/room/bungalow-king", "Bungalow King"],
 				["/room/bungalow-queen", "Bungalow with 2 Queen Beds"],
@@ -66,8 +69,7 @@ export const ui = {
 		home: {
 			meta: {
 				title: "Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica",
-				description:
-					"Resort de playa y jungla en Playa Cocles, Puerto Viejo. Habitaciones, piscinas, restaurantes, spa y reservas directas en el Caribe de Costa Rica.",
+				description: "Resort de playa y jungla en Playa Cocles, Puerto Viejo. Habitaciones, piscinas, restaurantes, spa y reservas directas en el Caribe de Costa Rica.",
 			},
 			hero: {
 				videoTitle: "Video de fondo de Cariblue",
@@ -264,7 +266,7 @@ export const ui = {
 			menuToggle: "Open menu",
 			booking: "Book Now",
 			nav: {
-				home: "Home",
+				// home: "Home",
 				rooms: "Rooms",
 				allInclusive: "All Inclusive",
 				restaurants: "Restaurants",
@@ -273,6 +275,9 @@ export const ui = {
 			},
 			roomLinks: [
 				["/en/room/triple-economica", "Economy Triple"],
+				["/en/room/habitacion-estandar-triple", "Standard Triple Room"],
+				["/en/room/habitacion-familiar-economica", "Economy Family Room"],
+				["/en/room/habitacion-superior-2-queen", "Superior 2 Queen Room"],
 				["/en/room/superior-king", "Superior King Room"],
 				["/en/room/bungalow-king", "Bungalow King"],
 				["/en/room/bungalow-queen", "Bungalow with 2 Queen Beds"],
@@ -315,8 +320,7 @@ export const ui = {
 		home: {
 			meta: {
 				title: "Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica",
-				description:
-					"Beach and jungle resort in Playa Cocles, Puerto Viejo. Rooms, pools, restaurants, spa and direct booking in Costa Rica's Caribbean coast.",
+				description: "Beach and jungle resort in Playa Cocles, Puerto Viejo. Rooms, pools, restaurants, spa and direct booking in Costa Rica's Caribbean coast.",
 			},
 			hero: {
 				videoTitle: "Cariblue background video",
