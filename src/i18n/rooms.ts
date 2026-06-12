@@ -136,7 +136,7 @@ const rooms = {
 			slug: "jungle-house",
 			description:
 				"Ubicados en el sector de la selva del hotel, rodeados de arboles centenarios y flores tropicales, nuestros tres bungalows de madera son una excelente opción para familias que quieran descansar rodeados de naturaleza.",
-			image: "https://i.imgur.com/7vvtt44.png",
+			image: "https://i.imgur.com/opsbdb4.jpeg",
 			acreage: "90 m²",
 			guests: "7",
 			beds: "4",
@@ -275,7 +275,7 @@ const rooms = {
 			slug: "jungle-house",
 			description:
 				"Located in the hotel's jungle area, surrounded by ancient trees and tropical flowers, our wooden bungalows are an excellent option for families looking to rest in nature.",
-			image: "https://i.imgur.com/7vvtt44.png",
+			image: "https://i.imgur.com/opsbdb4.jpeg",
 			acreage: "90 m²",
 			guests: "7",
 			beds: "4",
