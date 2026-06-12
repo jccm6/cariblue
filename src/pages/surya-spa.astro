@@ -1,60 +1,60 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const daySpaPackages = [
-  {
-    title: "Sin preocupaciones",
-    image: "https://i.imgur.com/atoJGJu.png",
-    text: "¡Libérate del estrés con nuestra oferta exclusiva! Relájate con piedras calientes y reflexología para renovar cuerpo y mente. Luego, disfruta de un día completo en la piscina y deléitate con exquisiteces en el restaurante La Jungla."
-  },
-  {
-    title: "Revitalizate",
-    image: "https://i.imgur.com/5pz8vkh.png",
-    text: "Descubre el paraíso con nuestra oferta exclusiva! Relájate con un masaje de CBD y renueva tu piel con el facial \"Vive el Caribe\". Luego, disfruta del sol, la piscina y saborea exquisiteces en el Restaurante La Jungla, con un tiquete de ₡7.950. ¡Tu día perfecto te espera!"
-  },
-  {
-    title: "Renueva tu energía",
-    image: "https://i.imgur.com/KQ1CXM8.png",
-    text: "Renueva tu bienestar con nuestra oferta exclusiva! Comienza con la exfoliación Surya para revitalizar tu piel y sigue con un masaje de tejido profundo de 90 minutos que elimina el estrés. Luego, disfruta de un día de sol y piscina, y deléitate con un tiquete de consumo de ₡7.950 en el restaurante La Jungla. ¡Tu escape perfecto te está esperando!"
-  }
+	{
+		title: "Sin preocupaciones",
+		image: "https://i.imgur.com/atoJGJu.png",
+		text: "¡Libérate del estrés con nuestra oferta exclusiva! Relájate con piedras calientes y reflexología para renovar cuerpo y mente. Luego, disfruta de un día completo en la piscina y deléitate con exquisiteces en el restaurante La Jungla.",
+	},
+	{
+		title: "Revitalizate",
+		image: "https://i.imgur.com/5pz8vkh.png",
+		text: 'Descubre el paraíso con nuestra oferta exclusiva! Relájate con un masaje de CBD y renueva tu piel con el facial "Vive el Caribe". Luego, disfruta del sol, la piscina y saborea exquisiteces en el Restaurante La Jungla, con un tiquete de ₡7.950. ¡Tu día perfecto te espera!',
+	},
+	{
+		title: "Renueva tu energía",
+		image: "https://i.imgur.com/KQ1CXM8.png",
+		text: "Renueva tu bienestar con nuestra oferta exclusiva! Comienza con la exfoliación Surya para revitalizar tu piel y sigue con un masaje de tejido profundo de 90 minutos que elimina el estrés. Luego, disfruta de un día de sol y piscina, y deléitate con un tiquete de consumo de ₡7.950 en el restaurante La Jungla. ¡Tu escape perfecto te está esperando!",
+	},
 ];
 
 const massages = [
-  {
-    title: "Masaje Con CBD",
-    image: "https://i.imgur.com/j4bd36i.png"
-  },
-  {
-    title: "Masaje Con Chocolate",
-    image: "https://i.imgur.com/WVGPmvW.png"
-  },
-  {
-    title: "Masaje Con Piedras Calientes",
-    image: "https://i.imgur.com/BW06TrU.png"
-  },
-  {
-    title: "Masaje Relajante",
-    image: "https://i.imgur.com/Fbn8cfL.png"
-  },
-  {
-    title: "Masaje de tejido profundo",
-    image: "https://i.imgur.com/zy9tGnn.png"
-  }
+	{
+		title: "Masaje Con CBD",
+		image: "https://i.imgur.com/j4bd36i.png",
+	},
+	{
+		title: "Masaje Con Chocolate",
+		image: "https://i.imgur.com/WVGPmvW.png",
+	},
+	{
+		title: "Masaje Con Piedras Calientes",
+		image: "https://i.imgur.com/BW06TrU.png",
+	},
+	{
+		title: "Masaje Relajante",
+		image: "https://i.imgur.com/Fbn8cfL.png",
+	},
+	{
+		title: "Masaje de tejido profundo",
+		image: "https://i.imgur.com/zy9tGnn.png",
+	},
 ];
 
 const treatments = [
-  {
-    title: "Exfoliación Surya",
-    image: "https://i.imgur.com/pK1zhBV.png"
-  },
-  {
-    title: "Facial Vive El Caribe",
-    image: "https://i.imgur.com/wcxhAIA.png"
-  }
+	{
+		title: "Exfoliación Surya",
+		image: "https://i.imgur.com/pK1zhBV.png",
+	},
+	{
+		title: "Facial Vive El Caribe",
+		image: "https://i.imgur.com/wcxhAIA.png",
+	},
 ];
 ---
 
-<Layout 
+<Layout
 	title="Surya Spa | Wellness & Spa Cariblue Resort Costa Rica"
 	description="Relájate en Surya Wellness & Spa dentro de Cariblue Resort. Descubre masajes de CBD, tratamientos de chocolate y envolturas orgánicas en Puerto Viejo."
 >
@@ -63,19 +63,11 @@ const treatments = [
 		<section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
 			<div class="absolute inset-0 z-0">
 				<div class="absolute inset-0 z-10"></div>
-				<img 
-					src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=2000&q=80" 
-					alt="Spa luxury stones candles background" 
-					class="w-full h-full object-cover"
-				/>
+				<img src="https://i.imgur.com/fUgicJc.jpeg" alt="Spa luxury stones candles background" class="w-full h-full object-cover" />
 			</div>
 			<div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
-				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">
-					Surya Spa
-				</h1>
-				<p class="text-xs md:text-sm font-bold tracking-[0.25em] text-accent uppercase mt-2 drop-shadow">
-					WELLNESS & SPA
-				</p>
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Surya Spa</h1>
+				<p class="text-xs md:text-sm font-bold tracking-[0.25em] text-accent uppercase mt-2 drop-shadow">WELLNESS & SPA</p>
 			</div>
 		</section>
 
@@ -84,15 +76,19 @@ const treatments = [
 			<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
 				<div class="space-y-6 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal max-w-3xl">
 					<p>
-						Surya Wellness & Spa representa un espacio dedicado a la armonía y el bienestar integral de cuerpo y alma. Te invitamos a sumergirte en una experiencia única donde podrás conectar con la serenidad del mar y la exuberancia de la jungla, mientras percibes los sonidos reconfortantes de los árboles, aves, monos y las olas del mar durante cada tratamiento.
+						Surya Wellness & Spa representa un espacio dedicado a la armonía y el bienestar integral de cuerpo y alma. Te invitamos a sumergirte en una experiencia única donde
+						podrás conectar con la serenidad del mar y la exuberancia de la jungla, mientras percibes los sonidos reconfortantes de los árboles, aves, monos y las olas del mar
+						durante cada tratamiento.
 					</p>
 					<p>
-						Nuestros tratamientos corporales se distinguen por el uso de ingredientes orgánicos, destacando nuestros aceites totalmente naturales, emblemáticos de Costa Rica. Estos se combinan cuidadosamente con frutas tropicales, aceite de coco y aceites esenciales elaborados artesanalmente por nuestros proveedores locales. Este enfoque refleja nuestro compromiso con el cuidado del medio ambiente y el bienestar de nuestros animales, proporcionando una experiencia sensorial en armonía con la naturaleza.
+						Nuestros tratamientos corporales se distinguen por el uso de ingredientes orgánicos, destacando nuestros aceites totalmente naturales, emblemáticos de Costa Rica. Estos
+						se combinan cuidadosamente con frutas tropicales, aceite de coco y aceites esenciales elaborados artesanalmente por nuestros proveedores locales. Este enfoque refleja
+						nuestro compromiso con el cuidado del medio ambiente y el bienestar de nuestros animales, proporcionando una experiencia sensorial en armonía con la naturaleza.
 					</p>
 				</div>
 
-				<a 
-					href="https://commerce.smartness.com/cariblue/Masajes-Relajaci%C3%B3n-Total:-Cuerpo-y-Mente-en-Calma-%F0%9F%8C%BF%F0%9F%98%B4-Cariblue-beach-and-jungle-resort" 
+				<a
+					href="https://commerce.smartness.com/cariblue/Masajes-Relajaci%C3%B3n-Total:-Cuerpo-y-Mente-en-Calma-%F0%9F%8C%BF%F0%9F%98%B4-Cariblue-beach-and-jungle-resort"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="mt-10 bg-accent hover:bg-accent text-white font-extrabold text-xs tracking-widest uppercase px-10 py-3.5 rounded shadow-lg transition-all duration-300"
@@ -106,33 +102,25 @@ const treatments = [
 		<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-y border-slate-100">
 			<div class="max-w-7xl mx-auto text-center">
 				<div class="mb-14">
-					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">
-						Pasa un Día de Spa
-					</h2>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Pasa un Día de Spa</h2>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-					{daySpaPackages.map((pkg) => (
-						<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-lg flex flex-col hover:shadow-xl transition-all duration-300">
-							<div class="h-50 overflow-hidden">
-								<img 
-									src={pkg.image} 
-									alt={pkg.title} 
-									class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-								/>
-							</div>
-							<div class="p-6 md:p-8 flex-1 flex flex-col justify-between text-left">
-								<div>
-									<h3 class="text-xl md:text-2xl font-serif font-bold text-[#0f2e59] mb-4 text-center">
-										{pkg.title}
-									</h3>
-									<p class="text-xs text-slate-500 leading-relaxed font-normal">
-										{pkg.text}
-									</p>
+					{
+						daySpaPackages.map((pkg) => (
+							<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-lg flex flex-col hover:shadow-xl transition-all duration-300">
+								<div class="h-50 overflow-hidden">
+									<img src={pkg.image} alt={pkg.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+								</div>
+								<div class="p-6 md:p-8 flex-1 flex flex-col justify-between text-left">
+									<div>
+										<h3 class="text-xl md:text-2xl font-serif font-bold text-[#0f2e59] mb-4 text-center">{pkg.title}</h3>
+										<p class="text-xs text-slate-500 leading-relaxed font-normal">{pkg.text}</p>
+									</div>
 								</div>
 							</div>
-						</div>
-					))}
+						))
+					}
 				</div>
 			</div>
 		</section>
@@ -141,49 +129,45 @@ const treatments = [
 		<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
 			<div class="max-w-7xl mx-auto text-center">
 				<div class="mb-14">
-					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">
-						Masajes
-					</h2>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Masajes</h2>
 				</div>
 
 				<!-- Slider Container -->
 				<div class="relative max-w-5xl mx-auto overflow-hidden px-4">
 					<!-- Track -->
 					<div id="massage-track" class="flex transition-transform duration-500 ease-out gap-6" style="transform: translateX(0px);">
-						{massages.map((item) => (
-							<div class="massage-card min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] bg-white rounded-md overflow-hidden border border-slate-100 shadow-md hover:shadow-lg flex flex-col transition-all duration-300">
-								<div class="aspect-4/3 overflow-hidden">
-									<img 
-										src={item.image} 
-										alt={item.title} 
-										class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-									/>
+						{
+							massages.map((item) => (
+								<div class="massage-card min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] bg-white rounded-md overflow-hidden border border-slate-100 shadow-md hover:shadow-lg flex flex-col transition-all duration-300">
+									<div class="aspect-4/3 overflow-hidden">
+										<img src={item.image} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+									</div>
+									<div class="p-5 text-center border-t border-slate-50">
+										<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3>
+									</div>
 								</div>
-								<div class="p-5 text-center border-t border-slate-50">
-									<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3>
-								</div>
-							</div>
-						))}
+							))
+						}
 					</div>
 
 					<!-- Left/Right Buttons -->
-					<button 
-						id="massage-prev" 
+					<button
+						id="massage-prev"
 						class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-slate-400 hover:text-accent w-10 h-10 border border-slate-100 rounded-full flex items-center justify-center shadow-md z-20 hover:scale-105 transition-all focus:outline-none cursor-pointer"
 						aria-label="Previous Massages"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4.5 h-4.5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
 						</svg>
 					</button>
 
-					<button 
-						id="massage-next" 
+					<button
+						id="massage-next"
 						class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-slate-400 hover:text-accent w-10 h-10 border border-slate-100 rounded-full flex items-center justify-center shadow-md z-20 hover:scale-105 transition-all focus:outline-none cursor-pointer"
 						aria-label="Next Massages"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4.5 h-4.5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
 						</svg>
 					</button>
 				</div>
@@ -194,49 +178,45 @@ const treatments = [
 		<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
 			<div class="max-w-7xl mx-auto text-center">
 				<div class="mb-14">
-					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">
-						Tratamientos
-					</h2>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Tratamientos</h2>
 				</div>
 
 				<!-- Slider Container -->
 				<div class="relative max-w-5xl mx-auto overflow-hidden px-4">
 					<!-- Track -->
 					<div id="treatment-track" class="flex transition-transform duration-500 ease-out gap-6" style="transform: translateX(0px);">
-						{treatments.map((item) => (
-							<div class="treatment-card min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] bg-white rounded-md overflow-hidden border border-slate-100 shadow-md hover:shadow-lg flex flex-col transition-all duration-300">
-								<div class="aspect-4/3 overflow-hidden">
-									<img 
-										src={item.image} 
-										alt={item.title} 
-										class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-									/>
+						{
+							treatments.map((item) => (
+								<div class="treatment-card min-w-full sm:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] bg-white rounded-md overflow-hidden border border-slate-100 shadow-md hover:shadow-lg flex flex-col transition-all duration-300">
+									<div class="aspect-4/3 overflow-hidden">
+										<img src={item.image} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+									</div>
+									<div class="p-5 text-center border-t border-slate-50">
+										<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3>
+									</div>
 								</div>
-								<div class="p-5 text-center border-t border-slate-50">
-									<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3>
-								</div>
-							</div>
-						))}
+							))
+						}
 					</div>
 
 					<!-- Left/Right Buttons -->
-					<button 
-						id="treatment-prev" 
+					<button
+						id="treatment-prev"
 						class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-slate-400 hover:text-accent w-10 h-10 border border-slate-100 rounded-full flex items-center justify-center shadow-md z-20 hover:scale-105 transition-all focus:outline-none cursor-pointer"
 						aria-label="Previous Treatments"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4.5 h-4.5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5"></path>
 						</svg>
 					</button>
 
-					<button 
-						id="treatment-next" 
+					<button
+						id="treatment-next"
 						class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-slate-400 hover:text-accent w-10 h-10 border border-slate-100 rounded-full flex items-center justify-center shadow-md z-20 hover:scale-105 transition-all focus:outline-none cursor-pointer"
 						aria-label="Next Treatments"
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4.5 h-4.5">
-							<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
 						</svg>
 					</button>
 				</div>
@@ -276,7 +256,7 @@ const treatments = [
 			track.style.transform = `translateX(-${offset}px)`;
 		}
 
-		next.addEventListener('click', () => {
+		next.addEventListener("click", () => {
 			const visibleCount = getVisibleCardsCount();
 			const maxIndex = cards.length - visibleCount + 1;
 			if (index < maxIndex - 1) {
@@ -287,7 +267,7 @@ const treatments = [
 			updateCarousel();
 		});
 
-		prev.addEventListener('click', () => {
+		prev.addEventListener("click", () => {
 			const visibleCount = getVisibleCardsCount();
 			const maxIndex = cards.length - visibleCount + 1;
 			if (index > 0) {
@@ -298,11 +278,11 @@ const treatments = [
 			updateCarousel();
 		});
 
-		window.addEventListener('resize', updateCarousel);
+		window.addEventListener("resize", updateCarousel);
 		updateCarousel();
 	}
 
 	// Initialize both sliders
-	setupCarousel('massage-track', 'massage-prev', 'massage-next', 'massage-card');
-	setupCarousel('treatment-track', 'treatment-prev', 'treatment-next', 'treatment-card');
+	setupCarousel("massage-track", "massage-prev", "massage-next", "massage-card");
+	setupCarousel("treatment-track", "treatment-prev", "treatment-next", "treatment-card");
 </script>

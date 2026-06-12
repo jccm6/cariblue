@@ -2,41 +2,141 @@
 import Layout from "../../layouts/Layout.astro";
 
 const daySpaPackages = [
-  { title: "No worries", image: "https://i.imgur.com/atoJGJu.png", text: "Release stress with hot stones and reflexology, then enjoy a full day by the pool and a delicious meal at La Jungla." },
-  { title: "Revitalize", image: "https://i.imgur.com/5pz8vkh.png", text: "Relax with a CBD massage and refresh your skin with the Vive el Caribe facial, then enjoy the sun, the pool and restaurant credit." },
-  { title: "Renew your energy", image: "https://i.imgur.com/KQ1CXM8.png", text: "Start with our Surya exfoliation and continue with a 90-minute deep tissue massage. Finish your day with pool time and restaurant credit." },
+	{
+		title: "No worries",
+		image: "https://i.imgur.com/atoJGJu.png",
+		text: "Release stress with hot stones and reflexology, then enjoy a full day by the pool and a delicious meal at La Jungla.",
+	},
+	{
+		title: "Revitalize",
+		image: "https://i.imgur.com/5pz8vkh.png",
+		text: "Relax with a CBD massage and refresh your skin with the Vive el Caribe facial, then enjoy the sun, the pool and restaurant credit.",
+	},
+	{
+		title: "Renew your energy",
+		image: "https://i.imgur.com/KQ1CXM8.png",
+		text: "Start with our Surya exfoliation and continue with a 90-minute deep tissue massage. Finish your day with pool time and restaurant credit.",
+	},
 ];
 
 const massages = [
-  { title: "CBD Massage", image: "https://i.imgur.com/j4bd36i.png" },
-  { title: "Chocolate Massage", image: "https://i.imgur.com/WVGPmvW.png" },
-  { title: "Hot Stone Massage", image: "https://i.imgur.com/BW06TrU.png" },
-  { title: "Relaxing Massage", image: "https://i.imgur.com/Fbn8cfL.png" },
-  { title: "Deep Tissue Massage", image: "https://i.imgur.com/zy9tGnn.png" },
+	{ title: "CBD Massage", image: "https://i.imgur.com/j4bd36i.png" },
+	{ title: "Chocolate Massage", image: "https://i.imgur.com/WVGPmvW.png" },
+	{ title: "Hot Stone Massage", image: "https://i.imgur.com/BW06TrU.png" },
+	{ title: "Relaxing Massage", image: "https://i.imgur.com/Fbn8cfL.png" },
+	{ title: "Deep Tissue Massage", image: "https://i.imgur.com/zy9tGnn.png" },
 ];
 
 const treatments = [
-  { title: "Surya Exfoliation", image: "https://i.imgur.com/pK1zhBV.png" },
-  { title: "Vive el Caribe Facial", image: "https://i.imgur.com/wcxhAIA.png" },
+	{ title: "Surya Exfoliation", image: "https://i.imgur.com/pK1zhBV.png" },
+	{ title: "Vive el Caribe Facial", image: "https://i.imgur.com/wcxhAIA.png" },
 ];
 ---
 
 <Layout
-  lang="en"
-  title="Surya Spa | Wellness & Spa Cariblue Resort Costa Rica"
-  description="Relax at Surya Wellness & Spa inside Cariblue Resort. Discover CBD massages, chocolate treatments and organic wraps in Puerto Viejo."
+	lang="en"
+	title="Surya Spa | Wellness & Spa Cariblue Resort Costa Rica"
+	description="Relax at Surya Wellness & Spa inside Cariblue Resort. Discover CBD massages, chocolate treatments and organic wraps in Puerto Viejo."
 >
-  <main>
-    <section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-      <div class="absolute inset-0 z-0"><div class="absolute inset-0 z-10"></div><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=2000&q=80" alt="Spa luxury stones candles background" class="w-full h-full object-cover" /></div>
-      <div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
-        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Surya Spa</h1>
-        <p class="text-xs md:text-sm font-bold tracking-[0.25em] text-accent uppercase mt-2 drop-shadow">WELLNESS & SPA</p>
-      </div>
-    </section>
-    <section class="bg-white py-20 px-6 md:px-12 lg:px-24"><div class="max-w-4xl mx-auto text-center flex flex-col items-center"><div class="space-y-6 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal max-w-3xl"><p>Surya Wellness & Spa is dedicated to harmony and the wellbeing of body and soul. Here you can connect with the serenity of the sea and the jungle while listening to birds, monkeys and the sound of the waves.</p><p>Our body treatments use organic ingredients, especially natural Costa Rican oils blended with tropical fruits, coconut oil and handcrafted essential oils from local suppliers.</p></div><a href="https://commerce.smartness.com/cariblue/Masajes-Relajaci%C3%B3n-Total:-Cuerpo-y-Mente-en-Calma-%F0%9F%8C%BF%F0%9F%98%B4-Cariblue-beach-and-jungle-resort" target="_blank" rel="noopener noreferrer" class="mt-10 bg-accent hover:bg-accent text-white font-extrabold text-xs tracking-widest uppercase px-10 py-3.5 rounded shadow-lg transition-all duration-300">Book here</a></div></section>
-    <section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-y border-slate-100"><div class="max-w-7xl mx-auto text-center"><div class="mb-14"><h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Spend a Spa Day</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">{daySpaPackages.map((pkg) => (<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-lg flex flex-col hover:shadow-xl transition-all duration-300"><div class="h-50 overflow-hidden"><img src={pkg.image} alt={pkg.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div><div class="p-6 md:p-8 flex-1 flex flex-col justify-between text-left"><div><h3 class="text-xl md:text-2xl font-serif font-bold text-[#0f2e59] mb-4 text-center">{pkg.title}</h3><p class="text-xs text-slate-500 leading-relaxed font-normal">{pkg.text}</p></div></div></div>))}</div></div></section>
-    <section class="bg-white py-24 px-6 md:px-12 lg:px-24"><div class="max-w-7xl mx-auto text-center"><div class="mb-14"><h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Massages</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">{massages.map((item) => (<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-md"><div class="aspect-4/3 overflow-hidden"><img src={item.image} alt={item.title} class="w-full h-full object-cover" /></div><div class="p-5 text-center border-t border-slate-50"><h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3></div></div>))}</div></div></section>
-    <section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100"><div class="max-w-7xl mx-auto text-center"><div class="mb-14"><h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Treatments</h2></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">{treatments.map((item) => (<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-md"><div class="aspect-4/3 overflow-hidden"><img src={item.image} alt={item.title} class="w-full h-full object-cover" /></div><div class="p-5 text-center border-t border-slate-50"><h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3></div></div>))}</div></div></section>
-  </main>
+	<main>
+		<section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 z-10"></div><img src="https://i.imgur.com/fUgicJc.jpeg" alt="Spa luxury stones candles background" class="w-full h-full object-cover" />
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Surya Spa</h1>
+				<p class="text-xs md:text-sm font-bold tracking-[0.25em] text-accent uppercase mt-2 drop-shadow">WELLNESS & SPA</p>
+			</div>
+		</section>
+		<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+			<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+				<div class="space-y-6 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal max-w-3xl">
+					<p>
+						Surya Wellness & Spa is dedicated to harmony and the wellbeing of body and soul. Here you can connect with the serenity of the sea and the jungle while listening to
+						birds, monkeys and the sound of the waves.
+					</p><p>
+						Our body treatments use organic ingredients, especially natural Costa Rican oils blended with tropical fruits, coconut oil and handcrafted essential oils from local
+						suppliers.
+					</p>
+				</div><a
+					href="https://commerce.smartness.com/cariblue/Masajes-Relajaci%C3%B3n-Total:-Cuerpo-y-Mente-en-Calma-%F0%9F%8C%BF%F0%9F%98%B4-Cariblue-beach-and-jungle-resort"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="mt-10 bg-accent hover:bg-accent text-white font-extrabold text-xs tracking-widest uppercase px-10 py-3.5 rounded shadow-lg transition-all duration-300"
+					>Book here</a
+				>
+			</div>
+		</section>
+		<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-y border-slate-100">
+			<div class="max-w-7xl mx-auto text-center">
+				<div class="mb-14"><h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Spend a Spa Day</h2></div><div
+					class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+				>
+					{
+						daySpaPackages.map((pkg) => (
+							<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-lg flex flex-col hover:shadow-xl transition-all duration-300">
+								<>
+									<div class="h-50 overflow-hidden">
+										<img src={pkg.image} alt={pkg.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+									</div>
+									<div class="p-6 md:p-8 flex-1 flex flex-col justify-between text-left">
+										<div>
+											<>
+												<h3 class="text-xl md:text-2xl font-serif font-bold text-[#0f2e59] mb-4 text-center">{pkg.title}</h3>
+												<p class="text-xs text-slate-500 leading-relaxed font-normal">{pkg.text}</p>
+											</>
+										</div>
+									</div>
+								</>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+		<section class="bg-white py-24 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto text-center">
+				<div class="mb-14"><h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Massages</h2></div><div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+				>
+					{
+						massages.map((item) => (
+							<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-md">
+								<>
+									<div class="aspect-4/3 overflow-hidden">
+										<img src={item.image} alt={item.title} class="w-full h-full object-cover" />
+									</div>
+									<div class="p-5 text-center border-t border-slate-50">
+										<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3>
+									</div>
+								</>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+		<section class="bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24 border-t border-slate-100">
+			<div class="max-w-7xl mx-auto text-center">
+				<div class="mb-14"><h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">Treatments</h2></div><div
+					class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+				>
+					{
+						treatments.map((item) => (
+							<div class="bg-white rounded-md overflow-hidden border border-slate-100 shadow-md">
+								<>
+									<div class="aspect-4/3 overflow-hidden">
+										<img src={item.image} alt={item.title} class="w-full h-full object-cover" />
+									</div>
+									<div class="p-5 text-center border-t border-slate-50">
+										<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider">{item.title}</h3>
+									</div>
+								</>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
