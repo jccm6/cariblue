@@ -212,15 +212,16 @@ export function getGlobalStructuredData(locale: Locale): Record<string, unknown>
 			email: "reservations@cariblue.com",
 			address: {
 				"@type": "PostalAddress",
-				streetAddress: "Playa Cocles",
-				addressLocality: "Puerto Viejo de Talamanca",
+				streetAddress: "Cocles Beach, 1.5 Km. South Puerto Viejo",
+				postalCode: "70403",
+				addressLocality: "Puerto Viejo",
 				addressRegion: "Limón",
 				addressCountry: "CR",
 			},
 			geo: {
 				"@type": "GeoCoordinates",
-				latitude: 9.6389,
-				longitude: -82.7357,
+				latitude: 9.650190490438069,
+				longitude: -82.74184302332371,
 			},
 			priceRange: "$$",
 			checkinTime: "15:00",
@@ -252,10 +253,12 @@ export function getGlobalStructuredData(locale: Locale): Record<string, unknown>
 			name: SITE_NAME,
 			url: home,
 			logo,
+			owns: { "@id": `${SITE_URL}/#hotel` },
 			contactPoint: {
 				"@type": "ContactPoint",
 				telephone: "+506 2750 0035",
 				contactType: "reservations",
+				email: "reservations@cariblue.com",
 				availableLanguage: ["Spanish", "English"],
 			},
 		},
@@ -267,6 +270,7 @@ export function getGlobalStructuredData(locale: Locale): Record<string, unknown>
 			url: home,
 			inLanguage: locale === "es" ? "es-CR" : "en",
 			publisher: { "@id": `${SITE_URL}/#organization` },
+			about: { "@id": `${SITE_URL}/#hotel` },
 		},
 	];
 }
