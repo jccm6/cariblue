@@ -42,6 +42,7 @@ export const ui = {
 			restaurants: [
 				["/restaurante", "La Jungla Restaurant"],
 				["/sushi-wave", "Sushi Wave"],
+				["/beach-break", "Beach Break"],
 			],
 			experiences: [
 				["/surya-spa", "Surya Spa"],
@@ -293,6 +294,7 @@ export const ui = {
 			restaurants: [
 				["/en/restaurante", "La Jungla Restaurant"],
 				["/en/sushi-wave", "Sushi Wave (Beachfront)"],
+				["/en/beach-break", "Beach Break"],
 			],
 			experiences: [
 				["/en/surya-spa", "Surya Spa"],
