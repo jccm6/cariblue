@@ -1,78 +1,71 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const highlights = [
-	"Pantallas en salón para vivir cada partido",
-	"Mesas en la playa con ambiente relajado",
-	"Comida de alta calidad y cócteles refrescantes",
-	"El equilibrio perfecto entre energía y chill caribeño",
-];
-
-const menuCategories = [
-	"Hamburguesas y clásicos del sport bar",
-	"Bowls y ensaladas frescas",
-	"Especiales de la casa",
-	"Tacos",
-	"Alitas",
-	"Aperitivos",
-	"Postres",
-	"Coctelería y bar",
-];
-
-const keyInfo = [
+const sportsBarFeatures = [
 	{
-		title: "Beachfront",
-		text: "Mesas en la playa y salón con pantallas",
-		icon: "https://i.imgur.com/N6NmSHp.png",
+		title: "4 pantallas gigantes",
+		text: "Sigue cada jugada con una vista privilegiada desde cualquier mesa.",
 	},
 	{
-		title: "Horario de atención",
-		text: "Lunes a domingo de 11:00 a.m. a 9:00 p.m.",
-		icon: "https://i.imgur.com/s89vBk2.png",
+		title: "Todos los deportes en vivo",
+		text: "Fútbol, UFC, tenis, Fórmula 1 y más en un ambiente que sube la energía.",
 	},
 	{
-		title: "Happy Hour",
-		text: "Todos los días de 4:00 p.m. a 7:00 p.m.",
-		icon: "https://i.imgur.com/89Lxb5P.png",
+		title: "Área de juegos",
+		text: "Espacio para compartir antes, durante y después de cada partido.",
+	},
+	{
+		title: "La mejor energía",
+		text: "Buena música, servicio ágil y vibra caribeña frente al mar.",
 	},
 ];
 
-const activationItems = ["DJ en vivo: martes, jueves, viernes y sábado", "Horario: 5:30 p.m. a 8:30 p.m.", "Fogata en la playa al atardecer"];
+const beachClubFeatures = [
+	{
+		title: "Mesas frente al mar",
+		text: "Un escenario abierto al Caribe para almorzar, brindar o simplemente quedarte.",
+	},
+	{
+		title: "Cócteles y bebidas refrescantes",
+		text: "Opciones pensadas para acompañar el calor, la playa y el ritmo del día.",
+	},
+	{
+		title: "DJ en vivo",
+		text: "Martes, jueves, viernes y sábado de 4:30 p.m. a 7:30 p.m.",
+	},
+	{
+		title: "Fogata en la playa al atardecer",
+		text: "Un cierre perfecto para disfrutar el paisaje con un ambiente relajado.",
+	},
+];
 ---
 
 <Layout
-	title="Beach Break | Sport bar frente al mar en Playa Cocles"
-	description="Descubre Beach Break en Cariblue Resort: deportes, buena comida y cócteles frente a la playa con ambiente relajado y energía caribeña."
+	title="Beach Break | Sports Bar y Beach Club frente al mar en Playa Cocles"
+	description="Descubre Beach Break en Cariblue Resort: un espacio que reúne Sports Bar y Beach Club con deportes en vivo, buena comida, cócteles y la mejor experiencia frente al Caribe."
 >
 	<main>
-		<section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+		<section class="relative min-h-[42vh] md:min-h-[52vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
 			<div class="absolute inset-0 z-0">
-				<div class="absolute inset-0 z-10 bg-black/20"></div>
-				<img src="/vista_al_mar.webp" alt="Vista frente al mar en Beach Break" class="h-full w-full object-cover" />
+				<div class="absolute inset-0 z-10 bg-linear-to-b from-black/20 via-black/25 to-black/45"></div>
+				<img src="https://i.imgur.com/Ye32tZX.png" alt="Vista frente al mar en Beach Break" class="h-full w-full object-cover" />
 			</div>
-			<div class="relative z-20 max-w-4xl mx-auto mt-8">
-				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Beach Break</h1>
-				<p class="mt-4 text-sm md:text-lg font-medium tracking-[0.2em] uppercase text-white/90">Sport bar frente al mar</p>
+			<div class="relative z-20 max-w-5xl mx-auto mt-8">
+				<p class="text-[11px] md:text-xs font-black tracking-[0.35em] uppercase text-white/80">Cariblue Resort</p>
+				<h1 class="mt-4 text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Beach Break</h1>
+				<p class="mt-5 text-sm md:text-lg font-medium tracking-[0.18em] uppercase text-white/90">Sports Bar + Beach Club frente al mar</p>
 			</div>
 		</section>
 
 		<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
 			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 				<div class="lg:col-span-6">
-					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Valor</p>
-					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight mb-6">Mucho más que un sport bar</h2>
-					<p class="text-sm md:text-[15px] text-slate-600 leading-relaxed">Deportes, buena comida y cócteles frente a la playa.</p>
-					<p class="mt-4 text-sm md:text-[15px] text-slate-600 leading-relaxed">Beach Break combina la emoción del deporte con una experiencia relajada frente al mar.</p>
-					<ul class="mt-8 space-y-4">
-						{
-							highlights.map((item) => (
-								<li class="flex items-start gap-3 text-sm md:text-[15px] text-slate-700 leading-relaxed">
-									<span class="mt-1 h-2.5 w-2.5 rounded-full bg-accent shrink-0" />
-									<span>{item}</span>
-								</li>
-							))
-						}
-					</ul>
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Sports Bar</p>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">Mucho más que un sport bar</h2>
+					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">Deportes, buena comida y cócteles frente al mar.</p>
+					<p class="mt-4 text-sm md:text-[15px] text-slate-600 leading-relaxed">
+						Beach Break Sports Bar combina la emoción de cada partido con una propuesta gastronómica de alta calidad, un ambiente vibrante y la mejor vista del Caribe.
+					</p>
 					<div class="mt-8 flex flex-col sm:flex-row gap-4">
 						<a
 							href="https://cariblue.kivly.store/menu/6a341235ed58c16ac4efa401?tab=carta"
@@ -86,97 +79,98 @@ const activationItems = ["DJ en vivo: martes, jueves, viernes y sábado", "Horar
 							target="_blank"
 							class="inline-flex items-center justify-center border border-slate-200 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300"
 						>
-							Reservar mesa (WhatsApp)
+							WhatsApp
 						</a>
 					</div>
 				</div>
 				<div class="lg:col-span-6">
-					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-4/3 relative group">
-						<img src="/coctel.webp" alt="Cócteles y ambiente relajado en Beach Break" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="bg-slate-50/60 py-20 px-6 md:px-12 lg:px-24 border-y border-slate-100">
-			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-				<div class="lg:col-span-5">
-					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-4/5 relative group">
+					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-5/4 relative group">
 						<img
-							src="/restaurante_la_jungla.webp"
-							alt="Comida para compartir en Beach Break"
+							src="https://i.imgur.com/eCcEHVh.png"
+							alt="Ambiente y comida en Beach Break Sports Bar"
 							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
 						/>
 					</div>
 				</div>
-				<div class="lg:col-span-7">
-					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Menú</p>
-					<p class="text-sm md:text-[15px] text-slate-600 leading-relaxed">Una carta pensada para compartir, disfrutar y acompañar cualquier momento del día.</p>
-					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-						{menuCategories.map((item) => <div class="rounded border border-slate-200 bg-white px-5 py-4 text-sm md:text-[15px] text-[#0f2e59] font-semibold">{item}</div>)}
-					</div>
-					<p class="mt-8 text-sm md:text-[15px] text-slate-600 leading-relaxed">Perfecto para ver el partido, compartir con amigos o disfrutar un atardecer frente al mar.</p>
-				</div>
 			</div>
-		</section>
 
-		<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
-			<div class="max-w-5xl mx-auto border-t border-slate-100 pt-16">
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+			<div class="max-w-7xl mx-auto mt-16">
+				<div class="flex items-center gap-4 mb-8">
+					<div class="h-px flex-1 bg-slate-200"></div>
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-[#0f2e59]">¿Qué encontrarás?</p>
+					<div class="h-px flex-1 bg-slate-200"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
 					{
-						keyInfo.map((item) => (
-							<div class="flex flex-col items-center">
-								<div class="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center mb-4 border border-slate-100">
-									<img src={item.icon} alt={item.title} />
-								</div>
-								<h3 class="text-sm font-bold text-[#0f2e59] uppercase tracking-wider mb-2">{item.title}</h3>
-								<p class="text-xs text-slate-500 font-light leading-relaxed max-w-xs">{item.text}</p>
+						sportsBarFeatures.map((item, index) => (
+							<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
+								<div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/12 border border-white/15 mb-5 text-lg font-bold">{index + 1}</div>
+								<h3 class="text-base font-bold tracking-wide mb-3">{item.title}</h3>
+								<p class="text-sm text-white/78 leading-relaxed">{item.text}</p>
 							</div>
 						))
 					}
 				</div>
+				<p class="mt-8 text-center text-base md:text-lg font-medium text-[#0f2e59]">Perfecto para vivir el deporte como se debe.</p>
 			</div>
 		</section>
 
-		<section class="bg-[#0f2e59] py-20 px-6 md:px-12 lg:px-24 text-white">
+		<section class="bg-[#f6efe4] py-20 px-6 md:px-12 lg:px-24 border-y border-[#eadbc7]">
 			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-				<div class="lg:col-span-7">
-					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Activación</p>
-					<h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">Atardeceres con energía</h2>
-					<p class="text-sm md:text-[15px] text-white/80 leading-relaxed">La mejor combinación entre deporte, música y playa.</p>
-					<ul class="mt-8 space-y-4">
-						{
-							activationItems.map((item) => (
-								<li class="flex items-start gap-3 text-sm md:text-[15px] text-white/90 leading-relaxed">
-									<span class="mt-1 h-2.5 w-2.5 rounded-full bg-accent shrink-0" />
-									<span>{item}</span>
-								</li>
-							))
-						}
-					</ul>
-					<p class="mt-8 text-lg md:text-xl font-medium text-white">Ven por el juego, quédate por la vibra.</p>
-					<p class="mt-6 text-sm md:text-[15px] text-white/75 leading-relaxed">Abierto a huéspedes y visitantes. Siempre hay un buen momento esperándote frente al mar.</p>
-					<div class="mt-8 flex flex-col sm:flex-row gap-4">
-						<a
-							href="https://cariblue.kivly.store/menu/6a341235ed58c16ac4efa401?tab=carta"
-							target="_blank"
-							class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
-						>
-							Ver menú
-						</a>
-						<a
-							href="https://maps.app.goo.gl/NwJjTVxUU8TakKxr6"
-							target="_blank"
-							class="inline-flex items-center justify-center border border-white/35 bg-white/10 text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300"
-						>
-							Cómo llegar
-						</a>
+				<div class="lg:col-span-5 order-2 lg:order-1">
+					<div class="overflow-hidden rounded shadow-2xl border border-white/50 aspect-4/5 relative group">
+						<img
+							src="https://i.imgur.com/SFzWfHG.png"
+							alt="Cócteles y ambiente relajado en Beach Break Playa"
+							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+						/>
 					</div>
 				</div>
-				<div class="lg:col-span-5">
-					<div class="overflow-hidden rounded shadow-2xl border border-white/10 aspect-4/5 relative group">
-						<img src="/sushi_wave.webp" alt="Atardecer frente al mar en Beach Break" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
-					</div>
+				<div class="lg:col-span-7 order-1 lg:order-2">
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Beach Club</p>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">El Caribe se vive mejor frente al mar</h2>
+					<p class="mt-6 text-sm md:text-[15px] text-slate-700 leading-relaxed">
+						Disfruta de mesas sobre la playa, buena música, cócteles y un ambiente relajado donde el atardecer es parte de la experiencia.
+					</p>
+					<p class="mt-4 text-sm md:text-[15px] text-slate-700 leading-relaxed">
+						Ya sea para almorzar, tomar un trago o simplemente desconectarte, Beach Break Playa es el lugar ideal para vivir la esencia del Caribe.
+					</p>
+					<p class="mt-6 text-lg md:text-xl font-medium text-[#0f2e59]">Vive la experiencia</p>
+				</div>
+			</div>
+
+			<div class="max-w-7xl mx-auto mt-16">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+					{
+						beachClubFeatures.map((item) => (
+							<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+								<div class="w-11 h-11 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+										<path d="M12 2a1 1 0 0 1 .894.553l2.078 4.214 4.65.675a1 1 0 0 1 .554 1.706l-3.364 3.279.794 4.632a1 1 0 0 1-1.45 1.054L12 15.927l-4.156 2.186a1 1 0 0 1-1.45-1.054l.794-4.632L3.824 9.148a1 1 0 0 1 .554-1.706l4.65-.675 2.078-4.214A1 1 0 0 1 12 2Z" />
+									</svg>
+								</div>
+								<h3 class="text-base font-bold text-[#0f2e59] mb-2">{item.title}</h3>
+								<p class="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+							</div>
+						))
+					}
+				</div>
+				<p class="mt-10 text-center text-lg md:text-xl font-medium text-[#0f2e59]">Ven por el paisaje, quédate por la experiencia.</p>
+				<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+					<a
+						href="https://maps.app.goo.gl/NwJjTVxUU8TakKxr6"
+						target="_blank"
+						class="inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+					>
+						Cómo llegar
+					</a>
+					<a
+						href="https://wa.me/message/75TXOCRHFENEO1"
+						target="_blank"
+						class="inline-flex items-center justify-center border border-[#0f2e59]/15 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300"
+					>
+						WhatsApp
+					</a>
 				</div>
 			</div>
 		</section>
