@@ -129,7 +129,7 @@ export const ui = {
 							"Moana cuenta con gran variedad de masajes y tratamientos para disfrutar solo o en pareja, relajarse después de un viaje largo o ese tour cargado de adrenalina es imprescindible para cerrar el día. El centro de Spa Moana está a disposición de todo el público, dando prioridad a nuestros huéspedes, podrá disfrutar del mismo apartando su lugar en nuestra recepción.",
 						],
 						quote: "Masajes, tratamientos y un espacio íntimo entre el mar y la jungla.",
-						image: "https://i.imgur.com/JpZ8LfA.png",
+						image: "https://i.imgur.com/QN0wGs7.png",
 						caption: "Spa Moana y bienestar",
 					},
 					{
@@ -139,7 +139,7 @@ export const ui = {
 							"26 habitaciones con capacidad entre 2 a 6 personas, aire acondicionado, refrigerador, TV con cable, hamacas, áreas verdes, 2 piscinas y 1 jacuzzi abiertos las 24 horas del día son algunas de las comodidades que se puede encontrar en el área de playa.",
 						],
 						quote: "A pasos de Playa Cocles, entre el sonido del mar y la brisa.",
-						image: "https://i.imgur.com/vx4ec1b.png",
+						image: "https://i.imgur.com/UScW40f.jpeg",
 						caption: "Habitaciones frente al mar",
 					},
 					{
@@ -149,7 +149,7 @@ export const ui = {
 							"Entre nuestros exuberantes jardines podrá observar osos perezosos, tucanes, monos, guatusas, ranas, ardillas y variedad de pájaros. Contamos con varios convenios con fundaciones protectoras de la naturaleza y colaboramos en la conservación, documentación y rehabilitación de fauna local.",
 						],
 						quote: "La naturaleza es la base de nuestro ecosistema.",
-						image: "https://i.imgur.com/YsK6QGt.png",
+						image: "https://i.imgur.com/DRu9d9a.png",
 						caption: "Santuario de vida salvaje",
 					},
 					{
@@ -159,7 +159,7 @@ export const ui = {
 							"Playa Cocles es una de las visitas obligatorias del Caribe Sur. Si es amante del buceo o snorkell podrá deleitarse en el acuario marítimo natural más grande de la zona gracias a la línea de arrecife coralino protegido por los locales.",
 						],
 						quote: "Una playa predilecta para turistas extranjeros y locales.",
-						image: "https://i.imgur.com/WOMEmZ3.png",
+						image: "https://i.imgur.com/hm2CpL1.png",
 						caption: "Frente a Playa Cocles",
 					},
 					{
@@ -169,7 +169,7 @@ export const ui = {
 							"La Zona de La Jungla cuenta con 22 habitaciones con capacidad entre 2 a 6 personas, aire acondicionado, baños privados con agua caliente, dispensadores de shampoo, acondicionador y gel biodegradable, escritorios con toma corriente USB y refrigerador.",
 						],
 						quote: "También podrá disfrutar de la brisa del mar en nuestra zona de playa.",
-						image: "https://i.imgur.com/9FX2Gng.png",
+						image: "https://i.imgur.com/zjAZnxr.jpeg",
 						caption: "Habitaciones entre la jungla",
 					},
 					{
@@ -179,7 +179,7 @@ export const ui = {
 							"Sumergida en medio de la jungla y rodeada de árboles centenarios, la Casa Familiar es ideal para las vacaciones familiares. Cuenta con terraza con hamacas, cocina equipada, aire acondicionado, baño privado, escritorio con tomas USB, secadora de pelo, caja de seguridad, servicio a la habitación e internet wifi gratuito.",
 						],
 						quote: "40 metros cuadrados de construcción a base de madera para 8 personas.",
-						image: "https://i.imgur.com/YBuMXQs.png",
+						image: "https://i.imgur.com/4dxCKMo.jpeg",
 						caption: "Casa Familiar",
 					},
 					{
@@ -189,7 +189,7 @@ export const ui = {
 							"Desde exquisitos appetizers como ceviches, quesadillas, humus, tartares y tacos, hasta exóticos bowls como el Perezozo Bowl y el Congo Bowl, elaborados por el chef de la casa con una fusión de aromas y sabores mediterráneos y caribeños.",
 						],
 						quote: "Nuestro restaurante cuenta con capacidad para 60 comensales.",
-						image: "https://i.imgur.com/BlfA4NW.png",
+						image: "https://i.imgur.com/yH64nqJ.png",
 						caption: "Restaurante La Jungla",
 					},
 					{
@@ -199,7 +199,7 @@ export const ui = {
 							"Entre las 3:30 y 5:50 de la tarde llega nuestra Happy Hour, favorita entre nuestros huéspedes, con cócteles especiales de la casa, más de 70 opciones de bebidas y alternativas sin alcohol para el disfrute de los más pequeños.",
 						],
 						quote: "También es posible pedir comida del restaurante La Jungla sin salir de la piscina.",
-						image: "https://i.imgur.com/WRKZRnw.png",
+						image: "https://i.imgur.com/LYR7McN.png",
 						caption: "Wetbar y Happy Hour",
 					},
 					{
@@ -381,7 +381,7 @@ export const ui = {
 							"Moana offers a wide variety of massages and treatments to enjoy alone or as a couple. Relaxing after a long trip or an adrenaline-filled tour is essential to close the day. Spa Moana is open to the public, with priority for our guests, and reservations can be made at reception.",
 						],
 						quote: "Massages, treatments and an intimate space between the sea and the jungle.",
-						image: "https://i.imgur.com/JpZ8LfA.png",
+						image: "https://i.imgur.com/QN0wGs7.png",
 						caption: "Spa Moana and wellness",
 					},
 					{
@@ -391,7 +391,7 @@ export const ui = {
 							"Twenty-six rooms for 2 to 6 guests, air conditioning, refrigerator, cable TV, hammocks, green areas, 2 pools and 1 jacuzzi open 24 hours a day are some of the comforts available in the beach area.",
 						],
 						quote: "Steps from Playa Cocles, between the sound of the sea and the breeze.",
-						image: "https://i.imgur.com/vx4ec1b.png",
+						image: "https://i.imgur.com/UScW40f.jpeg",
 						caption: "Oceanfront rooms",
 					},
 					{
@@ -401,7 +401,7 @@ export const ui = {
 							"Across our lush gardens you may observe sloths, toucans, monkeys, agoutis, frogs, squirrels and many birds. We partner with nature protection foundations and contribute to the conservation, documentation and rehabilitation of local wildlife.",
 						],
 						quote: "Nature is the foundation of our ecosystem.",
-						image: "https://i.imgur.com/YsK6QGt.png",
+						image: "https://i.imgur.com/DRu9d9a.png",
 						caption: "Wildlife sanctuary",
 					},
 					{
@@ -411,7 +411,7 @@ export const ui = {
 							"Playa Cocles is a must-visit destination in the South Caribbean. If you love diving or snorkeling, you can enjoy the area's largest natural marine aquarium thanks to the coral reef protected by locals.",
 						],
 						quote: "A favorite beach for international visitors and locals.",
-						image: "https://i.imgur.com/WOMEmZ3.png",
+						image: "https://i.imgur.com/hm2CpL1.png",
 						caption: "In front of Playa Cocles",
 					},
 					{
@@ -421,7 +421,7 @@ export const ui = {
 							"La Jungla Area has 22 rooms for 2 to 6 guests, air conditioning, private bathrooms with hot water, biodegradable shampoo, conditioner and gel dispensers, desks with USB outlets and refrigerators.",
 						],
 						quote: "You can also enjoy the sea breeze in our beach area.",
-						image: "https://i.imgur.com/9FX2Gng.png",
+						image: "https://i.imgur.com/zjAZnxr.jpeg",
 						caption: "Rooms in the jungle",
 					},
 					{
@@ -431,7 +431,7 @@ export const ui = {
 							"Surrounded by jungle and ancient trees, the Family House is ideal for family vacations. It features a terrace with hammocks, equipped kitchen, air conditioning, private bathroom, desk with USB outlets, hair dryer, safe, room service and free Wi-Fi.",
 						],
 						quote: "Forty square meters built in wood for up to 8 people.",
-						image: "https://i.imgur.com/YBuMXQs.png",
+						image: "https://i.imgur.com/4dxCKMo.jpeg",
 						caption: "Family House",
 					},
 					{
@@ -441,7 +441,7 @@ export const ui = {
 							"From appetizers such as ceviches, quesadillas, hummus, tartares and tacos to exotic bowls like the Sloth Bowl and the Congo Bowl, everything is prepared by our chef with a fusion of Mediterranean and Caribbean aromas and flavors.",
 						],
 						quote: "Our restaurant has capacity for 60 diners.",
-						image: "https://i.imgur.com/BlfA4NW.png",
+						image: "https://i.imgur.com/yH64nqJ.png",
 						caption: "La Jungla Restaurant",
 					},
 					{
@@ -451,7 +451,7 @@ export const ui = {
 							"From 3:30 to 5:50 in the afternoon, our guests' favorite Happy Hour arrives with house cocktails, more than 70 drink options and alcohol-free alternatives for younger guests.",
 						],
 						quote: "You can also order food from La Jungla restaurant without leaving the pool.",
-						image: "https://i.imgur.com/WRKZRnw.png",
+						image: "https://i.imgur.com/LYR7McN.png",
 						caption: "Wet bar and Happy Hour",
 					},
 					{
