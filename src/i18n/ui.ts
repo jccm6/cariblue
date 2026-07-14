@@ -15,7 +15,7 @@ export const ui = {
 			menuToggle: "Abrir menú",
 			booking: "Reservar",
 			nav: {
-				// home: "Inicio",
+				home: "Inicio",
 				rooms: "Habitaciones",
 				allInclusive: "All Inclusive",
 				restaurants: "Restaurantes",
@@ -267,7 +267,7 @@ export const ui = {
 			menuToggle: "Open menu",
 			booking: "Book Now",
 			nav: {
-				// home: "Home",
+				home: "Home",
 				rooms: "Rooms",
 				allInclusive: "All Inclusive",
 				restaurants: "Restaurants",
