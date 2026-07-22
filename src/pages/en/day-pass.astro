@@ -1,82 +1,216 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const dayPassFeatures = [
-  {
-    title: "Value",
-    text: "The price is 15,000 colones per person. Children 5 to 12 years old pay 50%. Children under 5 enter free.",
-    image: "https://i.imgur.com/Pb4VtVh.png",
-    alt: "Friends raising cocktails by the pool",
-  },
-  {
-    title: "Restaurant",
-    text: "The price is consumable at La Jungla restaurant and bar, where you can enjoy dishes and drinks.",
-    image: "https://i.imgur.com/xUxe0xj.png",
-    alt: "Gourmet burger served on a plate",
-  },
-  {
-    title: "Facilities",
-    text: "You can use all hotel facilities such as bars, pools, restaurants, common spaces and the pool table.",
-    image: "https://i.imgur.com/Vf3BfEO.png",
-    alt: "Guests playing pool at the resort lounge",
-  },
-  {
-    title: "Schedule",
-    text: "Open daily from 11:00 am to 6:00 pm.",
-    image: "https://i.imgur.com/kDB5tha.png",
-    alt: "Family enjoying the swimming pool",
-  },
+const regularFeatures = [
+	{
+		title: "Resort facilities",
+		text: "Access to all resort facilities.",
+	},
+	{
+		title: "Pools",
+		text: "Enjoy the use of our pools throughout the day.",
+	},
+	{
+		title: "Scheduled activities",
+		text: "Access to the hotel's scheduled activities during the day.",
+	},
+	{
+		title: "Included credit",
+		text: "₡15,000 to spend on food and drinks at La Jungla Restaurant.",
+	},
+];
+
+const allInclusiveAccess = [
+	"Use of pools.",
+	"Access to common areas.",
+	"Scheduled activities during the day.",
+	"Use of the gym with a reservation required, subject to availability.",
+];
+
+const mealOptions = [
+	{
+		title: "Option 1",
+		subtitle: "Buffet Breakfast + Lunch",
+		items: [
+			"Buffet Breakfast: 9:00 a.m. – 10:00 a.m.",
+			"Lunch: 12:00 p.m. – 5:00 p.m.",
+			"Includes the day's starter, a main course of your choice from the menu and dessert.",
+		],
+	},
+	{
+		title: "Option 2",
+		subtitle: "Lunch + Dinner",
+		items: [
+			"Lunch: 12:00 p.m. – 5:00 p.m.",
+			"Dinner: 5:00 p.m. – 7:00 p.m.",
+			"Each meal includes the day's starter, a main course and dessert.",
+		],
+	},
+];
+
+const openBarItems = [
+	"National beers.",
+	"Traditional pour-over coffee.",
+	"Tea and infusions.",
+	"Chocolate milk.",
+	"Soft drinks and sodas.",
+	"Natural juice selected for the day.",
+	"House wine by the glass (white, red or rosé).",
+	"Selected cocktails.",
 ];
 ---
 
 <Layout
-  lang="en"
-  title="Day Pass | Cariblue Beach & Jungle Resort Costa Rica"
-  description="Enjoy an unforgettable day at Cariblue Resort with our Day Pass. Access to pools, jacuzzis, bars and 15,000 colones of consumable credit at the restaurant."
+	lang="en"
+	title="Day Pass | Cariblue Beach & Jungle Resort Costa Rica"
+	description="Experience a Caribbean vacation day with Cariblue Resort's Regular or All Inclusive Day Pass. Enjoy our facilities, pools, activities, meals and open bar without staying overnight."
 >
-  <main>
-    <section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 z-10"></div>
-        <img src="https://i.imgur.com/3l7ZTne.png" alt="Pool sunbathing floating lounge background" class="w-full h-full object-cover" />
-      </div>
-      <div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
-        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Day Pass</h1>
-      </div>
-    </section>
+	<main>
+		<section class="relative min-h-[42vh] md:min-h-[52vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 z-10 bg-linear-to-b from-black/20 via-black/25 to-black/45"></div>
+				<img src="https://i.imgur.com/3l7ZTne.png" alt="Guests enjoying the Cariblue pool" class="h-full w-full object-cover" />
+			</div>
+			<div class="relative z-20 max-w-5xl mx-auto mt-8">
+				<p class="text-[11px] md:text-xs font-black tracking-[0.35em] uppercase text-white/80">Cariblue Resort</p>
+				<h1 class="mt-4 text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Day Pass Cariblue</h1>
+				<p class="mt-5 text-sm md:text-lg font-medium tracking-[0.18em] uppercase text-white/90">Experience a Caribbean vacation day</p>
+				<p class="mt-4 text-sm md:text-base text-white/90">You do not need to stay overnight to enjoy the Cariblue experience.</p>
+			</div>
+		</section>
 
-    <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
-      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-5">What is included?</h2>
-        <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-3xl">
-          Enjoy full access to our facilities for a whole day for only <span class="font-bold text-accent">15,000 consumable colones</span> at La Jungla restaurant, where you can enjoy delicious dishes and cocktails. Create memorable moments with friends and family.
-        </p>
-      </div>
-    </section>
+		<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+				<div class="lg:col-span-6">
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Regular Day Pass</p>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">Enjoy Cariblue your way</h2>
+					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">Ideal for those who want to spend the day at our facilities and enjoy a wonderful day in a tropical setting.</p>
+					<p class="mt-4 text-sm md:text-[15px] text-slate-600 leading-relaxed">Perfect for birthdays, anniversaries and other special moments.</p>
+					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<div class="rounded bg-[#0f2e59] px-5 py-5 text-white shadow-lg">
+							<p class="text-[11px] font-black tracking-[0.2em] uppercase text-white/70">Price</p>
+							<p class="mt-2 text-2xl font-serif font-bold">₡15,000</p>
+							<p class="mt-1 text-sm text-white/80">per person</p>
+						</div>
+						<div class="rounded border border-[#eadbc7] bg-[#f6efe4] px-5 py-5">
+							<p class="text-[11px] font-black tracking-[0.2em] uppercase text-accent">Children's policy</p>
+							<p class="mt-2 text-sm text-slate-700 leading-relaxed">Ages 0 to 2: admission without a meal plan. Ages 3 to 12: pay 50% of the rate.</p>
+						</div>
+					</div>
+					<p class="mt-6 text-sm font-semibold text-[#0f2e59]">Groups of more than 10 people require an advance reservation.</p>
+					<a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">Book groups here</a>
+				</div>
+				<div class="lg:col-span-6">
+					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-5/4 relative group">
+						<img src="https://i.imgur.com/Pb4VtVh.png" alt="Friends enjoying drinks by the pool" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+					</div>
+				</div>
+			</div>
 
-    <section class="bg-white pb-20 px-6 md:px-12 lg:px-24">
-      <div class="max-w-5xl mx-auto space-y-16 lg:space-y-24">
-        {dayPassFeatures.map((feat) => (
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16 last:border-0 last:pb-0">
-            <div class="col-span-1 md:col-span-6 text-left">
-              <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">{feat.title}</h3>
-              <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal">{feat.text}</p>
-            </div>
-            <div class="col-span-1 md:col-span-6">
-              <div class="overflow-hidden rounded shadow-xl border border-slate-100 relative group aspect-video">
-                <img src={feat.image} alt={feat.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+			<div class="max-w-7xl mx-auto mt-16">
+				<div class="flex items-center gap-4 mb-8">
+					<div class="h-px flex-1 bg-slate-200"></div>
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-[#0f2e59]">Included</p>
+					<div class="h-px flex-1 bg-slate-200"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+					{regularFeatures.map((item, index) => (
+						<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
+							<div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/12 border border-white/15 mb-5 text-lg font-bold">{index + 1}</div>
+							<h3 class="text-base font-bold tracking-wide mb-3">{item.title}</h3>
+							<p class="text-sm text-white/78 leading-relaxed">{item.text}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
 
-    <section class="bg-slate-50/50 py-20 px-6 text-center border-t border-slate-100">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-8 leading-tight">Don't wait any longer to spend a day at Cariblue</h2>
-        <a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300">Contact us</a>
-      </div>
-    </section>
-  </main>
+		<section class="bg-[#f6efe4] py-20 px-6 md:px-12 lg:px-24 border-y border-[#eadbc7]">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+				<div class="lg:col-span-5 order-2 lg:order-1">
+					<div class="overflow-hidden rounded shadow-2xl border border-white/50 aspect-4/5 relative group">
+						<img src="https://i.imgur.com/xUxe0xj.png" alt="Food served at La Jungla Restaurant" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+					</div>
+				</div>
+				<div class="lg:col-span-7 order-1 lg:order-2">
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">All Inclusive Day Pass</p>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">The Cariblue experience without limits</h2>
+					<p class="mt-6 text-sm md:text-[15px] text-slate-700 leading-relaxed">Enjoy a full day with meals, drinks, access to our facilities and everything you need to relax.</p>
+					<p class="mt-4 text-sm md:text-[15px] text-slate-700 leading-relaxed">Perfect for couples, families and groups who want to experience All Inclusive without staying overnight.</p>
+					<div class="mt-8 rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+						<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-4">Hotel access</h3>
+						<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+							{allInclusiveAccess.map((item) => <li>{item}</li>)}
+						</ul>
+						<p class="mt-4 text-sm font-semibold text-[#0f2e59]">Groups of more than 10 people require an advance reservation.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="max-w-7xl mx-auto mt-16">
+				<div class="flex items-center gap-4 mb-8">
+					<div class="h-px flex-1 bg-[#eadbc7]"></div>
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-[#0f2e59]">Meals and drinks</p>
+					<div class="h-px flex-1 bg-[#eadbc7]"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+					{mealOptions.map((option) => (
+						<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+							<p class="text-[11px] font-black tracking-[0.2em] uppercase text-accent mb-2">{option.title}</p>
+							<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-4">{option.subtitle}</h3>
+							<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+								{option.items.map((item) => <li>{item}</li>)}
+							</ul>
+						</div>
+					))}
+				</div>
+
+				<div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+					<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+						<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-3">Snack</h3>
+						<p class="text-sm text-slate-600 leading-relaxed">Includes 1 personal snack per person, available at our Wet Bar.</p>
+					</div>
+					<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+						<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-3">Open bar</h3>
+						<p class="text-sm text-slate-600 leading-relaxed mb-4">Available from 11:00 a.m. to 6:00 p.m. at La Jungla and Wet Bar.</p>
+						<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+							{openBarItems.map((item) => <li>{item}</li>)}
+						</ul>
+						<p class="mt-4 text-xs text-slate-500 leading-relaxed">Premium spirits and cocktails not included in the selection have an additional cost.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="max-w-7xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-12 gap-5">
+				<div class="lg:col-span-5 overflow-hidden rounded shadow-xl border border-white/50 aspect-5/4 relative group">
+					<img src="https://i.imgur.com/Vf3BfEO.png" alt="Entertainment area at Cariblue" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+				</div>
+				<div class="lg:col-span-3 rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg flex flex-col justify-center">
+					<p class="text-[11px] font-black tracking-[0.2em] uppercase text-white/70">Wet Bar hours</p>
+					<p class="mt-3 text-2xl font-serif font-bold">12:00 p.m. – 5:00 p.m.</p>
+				</div>
+				<div class="lg:col-span-4 self-stretch min-h-[260px] lg:min-h-0 overflow-hidden rounded shadow-xl border border-white/50 relative group">
+					<img src="https://i.imgur.com/kDB5tha.png" alt="Family enjoying the Cariblue pool" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+				</div>
+			</div>
+
+			<div class="max-w-7xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
+				<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+					<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-3">Children</h3>
+					<p class="text-sm text-slate-600 leading-relaxed">Ages 0 to 2: admission without a meal plan.</p>
+					<p class="mt-2 text-sm text-slate-600 leading-relaxed">Ages 3 to 11: pay 50% of the rate, with a children's menu.</p>
+				</div>
+				<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+					<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-3">Price</h3>
+					<p class="text-sm text-slate-600 leading-relaxed"><span class="font-bold text-[#0f2e59]">Adults:</span> ₡40,000 per person</p>
+					<p class="mt-2 text-sm text-slate-600 leading-relaxed"><span class="font-bold text-[#0f2e59]">Children (ages 3 to 11):</span> ₡20,000 per child</p>
+				</div>
+			</div>
+
+			<div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">Book groups here</a>
+				<a href="https://maps.app.goo.gl/NwJjTVxUU8TakKxr6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-[#0f2e59]/15 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300">How to get here</a>
+			</div>
+		</section>
+	</main>
 </Layout>
