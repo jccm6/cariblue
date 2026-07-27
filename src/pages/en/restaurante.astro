@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 
 const menuUrl = "https://cariblue.kivly.store/menu/6a049a97b7a1a2ae0d2fa360?tab=carta";
 const whatsappUrl = "https://wa.me/50683141965";
-const directionsUrl = "https://maps.app.goo.gl/NwJjTVxUU8TakKxr6";
+const directionsUrl = "https://maps.app.goo.gl/2YBFAKLmUraXF6qM8";
 
 const valueFeatures = [
 	{
@@ -20,12 +20,7 @@ const valueFeatures = [
 	},
 ];
 
-const menuCategories = [
-	"Ceviches, tacos and starters to share",
-	"Vegan, chicken, fish and shrimp bowls",
-	"Pastas and rice dishes",
-	"Sandwiches and casual options",
-];
+const menuCategories = ["Ceviches, tacos and starters to share", "Vegan, chicken, fish and shrimp bowls", "Pastas and rice dishes", "Sandwiches and casual options"];
 
 const scheduleInfo = [
 	{
@@ -83,8 +78,20 @@ const socialLinks = [
 				<h1 class="mt-4 text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">La Jungla Restaurant</h1>
 				<p class="mt-5 max-w-3xl text-sm md:text-lg font-medium leading-relaxed text-white/95">A fusion of Mediterranean and Caribbean flavors in the heart of Cariblue.</p>
 				<div class="mt-8 flex flex-col sm:flex-row gap-4">
-					<a href={menuUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">View menu</a>
-					<a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-white/40 bg-white/10 text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded backdrop-blur transition-all duration-300">Reserve a table</a>
+					<a
+						href={menuUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+						>View menu</a
+					>
+					<a
+						href={whatsappUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center border border-white/40 bg-white/10 text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded backdrop-blur transition-all duration-300"
+						>Reserve a table</a
+					>
 				</div>
 			</div>
 		</section>
@@ -94,11 +101,21 @@ const socialLinks = [
 				<div class="lg:col-span-6">
 					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Our value proposition</p>
 					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">Signature cuisine with Caribbean identity</h2>
-					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">A culinary proposal designed to be enjoyed at a relaxed pace, in an open space surrounded by the spirit of Cariblue.</p>
+					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">
+						A culinary proposal designed to be enjoyed at a relaxed pace, in an open space surrounded by the spirit of Cariblue.
+					</p>
 				</div>
 				<div class="lg:col-span-6">
 					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-5/4 relative group">
-						<img src="/restaurante_la_jungla.webp" alt="Guests enjoying the pool area at Cariblue" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						<iframe
+							width="100%"
+							height="100%"
+							src="https://www.youtube.com/embed/rMIO4s3ae70?si=EPL1OP9piX5muL2K"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -110,13 +127,15 @@ const socialLinks = [
 					<div class="h-px flex-1 bg-slate-200"></div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-					{valueFeatures.map((item, index) => (
-						<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
-							<div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/12 border border-white/15 mb-5 text-lg font-bold">{index + 1}</div>
-							<h3 class="text-base font-bold tracking-wide mb-3">{item.title}</h3>
-							<p class="text-sm text-white/78 leading-relaxed">{item.text}</p>
-						</div>
-					))}
+					{
+						valueFeatures.map((item, index) => (
+							<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
+								<div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/12 border border-white/15 mb-5 text-lg font-bold">{index + 1}</div>
+								<h3 class="text-base font-bold tracking-wide mb-3">{item.title}</h3>
+								<p class="text-sm text-white/78 leading-relaxed">{item.text}</p>
+							</div>
+						))
+					}
 				</div>
 			</div>
 		</section>
@@ -128,20 +147,32 @@ const socialLinks = [
 					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">A menu designed to enjoy all day</h2>
 					<p class="mt-6 text-sm md:text-[15px] text-slate-700 leading-relaxed">Varied options for sharing, light meals or a complete experience by the Caribbean.</p>
 					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-						{menuCategories.map((category, index) => (
-							<div class="rounded bg-white/80 backdrop-blur px-5 py-5 border border-[#eadbc7] shadow-sm">
-								<div class="flex items-center gap-3">
-									<div class="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent text-sm font-bold">{index + 1}</div>
-									<h3 class="text-sm font-bold text-[#0f2e59]">{category}</h3>
+						{
+							menuCategories.map((category, index) => (
+								<div class="rounded bg-white/80 backdrop-blur px-5 py-5 border border-[#eadbc7] shadow-sm">
+									<div class="flex items-center gap-3">
+										<div class="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent text-sm font-bold">{index + 1}</div>
+										<h3 class="text-sm font-bold text-[#0f2e59]">{category}</h3>
+									</div>
 								</div>
-							</div>
-						))}
+							))
+						}
 					</div>
-					<a href={menuUrl} target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">View menu</a>
+					<a
+						href={menuUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-8 inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+						>View menu</a
+					>
 				</div>
 				<div class="lg:col-span-5 order-first lg:order-last">
 					<div class="overflow-hidden rounded shadow-2xl border border-white/50 aspect-4/5 relative group">
-						<img src="https://i.imgur.com/w2EIc0m.jpeg" alt="Tropical cocktail served at La Jungla" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						<img
+							src="https://i.imgur.com/zl7vo0Q.jpeg"
+							alt="Tropical cocktail served at La Jungla"
+							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+						/>
 					</div>
 				</div>
 			</div>
@@ -153,13 +184,17 @@ const socialLinks = [
 					<div class="h-px flex-1 bg-[#eadbc7]"></div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-					{scheduleInfo.map((item) => (
-						<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
-							<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-5 border border-[#eadbc7]"><img src={item.icon} alt="" class="max-h-9 max-w-9" /></div>
-							<h3 class="text-base font-bold text-[#0f2e59] mb-2">{item.title}</h3>
-							<p class="text-sm text-slate-600 leading-relaxed">{item.text}</p>
-						</div>
-					))}
+					{
+						scheduleInfo.map((item) => (
+							<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+								<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-5 border border-[#eadbc7]">
+									<img src={item.icon} alt="" class="max-h-9 max-w-9" />
+								</div>
+								<h3 class="text-base font-bold text-[#0f2e59] mb-2">{item.title}</h3>
+								<p class="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+							</div>
+						))
+					}
 				</div>
 			</div>
 		</section>
@@ -168,7 +203,11 @@ const socialLinks = [
 			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 				<div class="lg:col-span-5 order-2 lg:order-1">
 					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-4/5 relative group">
-						<img src="https://i.imgur.com/w2EIc0m.jpeg" alt="Tropical cocktail by the pool" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						<img
+							src="https://i.imgur.com/w2EIc0m.jpeg"
+							alt="Tropical cocktail by the pool"
+							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+						/>
 					</div>
 				</div>
 				<div class="lg:col-span-7 order-1 lg:order-2">
@@ -176,13 +215,15 @@ const socialLinks = [
 					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">Pool, cocktails & good vibes</h2>
 					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">Enjoy without leaving the water.</p>
 					<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-						{wetBarFeatures.map((item, index) => (
-							<div class="rounded bg-[#0f2e59] px-5 py-6 text-white shadow-lg">
-								<div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/12 border border-white/15 mb-4 text-sm font-bold">{index + 1}</div>
-								<h3 class="text-sm font-bold mb-2">{item.title}</h3>
-								<p class="text-xs text-white/78 leading-relaxed">{item.text}</p>
-							</div>
-						))}
+						{
+							wetBarFeatures.map((item, index) => (
+								<div class="rounded bg-[#0f2e59] px-5 py-6 text-white shadow-lg">
+									<div class="flex items-center justify-center w-10 h-10 rounded-full bg-white/12 border border-white/15 mb-4 text-sm font-bold">{index + 1}</div>
+									<h3 class="text-sm font-bold mb-2">{item.title}</h3>
+									<p class="text-xs text-white/78 leading-relaxed">{item.text}</p>
+								</div>
+							))
+						}
 					</div>
 					<div class="mt-6 inline-flex items-center rounded border border-accent/20 bg-accent/10 px-5 py-3 text-sm font-bold text-accent">Happy Hour: 11:00 a.m. – 6:00 p.m.</div>
 				</div>
@@ -205,7 +246,11 @@ const socialLinks = [
 					</div>
 					<div class="lg:col-span-6">
 						<div class="overflow-hidden rounded shadow-xl border border-white/50 aspect-video relative group">
-							<img src="https://i.imgur.com/XdLw1g1.jpeg" alt="Live music at La Jungla" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img
+								src="https://i.imgur.com/XdLw1g1.jpeg"
+								alt="Live music at La Jungla"
+								class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
 						</div>
 					</div>
 				</div>
@@ -213,17 +258,23 @@ const socialLinks = [
 				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 					<div class="lg:col-span-6 order-2 lg:order-1">
 						<div class="overflow-hidden rounded shadow-xl border border-white/50 aspect-video relative group">
-							<img src="https://i.imgur.com/dhYg7jr.jpeg" alt="Family enjoying the Cariblue game area" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+							<img
+								src="https://i.imgur.com/dhYg7jr.jpeg"
+								alt="Family enjoying the Cariblue game area"
+								class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+							/>
 						</div>
 					</div>
 					<div class="lg:col-span-6 order-1 lg:order-2">
 						<p class="text-[11px] md:text-xs font-black tracking-[0.2em] uppercase text-accent mb-3">Game Area</p>
 						<h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">A space to share</h3>
-						<p class="text-sm md:text-[15px] text-slate-600 leading-relaxed">Fun for all ages with a pool table, board games and other entertainment options to enjoy with friends and family.</p>
-						<div class="mt-6 rounded bg-white/80 px-6 py-5 border border-[#eadbc7] shadow-sm">
+						<p class="text-sm md:text-[15px] text-slate-600 leading-relaxed">
+							Fun for all ages with a pool table, board games and other entertainment options to enjoy with friends and family.
+						</p>
+						<!-- <div class="mt-6 rounded bg-white/80 px-6 py-5 border border-[#eadbc7] shadow-sm">
 							<h4 class="text-base font-bold text-[#0f2e59] mb-2">Night activities</h4>
 							<p class="text-sm text-slate-600 leading-relaxed">Shows, music and experiences every Friday and Saturday.</p>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -233,15 +284,38 @@ const socialLinks = [
 			<div class="max-w-4xl mx-auto">
 				<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">La Jungla</p>
 				<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6 leading-tight">Come, stay and enjoy</h2>
-				<p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">Whether you are staying with us or just passing through, La Jungla always has something for you.</p>
+				<p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+					Whether you are staying with us or just passing through, La Jungla always has something for you.
+				</p>
 				<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-					<a href={menuUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">View menu</a>
-					<a href={directionsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-slate-200 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300">How to get here</a>
+					<a
+						href={menuUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+						>View menu</a
+					>
+					<a
+						href={directionsUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center border border-slate-200 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300"
+						>How to get here</a
+					>
 				</div>
 				<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-					{socialLinks.map((social) => (
-						<a href={social.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-[#0f2e59]/15 bg-white text-[#0f2e59] font-bold text-[11px] tracking-[0.16em] uppercase px-5 py-3 rounded transition-all duration-300">{social.label}</a>
-					))}
+					{
+						socialLinks.map((social) => (
+							<a
+								href={social.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center justify-center border border-[#0f2e59]/15 bg-white text-[#0f2e59] font-bold text-[11px] tracking-[0.16em] uppercase px-5 py-3 rounded transition-all duration-300"
+							>
+								{social.label}
+							</a>
+						))
+					}
 				</div>
 			</div>
 		</section>
