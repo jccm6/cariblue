@@ -31,20 +31,12 @@ const mealOptions = [
 	{
 		title: "Opción 1",
 		subtitle: "Desayuno Buffet + Almuerzo",
-		items: [
-			"Desayuno Buffet: 9:00 a.m. – 10:00 a.m.",
-			"Almuerzo: 12:00 p.m. – 5:00 p.m.",
-			"Incluye entrada del día, plato fuerte a elegir del menú y postre.",
-		],
+		items: ["Desayuno Buffet: 9:00 a.m. – 10:00 a.m.", "Almuerzo: 12:00 p.m. – 5:00 p.m.", "Incluye entrada del día, plato fuerte a elegir del menú y postre."],
 	},
 	{
 		title: "Opción 2",
 		subtitle: "Almuerzo + Cena",
-		items: [
-			"Almuerzo: 12:00 p.m. – 5:00 p.m.",
-			"Cena: 5:00 p.m. – 7:00 p.m.",
-			"Cada tiempo incluye entrada del día, plato fuerte y postre.",
-		],
+		items: ["Almuerzo: 12:00 p.m. – 5:00 p.m.", "Cena: 5:00 p.m. – 7:00 p.m.", "Cada tiempo incluye entrada del día, plato fuerte y postre."],
 	},
 ];
 
@@ -83,7 +75,9 @@ const openBarItems = [
 				<div class="lg:col-span-6">
 					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Day Pass Regular</p>
 					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">Disfruta Cariblue a tu manera</h2>
-					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">Ideal para quienes desean pasar el día en nuestras instalaciones y disfrutar de un excelente día en un ambiente tropical.</p>
+					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">
+						Ideal para quienes desean pasar el día en nuestras instalaciones y disfrutar de un excelente día en un ambiente tropical.
+					</p>
 					<p class="mt-4 text-sm md:text-[15px] text-slate-600 leading-relaxed">Perfecto para disfrutar cumpleaños, aniversarios u otros momentos especiales.</p>
 					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
 						<div class="rounded bg-[#0f2e59] px-5 py-5 text-white shadow-lg">
@@ -97,11 +91,21 @@ const openBarItems = [
 						</div>
 					</div>
 					<p class="mt-6 text-sm font-semibold text-[#0f2e59]">Grupos +10 personas requieren reservación previa.</p>
-					<a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">Reserva grupos aquí</a>
+					<a
+						href="https://wa.me/50683141965"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-8 inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+						>Reserva grupos aquí</a
+					>
 				</div>
 				<div class="lg:col-span-6">
 					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-5/4 relative group">
-						<img src="https://i.imgur.com/Pb4VtVh.png" alt="Amigos disfrutando bebidas junto a la piscina" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						<img
+							src="https://i.imgur.com/Pb4VtVh.png"
+							alt="Amigos disfrutando bebidas junto a la piscina"
+							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+						/>
 					</div>
 				</div>
 			</div>
@@ -113,13 +117,15 @@ const openBarItems = [
 					<div class="h-px flex-1 bg-slate-200"></div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
-					{regularFeatures.map((item, index) => (
-						<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
-							<div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/12 border border-white/15 mb-5 text-lg font-bold">{index + 1}</div>
-							<h3 class="text-base font-bold tracking-wide mb-3">{item.title}</h3>
-							<p class="text-sm text-white/78 leading-relaxed">{item.text}</p>
-						</div>
-					))}
+					{
+						regularFeatures.map((item, index) => (
+							<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
+								<div class="flex items-center justify-center w-12 h-12 rounded-full bg-white/12 border border-white/15 mb-5 text-lg font-bold">{index + 1}</div>
+								<h3 class="text-base font-bold tracking-wide mb-3">{item.title}</h3>
+								<p class="text-sm text-white/78 leading-relaxed">{item.text}</p>
+							</div>
+						))
+					}
 				</div>
 			</div>
 		</section>
@@ -128,14 +134,22 @@ const openBarItems = [
 			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 				<div class="lg:col-span-5 order-2 lg:order-1">
 					<div class="overflow-hidden rounded shadow-2xl border border-white/50 aspect-4/5 relative group">
-						<img src="https://i.imgur.com/xUxe0xj.png" alt="Comida servida en Restaurante La Jungla" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						<img
+							src="https://i.imgur.com/xUxe0xj.png"
+							alt="Comida servida en Restaurante La Jungla"
+							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+						/>
 					</div>
 				</div>
 				<div class="lg:col-span-7 order-1 lg:order-2">
 					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Day Pass Todo Incluido</p>
 					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">La experiencia Cariblue sin límites</h2>
-					<p class="mt-6 text-sm md:text-[15px] text-slate-700 leading-relaxed">Disfruta un día completo con comidas, bebidas, acceso a las instalaciones y todo lo necesario para relajarte.</p>
-					<p class="mt-4 text-sm md:text-[15px] text-slate-700 leading-relaxed">Perfecto para parejas, familias y grupos que desean vivir la experiencia All Inclusive sin hospedarse.</p>
+					<p class="mt-6 text-sm md:text-[15px] text-slate-700 leading-relaxed">
+						Disfruta un día completo con comidas, bebidas, acceso a las instalaciones y todo lo necesario para relajarte.
+					</p>
+					<p class="mt-4 text-sm md:text-[15px] text-slate-700 leading-relaxed">
+						Perfecto para parejas, familias y grupos que desean vivir la experiencia All Inclusive sin hospedarse.
+					</p>
 					<div class="mt-8 rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
 						<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-4">Acceso al hotel</h3>
 						<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -149,47 +163,75 @@ const openBarItems = [
 			<div class="max-w-7xl mx-auto mt-16">
 				<div class="flex items-center gap-4 mb-8">
 					<div class="h-px flex-1 bg-[#eadbc7]"></div>
-					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-[#0f2e59]">Comidas y bebidas</p>
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-[#0f2e59]">Incluye</p>
 					<div class="h-px flex-1 bg-[#eadbc7]"></div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-					{mealOptions.map((option) => (
-						<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
-							<p class="text-[11px] font-black tracking-[0.2em] uppercase text-accent mb-2">{option.title}</p>
-							<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-4">{option.subtitle}</h3>
-							<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
-								{option.items.map((item) => <li>{item}</li>)}
-							</ul>
-						</div>
-					))}
+					{
+						mealOptions.map((option) => (
+							<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+								<p class="text-[11px] font-black tracking-[0.2em] uppercase text-accent mb-2">{option.title}</p>
+								<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-4">{option.subtitle}</h3>
+								<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+									{option.items.map((item) => (
+										<li>{item}</li>
+									))}
+								</ul>
+							</div>
+						))
+					}
 				</div>
 
-				<div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-					<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
-						<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-3">Snack</h3>
-						<p class="text-sm text-slate-600 leading-relaxed">Incluye 1 snack personal por persona, disponible en nuestro Wet Bar.</p>
+				<div class="mt-5 rounded bg-white/80 backdrop-blur p-6 md:p-8 border border-[#eadbc7] shadow-sm">
+					<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-7">
+						<div>
+							<p class="text-[11px] font-black tracking-[0.2em] uppercase text-accent mb-2">Experiencia incluida</p>
+							<h3 class="text-2xl font-serif font-bold text-[#0f2e59]">Snack y barra libre</h3>
+						</div>
+						<p class="text-xs text-slate-500 md:text-right">Disfruta algo para picar y bebidas durante tu día en Cariblue.</p>
 					</div>
-					<div class="rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
-						<h3 class="text-xl font-serif font-bold text-[#0f2e59] mb-3">Barra libre</h3>
-						<p class="text-sm text-slate-600 leading-relaxed mb-4">Disponible de 11:00 a.m. a 6:00 p.m. en La Jungla y Wet Bar.</p>
-						<ul class="space-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
-							{openBarItems.map((item) => <li>{item}</li>)}
-						</ul>
-						<p class="mt-4 text-xs text-slate-500 leading-relaxed">Los licores premium y cócteles no seleccionados tienen un costo adicional.</p>
+					<div class="grid grid-cols-1 md:grid-cols-[minmax(0,0.85fr)_minmax(0,2fr)] gap-7 md:gap-9">
+						<div class="md:pr-9">
+							<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
+								<h4 class="text-xl font-serif font-bold text-[#0f2e59]">Snack</h4>
+								<p class="text-xs font-semibold text-accent">1 por persona</p>
+							</div>
+							<p class="text-sm text-slate-600 leading-relaxed">Incluye 1 snack personal por persona.</p>
+							<p class="mt-2 text-sm text-slate-600 leading-relaxed">Disponible en nuestro Wet Bar.</p>
+						</div>
+						<div class="md:border-l md:border-[#eadbc7] md:pl-9">
+							<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
+								<h4 class="text-xl font-serif font-bold text-[#0f2e59]">Barra libre</h4>
+								<p class="text-xs font-semibold text-accent">11:00 a.m. – 6:00 p.m.</p>
+							</div>
+							<p class="text-sm text-slate-600 leading-relaxed mb-4">Disponible en La Jungla y Wet Bar.</p>
+							<ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+								{openBarItems.map((item) => <li>{item}</li>)}
+							</ul>
+							<p class="mt-5 pt-4 border-t border-[#eadbc7] text-xs text-slate-500 leading-relaxed">Los licores premium y cócteles no seleccionados tienen un costo adicional.</p>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="max-w-7xl mx-auto mt-16 grid grid-cols-1 lg:grid-cols-12 gap-5">
 				<div class="lg:col-span-5 overflow-hidden rounded shadow-xl border border-white/50 aspect-5/4 relative group">
-					<img src="https://i.imgur.com/Vf3BfEO.png" alt="Área de entretenimiento en Cariblue" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+					<img
+						src="https://i.imgur.com/Vf3BfEO.png"
+						alt="Área de entretenimiento en Cariblue"
+						class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+					/>
 				</div>
 				<div class="lg:col-span-3 rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg flex flex-col justify-center">
 					<p class="text-[11px] font-black tracking-[0.2em] uppercase text-white/70">Horario del Wet Bar</p>
 					<p class="mt-3 text-2xl font-serif font-bold">12:00 p.m. – 5:00 p.m.</p>
 				</div>
 				<div class="lg:col-span-4 self-stretch min-h-[260px] lg:min-h-0 overflow-hidden rounded shadow-xl border border-white/50 relative group">
-					<img src="https://i.imgur.com/kDB5tha.png" alt="Familia disfrutando la piscina de Cariblue" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+					<img
+						src="https://i.imgur.com/kDB5tha.png"
+						alt="Familia disfrutando la piscina de Cariblue"
+						class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+					/>
 				</div>
 			</div>
 
@@ -207,8 +249,20 @@ const openBarItems = [
 			</div>
 
 			<div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-				<a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300">Reserva grupos aquí</a>
-				<a href="https://maps.app.goo.gl/NwJjTVxUU8TakKxr6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-[#0f2e59]/15 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300">Cómo llegar</a>
+				<a
+					href="https://wa.me/50683141965"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+					>Reserva grupos aquí</a
+				>
+				<a
+					href="https://maps.app.goo.gl/NwJjTVxUU8TakKxr6"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center justify-center border border-[#0f2e59]/15 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded transition-all duration-300"
+					>Cómo llegar</a
+				>
 			</div>
 		</section>
 	</main>
