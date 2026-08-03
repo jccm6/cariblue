@@ -1,122 +1,239 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
+const whatsappUrl = "https://wa.me/message/GMSVUP75UWUHC1";
+const bookingUrl = "https://book.cariblue.com/";
+const menuUrl = "https://cariblue.kivly.store/menu/6a049a97b7a1a2ae0d2fa360?tab=carta";
+
 const inclusions = [
-  {
-    title: "Rooms",
-    text: "Choose the room type that best fits your stay.",
-    image: "https://i.imgur.com/stL676L.jpeg",
-    alt: "Luxury room with king bed",
-  },
-  {
-    title: "Buffet Breakfast",
-    text: "Served daily from 7:00 am to 10:00 am at La Jungla restaurant.",
-    image: "https://i.imgur.com/fzN46OU.jpeg",
-    alt: "Tropical buffet breakfast",
-  },
-  {
-    title: "Lunch and Dinner A La Carte",
-    text: "Lunch and dinner are included at La Jungla restaurant, with starter, main course and dessert.",
-    image: "https://i.imgur.com/shoYZfx.jpeg",
-    alt: "Gourmet lunch and dinner",
-  },
-  {
-    title: "Open Bar",
-    text: "Soft drinks, daily fresh juices, beer and selected cocktails are included. Premium spirits are not included. Open from 11:00 am to 9:00 pm.",
-    image: "https://i.imgur.com/LkVXgYv.jpeg",
-    alt: "Tropical cocktails by the pool",
-  },
-  {
-    title: "Snacks",
-    text: "Available at the Wet Bar from 12:00 pm to 5:00 pm. Please ask for the snacks menu at the bar. Includes 1 snack per person.",
-    image: "https://i.imgur.com/E6y9aVT.jpeg",
-    alt: "Snacks and drinks at the Wet Bar",
-  },
-  {
-    title: "Hot Beverage Station",
-    text: "Enjoy freshly prepared Costa Rican pour-over coffee, a selection of teas and herbal infusions, among others.",
-    image: "/desayuno_buffet.webp",
-    alt: "Coffee, teas and hot infusions",
-  },
-  {
-    title: "Late Check-out",
-    text: "Stay until 4:00 pm and enjoy your departure day, subject to availability.",
-    image: "https://i.imgur.com/18Lblcl.jpeg",
-    alt: "Couple relaxing in the room",
-  },
-  {
-    title: "Children Policy",
-    text: "Children 0 to 2 years old stay free sharing bed with parents. Children 3 to 12 years old pay 50%, with kids menu and extra bed available. Price: 39,500 colones.",
-    image: "https://i.imgur.com/EDduZnb.jpeg",
-    alt: "Family by the pool",
-  },
-];
+	{
+		title: "Accommodation",
+		text: "Choose the room that best suits your needs from the different room types we offer.",
+		image: "https://i.imgur.com/LQxmZeL.jpeg",
+		alt: "Room at Cariblue Resort",
+		details: [],
+		link: false,
+		note: null,
+	},
+	{
+		title: "Complete Dining",
+		text: "Enjoy a complete culinary experience throughout your stay:",
+		image: "https://i.imgur.com/uooYTQT.jpeg",
+		alt: "Dining experience at La Jungla Restaurant",
+		details: [
+			{ title: "Arrival day", items: ["Dinner included"] },
+			{ title: "During your stay", items: ["Buffet breakfast", "À la carte lunch", "À la carte dinner"] },
+			{ title: "Departure day", items: ["Breakfast + lunch"] },
+			{ title: "Each meal includes", items: ["Starter of the day", "Main course of your choice", "Dessert of the day"] },
+		],
+		link: "https://cariblue.kivly.store/menu/6a049a97b7a1a2ae0d2fa360?tab=carta",
+		linkDescription: "View the full menu",
+		note: null,
+	},
+	{
+		title: "Snacks during the day",
+		text: "Enjoy a moment to recharge during your stay.",
+		image: "https://i.imgur.com/E6y9aVT.jpeg",
+		alt: "Snacks and drinks at the Cariblue Wetbar",
+		details: [
+			{ title: "Includes", items: ["1 daily snack per person"] },
+			{ title: "Available at", items: ["Our Wetbar"] },
+		],
+		link: false,
+		note: null,
+	},
+	{
+		title: "Daily open bar",
+		text: "Enjoy selected drinks every day during your stay.",
+		image: "https://i.imgur.com/LkVXgYv.jpeg",
+		alt: "Tropical cocktails from the Cariblue bar",
+		details: [
+			{ title: "Hours", items: ["Available from 11:00 a.m. to 9:00 p.m. at La Jungla and Wetbar."] },
+			{
+				title: "Includes",
+				items: [
+					"National and Harbour beers",
+					"Selected cocktails (Piña Colada, Margarita, Daiquiri, etc.)",
+					"House wine (red, white or rosé)",
+					"Soft drinks",
+					"Fresh juices of the day",
+					"Coffee and infusions",
+				],
+			},
+		],
+		note: "Important: premium spirits and cocktails not included are charged additionally.",
+		link: false,
+	},
+	{
+		title: "Late Check-Out",
+		text: "Enjoy Cariblue until the very last moment of your stay.",
+		image: "https://i.imgur.com/HqLrfpM.jpeg",
+		alt: "Guests enjoying their stay at Cariblue",
+		details: [{ title: "Availability", items: ["Late check-out until 4:00 p.m. (subject to availability)"] }],
+		link: false,
+		note: null,
+	},
+] as const;
 ---
 
 <Layout
-  lang="en"
-  title="All Inclusive | Cariblue Beach & Jungle Resort Costa Rica"
-  description="Discover the All Inclusive plan at Cariblue Resort. Everything you need for a family trip, couple getaway or friends escape in Playa Cocles, Costa Rica."
+	lang="en"
+	title="All Inclusive | Cariblue Beach & Jungle Resort Costa Rica"
+	description="Turn your stay into a complete experience by the sea and jungle at Cariblue, with accommodation, dining, snacks, an open bar and late check-out."
 >
-  <main>
-    <section class="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 z-10"></div>
-        <img src="https://i.imgur.com/bkq1aqP.png" alt="Cariblue All Inclusive coastline" class="w-full h-full object-cover" />
-      </div>
-      <div class="relative z-20 max-w-4xl mx-auto mt-8">
-        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">All Inclusive</h1>
-      </div>
-    </section>
+	<main>
+		<section class="relative min-h-[42vh] md:min-h-[52vh] flex items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 z-10 bg-linear-to-b from-black/20 via-black/30 to-black/55"></div>
+				<img src="https://i.imgur.com/bkq1aqP.png" alt="All Inclusive experience by the sea and jungle at Cariblue" class="h-full w-full object-cover" />
+			</div>
+			<div class="relative z-20 max-w-5xl mx-auto mt-8">
+				<p class="text-[11px] md:text-xs font-black tracking-[0.35em] uppercase text-white/80">Cariblue Resort</p>
+				<h1 class="mt-4 text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">All Inclusive</h1>
+				<p class="mt-5 text-sm md:text-lg font-medium tracking-[0.18em] uppercase text-white/90">In the South Caribbean of Costa Rica</p>
+			</div>
+		</section>
 
-    <section class="bg-white py-20 px-6 md:px-12 lg:px-24">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div class="col-span-1 lg:col-span-7 text-left">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] mb-6">Cariblue</h2>
-            <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
-              <p>Cariblue invites you to live a unique beach-and-jungle experience on Costa Rica's South Caribbean coast with <span class="font-semibold text-accent">ALL INCLUSIVE</span> convenience.</p>
-              <p>It is the ideal plan for families, couples and groups of friends. Here you'll find great rooms, restaurants, live music, spa and wellness, gourmet food to take to the beach, yoga, wildlife spotting, tours and sports activities.</p>
-              <p>We are located less than 3 kilometers from Puerto Viejo, right on Playa Cocles, one of the most beautiful beaches on the South Caribbean coast, and within walking distance of Playa Chiquita, Pocitas, Punta Uva, Arrecife and Playa Grande.</p>
-              <p class="font-bold text-[#0f2e59] tracking-wider uppercase mt-6 text-[11px]">We are waiting for you to live the <span class="text-accent italic font-semibold border-b border-accent pb-0.5">• p u r a  v i d a •</span> experience</p>
-            </div>
-          </div>
-          <div class="col-span-1 lg:col-span-5">
-            <div class="overflow-hidden rounded-lg shadow-2xl border border-slate-100 relative group h-75">
-              <img src="/bienvenido.webp" alt="Jungle pool at Cariblue Resort" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="bg-white py-20 px-6 md:px-12 lg:px-24">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+				<div class="lg:col-span-7">
+					<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-4">Cariblue All Inclusive</p>
+					<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59] leading-tight">Turn your stay into a complete experience</h2>
+					<p class="mt-6 text-base md:text-lg text-slate-700 leading-relaxed">
+						Turn your stay into a complete experience by the sea and jungle, with meals, drinks and activities designed for you to enjoy Cariblue to the fullest.
+					</p>
+					<p class="mt-4 text-sm md:text-[15px] text-slate-600 leading-relaxed">Recommended for couples, families and groups who want to enjoy the complete experience.</p>
+					<p class="mt-6 text-sm font-bold text-[#0f2e59] tracking-[0.18em] uppercase">
+						We are waiting for you, come and live the <span class="text-accent italic font-semibold">p u r a&nbsp;&nbsp;v i d a</span> experience
+					</p>
+					<div class="mt-8 flex flex-col sm:flex-row gap-4">
+						<a
+							href={whatsappUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+							>WhatsApp</a
+						>
+						<a
+							href={bookingUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center justify-center bg-[#0f2e59] text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+							>Book Direct</a
+						>
+					</div>
+				</div>
+				<div class="lg:col-span-5">
+					<div class="overflow-hidden rounded shadow-2xl border border-slate-100 aspect-5/4 relative group">
+						<img
+							src="/bienvenido.webp"
+							alt="Pool surrounded by nature at Cariblue Resort"
+							class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="bg-slate-50/50 py-10 border-y border-slate-100 text-center">
-      <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">What is included?</h2>
-    </section>
+		<section class="bg-slate-50/50 py-10 border-y border-slate-100 text-center">
+			<h2 class="text-3xl md:text-5xl font-serif font-bold text-[#0f2e59]">What's included?</h2>
+		</section>
 
-    <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
-      <div class="max-w-5xl mx-auto space-y-16 lg:space-y-24">
-        {inclusions.map((inc) => (
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-50 pb-16 last:border-0 last:pb-0">
-            <div class="col-span-1 md:col-span-6 text-left">
-              <h3 class="text-2xl md:text-3xl font-serif font-bold text-[#0f2e59] mb-4">{inc.title}</h3>
-              <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal whitespace-pre-line">{inc.text}</p>
-            </div>
-            <div class="col-span-1 md:col-span-6">
-              <div class="overflow-hidden rounded shadow-xl border border-slate-100 relative group aspect-video">
-                <img src={inc.image} alt={inc.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+		<section class="bg-[#f6efe4] py-16 px-6 md:px-12 lg:px-24 border-b border-[#eadbc7]">
+			<div class="max-w-7xl mx-auto space-y-16 lg:space-y-20">
+				{
+					inclusions.map((item, index) => (
+						<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-[#eadbc7] pb-16 last:border-0 last:pb-0">
+							<div class={`col-span-1 md:col-span-7 ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}>
+								<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-accent mb-3">Includes {String(index + 1).padStart(2, "0")}</p>
+								<h3 class="text-3xl md:text-4xl font-serif font-bold text-[#0f2e59] leading-tight">{item.title}</h3>
+								<p class="mt-5 text-sm md:text-[15px] text-slate-700 leading-relaxed">{item.text}</p>
 
-    <section class="bg-slate-50/50 py-20 px-6 text-center border-t border-slate-100">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-8 leading-tight">Don't wait any longer to plan your trip</h2>
-        <a href="https://wa.me/50683141965" target="_blank" rel="noopener noreferrer" class="inline-block bg-accent hover:bg-accent text-white font-bold text-xs tracking-widest uppercase px-12 py-4 rounded shadow-lg hover:shadow-pink-600/30 transition-all duration-300">Contact us</a>
-      </div>
-    </section>
-  </main>
+								{item.details.length > 0 && (
+									<div class="mt-7 rounded bg-white/80 backdrop-blur px-6 py-6 border border-[#eadbc7] shadow-sm">
+										<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+											{item.details.map((detail) => (
+												<div>
+													<h4 class="text-base font-serif font-bold text-[#0f2e59] mb-2">{detail.title}</h4>
+													<ul class="space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+														{detail.items.map((detailItem) => (
+															<li>{detailItem}</li>
+														))}
+													</ul>
+												</div>
+											))}
+										</div>
+									</div>
+								)}
+
+								{item.link && (
+									<p class="mt-5 text-sm font-semibold text-[#0f2e59]">
+										<a href={item.link} target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-4 hover:text-[#0f2e59] transition-colors">
+											{item.linkDescription}
+										</a>
+									</p>
+								)}
+
+								{item.note && <p class="mt-5 text-xs text-slate-500 leading-relaxed">{item.note}</p>}
+							</div>
+							<div class={`col-span-1 md:col-span-5 ${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}>
+								<div class="overflow-hidden rounded shadow-2xl border border-white/60 aspect-4/5 relative group">
+									<img src={item.image} alt={item.alt} class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+								</div>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="bg-white py-16 px-6 md:px-12 lg:px-24 border-b border-slate-100">
+			<div class="max-w-7xl mx-auto">
+				<div class="flex items-center gap-4 mb-8">
+					<div class="h-px flex-1 bg-slate-200"></div>
+					<h2 class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-[#0f2e59]">Children's policy</h2>
+					<div class="h-px flex-1 bg-slate-200"></div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+					<div class="rounded bg-[#0f2e59] px-6 py-7 text-white shadow-lg">
+						<p class="text-[11px] font-black tracking-[0.2em] uppercase text-white/70">Ages 0 to 2</p>
+						<h3 class="mt-3 text-2xl font-serif font-bold">Complimentary</h3>
+						<p class="mt-3 text-sm text-white/80 leading-relaxed">Meal plan not included.</p>
+					</div>
+					<div class="rounded border border-[#eadbc7] bg-[#f6efe4] px-6 py-7 shadow-sm">
+						<p class="text-[11px] font-black tracking-[0.2em] uppercase text-accent">Ages 3 to 12</p>
+						<h3 class="mt-3 text-2xl font-serif font-bold text-[#0f2e59]">50% of the rate</h3>
+						<p class="mt-3 text-sm text-slate-600 leading-relaxed">Includes a children's menu.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="bg-[#0f2e59] py-20 px-6 text-center">
+			<div class="max-w-3xl mx-auto">
+				<p class="text-[11px] md:text-xs font-black tracking-[0.28em] uppercase text-white/60 mb-4">Enjoy Cariblue to the fullest</p>
+				<h2 class="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">It's not just a plan, it's an experience</h2>
+				<p class="mt-6 text-base md:text-lg text-white/80 leading-relaxed">
+					From breakfast surrounded by nature to ending the day with a cocktail by the sea, All Inclusive lets you enjoy every moment without interruption.
+				</p>
+				<p class="mt-4 text-sm md:text-base font-semibold tracking-[0.08em] text-white/90">Explore, relax, eat, toast and repeat.</p>
+				<div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+					<a
+						href={whatsappUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center bg-accent text-white font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+						>WhatsApp</a
+					>
+					<a
+						href={bookingUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center justify-center border border-white/30 bg-white text-[#0f2e59] font-extrabold text-xs tracking-[0.18em] uppercase px-8 py-4 rounded shadow-lg transition-all duration-300"
+						>Book Direct</a
+					>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
