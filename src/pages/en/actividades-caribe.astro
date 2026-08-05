@@ -2,176 +2,197 @@
 import Layout from "../../layouts/Layout.astro";
 
 const activities = [
-  {
-    title: "Canopy adventure",
-    bg: "bg-primary text-white",
-    align: "left",
-    text: "Fly through the jungle and push your adrenaline to the limit on our canopy tour. The route covers more than 2,400 meters of fun with trails, fiber bridges and ziplines over the jungle canopy. Suitable from 4 years old. Not suitable for pregnant guests, children under 4, guests over 120 kg or anyone without a good physical condition.",
-    image: "https://i.imgur.com/yQlBBMt.png",
-    alt: "Canopy zipline adventure Costa Rica",
-  },
-  {
-    title: "Jungle Adventure Tour",
-    bg: "bg-primary text-white",
-    align: "right",
-    text: "This tour has everything: canopy, hiking, rappelling, hanging bridges, tree climbing, Tarzan swing and Superman line. It ends with a local meal at a restaurant selected for the group. Not suitable for pregnant guests, children under 12, guests over 120 kg or anyone without a good physical condition.",
-    image: "https://i.imgur.com/DyxHvIn.png",
-    alt: "Jungle hanging bridges walk",
-  },
-  {
-    title: "Punta Uva",
-    bg: "bg-slate-50 text-slate-800",
-    align: "left",
-    text: "Only 8.4 km from the resort, Punta Uva is known for its calm waters, crystal-clear sea and incredible natural tunnel formed by a large rock. It is a public beach with easy access and no entrance fee.",
-    image: "https://i.imgur.com/BDP1sEM.png",
-    alt: "Punta Uva Beach and kayaking",
-  },
-  {
-    title: "Cahuita",
-    bg: "bg-primary text-white",
-    align: "right",
-    text: "Cahuita National Park is located 19 km from the resort and features more than 8 km of trails and rich marine life. Snorkeling is allowed with a guide. Ask at the Tour Desk for schedules and rates.",
-    image: "https://i.imgur.com/il05JZF.png",
-    alt: "Cahuita National Park path",
-  },
-  {
-    title: "Surf lessons",
-    bg: "bg-slate-50 text-slate-800",
-    align: "left",
-    text: "Feel the Caribbean breeze while learning to surf with qualified local instructors. Classes are held at Playa Cocles, one of the most popular beaches for local and international surfers.",
-    image: "https://i.imgur.com/msaIuoQ.png",
-    alt: "Surf lessons Cocles beach",
-  },
-  {
-    title: "Bike rental",
-    bg: "bg-primary text-white",
-    align: "right",
-    text: "Explore the Caribbean by bike and discover local spots like a resident. We offer banana-style bicycles, guided tours and self-guided routes to help you enjoy a low-carbon, active experience.",
-    image: "https://i.imgur.com/53I3TG0.jpeg",
-    alt: "Beach cruiser bicycles rental",
-  },
-  {
-    title: "Gandoca-Manzanillo Wildlife Refuge",
-    bg: "bg-slate-50 text-slate-800",
-    align: "left",
-    text: "This wildlife refuge protects ancient rocky formations, an untouched mangrove, oyster beds and native palm species. Ask at the Tour Desk for more information about this amazing natural area.",
-    image: "https://i.imgur.com/u4UbwCb.png",
-    alt: "Gandoca Manzanillo sloth",
-  },
-  {
-    title: "Kekoldi & Bribri Indigenous Reserve",
-    bg: "bg-primary text-white",
-    align: "right",
-    text: "Located in the Talamanca mountains, this reserve preserves culture, traditions and biodiversity. It is also known for cocoa traditions, wildlife conservation and the impressive Volio waterfall.",
-    image: "https://i.imgur.com/JvuLn8j.png",
-    alt: "Bribri cacao traditional ceremony",
-  },
-  {
-    title: "Horseback riding",
-    bg: "bg-slate-50 text-slate-800",
-    align: "left",
-    text: "If you love horses, ride across Caribbean beaches and jungle trails with trained, gentle rescue horses in a respectful and safe experience.",
-    image: "https://i.imgur.com/PX5tm4H.png",
-    alt: "Horseback riding on Cocles beach",
-  },
-  {
-    title: "Pacuare rafting",
-    bg: "bg-primary text-white",
-    align: "right",
-    text: "For adrenaline lovers, this class III-IV rafting adventure on the Pacuare River is one of the most beautiful experiences in Costa Rica. Ask at the Tour Desk for details.",
-    image: "https://i.imgur.com/VIE2rjr.png",
-    alt: "Pacuare River white water rafting",
-  },
-  {
-    title: "Tortuguero",
-    bg: "bg-primary text-white",
-    align: "left",
-    text: "Seeing a turtle return to the sea after nesting is a powerful experience. Tortuguero is home to several sea turtle species and protects an extraordinary biodiversity.",
-    image: "https://i.imgur.com/xqLad6V.png",
-    alt: "Tortuguero National Park boat canal",
-  },
+	{
+		title: "Canopy adventure",
+		bg: "bg-primary text-white",
+		align: "left",
+		text: "Fly through the jungle and push your adrenaline to the limit on our canopy tour. The route covers more than 2,400 meters of fun with trails, fiber bridges and ziplines over the jungle canopy. Suitable from 4 years old. Not suitable for pregnant guests, children under 4, guests over 120 kg or anyone without a good physical condition.",
+		image: "https://i.imgur.com/yQlBBMt.png",
+		alt: "Canopy zipline adventure Costa Rica",
+	},
+	{
+		title: "Jungle Adventure Tour",
+		bg: "bg-primary text-white",
+		align: "right",
+		text: "This tour has everything: canopy, hiking, rappelling, hanging bridges, tree climbing, Tarzan swing and Superman line. It ends with a local meal at a restaurant selected for the group. Not suitable for pregnant guests, children under 12, guests over 120 kg or anyone without a good physical condition.",
+		image: "https://i.imgur.com/DyxHvIn.png",
+		alt: "Jungle hanging bridges walk",
+	},
+	{
+		title: "Punta Uva",
+		bg: "bg-slate-50 text-slate-800",
+		align: "left",
+		text: "Only 8.4 km from the resort, Punta Uva is known for its calm waters, crystal-clear sea and incredible natural tunnel formed by a large rock. It is a public beach with easy access and no entrance fee.",
+		image: "https://i.imgur.com/BDP1sEM.png",
+		alt: "Punta Uva Beach and kayaking",
+	},
+	{
+		title: "Cahuita",
+		bg: "bg-primary text-white",
+		align: "right",
+		text: "Cahuita National Park is located 19 km from the resort and features more than 8 km of trails and rich marine life. Snorkeling is allowed with a guide. Ask at the Tour Desk for schedules and rates.",
+		image: "https://i.imgur.com/il05JZF.png",
+		alt: "Cahuita National Park path",
+	},
+	{
+		title: "Surf lessons",
+		bg: "bg-slate-50 text-slate-800",
+		align: "left",
+		text: "Feel the Caribbean breeze while learning to surf with qualified local instructors. Classes are held at Playa Cocles, one of the most popular beaches for local and international surfers.",
+		image: "https://i.imgur.com/msaIuoQ.png",
+		alt: "Surf lessons Cocles beach",
+	},
+	{
+		title: "Bike rental",
+		bg: "bg-primary text-white",
+		align: "right",
+		text: "Explore the Caribbean by bike and discover local spots like a resident. We offer banana-style bicycles, guided tours and self-guided routes to help you enjoy a low-carbon, active experience.",
+		image: "https://i.imgur.com/53I3TG0.jpeg",
+		alt: "Beach cruiser bicycles rental",
+	},
+	{
+		title: "Gandoca-Manzanillo Wildlife Refuge",
+		bg: "bg-slate-50 text-slate-800",
+		align: "left",
+		text: "This wildlife refuge protects ancient rocky formations, an untouched mangrove, oyster beds and native palm species. Ask at the Tour Desk for more information about this amazing natural area.",
+		image: "https://i.imgur.com/u4UbwCb.png",
+		alt: "Gandoca Manzanillo sloth",
+	},
+	{
+		title: "Kekoldi & Bribri Indigenous Reserve",
+		bg: "bg-primary text-white",
+		align: "right",
+		text: "Located in the Talamanca mountains, this reserve preserves culture, traditions and biodiversity. It is also known for cocoa traditions, wildlife conservation and the impressive Volio waterfall.",
+		image: "https://i.imgur.com/JvuLn8j.png",
+		alt: "Bribri cacao traditional ceremony",
+	},
+	// {
+	//   title: "Horseback riding",
+	//   bg: "bg-slate-50 text-slate-800",
+	//   align: "left",
+	//   text: "If you love horses, ride across Caribbean beaches and jungle trails with trained, gentle rescue horses in a respectful and safe experience.",
+	//   image: "https://i.imgur.com/PX5tm4H.png",
+	//   alt: "Horseback riding on Cocles beach",
+	// },
+	{
+		title: "Pacuare rafting",
+		bg: "bg-slate-50 text-slate-800",
+		align: "left",
+		text: "For adrenaline lovers, this class III-IV rafting adventure on the Pacuare River is one of the most beautiful experiences in Costa Rica. Ask at the Tour Desk for details.",
+		image: "https://i.imgur.com/VIE2rjr.png",
+		alt: "Pacuare River white water rafting",
+	},
+	// {
+	//   title: "Tortuguero",
+	//   bg: "bg-primary text-white",
+	//   align: "left",
+	//   text: "Seeing a turtle return to the sea after nesting is a powerful experience. Tortuguero is home to several sea turtle species and protects an extraordinary biodiversity.",
+	//   image: "https://i.imgur.com/xqLad6V.png",
+	//   alt: "Tortuguero National Park boat canal",
+	// },
 ];
 ---
 
 <Layout
-  lang="en"
-  title="Activities in the Caribbean | Puerto Viejo Adventure Tours"
-  description="Discover the adventure and nature activities available from Cariblue Resort: canopy, surf lessons, Pacuare rafting, Bribri reserve and more."
+	lang="en"
+	title="Activities in the Caribbean | Puerto Viejo Adventure Tours"
+	description="Discover the adventure and nature activities available from Cariblue Resort: canopy, surf lessons, Pacuare rafting, Bribri reserve and more."
 >
-  <main>
-    <section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 z-10"></div>
-        <img src="/actividades_header.webp" alt="Kayaking river Caribbean Costa Rica" class="w-full h-full object-cover" />
-      </div>
-      <div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
-        <h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Caribbean Activities</h1>
-        <p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-accent uppercase mt-2 drop-shadow">AT CARIBLUE, EVERY DAY IS AN ADVENTURE</p>
-      </div>
-    </section>
+	<main>
+		<section class="relative min-h-[40vh] md:min-h-[50vh] flex flex-col items-center justify-center text-white text-center px-4 overflow-hidden pt-28">
+			<div class="absolute inset-0 z-0">
+				<div class="absolute inset-0 z-10"></div>
+				<img src="/actividades_header.webp" alt="Kayaking river Caribbean Costa Rica" class="w-full h-full object-cover" />
+			</div>
+			<div class="relative z-20 max-w-4xl mx-auto mt-8 flex flex-col items-center">
+				<h1 class="text-4xl md:text-7xl font-serif font-bold tracking-wide drop-shadow-lg leading-tight select-none">Caribbean Activities</h1>
+				<p class="text-[10px] md:text-xs font-bold tracking-[0.25em] text-accent uppercase mt-2 drop-shadow">AT CARIBLUE, EVERY DAY IS AN ADVENTURE</p>
+			</div>
+		</section>
 
-    <section class="bg-white py-16 px-6 md:px-12 lg:px-24">
-      <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
-        <h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-3">The most fun Caribbean for your family</h2>
-        <p class="text-xs md:text-sm font-bold text-accent uppercase tracking-wider mb-6">At Cariblue, every day is an adventure.</p>
-        <p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-2xl">Enjoy a Caribbean experience for all ages, with activities that connect the whole family. Explore jungle walks, water adventures, games and moments of poolside relaxation.</p>
-      </div>
-    </section>
+		<section class="bg-white py-16 px-6 md:px-12 lg:px-24">
+			<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+				<h2 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-3">The most fun Caribbean for your family</h2>
+				<p class="text-xs md:text-sm font-bold text-accent uppercase tracking-wider mb-6">At Cariblue, every day is an adventure.</p>
+				<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-light max-w-2xl">
+					Enjoy a Caribbean experience for all ages, with activities that connect the whole family. Explore jungle walks, water adventures, games and moments of poolside
+					relaxation.
+				</p>
+			</div>
+		</section>
 
-    <section class="bg-slate-50/50 py-16 px-6 md:px-12 lg:px-24 border-y border-slate-100">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:items-stretch">
-          <div class="col-span-1 lg:col-span-7 text-left">
-            <h3 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6">Puerto Viejo and surroundings</h3>
-            <div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
-              <p>On Costa Rica's Caribbean coast, Puerto Viejo de Talamanca is a popular destination thanks to the variety of beaches and parks around it.</p>
-              <p>If you like action, try surfing or white-water rafting. Puerto Viejo is definitely a place to enjoy relaxing holidays full of sport and fun.</p>
-            </div>
-          </div>
-          <div class="col-span-1 lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 self-stretch">
-            <div class="overflow-hidden rounded shadow-md border border-slate-100 h-full min-h-55"><img src="https://i.imgur.com/YDIJKFf.png" alt="Children laughing in jungle" class="w-full h-full object-cover" /></div>
-            <div class="overflow-hidden rounded shadow-md border border-slate-100 h-full min-h-55"><img src="https://i.imgur.com/Xwhdget.png" alt="Beautiful Cocles coast view" class="w-full h-full object-cover" /></div>
-          </div>
-        </div>
-      </div>
-    </section>
+		<section class="bg-slate-50/50 py-16 px-6 md:px-12 lg:px-24 border-y border-slate-100">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center lg:items-stretch">
+					<div class="col-span-1 lg:col-span-7 text-left">
+						<h3 class="text-2xl md:text-4xl font-serif font-bold text-[#0f2e59] mb-6">Puerto Viejo and surroundings</h3>
+						<div class="space-y-4 text-xs md:text-[13px] text-slate-600 leading-relaxed font-normal">
+							<p>On Costa Rica's Caribbean coast, Puerto Viejo de Talamanca is a popular destination thanks to the variety of beaches and parks around it.</p>
+							<p>If you like action, try surfing or white-water rafting. Puerto Viejo is definitely a place to enjoy relaxing holidays full of sport and fun.</p>
+						</div>
+					</div>
+					<div class="col-span-1 lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 self-stretch">
+						<div class="overflow-hidden rounded shadow-md border border-slate-100 h-full min-h-55">
+							<img src="https://i.imgur.com/YDIJKFf.png" alt="Children laughing in jungle" class="w-full h-full object-cover" />
+						</div>
+						<div class="overflow-hidden rounded shadow-md border border-slate-100 h-full min-h-55">
+							<img src="https://i.imgur.com/Xwhdget.png" alt="Beautiful Cocles coast view" class="w-full h-full object-cover" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section class="w-full">
-      {activities.map((act) => (
-        <div class={`py-20 px-6 md:px-12 lg:px-24 ${act.bg}`}>
-          <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {act.align === "left" ? (
-                <>
-                  <div class="col-span-1 lg:col-span-7 text-left">
-                    <h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">{act.title}</h3>
-                    <p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">{act.text}</p>
-                    <a href="https://wa.me/50683141965" target="_blank" class="inline-block mt-8 bg-accent hover:bg-accent text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors">Book activity</a>
-                  </div>
-                  <div class="col-span-1 lg:col-span-5">
-                    <div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-4/3 group">
-                      <img src={act.image} alt={act.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div class="col-span-1 lg:col-span-5 order-2 lg:order-1">
-                    <div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-4/3 group">
-                      <img src={act.image} alt={act.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    </div>
-                  </div>
-                  <div class="col-span-1 lg:col-span-7 text-left order-1 lg:order-2">
-                    <h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">{act.title}</h3>
-                    <p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">{act.text}</p>
-                    <a href="https://wa.me/50683141965" target="_blank" class="inline-block mt-8 bg-accent hover:bg-accent text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors">Book activity</a>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
-    </section>
-  </main>
+		<section class="w-full">
+			{
+				activities.map((act) => (
+					<div class={`py-20 px-6 md:px-12 lg:px-24 ${act.bg}`}>
+						<div class="max-w-7xl mx-auto">
+							<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+								{act.align === "left" ? (
+									<>
+										<div class="col-span-1 lg:col-span-7 text-left">
+											<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">{act.title}</h3>
+											<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">{act.text}</p>
+											<a
+												href="https://wa.me/50683141965"
+												target="_blank"
+												class="inline-block mt-8 bg-accent hover:bg-accent text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
+											>
+												Book activity
+											</a>
+										</div>
+										<div class="col-span-1 lg:col-span-5">
+											<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-4/3 group">
+												<img src={act.image} alt={act.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+											</div>
+										</div>
+									</>
+								) : (
+									<>
+										<div class="col-span-1 lg:col-span-5 order-2 lg:order-1">
+											<div class="overflow-hidden rounded-lg shadow-2xl relative border border-white/10 aspect-video lg:aspect-4/3 group">
+												<img src={act.image} alt={act.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="col-span-1 lg:col-span-7 text-left order-1 lg:order-2">
+											<h3 class="text-2xl md:text-4xl font-serif font-bold mb-6 tracking-wide">{act.title}</h3>
+											<p class="text-xs md:text-[13px] leading-relaxed font-light whitespace-pre-line opacity-90">{act.text}</p>
+											<a
+												href="https://wa.me/50683141965"
+												target="_blank"
+												class="inline-block mt-8 bg-accent hover:bg-accent text-white font-extrabold text-[10px] tracking-widest uppercase px-6 py-3 rounded-xs shadow-md transition-colors"
+											>
+												Book activity
+											</a>
+										</div>
+									</>
+								)}
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</section>
+	</main>
 </Layout>
