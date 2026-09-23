@@ -11,6 +11,7 @@ const t = getUi(lang).header;
 const homeHref = getHomePath(lang);
 const roomsHref = localizePath("/habitaciones", lang);
 const allInclusiveHref = localizePath("/all-inclusive", lang);
+const bookingHref = `/booking?lang=${lang}`;
 const alternateHref = getLocalizedPath(Astro.url.pathname, lang === "es" ? "en" : "es");
 ---
 
@@ -306,8 +307,7 @@ const alternateHref = getLocalizedPath(Astro.url.pathname, lang === "es" ? "en" 
 		<div class="flex items-center space-x-4">
 			<!-- Book Button -->
 			<a
-				href="https://book.cariblue.com/"
-				target="_blank"
+				href={bookingHref}
 				class="bg-accent hover:bg-accent text-white font-bold px-5 py-2.5 md:px-7 md:py-3 rounded-sm transition-all duration-300 shadow-lg text-[10px] md:text-xs tracking-[0.15em] uppercase hover:shadow-pink-600/30 animate-pulse-soft"
 			>
 				{t.booking}

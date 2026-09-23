@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+
+const propertyCode = "Em5T36";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="theme-color" content="#406ea7" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/webp" href="/favicon.webp" />
+		<title>Reservar | Cariblue Beach & Jungle Resort</title>
+		<meta name="description" content="Consulta disponibilidad y reserva tu estadía en Cariblue Beach & Jungle Resort." />
+		<script is:inline>
+			const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+			if (requestedLanguage === "en") {
+				document.documentElement.lang = "en";
+			}
+		</script>
+		<script is:inline type="text/javascript" src="https://static1.cloudbeds.com/booking-engine/latest/static/js/immersive-experience/cb-immersive-experience.js"></script>
+	</head>
+	<body class="min-h-screen bg-white text-slate-800 antialiased">
+		<header class="bg-primary text-white shadow-lg">
+			<div class="mx-auto flex max-w-7xl items-center px-5 py-5 md:px-8">
+				<a href="/" aria-label="Volver al inicio de Cariblue" class="inline-flex items-center">
+					<img src="/logo.webp" alt="Cariblue Beach & Jungle Resort" class="h-14 w-auto md:h-16" />
+				</a>
+			</div>
+		</header>
+
+		<main class="mx-auto min-h-180 max-w-7xl px-3 py-6 sm:px-5 md:px-8 md:py-10">
+			<cb-immersive-experience mode="standard" property-code={propertyCode}></cb-immersive-experience>
+			<noscript>
+				<p class="px-5 py-12 text-center text-sm text-red-700">Para utilizar el motor de reservas debes habilitar JavaScript en tu navegador.</p>
+			</noscript>
+		</main>
+	</body>
+</html>
+
+<style is:global data-cb-immersive-experience-root>
+	cb-immersive-experience {
+		display: block;
+		width: 100%;
+		min-height: 720px;
+	}
+
+	@media (max-width: 640px) {
+		cb-immersive-experience {
+			min-height: 640px;
+		}
+	}
+</style>
