@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
 
 const propertyCode = "Em5T36";
 ---
@@ -24,6 +25,10 @@ const propertyCode = "Em5T36";
 		<script is:inline type="text/javascript" src="https://static1.cloudbeds.com/booking-engine/latest/static/js/immersive-experience/cb-immersive-experience.js"></script>
 	</head>
 	<body class="min-h-screen bg-white text-slate-800 antialiased">
+		<div class="relative min-h-22 bg-primary lg:min-h-32">
+			<Header lang="es" />
+		</div>
+
 		<main class="mx-auto min-h-180 max-w-7xl px-3 py-6 sm:px-5 md:px-8 md:py-10">
 			<cb-immersive-experience mode="standard" property-code={propertyCode} hide-custom-header="yes" hide-property-info="yes"></cb-immersive-experience>
 			<noscript>
@@ -34,6 +39,10 @@ const propertyCode = "Em5T36";
 </html>
 
 <style is:global data-cb-immersive-experience-root>
+	.page-content-wrapper {
+		display: none;
+	}
+
 	cb-immersive-experience {
 		display: block;
 		width: 100%;
