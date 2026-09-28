@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 
 const propertyCode = "Em5T36";
+const gtmId = import.meta.env.PUBLIC_GTM;
+const shouldLoadGtm = Boolean(gtmId) && (import.meta.env.NODE_ENV !== "development");
 ---
 
 <!doctype html>
@@ -16,6 +18,15 @@ const propertyCode = "Em5T36";
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<title>Reservar | Cariblue Beach & Jungle Resort</title>
 		<meta name="description" content="Consulta disponibilidad y reserva tu estadía en Cariblue Beach & Jungle Resort." />
+		{shouldLoadGtm && (
+			<script is:inline define:vars={{ gtmId }}>
+				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer',gtmId);
+			</script>
+		)}
 		<script is:inline>
 			const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
 			if (requestedLanguage === "en") {
@@ -25,6 +36,17 @@ const propertyCode = "Em5T36";
 		<script is:inline type="text/javascript" src="https://static1.cloudbeds.com/booking-engine/latest/static/js/immersive-experience/cb-immersive-experience.js"></script>
 	</head>
 	<body class="min-h-screen bg-white text-slate-800 antialiased">
+		{shouldLoadGtm && (
+			<noscript>
+				<iframe
+					src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+					height="0"
+					width="0"
+					style="display:none;visibility:hidden"
+				>
+					</iframe>
+			</noscript>
+		)}
 		<div class="relative min-h-22 bg-primary lg:min-h-32">
 			<Header lang="es" />
 		</div>
