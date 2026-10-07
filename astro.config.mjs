@@ -17,6 +17,9 @@ export default defineConfig({
 			prefixDefaultLocale: false,
 		},
 	},
+	redirects: {
+		"/en/service/vive-el-caribe": "/en/actividades-caribe",
+	},
 
 	// adapter: cloudflare(),
 });
