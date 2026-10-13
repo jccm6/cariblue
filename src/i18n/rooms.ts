@@ -42,7 +42,8 @@ const rooms = {
 		{
 			title: "Beach Studio",
 			slug: "beach-studio",
-			description: "Habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort.",
+			description:
+				"Disfruta de este cómodo estudio a pocos pasos de Playa Cocles. Cuenta con cama King, aire acondicionado, WiFi de alta velocidad, cocina equipada y escritorio, ideal para descansar o trabajar en un ambiente tranquilo.",
 			image: "https://i.imgur.com/OTApYwZ.jpeg",
 			acreage: "30 m²",
 			guests: "3",
@@ -51,7 +52,8 @@ const rooms = {
 		{
 			title: "Beach Apartment",
 			slug: "beach-apartment",
-			description: "Habitación triple económica combina practicidad con todo lo que necesitas para disfrutar de tu estadía en nuestro resort.",
+			description:
+				"A pocos pasos de Playa Cocles, este apartamento ofrece comodidad y una ubicación privilegiada en el Caribe. Cuenta con habitación principal con cama king, segunda habitación con dos camas individuales, aire acondicionado, living con TV de 55” y cocina americana completamente equipada.",
 			image: "https://i.imgur.com/lu0oGrw.jpeg",
 			acreage: "30 m²",
 			guests: "3",
@@ -182,7 +184,8 @@ const rooms = {
 		{
 			title: "Beach Studio",
 			slug: "beach-studio",
-			description: "This practical room combines everything you need to enjoy your stay at our resort.",
+			description:
+				"Enjoy this comfortable studio just steps from Cocles Beach. It features a king-size bed, air conditioning, high-speed Wi-Fi, a fully equipped kitchen, and a desk—ideal for relaxing or working in a peaceful setting.",
 			image: "https://i.imgur.com/OTApYwZ.jpeg",
 			acreage: "30 m²",
 			guests: "3",
@@ -191,7 +194,8 @@ const rooms = {
 		{
 			title: "Beach Apartment",
 			slug: "beach-apartment",
-			description: "Wake up each morning in our vacation apartment and feel the Caribbean Sea nearby, just steps from beautiful Playa Cocles.",
+			description:
+				"Located just steps from Cocles Beach, this apartment offers comfort and a prime Caribbean location. It features a master bedroom with a king-size bed, a second bedroom with two single beds, air conditioning, a living area with a 55-inch TV, and a fully equipped open-plan kitchen.",
 			image: "https://i.imgur.com/lu0oGrw.jpeg",
 			acreage: "30 m²",
 			guests: "3",
