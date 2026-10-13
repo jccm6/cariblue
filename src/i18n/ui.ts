@@ -90,7 +90,7 @@ export const ui = {
 				titleAccent: "del caribe costarricense!",
 				paragraphs: [
 					"Ubicado estratégicamente frente a la hermosa Playa Cocles, rodeada de arena dorada y la exuberante vegetación de los bosques tropicales, nuestro resort ofrece una experiencia única de confort y relajación en Costa Rica.",
-					"Con una variedad de opciones de alojamiento que incluyen cómodas habitaciones, bungalows y villas, nuestro resort proporciona el escenario ideal para unas vacaciones inolvidables. Además de disfrutar de la serenidad de la playa, nuestros huéspedes pueden relajarse en nuestras 2 piscinas de agua dulce, sumergirse en el jacuzzi o rejuvenecer en el Surya Wellness SPA.",
+					"Con una variedad de opciones de alojamiento que incluyen cómodas habitaciones, bungalows y villas, nuestro resort proporciona el escenario ideal para unas vacaciones inolvidables. Además de disfrutar de la serenidad de la playa, nuestros huéspedes pueden relajarse en nuestras 3 piscinas: 1 de agua clorada, 1 de agua salinizada y 1 jacuzzi, o rejuveneceder en nuestro Surya Wellness Spa.",
 					"Para satisfacer tus necesidades gastronómicas, nuestro exclusivo restaurante La Jungla ofrece deliciosas opciones para el desayuno, almuerzo y cena, mientras que el Congo wet bar es el lugar perfecto para disfrutar de los mejores cócteles y el happy hour junto a la piscina principal del resort. Por otro lado, contamos con Sushi Wave, nuestro restaurante frente a la playa, donde podrás deleitarte con los sabores frescos del mar en un entorno espectacular. Ya sea que busques aventura o un retiro tranquilo, nuestro resort ofrece una experiencia única para todos los gustos.",
 				],
 				stats: ["habitaciones", "piscinas", "restaurantes", "SPA", "gimnasio"],
@@ -123,20 +123,20 @@ export const ui = {
 				goToSlide: "Ir a la experiencia",
 				slides: [
 					{
-						title: "Wellness",
+						title: "Surya Spa",
 						description: [
-							"El estado de tu vida no es más que un reflejo del estado de tu mente. La salud mental es tan importante como la salud física es por eso que ponemos a disposición nuestro centro de Spa Moana, ubicado entre el mar y la jungla, ofreciendo un ambiente único, íntimo y relajante.",
+							"El estado de tu vida no es más que un reflejo del estado de tu mente. La salud mental es tan importante como la salud física es por eso que ponemos a disposición nuestro centro de Surya Spa, ubicado entre el mar y la jungla, ofreciendo un ambiente único, íntimo y relajante.",
 							"Moana cuenta con gran variedad de masajes y tratamientos para disfrutar solo o en pareja, relajarse después de un viaje largo o ese tour cargado de adrenalina es imprescindible para cerrar el día. El centro de Spa Moana está a disposición de todo el público, dando prioridad a nuestros huéspedes, podrá disfrutar del mismo apartando su lugar en nuestra recepción.",
 						],
 						quote: "Masajes, tratamientos y un espacio íntimo entre el mar y la jungla.",
 						image: "https://i.imgur.com/QN0wGs7.png",
-						caption: "Spa Moana y bienestar",
+						caption: "Surya Spa y bienestar",
 					},
 					{
 						title: "Habitaciones frente al mar",
 						description: [
 							"El sonido del mar es música para el alma. A pocos pasos de la primera línea de mar frente a Playa Cocles se encuentra la Zona de Playa donde el sonido de las olas y el olor del mar harán vibrar sus sensaciones.",
-							"26 habitaciones con capacidad entre 2 a 6 personas, aire acondicionado, refrigerador, TV con cable, hamacas, áreas verdes, 2 piscinas y 1 jacuzzi abiertos las 24 horas del día son algunas de las comodidades que se puede encontrar en el área de playa.",
+							"29 habitaciones con capacidad entre 2 a 6 personas, aire acondicionado, refrigerador, TV con cable, hamacas, áreas verdes, 3 piscinas: 1 de agua clorada, 1 de agua salinizada y 1 jacuzzi, abiertos las 24 horas del día son algunas de las comodidades que se puede encontrar en el área de playa.",
 						],
 						quote: "A pasos de Playa Cocles, entre el sonido del mar y la brisa.",
 						image: "https://i.imgur.com/UScW40f.jpeg",
@@ -375,20 +375,20 @@ export const ui = {
 				goToSlide: "Go to experience",
 				slides: [
 					{
-						title: "Wellness",
+						title: "Surya Spa",
 						description: [
 							"The state of your life is a reflection of the state of your mind. Mental health is as important as physical health, which is why our Spa Moana is available between the sea and the jungle, offering a unique, intimate and relaxing atmosphere.",
-							"Moana offers a wide variety of massages and treatments to enjoy alone or as a couple. Relaxing after a long trip or an adrenaline-filled tour is essential to close the day. Spa Moana is open to the public, with priority for our guests, and reservations can be made at reception.",
+							"Moana offers a wide variety of massages and treatments to enjoy alone or as a couple. Relaxing after a long trip or an adrenaline-filled tour is essential to close the day. Surya Spa is open to the public, with priority for our guests, and reservations can be made at reception.",
 						],
 						quote: "Massages, treatments and an intimate space between the sea and the jungle.",
 						image: "https://i.imgur.com/QN0wGs7.png",
-						caption: "Spa Moana and wellness",
+						caption: "Surya Spa and wellness",
 					},
 					{
 						title: "Oceanfront Rooms",
 						description: [
 							"The sound of the sea is music for the soul. Just steps from the first ocean line in front of Playa Cocles, the Beach Area lets the sound of the waves and the scent of the sea awaken your senses.",
-							"Twenty-six rooms for 2 to 6 guests, air conditioning, refrigerator, cable TV, hammocks, green areas, 2 pools and 1 jacuzzi open 24 hours a day are some of the comforts available in the beach area.",
+							"29 rooms for 2 to 6 guests, air conditioning, refrigerator, cable TV, hammocks, green areas, 3 pools: 1 chlorinated, 1 saltwater, and 1 Jacuzzi, open 24 hours a day are some of the comforts available in the beach area.",
 						],
 						quote: "Steps from Playa Cocles, between the sound of the sea and the breeze.",
 						image: "https://i.imgur.com/UScW40f.jpeg",
