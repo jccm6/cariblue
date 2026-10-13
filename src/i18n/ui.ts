@@ -126,7 +126,7 @@ export const ui = {
 						title: "Surya Spa",
 						description: [
 							"El estado de tu vida no es más que un reflejo del estado de tu mente. La salud mental es tan importante como la salud física es por eso que ponemos a disposición nuestro centro de Surya Spa, ubicado entre el mar y la jungla, ofreciendo un ambiente único, íntimo y relajante.",
-							"Moana cuenta con gran variedad de masajes y tratamientos para disfrutar solo o en pareja, relajarse después de un viaje largo o ese tour cargado de adrenalina es imprescindible para cerrar el día. El centro de Spa Moana está a disposición de todo el público, dando prioridad a nuestros huéspedes, podrá disfrutar del mismo apartando su lugar en nuestra recepción.",
+							"Moana cuenta con gran variedad de masajes y tratamientos para disfrutar solo o en pareja, relajarse después de un viaje largo o ese tour cargado de adrenalina es imprescindible para cerrar el día. El centro de Surya Spa está a disposición de todo el público, dando prioridad a nuestros huéspedes, podrá disfrutar del mismo apartando su lugar en nuestra recepción.",
 						],
 						quote: "Masajes, tratamientos y un espacio íntimo entre el mar y la jungla.",
 						image: "https://i.imgur.com/QN0wGs7.png",
@@ -377,7 +377,7 @@ export const ui = {
 					{
 						title: "Surya Spa",
 						description: [
-							"The state of your life is a reflection of the state of your mind. Mental health is as important as physical health, which is why our Spa Moana is available between the sea and the jungle, offering a unique, intimate and relaxing atmosphere.",
+							"The state of your life is a reflection of the state of your mind. Mental health is as important as physical health, which is why our Surya Spa is available between the sea and the jungle, offering a unique, intimate and relaxing atmosphere.",
 							"Moana offers a wide variety of massages and treatments to enjoy alone or as a couple. Relaxing after a long trip or an adrenaline-filled tour is essential to close the day. Surya Spa is open to the public, with priority for our guests, and reservations can be made at reception.",
 						],
 						quote: "Massages, treatments and an intimate space between the sea and the jungle.",
