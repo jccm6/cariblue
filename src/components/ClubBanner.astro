@@ -1,0 +1,43 @@
+---
+import { getLocale, localizePath, type Locale } from "../i18n/config";
+import { getUi } from "../i18n/ui";
+
+interface Props {
+	lang?: Locale;
+}
+
+const lang = getLocale(Astro.props.lang);
+const t = getUi(lang).home.clubBanner;
+---
+
+<section class="mx-auto my-0 px-6 max-w-7xl pt-16 pb-0 max-[720px]:pt-10" aria-label="Club Cariblue">
+	<div
+		class="relative overflow-hidden grid grid-cols-[1.2fr_.8fr] items-center bg-[linear-gradient(115deg,#0f2e59,var(--color-primary))] rounded-xl text-white max-[720px]:grid-cols-1"
+	>
+		<div class="px-12 py-11 relative z-1 max-[720px]:px-6 max-[720px]:pt-8 max-[720px]:pb-4">
+			<span class="text-[11px] tracking-[2px] uppercase text-[#dbeafe] font-bold">{t.eyebrow}</span>
+			<h2 class="mx-0 my-4 text-[clamp(32px,4vw,48px)] leading-[1.15]">{t.title}<br />{t.tagline}</h2>
+			<p class="mx-0 max-w-135 leading-[1.75] text-[15px] text-[#eff6ff] mt-0 mb-6">{t.message} <strong>{t.cashback}</strong></p>
+			<a
+				class="px-5.5 py-3.75 inline-flex items-center justify-between gap-4.5 rounded bg-accent text-white text-[13px] font-bold no-underline transition-[background] duration-200 ease-[ease] max-[720px]:w-full motion-reduce:transition-none hover:bg-[#bd0055] focus-visible:outline-3 focus-visible:outline-solid focus-visible:outline-white focus-visible:outline-offset-[5px]"
+				href={localizePath("/club-cariblue", lang)}
+			>
+				{t.button}
+				<span aria-hidden="true">↗</span>
+			</a>
+		</div>
+		<div class="h-full min-h-72.5 relative grid place-items-center max-[720px]:min-h-45" aria-hidden="true">
+			<div
+				class="border border-[#ffffff30] absolute w-92.5 h-92.5 rounded-full -right-17.5 -top-11.25 max-[720px]:w-65 max-[720px]:h-65 max-[720px]:right-[calc(50%-130px)] max-[720px]:-top-10 after:inset-8 after:border after:border-[#ffffff30] after:content-[''] after:absolute after:rounded-full"
+			>
+			</div>
+			<div
+				class="p-5.75 relative w-61.25 h-38.75 rounded-xl bg-[linear-gradient(135deg,#dbeafe,white)] text-[#0f2e59] shadow-[0_22px_50px_#0f2e5970] -rotate-9 flex flex-col justify-between max-[720px]:p-4.25 max-[720px]:w-52.5 max-[720px]:h-31.25 max-[720px]:-rotate-7"
+			>
+				<small class="text-[11px] tracking-[2px] font-bold">CARIBLUE</small>
+				<strong class="font-serif text-[28px] font-normal max-[720px]:text-[25px]">Club Cariblue</strong>
+				<span class="text-[10px] tracking-[1px] uppercase">{t.tagline} ✦</span>
+			</div>
+		</div>
+	</div>
+</section>

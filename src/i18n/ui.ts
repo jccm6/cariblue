@@ -68,6 +68,14 @@ export const ui = {
 			hotelWebsiteBy: "hotel website by",
 		},
 		home: {
+			clubBanner: {
+				eyebrow: "Beneficios exclusivos para socios",
+				title: "Club Cariblue:",
+				tagline: "Cada visita suma.",
+				message: "Únete gratis, acumula puntos en nuestros tres restaurantes y recibe",
+				cashback: "$20 de cashback por cada noche que reserves directamente con Cariblue.",
+				button: "Conoce más sobre Club Cariblue",
+			},
 			meta: {
 				title: "Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica",
 				description: "Resort de playa y jungla en Playa Cocles, Puerto Viejo. Habitaciones, piscinas, restaurantes, spa y reservas directas en el Caribe de Costa Rica.",
@@ -320,6 +328,14 @@ export const ui = {
 			hotelWebsiteBy: "hotel website by",
 		},
 		home: {
+			clubBanner: {
+				eyebrow: "Exclusive member benefits",
+				title: "Club Cariblue:",
+				tagline: "Every visit adds up.",
+				message: "Join for free, earn points at our three restaurants and receive",
+				cashback: "$20 cashback for every night you book directly with Cariblue.",
+				button: "Learn more about Club Cariblue",
+			},
 			meta: {
 				title: "Cariblue Beach & Jungle Resort | Puerto Viejo, Costa Rica",
 				description: "Beach and jungle resort in Playa Cocles, Puerto Viejo. Rooms, pools, restaurants, spa and direct booking in Costa Rica's Caribbean coast.",
