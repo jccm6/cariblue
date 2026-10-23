@@ -153,7 +153,7 @@ const faqs = [
 									{faq.question}
 								</span>
 								<!-- Toggle icon -->
-								<span class="faq-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none shrink-0 border border-slate-100 rounded-full group-hover:border-[#e60067]/20 transition-all">
+								<span class="faq-icon text-[#0f2e59] text-base font-black tracking-none w-6 h-6 flex items-center justify-center select-none shrink-0 border border-slate-100 rounded-full group-hover:border-accent/20 transition-all">
 									{faq.isOpen ? "−" : "+"}
 								</span>
 							</button>
@@ -163,7 +163,7 @@ const faqs = [
 								id={faq.id} 
 								class={`faq-content overflow-hidden transition-all duration-300 ease-in-out ${faq.isOpen ? 'max-h-75 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
 							>
-								<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-5 rounded-md border-l-2 border-[#e60067]">
+								<p class="text-xs md:text-[13px] text-slate-500 leading-relaxed font-normal bg-slate-50/50 p-5 rounded-md border-l-2 border-accent">
 									{faq.answer}
 								</p>
 							</div>
